@@ -13,3 +13,11 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .logo{
+    padding-top: 20px;
+    width:200px;
+    >img{
+        width:100%;
+    }
+ }
