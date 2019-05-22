@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/background.css">
+  <link rel="stylesheet" href="styles/coin.css">
+  <link rel="stylesheet" href="styles/modal.css">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <!-- endbuild -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+</head>
+
+<body ng-app="gregApp">
+  <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <background></background>
+  <div class="content">
+    <header></header>
+    <modal></modal>
+    <div ng-view=""></div>
+    <footer></footer>
+  </div>
+  <!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+  <!-- <a href="https://www.freepik.com/free-photos-vectors/logo">Logo vector created by BiZkettE1 - www.freepik.com</a> -->
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    !function (A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+      (A[l].q = A[l].q || []).push(arguments)
+    }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
+  <!-- <script>
+        function myMap() {
+        var mapProp= {
+          center:new google.maps.LatLng(51.508742,-0.120850),
+          zoom:5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+        </script>
+         -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg19u4sGu9ZhqqHuVXedWM8ZeL2qvKd3A"></script>
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/controllers/home.js"></script>
+  <script src="scripts/controllers/safety.js"></script>
+  <script src="scripts/directives/header.js"></script>
+  <script src="scripts/controllers/myroute.js"></script>
+  <script src="scripts/controllers/treks.js"></script>
+  <script src="scripts/controllers/riding.js"></script>
+  <script src="scripts/controllers/horses.js"></script>
+  <script src="scripts/directives/footer.js"></script>
+  <script src="scripts/directives/googlemap.js"></script>
+  <script src="scripts/directives/background.js"></script>
+  <script src="scripts/directives/coin.js"></script>
+  <script src="scripts/services/auth.js"></script>
+  <script src="scripts/services/books.js"></script>
+  <script src="scripts/controllers/lessons.js"></script>
+  <script src="scripts/controllers/photoshoots.js"></script>
+  <script src="scripts/controllers/picnics.js"></script>
+  <script src="scripts/directives/modal.js"></script>
+  <script src="scripts/controllers/contact.js"></script>
+  <script src="scripts/controllers/gallery.js"></script>
+  <!-- endbuild -->
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+</body>
+
+</html>

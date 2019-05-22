@@ -1,0 +1,103 @@
+$red : #DD381D;
+$green : #7EB530;
+$blue : rgb(246, 90, 28);
+$gray : #F0F0F0;
+
+$coin-layers : 10;
+$coin-layer-spacing : 1px;
+
+$duration : 1s;
+$bounce : cubic-bezier(.2,.7,.4,1.5);
+
+.skill-icon {
+  position: relative;
+  width: 85px;
+  height: 85px;
+  margin: 15px;
+  transform: perspective(400px);
+  transform-style: preserve-3d;
+  transform-origin: 
+    center 
+    center 
+    (($coin-layers/2) * -$coin-layer-spacing);
+  transition: transform $duration $bounce;
+  cursor: pointer;
+}
+
+
+.coin, .coin-wedge {
+  position: absolute;
+  top: 0;
+  bottom: 0;  
+  background: currentColor;
+}
+
+.coin {
+  left: 0;
+  right: 0;
+  border-radius: 100px;
+  overflow: hidden;
+  &:empty { 
+    box-shadow: inset 0 0 0 85px rgba(0,0,0,.3);
+    pointer-events: none;
+  }
+  
+  @for $i from 2 through $coin-layers {
+    &:nth-child(#{$i}) {
+      transform: 
+        translateZ(-$i * $coin-layer-spacing);    
+    }
+  }
+}
+
+.coin-wedge {
+  box-shadow: inset 0 0 0 85px rgba(0,0,0,.3);
+  left: 50%;
+  width: $coin-layers * $coin-layer-spacing;
+  transform: rotateY(90deg);
+  transform-origin: left center;
+  background: currentColor;
+}
+
+.icon {
+  width: 85px;
+  height: 85px;
+  background: url(https://d7mj4aqfscim2.cloudfront.net/images/skill-icons-unlocked.svg);
+  background-size: cover;
+  background-position: center center;
+  
+  .front & { transform: translateZ(1px); }
+  .last & { transform: translateZ(-1px); }
+}
+
+.red {
+  color: $red;
+  .icon { background-position: 440px 0; }
+}
+.blue {
+  transition-delay: $duration * .075;
+  margin-left: auto;
+  margin-right: auto;
+//   color: $blue;
+  
+//   .icon { background-position: 275px 0; }
+}
+.green {
+  transition-delay: $duration * .15;
+  color: $green;
+  
+  .icon { background-position: 440px 330px; }
+}
+.gray {
+  transition-delay: $duration * .225;
+  color: $gray;
+  
+  .coin:empty {
+    box-shadow: inset 0 0 0 85px rgba(0,0,0,.2);
+  }
+  .icon {
+    background-image: url(https://d7mj4aqfscim2.cloudfront.net/images/skill-icons-locked.svg);
+    background-position: 220px 0;
+  }
+}
+

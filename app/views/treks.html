@@ -1,0 +1,23 @@
+<div class="main-content">
+  <div class="empty-box"></div>
+  <div class="box green" ng-repeat="trek in Ctrl.treks">
+    <div class="container treks">
+      <div class="title-1">{{trek.title1}}</div>
+      <div class="title-2">{{trek.title2}}</div>
+      <div style="background-image: url('/images/trek.jpg')"></div>
+      <div class="text">{{trek.text}}</div>
+      <div class="bubbles">
+        <div class="time">{{trek.time}}</div>
+        <div class="price">{{trek.price}}</div>
+        <div class="level" ng-class="{'exp': trek.level=='level experienced'}">{{trek.level}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="extra-info">
+    <div class="container treks">
+      <div>
+        {{Ctrl.info}}
+      </div>
+    </div>
+  </div>
+</div>

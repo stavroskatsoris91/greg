@@ -1,0 +1,9 @@
+<div class="modal" ng-class="{open:Ctrl.group}">
+    <span class="close" ng-click="Ctrl.group=null">&times;</span>
+    <div class="pre-content">
+        <img class="modal-content" ng-src="{{Ctrl.group[Ctrl.index].img}}">
+        <span class="left" ng-click="Ctrl.prev()">{{Ctrl.left}}</span>
+        <span class="right" ng-click="Ctrl.next()">{{Ctrl.right}}</span>
+    </div>
+    <div class="caption">{{(Ctrl.index+1)+' / '+Ctrl.group.length}}</div>
+</div>
