@@ -61,6 +61,7 @@
         </script>
          -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg19u4sGu9ZhqqHuVXedWM8ZeL2qvKd3A"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -74,7 +75,6 @@
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
-
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/main.js"></script>
@@ -96,11 +96,12 @@
   <script src="scripts/controllers/photoshoots.js"></script>
   <script src="scripts/controllers/picnics.js"></script>
   <script src="scripts/directives/modal.js"></script>
+  <script src="scripts/directives/clickoutside.js"></script>
   <script src="scripts/controllers/contact.js"></script>
   <script src="scripts/controllers/gallery.js"></script>
+  <script src="scripts/firebase.js"></script>
   <!-- endbuild -->
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 </body>
 
 </html>

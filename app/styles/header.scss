@@ -8,27 +8,12 @@
     padding: 0;
     height: 130px;
     @media screen and (min-width: 768px) {
-      height: 115px;
+      height: 130px;
     }
     .logo{
-      padding-top: 20px;
+      padding-top: 14px;
       img{
-        width: 100px;
-      }
-      >div{
-        position: absolute;
-        font-family: 'Valeriana';
-        top: 20px;
-        left: 112px;
-        color: black;
-        width: 160px;
-        text-align: center;
-        font-size: 30px;
-        line-height: 34px;
-        >div{
-          font-size: 44px;
-          line-height: 46px;
-        }
+        width: 295px;
       }
     }
     >.container{
@@ -44,6 +29,9 @@
       margin: auto 0 13px auto;
       position: unset;
       background-color: transparent;   
+      >ul{
+        padding: 0;
+      }
       >ul>li{
         float: left;
         list-style: none;

@@ -29,7 +29,8 @@ angular.module('gregApp')
             {name:'/contact',image:'/images/background/contact.jpg'},
             {name:'/lessons',image:'/images/background/lessons.jpg'},
             {name:'/photoshoots',image:'/images/background/photoshoots.jpg'},
-            {name:'/picnics',image:'/images/background/picnics.jpg'}
+            {name:'/picnics',image:'/images/background/picnics.jpg'},
+            {name:'/safety',image:'/images/background/safety.jpg'}
           ];
           Ctrl.count = 0;
           Ctrl.scrollTop = 0;
@@ -49,13 +50,13 @@ angular.module('gregApp')
                 'background-image': 'url('+image+')'
               });
               window.$('#background-2').css({
-                'opacity': count%2==1?1:0
+                'opacity': count%2===1?1:0
               });
               Ctrl.count = count;
             });
           }
           window.$('body > div.content').on('scroll',function(e){
-            Ctrl.scrollTop = e.currentTarget.scrollTop/e.currentTarget.clientHeight*10;
+            Ctrl.scrollTop = e.currentTarget.scrollTop/(e.currentTarget.scrollHeight-window.innerHeight)*30;
             window.$('body > div > div.background > div').css({
               'transform': 'translateY(-'+Ctrl.scrollTop+'%)'
             });

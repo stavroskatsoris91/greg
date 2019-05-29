@@ -17,8 +17,8 @@ angular.module('gregApp')
     ];
     var Ctrl = this;
     Ctrl.picnics=[
-      ' Pony riding parties',
       'Are you looking for a beautiful area with plenty of space for a children\'s party with the extra excitement of horse riding too?',
-      'Contact us for more details.'
+      'Or organize a different picnic for you and your friends or family?',
+      ' Contact us for more details.'
     ];
   });

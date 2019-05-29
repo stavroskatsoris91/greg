@@ -8,7 +8,7 @@
  * Controller of the gregApp
  */
 angular.module('gregApp')
-  .controller('PhotoshootsCtrl', function ($templateCache) {
+  .controller('PhotoshootsCtrl', function ($templateCache,$rootScope) {
     $templateCache.get('views/photoshoots.html');
     this.awesomeThings = [
       'HTML5 Boilerplate',
@@ -21,4 +21,11 @@ angular.module('gregApp')
       'Why not hire our horses to make your wedding day, proposal, anniversary, any day even more unique and unforgettable?',
       'Choose the horses you like and be ready for a beautiful photoshoot next to the view of the sea or mountain while watching the sunset.'
     ];
+    Ctrl.photos = ['/images/photo1.jpg','/images/photo2.jpg','/images/photo3.jpg'];
+    Ctrl.showModal = function (pos) {
+      var list = Ctrl.photos.map(function (x) {
+        return { img: x };
+      });
+      $rootScope.$broadcast('$showModal', list,pos);
+    };
   });

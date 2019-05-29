@@ -42,7 +42,7 @@ angular.module('gregApp')
                 time: '2h 35min',
                 price: '€77 / horse',
                 level: 'All levels',
-                text: 'To Hunters\' Refuge. From the stables we ride a 60 minute outbound trek, along the coastal road (1.5km) then we turn off on to the country tracks through the mountains. We will make a stop on the hill of  Elonas (10 mins) if wished and also a stop at The Hara Estate (10 mins) for an opportunity to take photographs of the gorgeous views. We ride through pine forests to reach the Hunters\' Refuge where we will rest (15 mins) for photograhs and refreshments (not included). The return journey is 60 minutes via the same route.'
+                text: 'To Hunters\' Refuge. From the stables we ride a 60 minute outbound trek, along the coastal road (1.5km) then we turn off on to the country tracks through the mountains. We will make a stop on the hill of  Elonas (10 mins) if wished and also a stop at The Hara Estate (10 mins) for an opportunity to take photographs of the gorgeous views. We ride through pine forests to reach the Hunters\' Refuge where we will rest (15 mins) for photographs and refreshments (not included). The return journey is 60 minutes via the same route.'
             },
             {
                 title1: 'Trek 5',
@@ -58,7 +58,7 @@ angular.module('gregApp')
                 time: '4 hours',
                 price: '€122 / horse',
                 level: 'level experienced',
-                text: 'To Profitis Ilias (the Prophet Elias, or Elijah. From the stables we ride a 1 hour 30 minute trek, going along the coastal road (1.5km) then turning off on to the country tracks through the mountains. Along the way we will visit Panagia Elonas (15 mins), The Hara Estate (5 mins) and The Hunters\' Refuge (5 mins). On reaching Panagia Daskalaki we will rest (20 mins), to take in the stunning scenery and an opportunity for photograhs and refreshments (not included). At the destination Profitis Ilias, the highest point of the Island, there will chance to rest (15 mins), for refreshments (not included) and for gorgeous photographs of the most fantastic views. The return journey is 1 hour 30 minutes via the same route.'
+                text: 'To Profitis Ilias (the Prophet Elias, or Elijah. From the stables we ride a 1 hour 30 minute trek, going along the coastal road (1.5km) then turning off on to the country tracks through the mountains. Along the way we will visit Panagia Elonas (15 mins), The Hara Estate (5 mins) and The Hunters\' Refuge (5 mins). On reaching Panagia Daskalaki we will rest (20 mins), to take in the stunning scenery and an opportunity for photographs and refreshments (not included). At the destination Profitis Ilias, the highest point of the Island, there will chance to rest (15 mins), for refreshments (not included) and for gorgeous photographs of the most fantastic views. The return journey is 1 hour 30 minutes via the same route.'
             },
         ];
         Ctrl.info = '*Any additional time required will be charged at €12.30 per half hour.';

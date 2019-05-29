@@ -74,5 +74,10 @@ angular
         controller: 'PicnicsCtrl',
         controllerAs: 'Ctrl'
       })
+      .when('/safety', {
+        templateUrl: 'views/safety.html',
+        controller: 'SafetyCtrl',
+        controllerAs: 'Ctrl'
+      })
       .otherwise('/');
   });

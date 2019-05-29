@@ -30,15 +30,22 @@ angular.module('gregApp')
                             { path: '/treks', name: 'TREKS' },
                             { path: '/lessons', name: 'LESSONS' },
                             { path: '/photoshoots', name: 'PHOTO SHOOTS' },
-                            { path: '/picnics', name: 'PICNICS AND PARTIES' }
+                            { path: '/picnics', name: 'PICNICS AND PARTIES' },
+                            { path: '/safety', name: 'SAFETY' }
                         ]
                     },
                     { path: ['/gallery'], name: 'GALLERY', trigger:true },
                     { path: ['/contact'], name: 'CONTACT', trigger:true }
                 ];
+                function hideCollapse(){
+                    window.$('.collapse').collapse('hide');
+                }
+                Ctrl.hideCollapse = function(){
+                    console.log('here');
+                };
+                Ctrl.toggle
                 $rootScope.$on('$routeChangeSuccess',function(){
-                    /* jshint undef: false */
-                    $('.collapse').collapse('hide');
+                    hideCollapse();
                 });
                 // Initialize Firebase
                 if(window.firebase){

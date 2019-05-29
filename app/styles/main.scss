@@ -9,10 +9,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   color: #000;
   padding: 0.2em 0;
 }
-@font-face {
-  font-family: 'Valeriana';
-  src: url('/styles/fonts/Valeriana Demo.otf');
-}
+// @font-face {
+//   font-family: 'Valeriana';
+//   src: url('/styles/fonts/Valeriana Demo.otf');
+// }
 body {
   padding: 0;
 }
@@ -100,6 +100,10 @@ body {
     }
     &.green{
       background-color: rgba(0,68,58,0.7);
+      color: white;
+    }
+    &.yellow{
+      background-color: gba(137, 172, 52, 0.62);
       color: white;
     }
     &.white{
@@ -232,6 +236,28 @@ body {
           }
         }
       }
+    }
+  }
+}
+.list{
+  list-style-image: url('../images/horseshoe.png');
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+.photos{
+  margin-top: 20px;
+  text-align: center;
+  .photo{
+    margin-bottom: 20px;
+    @media screen and (min-width: 576px) {//mobile large
+      display: inline-block;
+      width: 30%;
+      padding: 0 5px;
+    }
+    img{
+      width: 100%;
+      border: 5px solid white;
     }
   }
 }
