@@ -10,13 +10,9 @@
 angular.module('gregApp')
   .service('books', function () {
     var firebase = window.firebase;
-    function makeBook(time, adults, kids) {
+    var savedForm = null;
+    function makeBook(data) {
       var bookTime = firebase.functions().httpsCallable('bookTime');
-      var data = {
-        time: time,
-        adults: adults,
-        kids: kids,
-      };
       return bookTime(data).then(function (result) {
         console.log(result);
         // ...
@@ -42,7 +38,15 @@ angular.module('gregApp')
         return false;
       });
     }
+    function setForm(form){
+      savedForm = form;
+    }
+    function getFrom(){
+      return savedForm;
+    }
     return { 
       makeBook: makeBook,
-      getTime: getTime };
+      getTime: getTime,
+      setFrom: setForm,
+      getFrom: getFrom  };
   });

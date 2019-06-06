@@ -40,12 +40,10 @@ angular.module('gregApp')
                 function hideCollapse(){
                     window.$('.collapse').collapse('hide');
                 }
-                Ctrl.hideCollapse = function(){
-                    console.log('here');
-                };
-                Ctrl.toggle
+                Ctrl.hideCollapse = hideCollapse;
                 $rootScope.$on('$routeChangeSuccess',function(){
                     hideCollapse();
+                    window.$('body > div.content')[0].scroll(0,0);
                 });
                 // Initialize Firebase
                 if(window.firebase){

@@ -26,6 +26,6 @@ angular.module('gregApp')
       var list = Ctrl.photos.map(function (x) {
         return { img: x };
       });
-      $rootScope.$broadcast('$showModal', list,pos);
+      $rootScope.$broadcast('showModal', list,pos);
     };
   });

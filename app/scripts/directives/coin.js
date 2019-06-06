@@ -46,7 +46,7 @@ angular.module('gregApp')
               var list = Ctrl.list.map(function (x) {
                 return { img: x };
               });
-              $rootScope.$broadcast('$showModal', list);
+              $rootScope.$broadcast('showModal', list);
             };
             $scope.$on('$destroy', function () {
               $interval.cancel(Ctrl.loopInterval);

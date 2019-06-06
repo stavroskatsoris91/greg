@@ -102,12 +102,32 @@ body {
       background-color: rgba(0,68,58,0.7);
       color: white;
     }
-    &.yellow{
-      background-color: gba(137, 172, 52, 0.62);
+    &.purple{
+      background-color: rgba(45, 5, 66, 0.63);
+      color: white;
+    }
+    &.yellow-2{
+      background-color: rgba(193, 181, 55, 0.50);
+      color: white;
+    }
+    &.green-2{
+      background-color: rgba(11, 115, 119, 0.52);
+      color: white;
+    }
+    &.green-3{
+      background-color: rgba(0, 68, 58, 0.63);
+      color: white;
+    }
+    &.green-4{
+      background-color: rgba(11, 115, 119, 0.52);
       color: white;
     }
     &.white{
       background-color: rgba(255,255,255,0.4);
+    }
+    &.white-2{
+      background-color: rgba(220, 236, 237, 0.52);
+      color: white;
     }
   }
   .extra-info{
@@ -169,12 +189,23 @@ body {
         padding: 14px;
         text-align: center;
         display: inline-block;
+        margin-right: 5%;
         &.exp{
           width: 90px;
           height: 90px;
           padding: 7px;
           padding-top: 19px;
         }
+      }
+      .photos{
+        background-color: rgb(233, 209, 2);
+        width: 70px;
+        height: 70px;
+        padding: 14px;
+        font-size: 14px;
+        border-radius: 50px;
+        text-align: center;
+        display: inline-block;
       }
     }
   }
@@ -214,6 +245,9 @@ body {
     .text{
       font-size: 20px;
       margin-bottom: 8px;
+      &.line-hight{
+        line-height: 1.8;
+      }
     }
     .info{
       margin-bottom: 20px;
@@ -277,5 +311,139 @@ body {
   display: block;
   @media screen and (min-width: 468px) {
     display: none;
+  }
+}
+.submit-form{
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.input {
+  margin-bottom: 20px;
+  position: relative;
+  >label {
+    font: normal 18px/1;
+        font-weight: 900;
+  }
+  >input,
+  textarea,select {
+    border: none;
+    background: #fff;
+    width: 100%;
+    padding: 0 15px;
+    margin: 5px 0 0 0;
+    box-shadow: none;
+    line-height: 20px;
+    border-radius: 2px;
+    color: #000;
+    font: normal 16px/20px ;
+        font-weight: 400;
+    border: 1px solid #c8c8c8;
+    &:focus {
+      background-color: #f5f5f5;
+      border-color: #f5f5f5;
+    }
+    &.invalid {
+      border: 2px solid red;
+    }
+    &.no-focus {
+      &:focus {
+        background-color: #fff;
+        border-color: #c8c8c8;
+      }
+    }
+  }
+  input,select{
+    height: 40px;
+  }
+  .error-message{
+    position: absolute;
+      color: red;
+  }
+}
+.button-info{
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: rgb(0, 191, 138);
+  border: 0px;
+  padding: 10px 20px;
+  color: white;
+}
+.add-rider{
+  background: white;
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  padding-left: 3px;
+  font-size: 26px;
+  line-height: 15px;
+  color: black;
+  cursor: pointer;
+}
+.remove-rider{
+  position: absolute;
+  right: 9px;
+  top: 8px;
+  >a{
+    font-size: 37px;
+  }
+}
+.riders{
+  background-color: rgba(0, 16, 74, 0.63);
+  border-radius: 20px;
+  padding: 5px 20px 0;
+  position: relative;
+  margin-bottom: 5px;
+  .input{
+    text-align: left;
+    font-size: 14px;
+    display: inline-block;
+  }
+  .name{
+    width: 260px;
+    max-width: 70%;
+    padding-right: 10px;
+  }
+  .age{
+    width: 60px;
+    max-width: 30%;
+  }
+  .height,.weight{
+    width: 85px;
+    padding-right: 10px;
+  }
+  .level{
+    width: 110px;
+  }
+}
+.a-info{
+  color: rgb(0, 191, 138);
+  text-decoration: underline;
+  &:focus,&:hover{
+    color: rgb(4, 252, 183);
+  }
+}
+.payments-title{
+  font-size: 20px;
+  text-decoration: underline;
+}
+.greg-carousel{
+  img{
+    height: 0.66%;
+    width: auto;
+    margin: auto;
+  }
+}
+.trek-photos{
+  a{
+    color: white;
+    cursor: pointer;
+    &:focus,&:active,&:hover{
+      color: beige;
+    }
+  }
+  img{
+    width: 20px;
   }
 }

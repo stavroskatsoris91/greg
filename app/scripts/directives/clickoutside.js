@@ -13,21 +13,21 @@ angular.module('gregApp')
           var bound = false;
           var onClick = function (event) {
             var isChild = element[0].contains(event.target);
-            var isSelf = element[0] == event.target;
+            var isSelf = element[0] === event.target;
             var isInside = isChild || isSelf;
             if (!isInside) {
               scope.$applyAsync(attrs.clickOutside);
             }
-          }
+          };
           $document.bind('click touchstart', onClick);
           bound = true;
-          scope.$on('$routeChangeSuccess', function(next, current) {
+          scope.$on('$routeChangeSuccess', function() {
             $document.unbind('click touchstart', onClick);
             $document.bind('click touchstart', onClick);
           });
           scope.$on('$destroy',function(){
             $document.unbind('click touchstart', onClick);
-          })
+          });
         }
       };
   }]);

@@ -25,7 +25,7 @@ angular.module('gregApp')
         'First aid kit carried',
         'Certified First Aider',
         'Rider ability assessment',
-        'Treks matched to experince'
+        'Treks matched to experience'
       ],
       text:[
         'Riding at any standard has inherent risk that you may fall off and could be injured. Please note that by using my service you accept that risk and agree that Greg\'s Spetses Horses will not be liable for injury or damage to property.',

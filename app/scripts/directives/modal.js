@@ -27,7 +27,7 @@ angular.module('gregApp')
         Ctrl.next = function(){
           Ctrl.index = window.Math.min(Ctrl.index+1,Ctrl.group.length-1);
         };
-        $rootScope.$on('$showModal',function(ev,data,pos){
+        $rootScope.$on('showModal',function(ev,data,pos){
           if(ev){
             Ctrl.index = pos||0;
             Ctrl.group = data;
