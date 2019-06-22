@@ -16,7 +16,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 body {
   padding: 0;
 }
-
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -178,7 +181,9 @@ body {
         padding: 18px;
         text-align: center;
         display: inline-block;
-        margin-right: 5%;
+        @media screen and (min-width: 424px) {
+          margin-right: 5%;
+        }
       }
       .level{
         width: 70px;
@@ -206,6 +211,11 @@ body {
         border-radius: 50px;
         text-align: center;
         display: inline-block;
+      }
+      .mobile{
+        @media screen and (min-width: 424px) {
+          display: none;
+        }
       }
     }
   }
@@ -241,12 +251,19 @@ body {
     .title{
       text-align: center;
       font-size: 30px;
+      &.lg{
+      font-size: 32px;
+      }
     }
     .text{
       font-size: 20px;
       margin-bottom: 8px;
       &.line-hight{
         line-height: 1.8;
+      }
+      &.lg{
+      font-size: 23px;
+
       }
     }
     .info{
@@ -322,8 +339,8 @@ body {
   margin-bottom: 20px;
   position: relative;
   >label {
-    font: normal 18px/1;
-        font-weight: 900;
+    font-size: 14px;
+    font-weight: 900;
   }
   >input,
   textarea,select {
@@ -336,8 +353,8 @@ body {
     line-height: 20px;
     border-radius: 2px;
     color: #000;
-    font: normal 16px/20px ;
-        font-weight: 400;
+    font-size: 14px;
+    font-weight: 400;
     border: 1px solid #c8c8c8;
     &:focus {
       background-color: #f5f5f5;
@@ -445,5 +462,36 @@ body {
   }
   img{
     width: 20px;
+  }
+}
+
+.date-time{
+  font-size: 0;
+  >div{
+    display: inline-block;
+  }
+  .date{
+    width:65%;
+    padding-right: 5px;
+    @media screen and (min-width: 468px) {
+      width:75%;
+    }
+  }
+  .time{
+    width: 35%;
+    >div{
+      display: inline-block;
+      max-width: 50px;
+      width: 50%;
+      &:first-child{
+        padding-right: 2.5px;
+      }
+      &:nth-child(2){
+        padding-left: 2.5px;
+      }
+    }
+    @media screen and (min-width: 468px) {
+      width:25%;
+    }
   }
 }

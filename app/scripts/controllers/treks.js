@@ -21,7 +21,8 @@ angular.module('gregApp')
                 images:[
                     '/images/treks/trek1-1.jpg',
                     '/images/treks/trek1-2.jpg',
-                    '/images/treks/trek1-3.jpg'
+                    '/images/treks/trek1-3.jpg',
+                    '/images/treks/trek1-4.jpg'
                 ],
                 text: 'From the stables we ride a 20 minute outbound trek along the high coastal road, over looking the beautiful view of the neighbouring private Island Spetsopoula. Break for photographs.'
             },
@@ -51,7 +52,8 @@ angular.module('gregApp')
                     '/images/treks/trek3-1.jpg',
                     '/images/treks/trek3-2.jpg',
                     '/images/treks/trek3-3.jpg',
-                    '/images/treks/trek3-4.jpg'
+                    '/images/treks/trek3-4.jpg',
+                    '/images/treks/trek3-5.jpg'
                 ],
                 text: 'To The Hara Estate. From the stables we ride a 55 minute outbound trek, travelling along the coastal road (1.5km) then we turn off on to the country track through the mountains. Along the route we will stop off at Panagia Elonas (10 mins) for photographs if wished, then we will head to The Hara Estate. Here we will take a 15 minute rest for photographs and refreshments (not included).'
             },
@@ -75,9 +77,12 @@ angular.module('gregApp')
                 price: '€95 / horse',
                 level: 'All levels',
                 images:[
+                    '/images/treks/trek5-6.jpg',
                     '/images/treks/trek5-1.jpg',
                     '/images/treks/trek5-2.jpg',
-                    '/images/treks/trek5-3.jpg'
+                    '/images/treks/trek5-3.jpg',
+                    '/images/treks/trek5-4.jpg',
+                    '/images/treks/trek5-5.jpg'
                 ],
                 text: 'To Panagia Daskalaki (Virgin Mary of Daskalaki). From the stables we ride a 75 minute outbound trek, along the coastal road (1.5 km) then we turn off on to the country tracks through the mountains. Along the way we will make stops at Panagia Elonas (10 mins), The Hara Estate (5 mins) and the Hunters\' refuge (5 mins) for photograph opportunities if wished. At our destination we will rest (20 mins) for refreshments (not included) and an opportunity to photograph the stunning views! This may be the most forested area of Spetses,  it offers the wonderful natural beauty of the pines, as well as a beautiful view.'
             },

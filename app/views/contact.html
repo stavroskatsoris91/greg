@@ -6,7 +6,7 @@
       </div>
       <div class="title m-b">
         <button class="button-info" ng-click="Ctrl.scrollTo('payments')">Payment ts&cs</button>
-        <a href="#/safety">
+        <a href="/safety">
           <button  class="button-info">Safety</button>
         </a>
       </div>
@@ -20,24 +20,42 @@
         </div>
         <div class="input">
           <label>Email</label>
-          <input class="required" type="email" ng-model="Ctrl.form.email" maxlength="50" ng-class="{'invalid': false}"  required>
+          <input class="required" type="email" ng-model="Ctrl.form.email" maxlength="50" ng-class="{'invalid': false}" required>
           <p class="error-message" ng-if="error">
             Required field
           </p>
         </div>
         <div class="input">
-          <label>Contact Number</label>
-          <input class="required" type="tel" ng-model="Ctrl.form.tel" maxlength="50" ng-class="{'invalid': false}">
+          <label>Contact Number (+Country Code)</label>
+          <input class="required" type="tel" ng-model="Ctrl.form.tel" maxlength="50" ng-class="{'invalid': false}" required>
           <p class="error-message" ng-if="error">
             Required field
           </p>
         </div>
-        <div class="input">
-          <label>Date & Time</label>
-          <input class="required" type="datetime-local" min="{{Ctrl.minDate}}" ng-model="Ctrl.form.date" maxlength="50" ng-class="{'invalid': false}"  required>
-          <p class="error-message" ng-if="error">
-            Required field
-          </p>
+        <div class="date-time">
+          <div class="input date">
+            <label for="date">Date</label>
+            <input name="date" class="required" type="date" min="{{Ctrl.minDate}}" ng-model="Ctrl.form.date" ng-class="{'invalid': false}"  required>
+            <p class="error-message" ng-if="error">
+              Required field
+            </p>
+          </div>
+          <div class="time">
+            <div class="input">
+              <label>Hour</label>
+              <select ng-model="Ctrl.form.hour" ng-change="Ctrl.changeHour()">
+                <option ng-repeat="opt in Ctrl.hours" ng-value="opt">{{opt}}
+                </option>
+              </select>
+            </div>
+            <div class="input">
+              <label>Mins</label>
+              <select ng-model="Ctrl.form.minutes" ng-change="Ctrl.changeHour()">
+                <option ng-repeat="opt in Ctrl.minutes" ng-value="opt">{{opt}}
+                </option>
+              </select>
+            </div>
+          </div>
         </div>
         <div class="input">
           <label>Riding</label>
@@ -82,13 +100,13 @@
             <div style="font-size: 0;text-align: center">
               <div class="input height">
                 <label>Height (m)</label>
-                <input class="required" type="number" ng-model="rider.height"
-                  ng-class="{'invalid': false}" max="3" required>
+                <input class="required" ng-model="rider.height" maxlength="4"
+                  ng-class="{'invalid': false}" required>
               </div>
               <div class="input weight">
                 <label>Weight (kg)</label>
-                <input class="required" type="number" ng-model="rider.weight"
-                  ng-class="{'invalid': false}" max="300" required>
+                <input class="required" ng-model="rider.weight" maxlength="4"
+                  ng-class="{'invalid': false}" required>
               </div>
               <div class="input level">
                 <label>Experence</label>
@@ -99,9 +117,19 @@
               </div>
             </div>
           </div>
-          <div>
+          <div ng-if="Ctrl.form.riders.length<=4">
             <a class="add-rider" ng-click="Ctrl.addRider()">+</a>
           </div>
+        </div>
+        <div class="input">
+          <label>Payment Method</label>
+          <select ng-model="Ctrl.form.payment">
+            <option ng-repeat="opt in Ctrl.payments" ng-value="opt">{{opt}} {{Ctrl.price()}}
+            </option>
+          </select>
+          <p class="error-message" ng-if="error">
+            Required field
+          </p>
         </div>
         <div class="input">
           <label>Message</label>
@@ -112,7 +140,7 @@
         </div>
         <div>
           <input ng-model="Ctrl.form.accept" type="checkbox" required>
-          I have read your <a class="a-info" href="#/safety">safety policy</a> and agree to accept responsibility for our own safety.
+          I have read your <a class="a-info" href="/safety">safety policy</a> and agree to accept responsibility for our own safety.
           <p class="error-message" ng-if="error">
             Required field
           </p>
@@ -126,27 +154,27 @@
           Payments
         </div>
         <br>
-        I accept payment for the full amount:
-        <br>
-        Bank transfer (in advance), or Cash on the day.
-        <br>
-        Payment must be paid EITHER in cash on the day.
-        <br>
-        OR by bank deposit so that funds are CLEARED at least the day before the trek, please note any costs associated
-        are your costs not mine.
-        <br>
-        Please note that I CANNOT accept credit/debit payment for your trek because there is no electricity or secure
-        internet connection at the stables or in the countryside of Spetses!
+        Payment can be made by CASH on the day
         <br>
         <br>
-        Pay In Advance
-        If you prefer to pay by bank transfer, please let me know when you book and I will send you my bank details when
-        I
-        confirm.
+        or Bank transfer in advance
+        <br>        
+        <br>        
+        NO Credit/Debit cards accepted due to our position in the countryside with no electricity/secure internet
         <br>
         <br>
-        Cancellation Policy
+        On booking please confirm how you wish to pay.
+        <br>        
+        <br>
+        In the event of cancellation please try to inform us at least 48hrs in advance.
+        <br>
+        <br>
+        <div class="text-center payments-title">
+          Cancellation Policy
+        </div>
+        <br>
         In the event of cancellation by the customer:
+        <br>
         <br>
         More than 48 hours notice: full refund
         Less than 48 hours notice: full refund (less 10% admin)
@@ -154,6 +182,7 @@
         <br>
         <br>
         In event of cancellation by Greg's Spetses Horses, for example:
+        <br>
         <br>
         Due to illness of trek guide,
         Illness of horses,

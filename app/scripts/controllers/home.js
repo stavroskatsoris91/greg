@@ -8,7 +8,7 @@
  * Controller of the gregApp
  */
 angular.module('gregApp')
-  .controller('HomeCtrl', function ($templateCache, auth,books) {
+  .controller('HomeCtrl', function ($templateCache, $scope, $interval, auth, books) {
     $templateCache.get('views/home.html');
     var Ctrl = this;
     Ctrl.text = 'Home';
@@ -42,9 +42,21 @@ angular.module('gregApp')
         console.log(res);
       });
     };
+    Ctrl.checkTripAdvisor = $interval(function () {
+      if(window.$('dt:contains("Gregs Spetses Horses")').length!==2){
+        if(window.taValidate){
+          window.taValidate();
+        }
+      }else{
+        $interval.cancel(Ctrl.checkTripAdvisor);
+      }
+    }, 1500);
     Ctrl.homeText = [
       'Do something different while visiting Spetses! Try horse trekking to see the island’s countryside and enjoy the panoramic views of the sparkling sea from above. We have six great treks for you to choose from.',
       'For those who love horse riding we offer riding lessons in our outdoors arena next to the view of the sea and Spetspoula island. We have private lessons and group lessons if you want to come up with friends. Or you can a enjoy a little ride in our arena for 12 euros.',
       'Apart from riding you can enjoy a picnic with your friends or organize kids’ parties with pony rides in the arena.  We also provide our horses for photoshoots for any special occasion.'
     ];
+    $scope.$on('$destroy', function () {
+      $interval.cancel(Ctrl.checkTripAdvisor);
+    });
   });

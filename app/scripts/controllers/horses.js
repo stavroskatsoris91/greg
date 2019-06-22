@@ -55,7 +55,7 @@ angular.module('gregApp')
         breed: '-',
         age: getAge(2009)+' years old',
         height: '1.45m',
-        images:['images/horses/nelly1.jpg','images/horses/nelly2.jpg','images/horses/nelly3.jpg'],
+        images:['images/horses/nelly1.jpg','images/horses/nelly2.jpg','images/horses/nelly3.jpg','images/horses/nelly4.jpg'],
         text: ['Nelly is a roan characterized by the white hairs intermingled throughout her bay coat. She has a very calm, quiet nature and is always keen to please her riders.']
       }, {
         name: 'OSCAR',

@@ -27,6 +27,7 @@ angular.module('gregApp')
             {name:'/riding',image:'/images/background/riding.jpg'},
             {name:'/gallery',image:'/images/background/gallery.jpg'},
             {name:'/contact',image:'/images/background/contact.jpg'},
+            {name:'/thankyou',image:'/images/background/contact.jpg'},
             {name:'/lessons',image:'/images/background/lessons.jpg'},
             {name:'/photoshoots',image:'/images/background/photoshoots.jpg'},
             {name:'/picnics',image:'/images/background/picnics.jpg'},

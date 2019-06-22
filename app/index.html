@@ -1,11 +1,30 @@
 <!doctype html>
-<html>
+<html ng-app="gregApp">
 
-<head>
+<head meta-data="">
   <meta charset="utf-8">
-  <title></title>
+  <title>Greg's Spetses Horses | Do something different while visiting Spetses!</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
+  <meta name='fragment', content='!'>
+  <meta http-equiv='x-ua-compatible', content='ie=edge'>
+  <meta name='author', content='greg'>
+  <meta name='description', content='Try horse trekking to see the island’s countryside and enjoy the panoramic views of the sparkling sea from above.'>
+  <meta name='keywords', content='spetses, horse riding, horseback riding, horseback trekking, horse trekking, horse, horse riding, horse riding lessons, picnic'>
+  <meta name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta name="msvalidate.01" content="4DC6B5434A604DEC77CE1987A48F2B91" />
+  <meta property="fb:pages", content="580857355426657">
+  <meta property='og:site_name', content='gregsspetseshorses'>
+  <meta property='og:title', content="Greg's Spetses Horses | Do something different while visiting Spetses!">
+  <meta property='og:description', content='Try horse trekking to see the island’s countryside and enjoy the panoramic views of the sparkling sea from above.'>
+  <meta property='og:type', content='website'>
+  <meta property='og:image', content='/images/background/home.jpg'>
+  <meta property='og:url', content='{{ meta.data.location }}'>
+  <meta name='twitter:card', content='summary_large_image'>
+  <meta name='twitter:site', content='@GregoryThimaras'>
+  <meta name='twitter:title', content="Greg\'s Spetses Horses | Do something different while visiting Spetses!">
+  <meta name='twitter:description', content='Try horse trekking to see the island’s countryside and enjoy the panoramic views of the sparkling sea from above.'>
+  <meta name='twitter:image', content='/images/background/home.jpg'>
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
@@ -25,7 +44,7 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 </head>
 
-<body ng-app="gregApp">
+<body>
   <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -63,7 +82,9 @@
         </script>
          -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg19u4sGu9ZhqqHuVXedWM8ZeL2qvKd3A"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-functions.js"></script>
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -83,6 +104,7 @@
   <script src="scripts/controllers/about.js"></script>
   <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/safety.js"></script>
+  <script src="scripts/controllers/thankyou.js"></script>
   <script src="scripts/directives/header.js"></script>
   <script src="scripts/controllers/myroute.js"></script>
   <script src="scripts/controllers/treks.js"></script>
@@ -99,6 +121,7 @@
   <script src="scripts/controllers/picnics.js"></script>
   <script src="scripts/directives/modal.js"></script>
   <script src="scripts/directives/clickoutside.js"></script>
+  <script src="scripts/directives/metadata.js"></script>
   <script src="scripts/controllers/contact.js"></script>
   <script src="scripts/controllers/gallery.js"></script>
   <script src="scripts/firebase.js"></script>

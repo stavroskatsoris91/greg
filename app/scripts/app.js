@@ -18,11 +18,7 @@ angular
     'ngTouch'
   ])
   .config(function ($routeProvider,$locationProvider) {
-    $locationProvider.hashPrefix('');
-    $locationProvider.html5Mode({
-      enabled: false,
-      requireBase: true
-    });
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
@@ -79,5 +75,16 @@ angular
         controller: 'SafetyCtrl',
         controllerAs: 'Ctrl'
       })
-      .otherwise('/');
+      .when('/thankyou', {
+        templateUrl: 'views/thankyou.html',
+        controller: 'ThankyouCtrl',
+        controllerAs: 'Ctrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+      $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+      });
   });

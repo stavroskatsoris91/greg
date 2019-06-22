@@ -15,17 +15,16 @@ angular.module('gregApp')
             templateUrl: 'views/header.html',
             replace: true,
             controllerAs: 'Ctrl',
-            controller: function ($scope, $location, $templateCache, auth,$rootScope) {
+            controller: function ($scope, $location, $templateCache, auth, $rootScope, $interval) {
                 $templateCache.get('views/header.html');
                 var Ctrl = this;
                 $scope.location = $location;
                 Ctrl.menu = [
-                    { path: ['/'], name: 'HOME', trigger:true},
-                    { path: ['/about'], name: 'ABOUT', trigger:true },
-                    { path: ['/horses'], name: 'HORSES', trigger:true },
+                    { path: ['/'], name: 'HOME', trigger: true },
+                    { path: ['/about'], name: 'ABOUT', trigger: true },
+                    { path: ['/horses'], name: 'HORSES', trigger: true },
                     {
-                        path: ['/treks','/lessons','/photoshoots','/picnics'],
-                        name: 'RIDING', trigger:false,
+                        name: 'RIDING', trigger: false,
                         sub: [
                             { path: '/treks', name: 'TREKS' },
                             { path: '/lessons', name: 'LESSONS' },
@@ -34,37 +33,36 @@ angular.module('gregApp')
                             { path: '/safety', name: 'SAFETY' }
                         ]
                     },
-                    { path: ['/gallery'], name: 'GALLERY', trigger:true },
-                    { path: ['/contact'], name: 'CONTACT', trigger:true }
+                    { path: ['/gallery'], name: 'GALLERY', trigger: true },
+                    { path: ['/contact'], name: 'CONTACT', trigger: true }
                 ];
-                function hideCollapse(){
+                function hideCollapse() {
                     window.$('.collapse').collapse('hide');
                 }
                 Ctrl.hideCollapse = hideCollapse;
-                $rootScope.$on('$routeChangeSuccess',function(){
+                $rootScope.$on('$routeChangeSuccess', function () {
                     hideCollapse();
-                    window.$('body > div.content')[0].scroll(0,0);
+                    window.$('body > div.content')[0].scroll(0, 0);
                 });
                 // Initialize Firebase
-                if(window.firebase){
-                    window.firebase.initializeApp({
-                        apiKey: 'AIzaSyDyjdfkFLxHbeMQw4_sqmL7WNmy6L9iIxI',
-                        authDomain: 'greg-8095f.firebaseapp.com',
-                        databaseURL: 'https://greg-8095f.firebaseio.com',
-                        projectId: 'greg-8095f',
-                        storageBucket: 'greg-8095f.appspot.com',
-                        messagingSenderId: '475809743777'
-                    });
+                function initFirebase() {
+                    if (window.firebase) {
+                        auth.status().then(function (res) {
+                            if (!res) {
+                                auth.anonimusSignIn().then(function (res) {
+                                    console.log(res);
+                                });
+                            }
+                        });
+                        return true;
+                    }
+                    return false;
                 }
-                if(window.auth){
-                    auth.status().then(function (res) {
-                        if (!res) {
-                            auth.anonimusSignIn().then(function (res) {
-                                console.log(res);
-                            });
-                        }
-                    });
-                }
+                var loop = $interval(function () {
+                    if (initFirebase()) {
+                        $interval.cancel(loop);
+                    }
+                }, 500);
             }
         };
     });

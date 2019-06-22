@@ -50,9 +50,10 @@ angular.module('gregApp')
               map: Ctrl.map,
               icon: Ctrl.cities[i].icon,
               title: Ctrl.cities[i].title
+              // animation: google.maps.Animation.BOUNCE
             });
 
-            var content = '<div>Starting Point</div>';//'<a ng-click="Ctrl.cityDetail(' + i + ')" class="btn btn-default">View details</a>';
+            var content = '<div><a href="https://maps.google.com/maps?saddr=37.2676649,23.1564344&daddr='+Ctrl.cities[i].lat+','+Ctrl.cities[i].lng+'" target="_blank">Find us!</a></div>';//'<a ng-click="Ctrl.cityDetail(' + i + ')" class="btn btn-default">View details</a>';
             var compiledContent = $compile(content)($scope);
             /* jshint loopfunc: true */
             google.maps.event.addListener(marker, 'click', (function (marker, content, scope) {
