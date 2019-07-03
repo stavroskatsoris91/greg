@@ -8,7 +8,7 @@
  * Controller of the gregApp
  */
 angular.module('gregApp')
-  .controller('ContactCtrl', function ($templateCache, books, $scope) {
+  .controller('ContactCtrl', function ($templateCache, books, $scope,$location) {
     $templateCache.get('views/contact.html');
     this.awesomeThings = [
       'HTML5 Boilerplate',
@@ -63,7 +63,7 @@ angular.module('gregApp')
         };
     }
     init();
-    Ctrl.minDate = new Date().toISOString().slice(0,-8);
+    Ctrl.minDate = new Date().toISOString().slice(0,10);
     Ctrl.riders =[angular.copy(rider)];
     var prices = [30,58,69,77,95,122];
     Ctrl.price = function(){
@@ -104,8 +104,9 @@ angular.module('gregApp')
       books.makeBook(data).then(function (res) {
         console.log(res);
         Ctrl.form = null;
-        window.location = '/thankyou';
+        $location.url('/thankyou');
         Ctrl.run = false;
+        $scope.$apply();
       }).catch(function(){
         Ctrl.run = false;
       });

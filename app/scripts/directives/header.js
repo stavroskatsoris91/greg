@@ -47,6 +47,7 @@ angular.module('gregApp')
                 // Initialize Firebase
                 function initFirebase() {
                     if (window.firebase) {
+                        window.firebase.initializeApp();
                         auth.status().then(function (res) {
                             if (!res) {
                                 auth.anonimusSignIn().then(function (res) {
