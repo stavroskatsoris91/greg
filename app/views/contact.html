@@ -81,9 +81,9 @@
           <label>Riders</label>
           <div ng-repeat="rider in Ctrl.form.riders track by $index" class="riders">
             <div class="remove-rider" ng-if="$index">
-              <a class="add-rider" ng-click="Ctrl.removeRider($index)">-</a>
+              <a class="add-rider" ng-click="Ctrl.removeRider($index)"><span class="remove">x</span></a>
             </div>
-            <div style="font-size: 0">
+            <div class="text-center" style="font-size: 0">
               <div class="input name">
                 <label>Name</label>
                 <input class="required" ng-model="rider.name" maxlength="50"
@@ -118,7 +118,9 @@
             </div>
           </div>
           <div ng-if="Ctrl.form.riders.length<=4">
-            <a class="add-rider" ng-click="Ctrl.addRider()">+</a>
+            <a class="add-rider" ng-click="Ctrl.addRider()"><span >+</span>
+              <label>Add Rider</label>
+            </a>
           </div>
         </div>
         <div class="input">

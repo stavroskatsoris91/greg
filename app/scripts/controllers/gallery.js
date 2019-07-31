@@ -39,7 +39,12 @@ angular.module('gregApp')
       '/images/gallery/gallery20.jpg',
       '/images/gallery/gallery21.jpg',
       '/images/gallery/gallery22.jpg',
-      '/images/gallery/gallery23.jpg'
+      '/images/gallery/gallery23.jpg',
+      '/images/gallery/gallery24.jpg',
+      '/images/gallery/gallery25.jpg',
+      '/images/gallery/gallery26.jpg',
+      '/images/gallery/gallery27.jpg',
+      '/images/gallery/gallery28.jpg'
     ];
     var cLength = Ctrl.carousel.length;
     Ctrl.initElement = function(i){

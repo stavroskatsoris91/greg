@@ -31,6 +31,11 @@ angular.module('gregApp')
       '5 - Panagia Daskalaki',
       '6 - Profitis Ilias'
     ];
+    Ctrl.lessons = [
+      '30 min',
+      '40 min',
+      '60 min'
+    ];
     Ctrl.levels = [
       'Novice',
       'Intermediate',
@@ -66,11 +71,15 @@ angular.module('gregApp')
     Ctrl.minDate = new Date().toISOString().slice(0,10);
     Ctrl.riders =[angular.copy(rider)];
     var prices = [30,58,69,77,95,122];
+
     Ctrl.price = function(){
       var total = 0;
       if(Ctrl.form&&Ctrl.form.riding===Ctrl.ridings[0]){
         total = prices[Ctrl.treks.indexOf(Ctrl.form.trek)]*Ctrl.form.riders.length;
       }
+      // else if(Ctrl.form&&Ctrl.form.riding===Ctrl.ridings[1]){
+      //   total = prices[Ctrl.lessons.indexOf(Ctrl.form.trek)]*Ctrl.form.riders.length;
+      // }
       return total?'- €'+total:'';
     };
 
