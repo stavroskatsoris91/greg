@@ -16,26 +16,8 @@ angular.module('gregApp')
       'Karma'
     ];
     var Ctrl = this;
-    Ctrl.ridings = [
-      'TREK',
-      'LESSON',
-      'PHOTO SHOOT',
-      'PICNIC / PARTY'
-    ];
-      Ctrl.riding = Ctrl.ridings[0];
-    Ctrl.treks = [
-      '1 - Coastal Road',
-      '2 - Panagia Elonas',
-      '3 - Hara Estate',
-      '4 - Hunters\' Refuge',
-      '5 - Panagia Daskalaki',
-      '6 - Profitis Ilias'
-    ];
-    Ctrl.lessons = [
-      '30 min',
-      '40 min',
-      '60 min'
-    ];
+    
+    Ctrl.ridings = books.ridings;
     Ctrl.levels = [
       'Novice',
       'Intermediate',
@@ -60,7 +42,6 @@ angular.module('gregApp')
           hour: Ctrl.hours[0],
           minutes: Ctrl.minutes[0],
           riding:Ctrl.ridings[0],
-          trek:Ctrl.treks[0],
           riders:[angular.copy(rider)],
           message:'',
           payment:'Cash on the Day',
@@ -70,16 +51,11 @@ angular.module('gregApp')
     init();
     Ctrl.minDate = new Date().toISOString().slice(0,10);
     Ctrl.riders =[angular.copy(rider)];
-    var prices = [30,58,69,77,95,122];
-
     Ctrl.price = function(){
       var total = 0;
-      if(Ctrl.form&&Ctrl.form.riding===Ctrl.ridings[0]){
-        total = prices[Ctrl.treks.indexOf(Ctrl.form.trek)]*Ctrl.form.riders.length;
+      if(Ctrl.form&&Ctrl.form.riding.options){
+        total = Ctrl.form.riding.options[Ctrl.form.riding.selected].price*Ctrl.form.riders.length;
       }
-      // else if(Ctrl.form&&Ctrl.form.riding===Ctrl.ridings[1]){
-      //   total = prices[Ctrl.lessons.indexOf(Ctrl.form.trek)]*Ctrl.form.riders.length;
-      // }
       return total?'- €'+total:'';
     };
 
@@ -101,8 +77,10 @@ angular.module('gregApp')
       }
       Ctrl.run = true;
       var data = angular.copy(Ctrl.form);
-      if(data.riding!=='TREK'){
-        delete data.treck;
+      if(data.riding.options){
+        data.riding = data.riding.name + ' : '+data.riding.options[data.riding.selected].name;
+      }else{
+        data.riding = data.riding.name;
       }
       var year = data.date.getFullYear();
       var month = data.date.getMonth()+1;

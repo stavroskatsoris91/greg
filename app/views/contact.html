@@ -60,17 +60,17 @@
         <div class="input">
           <label>Riding</label>
           <select ng-model="Ctrl.form.riding">
-            <option ng-repeat="opt in Ctrl.ridings" ng-value="opt">{{opt}}
+            <option ng-repeat="opt in Ctrl.ridings" ng-value="opt">{{opt.name}}
             </option>
           </select>
           <p class="error-message" ng-if="error">
             Required field
           </p>
         </div>
-        <div class="input" ng-if="Ctrl.form.riding=='TREK'">
-          <label>Trek</label>
-          <select ng-model="Ctrl.form.trek">
-            <option ng-repeat="opt in Ctrl.treks" ng-value="opt">{{opt}}
+        <div class="input" ng-if="Ctrl.form.riding.options">
+          <label>{{Ctrl.form.riding.display}}</label>
+          <select ng-model="Ctrl.form.riding.selected">
+            <option ng-repeat="opt in Ctrl.form.riding.options" ng-value="$index">{{opt.name}}
             </option>
           </select>
           <p class="error-message" ng-if="error">
