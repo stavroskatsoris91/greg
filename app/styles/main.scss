@@ -109,6 +109,10 @@ input[type=date]::-webkit-inner-spin-button {
       background-color: rgba(45, 5, 66, 0.63);
       color: white;
     }
+    &.purple-2{
+      background-color: rgba(85, 67, 154, 0.68);
+      color: white;
+    }  
     &.yellow-2{
       background-color: rgba(193, 181, 55, 0.50);
       color: white;
@@ -202,7 +206,7 @@ input[type=date]::-webkit-inner-spin-button {
           padding-top: 19px;
         }
       }
-      .photos{
+      .photos-bubble{
         background-color: rgb(233, 209, 2);
         width: 70px;
         height: 70px;
@@ -296,23 +300,24 @@ input[type=date]::-webkit-inner-spin-button {
         width: 70px;
         height: 70px;
         font-size: 14px;
+        font-weight: 600;
         border-radius: 50px;
         padding: 14px;
         text-align: center;
         display: inline-block;
       }
       .lesson-1{
-        background-color: #fb6200;
+        background-color: rgb(0, 182, 191);;
         margin-right: 5%;
       }
       .lesson-2{
-        background-color: #0cad5e;
+        background-color: rgb(226, 203, 2);;
         @media screen and (min-width: 424px) {
           margin-right: 5%;
         }
       }
       .lesson-3{
-        background-color: #8622bf;
+        background-color: rgb(251, 98, 0);
       }
       .mobile{
         @media screen and (min-width: 424px) {
@@ -341,6 +346,41 @@ input[type=date]::-webkit-inner-spin-button {
     img{
       width: 100%;
       border: 5px solid white;
+    }
+  }
+}
+.lessons-photos{
+  text-align: center;
+  font-size: 0;
+  margin-bottom: 30px;
+  .photo{
+    @media screen and (min-width: 576px) {//mobile large
+      display: inline-block;
+      width: 50%;
+      padding: 0 5px;
+    }
+    img{
+      width: 100%;
+      border: 5px solid white;
+    }
+  }
+  .description{
+    &.left{
+      display: none;
+    }
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    @media screen and (min-width: 576px) {//mobile large
+      display: inline-block;
+      width: 50%;
+      padding: 0 5px;
+      &.left{
+        display: inline-block;
+      }
+      &.desktop-hide{
+        display: none;
+      }
     }
   }
 }

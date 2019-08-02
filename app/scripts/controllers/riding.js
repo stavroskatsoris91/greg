@@ -17,7 +17,7 @@ angular.module('gregApp')
     ];
     var Ctrl = this;
     Ctrl.riding=[
-        'Choose a private lesson or come with friends (up to 3-4 riders). Lessons are arranged with an appointment.',
+        'Choose a private lesson or come with friends (up to 3-4 riders). Lessons are arranged by appointment.',
         'Call or send us an email!'
     ];
     });
