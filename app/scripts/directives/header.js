@@ -21,7 +21,13 @@ angular.module('gregApp')
                 $scope.location = $location;
                 Ctrl.menu = [
                     { path: ['/'], name: 'HOME', trigger: true },
-                    { path: ['/about'], name: 'ABOUT', trigger: true },
+                    {   
+                        name: 'ABOUT', trigger: false,
+                        sub: [
+                            { path: '/about', name: 'OUR STORY' },
+                            { path: '/instructors', name: 'THE INSTRUCTORS' }
+                        ]
+                    },
                     { path: ['/horses'], name: 'HORSES', trigger: true },
                     {
                         name: 'RIDING', trigger: false,

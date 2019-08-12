@@ -4,6 +4,11 @@
       <div class="container horses">
         <div class="title m-b">Picnics And Parties</div>
         <p ng-repeat="picnic in Ctrl.picnics" class="text">{{picnic}}</p>
+        <div class="picnic-photos">
+          <div class="photo" ng-repeat="image in Ctrl.photos">
+            <img ng-src="{{image}}" ng-click="Ctrl.showModal($index)"></img>
+          </div>
+        </div>
       </div>
     </div>
   </div>

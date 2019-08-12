@@ -22,6 +22,7 @@ angular.module('gregApp')
           var paths = [
             {name:'/',image:'/images/background/home.jpg'},
             {name:'/about',image:'/images/background/about.jpg'},
+            {name:'/instructors',image:'/images/background/about.jpg'},
             {name:'/horses',image:'/images/background/horses.jpg'},
             {name:'/treks',image:'/images/background/treks.jpg'},
             {name:'/riding',image:'/images/background/riding.jpg'},

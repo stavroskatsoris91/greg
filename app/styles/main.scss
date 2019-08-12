@@ -94,6 +94,9 @@ input[type=date]::-webkit-inner-spin-button {
   .empty-box{
     height: 400px
   }
+  .underline{
+    text-decoration: underline;
+  }
   .box{
     min-height: 400px;
     margin-bottom: 20px;
@@ -345,6 +348,23 @@ input[type=date]::-webkit-inner-spin-button {
     }
     img{
       width: 100%;
+      border: 5px solid white;
+    }
+  }
+}
+.picnic-photos{
+  margin-top: 20px;
+  text-align: center;
+  .photo{
+    margin-bottom: 20px;
+    // @media screen and (min-width: 576px) {//mobile large
+    //   display: inline-block;
+    //   width: 30%;
+    //   padding: 0 5px;
+    // }
+    img{
+      width: 100%;
+      max-width: 500px;
       border: 5px solid white;
     }
   }

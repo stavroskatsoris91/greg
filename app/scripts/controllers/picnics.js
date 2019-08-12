@@ -8,7 +8,7 @@
  * Controller of the gregApp
  */
 angular.module('gregApp')
-  .controller('PicnicsCtrl', function ($templateCache) {
+  .controller('PicnicsCtrl', function ($templateCache,$rootScope) {
     $templateCache.get('views/picnics.html');
     this.awesomeThings = [
       'HTML5 Boilerplate',
@@ -21,4 +21,11 @@ angular.module('gregApp')
       'Or organize a different picnic for you and your friends or family?',
       ' Contact us for more details.'
     ];
+    Ctrl.photos = ['/images/picnics/picnic-1.jpg'];
+    Ctrl.showModal = function (pos) {
+      var list = Ctrl.photos.map(function (x) {
+        return { img: x };
+      });
+      $rootScope.$broadcast('showModal', list,pos);
+    };
   });
