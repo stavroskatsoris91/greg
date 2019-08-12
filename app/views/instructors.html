@@ -1,12 +1,11 @@
 <div class="main-content">
-  <div class="empty-box"></div>
-  <div class="box green-3">
-    <div class="container horses">
-      <div class="title m-b">The Instructors</div>
-      <div ng-repeat="instructor in Ctrl.instructors" class="text">
-        <div class="text-center underline">{{instructor.name}}</div>
-        <p class="text" >{{instructor.description}}</p>
-      </div>
+  <div class="empty-box">
+    <div class="title m-b">The Instructors</div>
+  </div>
+  <div class="box" ng-class="instructor.color" ng-repeat="instructor in Ctrl.instructors">
+    <div class="container treks">
+      <div class="title-2 underline">{{instructor.name}}</div>
+      <p class="text line-h">{{instructor.description}}</p>
     </div>
   </div>
 </div>
