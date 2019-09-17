@@ -23,7 +23,7 @@ angular.module('gregApp')
       ];
     Ctrl.extraInfo = [
       'Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.',
-      'If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting for you.'
+      'If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)'
     ];
     Ctrl.lessonsPhotos = [
       {

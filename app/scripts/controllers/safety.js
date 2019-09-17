@@ -49,7 +49,7 @@ angular.module('gregApp')
       title:'Rules and Regulations',
       list:[
         'Always arrive at least five minutes before your lesson start time. Lessons will not be extended as this will affect the following student.',
-        'If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you.',
+        'If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness)',
         'No feeding the horses or carrying treats and bags near the arena during the lessons. Horses will only be fed when the instructors allow you to do so.',
         'Helmets MUST be worn (no exceptions). All riders must wear long trousers or leggings and appropriate closed shoes or boots.',
         'For your own safety and that of the riders, children must not shout or run around close to the arena fencing.',
