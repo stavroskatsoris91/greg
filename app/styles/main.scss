@@ -117,7 +117,7 @@ input[type=date]::-webkit-inner-spin-button {
       color: white;
     }
     &.red-1{
-      background-color: rgba(119, 11, 21, 0.7);
+      background-color: rgba(138, 72, 78, 0.7);
       color: white;
     }
     &.purple{
@@ -127,7 +127,11 @@ input[type=date]::-webkit-inner-spin-button {
     &.purple-2{
       background-color: rgba(85, 67, 154, 0.68);
       color: white;
-    }  
+    }
+    &.purple-3{
+      background-color: rgba(82, 50, 99, 0.63);;
+      color: white;
+    }
     &.yellow-2{
       background-color: rgba(193, 181, 55, 0.50);
       color: white;
@@ -288,8 +292,10 @@ input[type=date]::-webkit-inner-spin-button {
         line-height: 1.8;
       }
       &.lg{
-      font-size: 23px;
-
+        font-size: 23px;
+      }
+      &.md{
+        font-size: 16px;
       }
     }
     .info{

@@ -30,7 +30,7 @@ angular.module('gregApp')
       },
       {
         name: 'KATERINA',
-        color: 'purple',
+        color: 'purple-3',
         description:'Katerina is Greek and was raised in Spetses. She’s fluent in English and Greek. She’s trained with Greg for the last four years. She is a riding instructress and a trek guide. She’s in the third year of studying for a degree in nursing.'
       }
     ];
