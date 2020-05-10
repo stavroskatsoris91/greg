@@ -1,0 +1,14 @@
+<div class="main-content">
+    <div class="empty-box"></div>
+    <div class="box green-4">
+      <div class="container horses">
+        <div class="title m-b">Gallery</div>
+        <p class="text"></p>
+        <div id="slick">
+          <div class="greg-carousel" *ngFor="let image of carousel">
+            <img [src]="image" ng-init="initElement()">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

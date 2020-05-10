@@ -1,0 +1,210 @@
+<div class="main-content">
+    <div class="empty-box"></div>
+    <div class="box green">
+      <div class="container horses">
+        <div class="title m-b">Contact Us
+        </div>
+        <div class="title m-b">
+          <button class="button-info" (click)="scrollTo('payments')">Payment ts&cs</button>
+          <a href="/safety">
+            <button  class="button-info">Safety</button>
+          </a>
+        </div>
+        <form (ngSubmit)="submitForm()" class="submit-form">
+          <div class="input">
+            <label>Name</label>
+            <input class="required" type="text" [(ngModel)]="form.name" maxlength="50" [ngClass]="{'invalid': false}" required>
+            <p class="error-message" *ngIf="error">
+              Required field
+            </p>
+          </div>
+          <div class="input">
+            <label>Email</label>
+            <input class="required" type="email" [(ngModel)]="form.email" maxlength="50" [ngClass]="{'invalid': false}" required>
+            <p class="error-message" *ngIf="error">
+              Required field
+            </p>
+          </div>
+          <div class="input">
+            <label>Contact Number (+Country Code)</label>
+            <input class="required" type="tel" [(ngModel)]="form.tel" maxlength="50" [ngClass]="{'invalid': false}" required>
+            <p class="error-message" *ngIf="error">
+              Required field
+            </p>
+          </div>
+          <div class="date-time">
+            <div class="input date">
+              <label for="date">Date</label>
+              <input name="date" class="required" type="date" min="{{minDate}}" [(ngModel)]="form.date" [ngClass]="{'invalid': false}"  required>
+              <p class="error-message" *ngIf="error">
+                Required field
+              </p>
+            </div>
+            <div class="time">
+              <div class="input">
+                <label>Hour</label>
+                <select [(ngModel)]="form.hour" (change)="changeHour()">
+                  <option *ngFor="let opt of hours" [ngValue]="opt">{{opt}}
+                  </option>
+                </select>
+              </div>
+              <div class="input">
+                <label>Mins</label>
+                <select [(ngModel)]="form.minutes" (change)="changeHour()">
+                  <option *ngFor="let opt of minutes" [ngValue]="opt">{{opt}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="input">
+            <label>Riding</label>
+            <select [(ngModel)]="form.riding">
+              <option *ngFor="let opt of ridings" [ngValue]="opt">{{opt.name}}
+              </option>
+            </select>
+            <p class="error-message" *ngIf="error">
+              Required field
+            </p>
+          </div>
+          <div class="input" *ngIf="form.riding.options">
+            <label>{{form.riding.display}}</label>
+            <select [(ngModel)]="form.riding.selected">
+              <option *ngFor="let opt of form.riding.options;let i = index" [ngValue]="i">{{opt.name}}
+              </option>
+            </select>
+            <p class="error-message" *ngIf="error">
+              Required field
+            </p>
+          </div>
+          <div class="input">
+            <label>Riders</label>
+            <div *ngFor="let rider of form.riders;let i = index" class="riders">
+              <div class="remove-rider" *ngIf="i">
+                <a class="add-rider" (ngClick)="removeRider(i)"><span class="remove">x</span></a>
+              </div>
+              <div class="text-center" style="font-size: 0">
+                <div class="input name">
+                  <label>Name</label>
+                  <input class="required" [(ngModel)]="rider.name" maxlength="50"
+                    [ngClass]="{'invalid': false}" required>
+    
+                </div>
+                <div class="input age">
+                  <label>Age</label>
+                  <input class="required" type="number" [(ngModel)]="rider.age" maxlength="50"
+                  min="1" max="99" [ngClass]="{'invalid': false}" required>
+    
+                </div>
+              </div>
+              <div style="font-size: 0;text-align: center">
+                <div class="input height">
+                  <label>Height (m)</label>
+                  <input class="required" [(ngModel)]="rider.height" maxlength="4"
+                    [ngClass]="{'invalid': false}" required>
+                </div>
+                <div class="input weight">
+                  <label>Weight (kg)</label>
+                  <input class="required" [(ngModel)]="rider.weight" maxlength="4"
+                    [ngClass]="{'invalid': false}" required>
+                </div>
+                <div class="input level">
+                  <label>Experence</label>
+                  <select [(ngModel)]="rider.level">
+                    <option *ngFor="let opt of levels" [ngValue]="opt">{{opt}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="form.riders.length<=4">
+              <a class="add-rider" (ngClick)="addRider()"><span >+</span>
+                <label>Add Rider</label>
+              </a>
+            </div>
+          </div>
+          <div class="input">
+            <label>Payment Method</label>
+            <select [(ngModel)]="form.payment">
+              <option *ngFor="let opt of payments" [ngValue]="opt">{{opt}} {{price()}}
+              </option>
+            </select>
+            <p class="error-message" *ngIf="error">
+              Required field
+            </p>
+          </div>
+          <div class="input">
+            <label>Message</label>
+            <textarea [(ngModel)]="form.message" rows="4" maxlength="500"></textarea>
+            <p class="error-message" *ngIf="error">
+              Required field
+            </p>
+          </div>
+          <div>
+            <input [(ngModel)]="form.accept" type="checkbox" required>
+            I have read your <a class="a-info" href="/safety">safety</a> and <a class="a-info" (ngClick)="scrollTo('payments')">payment & cancelation</a> policy and agree to accept responsibility for our own safety.
+            <p class="error-message" *ngIf="error">
+              Required field
+            </p>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="button-info">Submit</button>
+          </div>
+        </form>
+        <div>
+          <div class="text-center payments-title" id="payments">
+            Payments
+          </div>
+          <br>
+          Payment can be made by CASH on the day
+          <br>
+          <br>
+          or Bank transfer in advance
+          <br>        
+          <br>        
+          NO Credit/Debit cards accepted due to our position in the countryside with no electricity/secure internet
+          <br>
+          <br>
+          On booking please confirm how you wish to pay.
+          <br>        
+          <br>
+          In the event of cancellation please try to inform us at least 48hrs in advance.
+          <br>
+          <br>
+          <div class="text-center payments-title">
+            Cancellation Policy
+          </div>
+          <br>
+          In the event of cancellation by the customer:
+          <br>
+          - More than 48 hours notice: full refund.
+          <br>
+          - Less than 24 hours notice: you may be charged half the price.
+          <br>
+          - Last minute cancelation: you will be charged the full price depending on the circumstance.
+          <br>
+          <br>
+          If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness) 
+          <br>
+          <br>
+          In event of cancellation by Greg's Spetses Horses, for example:
+          <br>
+          - Due to illness of trek guide
+          <br>
+          - Illness of horses
+          <br>
+          - Adverse weather conditions (at discretion of Greg's Spetses Horses)
+          <br>
+          Then a full refund will be given, or alternative dates agreed subject to availability.
+          <br>
+          <br>
+          It is a condition of your booking that you accept that Greg's Spetses Horses is entitled to require you to
+          dismount or to refuse to allow you to ride if for any reason, including your inability, behaviour or health,
+          they
+          consider that you may endanger the safety or welfare of any person or the horses. If so required you have no
+          claim
+          and will not be entitled to any compensation or refund.
+        </div>
+      </div>
+    </div>
+  </div>

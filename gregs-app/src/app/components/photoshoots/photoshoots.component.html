@@ -1,0 +1,14 @@
+<div class="main-content">
+    <div class="empty-box"></div>
+    <div class="box yellow-2">
+      <div class="container horses">
+        <div class="title m-b">Photo Shoots</div>
+        <p *ngFor="let photo of photoshoots" class="text">{{photo}}</p>
+        <div class="photos">
+          <div class="photo" *ngFor="let image of photos;let i = index">
+            <img [src]="image" (click)="showModal(i)"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<div class="main-content">
+    <div class="empty-box"></div>
+    <div class="box green">
+      <div class="container horses">
+        <div class="title m-b">Horse Riding Lessons</div>
+        <p *ngFor="let lesson of lessons" class="text">{{lesson}}</p>
+        <p *ngFor="let info of extraInfo" class="text md">{{info}}</p>
+        <div class="lessons-bubbles">
+          <div class="lesson lesson-1">30min 20€</div>
+          <div class="lesson lesson-2">45min 30€</div>
+          <br class="mobile">
+          <div class="lesson lesson-3">60min 40€</div>
+        </div>
+      </div>
+    </div>
+    <div class="box purple-2">
+      <div class="container horses">
+  
+        <div class="lessons-photos" *ngFor="let lesson of lessonsPhotos; let i=index">
+          <div class="description left" [ngClass]="{'desktop-hide':i%2==0}">{{lesson.description}}</div>
+          <div class="photo">
+            <img [src]="lesson.image" (click)="showModal(i)"/>
+          <div class="description" [ngClass]="{'desktop-hide':i%2==1}">{{lesson.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>

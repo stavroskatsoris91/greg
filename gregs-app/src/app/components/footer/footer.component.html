@@ -1,0 +1,38 @@
+<div class="footer">
+    <div class="container">
+        <div class="title">{{title}}</div>
+        <div class="info">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/gregsspetseshorses" target="_blank" class="facebook"></a>
+                <a href="https://www.instagram.com/gregs_spetses_horses" target="_blank" class="instagram"></a>
+                <a href="https://www.tripadvisor.com/Attraction_Review-g189496-d10367019-Reviews-Gregs_Spetses_Horses-Spetses_Saronic_Gulf_Islands_Attica.html"
+                    target="_blank" class="tripadvisor"></a>
+                <a href="https://twitter.com/GregoryThimaras" target="_blank" class="twitter"></a>
+            </div>
+            <div class="info-2">
+                <div>
+                    <div class="location"><img src="images/location.png">{{location}}</div>
+                    <a class="phone" href="tel:00306942792460"><img src="images/phone2.png">+(30) 6942 79 24 60</a>
+                    <div class="clock"><img src="images/clock.png">7am - 8pm
+                        <span class="info-popup" (clickOutside)="show=false">
+                            <img class="info-img" src="/images/info.svg" (click)="show=!show">
+                            <span [ngClass]="{'open':show}">
+                                For any activities you are intrested in doing you need to make an appointment first.
+                                <br>
+                                <br>
+                                But during summer months we are open all day from 8am to 9pm so you can visit the stables,
+                                <br>
+                                meet the horses or try a little ride in our arena.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map">
+            <img src="images/googlemaps.jpg" (mouseover)="openMap=true">
+            <app-googlemaps *ngIf="openMap"></app-googlemaps>
+        </div>
+    </div>
+</div>
