@@ -37,23 +37,13 @@ export class GalleryComponent implements OnInit {
     '/images/gallery/gallery27.jpg',
     '/images/gallery/gallery28.jpg'
   ];
-  public cLength = this.carousel.length;
-  private initElement(i){
-    if(i===this.cLength-1){
-      window['$']('#slick')['slick']({
-        autoplay:true,
-        arrows: true,
-        dots: false,
-        infinite: true});
-        this.setHeight();
-
-    }
+  cLength = this.carousel.length;
+  slideConfig = {
+    autoplay:true,
+    arrows: true,
+    dots: false,
+    infinite: true
   };
-  setHeight=()=>{
-    var height = window['$']('.greg-carousel')[0].clientWidth*0.6668118466898955;
-    window['$']('.greg-carousel img').css({height:height+'px'});
-    // 0.6668118466898955
-  }
   
   constructor() { }
   
@@ -64,5 +54,15 @@ export class GalleryComponent implements OnInit {
     window['$'](window).off('resize', this.setHeight);
     
   }
+  public initElements=(i)=>{
+    if(i==this.cLength-1){
+      this.setHeight();
+    }
+  };
 
+  setHeight=()=>{
+    var height = window['$']('.greg-carousel')[0].clientWidth*0.6668118466898955;
+    window['$']('.greg-carousel img').css({height:height+'px'});
+    // 0.6668118466898955
+  }
 }

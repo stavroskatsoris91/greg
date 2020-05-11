@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
   error: boolean = false;
   constructor(
     private books: BooksService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -39,12 +39,13 @@ export class ContactComponent implements OnInit {
     };
   } 
   public payments = ['Cash on the Day', 'Bank Transfer'];
+  nextDay = new Date(new Date().setDate(new Date().getDate()+1)).toISOString().slice(0, 10);
   private init(){
       this.form = this.books.getFrom()?this.books.getFrom():{
         name:'',
         email:'',
         tel:'',
-        date: new Date(new Date().setDate(new Date().getDate()+1)),
+        date: this.nextDay,
         hour: this.hours[0],
         minutes: this.minutes[0],
         riding:this.ridings[0],
@@ -76,7 +77,7 @@ export class ContactComponent implements OnInit {
       this.form.minutes=this.minutes[0];
     }
   };
-  submitForm () {
+  submitForm (submitForm) {
     if(this.run){
       return;
     }

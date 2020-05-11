@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-lessons',
@@ -30,7 +31,7 @@ lessonsPhotos = [
     image:'/images/lessons/lesson-4.jpg',
     description:'Our students dropping in to say hello to the horses'}
 ];
-  constructor() { }
+  constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +39,6 @@ lessonsPhotos = [
     var list = this.lessonsPhotos.map((x)=> {
       return { img: x.image };
     });
-    // $rootScope.$broadcast('showModal', list,pos);
+    this.ModalService.triggerEvent([list,pos]);
   };
 }

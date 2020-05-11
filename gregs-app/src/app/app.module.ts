@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { environment } from '../environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BackgroundComponent } from './components/background/background.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
 import { HomeComponent } from './components/home/home.component';
@@ -24,6 +28,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { CoinComponent } from './components/coin/coin.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { InitalizeDirective } from './directives/initalize.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,13 +51,17 @@ import { ModalComponent } from './components/modal/modal.component';
     ContactComponent,
     ThankyouComponent,
     CoinComponent,
-    ModalComponent
+    ModalComponent,
+    InitalizeDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule 
+    FormsModule,
+    SlickCarouselModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireFunctionsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

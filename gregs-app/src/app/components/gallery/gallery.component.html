@@ -3,12 +3,12 @@
     <div class="box green-4">
       <div class="container horses">
         <div class="title m-b">Gallery</div>
-        <p class="text"></p>
-        <div id="slick">
-          <div class="greg-carousel" *ngFor="let image of carousel">
-            <img [src]="image" ng-init="initElement()">
+        <p class="text" (appInitalize)="initElements($event)"></p>
+        <ngx-slick-carousel class="carousel"  #slickModal="slick-carousel" [config]="slideConfig">
+          <div ngxSlickItem class="greg-carousel" *ngFor="let image of carousel;let i = index">
+            <img [src]="image" (appInitalize)="initElements(i)">
           </div>
-        </div>
+        </ngx-slick-carousel>
       </div>
     </div>
   </div>

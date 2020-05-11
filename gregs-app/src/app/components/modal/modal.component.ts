@@ -17,7 +17,7 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
     this.ModalService.listenEvent().subscribe((ev)=>{
       let data = ev[0];
-      let pos = ev[2];
+      let pos = ev[1];
       this.index = pos||0;
       this.group = data;
     })

@@ -5,29 +5,29 @@
         <div class="title m-b">Contact Us
         </div>
         <div class="title m-b">
-          <button class="button-info" (click)="scrollTo('payments')">Payment ts&cs</button>
+          <button class="button-info m-r" (click)="scrollTo('payments')">Payment ts&cs</button>
           <a href="/safety">
             <button  class="button-info">Safety</button>
           </a>
         </div>
-        <form (ngSubmit)="submitForm()" class="submit-form">
+        <form #FormGroup="ngForm" (ngSubmit)="submitForm(FormGroup)" class="submit-form">
           <div class="input">
             <label>Name</label>
-            <input class="required" type="text" [(ngModel)]="form.name" maxlength="50" [ngClass]="{'invalid': false}" required>
+            <input name="name" class="required" type="text" [(ngModel)]="form.name" maxlength="50" [ngClass]="{'invalid': false}" required>
             <p class="error-message" *ngIf="error">
               Required field
             </p>
           </div>
           <div class="input">
             <label>Email</label>
-            <input class="required" type="email" [(ngModel)]="form.email" maxlength="50" [ngClass]="{'invalid': false}" required>
+            <input name="email" class="required" type="email" [(ngModel)]="form.email" maxlength="50" [ngClass]="{'invalid': false}" required>
             <p class="error-message" *ngIf="error">
               Required field
             </p>
           </div>
           <div class="input">
             <label>Contact Number (+Country Code)</label>
-            <input class="required" type="tel" [(ngModel)]="form.tel" maxlength="50" [ngClass]="{'invalid': false}" required>
+            <input name="phone" class="required" type="tel" [(ngModel)]="form.tel" maxlength="50" [ngClass]="{'invalid': false}" required>
             <p class="error-message" *ngIf="error">
               Required field
             </p>
@@ -43,14 +43,14 @@
             <div class="time">
               <div class="input">
                 <label>Hour</label>
-                <select [(ngModel)]="form.hour" (change)="changeHour()">
+                <select name="hour" [(ngModel)]="form.hour" (change)="changeHour()">
                   <option *ngFor="let opt of hours" [ngValue]="opt">{{opt}}
                   </option>
                 </select>
               </div>
               <div class="input">
                 <label>Mins</label>
-                <select [(ngModel)]="form.minutes" (change)="changeHour()">
+                <select name="mins" [(ngModel)]="form.minutes" (change)="changeHour()">
                   <option *ngFor="let opt of minutes" [ngValue]="opt">{{opt}}
                   </option>
                 </select>
@@ -59,7 +59,7 @@
           </div>
           <div class="input">
             <label>Riding</label>
-            <select [(ngModel)]="form.riding">
+            <select name="ride" [(ngModel)]="form.riding">
               <option *ngFor="let opt of ridings" [ngValue]="opt">{{opt.name}}
               </option>
             </select>
@@ -69,7 +69,7 @@
           </div>
           <div class="input" *ngIf="form.riding.options">
             <label>{{form.riding.display}}</label>
-            <select [(ngModel)]="form.riding.selected">
+            <select name="rideType" [(ngModel)]="form.riding.selected">
               <option *ngFor="let opt of form.riding.options;let i = index" [ngValue]="i">{{opt.name}}
               </option>
             </select>
@@ -86,13 +86,13 @@
               <div class="text-center" style="font-size: 0">
                 <div class="input name">
                   <label>Name</label>
-                  <input class="required" [(ngModel)]="rider.name" maxlength="50"
+                  <input [name]="'ridersName'+i" class="required" [(ngModel)]="rider.name" maxlength="50"
                     [ngClass]="{'invalid': false}" required>
     
                 </div>
                 <div class="input age">
                   <label>Age</label>
-                  <input class="required" type="number" [(ngModel)]="rider.age" maxlength="50"
+                  <input [name]="'ridersAge'+i" class="required" type="number" [(ngModel)]="rider.age" maxlength="50"
                   min="1" max="99" [ngClass]="{'invalid': false}" required>
     
                 </div>
@@ -100,17 +100,17 @@
               <div style="font-size: 0;text-align: center">
                 <div class="input height">
                   <label>Height (m)</label>
-                  <input class="required" [(ngModel)]="rider.height" maxlength="4"
+                  <input [name]="'ridersHeight'+i" class="required" [(ngModel)]="rider.height" maxlength="4"
                     [ngClass]="{'invalid': false}" required>
                 </div>
                 <div class="input weight">
                   <label>Weight (kg)</label>
-                  <input class="required" [(ngModel)]="rider.weight" maxlength="4"
+                  <input [name]="'ridersWeight'+i" class="required" [(ngModel)]="rider.weight" maxlength="4"
                     [ngClass]="{'invalid': false}" required>
                 </div>
                 <div class="input level">
                   <label>Experence</label>
-                  <select [(ngModel)]="rider.level">
+                  <select [name]="'riderLevel'+i"[(ngModel)]="rider.level">
                     <option *ngFor="let opt of levels" [ngValue]="opt">{{opt}}
                     </option>
                   </select>
@@ -125,7 +125,7 @@
           </div>
           <div class="input">
             <label>Payment Method</label>
-            <select [(ngModel)]="form.payment">
+            <select name="payment" [(ngModel)]="form.payment">
               <option *ngFor="let opt of payments" [ngValue]="opt">{{opt}} {{price()}}
               </option>
             </select>
@@ -135,13 +135,13 @@
           </div>
           <div class="input">
             <label>Message</label>
-            <textarea [(ngModel)]="form.message" rows="4" maxlength="500"></textarea>
+            <textarea name="message" [(ngModel)]="form.message" rows="4" maxlength="500"></textarea>
             <p class="error-message" *ngIf="error">
               Required field
             </p>
           </div>
           <div>
-            <input [(ngModel)]="form.accept" type="checkbox" required>
+            <input name="agree" [(ngModel)]="form.accept" type="checkbox" required>
             I have read your <a class="a-info" href="/safety">safety</a> and <a class="a-info" (ngClick)="scrollTo('payments')">payment & cancelation</a> policy and agree to accept responsibility for our own safety.
             <p class="error-message" *ngIf="error">
               Required field

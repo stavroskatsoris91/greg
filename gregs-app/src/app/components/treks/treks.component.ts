@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-treks',
@@ -95,7 +96,7 @@ export class TreksComponent implements OnInit {
     },
 ];
 info = '*The return journey is along the same route in all treks. Any additional time required will be charged at €12.30 per half hour.';
-  constructor() { }
+  constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {
   }
@@ -103,7 +104,7 @@ info = '*The return journey is along the same route in all treks. Any additional
     var list = images.map((x)=> {
       return { img: x };
     });
-    // $rootScope.$broadcast('showModal', list,0);
+    this.ModalService.triggerEvent([list,0]);
   };
 
 }
