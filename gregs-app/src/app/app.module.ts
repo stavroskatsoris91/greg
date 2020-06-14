@@ -6,6 +6,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,7 +59,7 @@ import { InitalizeDirective } from './directives/initalize.directive';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule,
+    ReactiveFormsModule,
     SlickCarouselModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireFunctionsModule

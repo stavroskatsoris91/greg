@@ -1,0 +1,12 @@
+.input{
+    &__time{
+        select, input{
+            padding: 0 0 0 5px;
+        }
+    }
+    &__age{
+        select, input{
+            padding: 0 0 0 10px;
+        }
+    }
+}

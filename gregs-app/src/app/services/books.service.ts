@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireFunctions } from 'angularfire2/functions';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { AngularFireFunctions } from 'angularfire2/functions';
 export class BooksService {
 
   constructor(
-    private functions : AngularFireFunctions,
+    private readonly functions : AngularFireFunctions,
   ) { }
   firebase = window['firebase'];
   savedForm = null;
@@ -39,21 +40,21 @@ export class BooksService {
     { name: 'PICNIC / PARTY', display: 'Picnic / Party', selected: null }
   ];
   public makeBook(data) {
-    return this.firebase.functions().httpsCallable('bookTime').call(data);
+    return this.functions.httpsCallable('bookTime')(data);
 
   }
   public getTime(time, adults, kids) {
-    var getTimes = this.firebase.functions().httpsCallable('getTime');
+    var getTimes = this.functions.httpsCallable('getTime');
     var data = {
       time: time,
       adults: adults,
       kids: kids,
     };
-    return getTimes(data).then(function (result) {
+    return getTimes(data).subscribe((result) =>{
       console.log(result);
       // ...
       return true;
-    }).catch(function (error) {
+    }, (error)=> {
       console.log(error);
       return false;
     });
@@ -61,7 +62,10 @@ export class BooksService {
   public setForm(form) {
     this.savedForm = form;
   }
-  public getFrom() {
+  public clearForm():void {
+    this.savedForm = null;
+  }
+  get getFrom():FormGroup {
     return this.savedForm;
   }
 }

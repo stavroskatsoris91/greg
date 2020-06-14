@@ -462,7 +462,7 @@ input[type=date]::-webkit-inner-spin-button {
     font-size: 14px;
     font-weight: 900;
   }
-  >input,
+  >input:not([type="checkbox"]),
   textarea,select {
     border: none;
     background: #fff;
@@ -490,7 +490,7 @@ input[type=date]::-webkit-inner-spin-button {
       }
     }
   }
-  input,select{
+  input:not([type="checkbox"]),select{
     height: 40px;
   }
   .error-message{
