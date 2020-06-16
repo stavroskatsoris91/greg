@@ -1,0 +1,19 @@
+.extra-info{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 17px;
+    background-color: #470552b3;
+  }
+
+.trek-photos{
+    a{
+      color: white;
+      cursor: pointer;
+      &:focus,&:active,&:hover{
+        color: beige;
+      }
+    }
+    img{
+      width: 20px;
+    }
+  }

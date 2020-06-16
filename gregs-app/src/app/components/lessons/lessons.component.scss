@@ -1,0 +1,35 @@
+.lessons-photos{
+    text-align: center;
+    font-size: 0;
+    margin-bottom: 30px;
+    .photo{
+      @media screen and (min-width: 576px) {//mobile large
+        display: inline-block;
+        width: 50%;
+        padding: 0 5px;
+      }
+      img{
+        width: 100%;
+        border: 5px solid white;
+      }
+    }
+    .description{
+      &.left{
+        display: none;
+      }
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      @media screen and (min-width: 576px) {//mobile large
+        display: inline-block;
+        width: 50%;
+        padding: 0 5px;
+        &.left{
+          display: inline-block;
+        }
+        &.desktop-hide{
+          display: none;
+        }
+      }
+    }
+  }

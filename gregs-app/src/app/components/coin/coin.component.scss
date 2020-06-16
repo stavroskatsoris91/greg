@@ -1,6 +1,6 @@
 $red : #DD381D;
 $green : #7EB530;
-$blue : rgb(246, 90, 28);
+$blue : #f65a1c;
 $gray : #F0F0F0;
 
 $coin-layers : 10;
@@ -41,7 +41,7 @@ $bounce : cubic-bezier(.2,.7,.4,1.5);
   border-radius: 100px;
   overflow: hidden;
   &:empty { 
-    box-shadow: inset 0 0 0 85px rgba(0,0,0,.3);
+    box-shadow: inset 0 0 0 85px #0000004d;
     pointer-events: none;
   }
   
@@ -54,7 +54,7 @@ $bounce : cubic-bezier(.2,.7,.4,1.5);
 }
 
 .coin-wedge {
-  box-shadow: inset 0 0 0 85px rgba(0,0,0,.3);
+  box-shadow: inset 0 0 0 85px #0000004d;
   left: 50%;
   width: $coin-layers * $coin-layer-spacing;
   transform: rotateY(90deg);
@@ -96,7 +96,7 @@ $bounce : cubic-bezier(.2,.7,.4,1.5);
   color: $gray;
   
   .coin:empty {
-    box-shadow: inset 0 0 0 85px rgba(0,0,0,.2);
+    box-shadow: inset 0 0 0 85px #00000033;
   }
   .icon {
     background-image: url(https://d7mj4aqfscim2.cloudfront.net/images/skill-icons-locked.svg);
