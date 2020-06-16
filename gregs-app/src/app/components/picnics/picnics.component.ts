@@ -13,7 +13,7 @@ export class PicnicsComponent implements OnInit {
     'Or organize a different picnic for you and your friends or family?',
     ' Contact us for more details.'
   ];
-  photos = ['/images/picnics/picnic-1.jpg'];
+  photos = [require('src/assets/images/picnics/picnic-1.jpg')];
 
   constructor(private ModalService: ModalService) { }
 

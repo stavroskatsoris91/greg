@@ -19,16 +19,16 @@ extraInfo = [
 ];
 lessonsPhotos = [
   {
-    image:'/images/lessons/lesson-1.jpg',
+    image:require('src/assets/images/lessons/lesson-1.jpg'),
     description:'Fun grooming Robbie before the lesson'},
   {
-    image:'/images/lessons/lesson-2.jpg',
+    image:require('src/assets/images/lessons/lesson-2.jpg'),
     description:'Trotting on Robbie'},
   {
-    image:'/images/lessons/lesson-3.jpg',
+    image:require('src/assets/images/lessons/lesson-3.jpg'),
     description:'First steps learning to trot on Rebecca'},
   {
-    image:'/images/lessons/lesson-4.jpg',
+    image:require('src/assets/images/lessons/lesson-4.jpg'),
     description:'Our students dropping in to say hello to the horses'}
 ];
   constructor(private ModalService: ModalService) { }

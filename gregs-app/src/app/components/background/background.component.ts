@@ -9,19 +9,19 @@ import { filter } from 'rxjs/operators';
 export class BackgroundComponent implements OnInit {
 
   paths = [
-    {name:'/',image:'/images/background/home.jpg'},
-    {name:'/about',image:'/images/background/about.jpg'},
-    {name:'/instructors',image:'/images/background/about.jpg'},
-    {name:'/horses',image:'/images/background/horses.jpg'},
-    {name:'/treks',image:'/images/background/treks.jpg'},
-    {name:'/riding',image:'/images/background/riding.jpg'},
-    {name:'/gallery',image:'/images/background/gallery.jpg'},
-    {name:'/contact',image:'/images/background/contact.jpg'},
-    {name:'/thankyou',image:'/images/background/contact.jpg'},
-    {name:'/lessons',image:'/images/background/lessons.jpg'},
-    {name:'/photoshoots',image:'/images/background/photoshoots.jpg'},
-    {name:'/picnics',image:'/images/background/picnics.jpg'},
-    {name:'/safety',image:'/images/background/safety.jpg'}
+    {name:'/',image:require('src/assets/images/background/home.jpg')},
+    {name:'/about',image:require('src/assets/images/background/about.jpg')},
+    {name:'/instructors',image:require('src/assets/images/background/about.jpg')},
+    {name:'/horses',image:require('src/assets/images/background/horses.jpg')},
+    {name:'/treks',image:require('src/assets/images/background/treks.jpg')},
+    // {name:'/riding',image:require('src/assets/images/background/riding.jpg')},
+    {name:'/gallery',image:require('src/assets/images/background/gallery.jpg')},
+    {name:'/contact',image:require('src/assets/images/background/contact.jpg')},
+    {name:'/thankyou',image:require('src/assets/images/background/contact.jpg')},
+    {name:'/lessons',image:require('src/assets/images/background/lessons.jpg')},
+    {name:'/photoshoots',image:require('src/assets/images/background/photoshoots.jpg')},
+    {name:'/picnics',image:require('src/assets/images/background/picnics.jpg')},
+    {name:'/safety',image:require('src/assets/images/background/safety.jpg')}
   ];
   count = 0;
   scrollTop = 0;

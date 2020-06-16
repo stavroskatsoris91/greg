@@ -13,7 +13,7 @@ export class PhotoshootsComponent implements OnInit {
     'Why not hire our horses to make your wedding day, proposal, anniversary, any day even more unique and unforgettable?',
     'Choose the horses you like and be ready for a beautiful photoshoot next to the view of the sea or mountain while watching the sunset.'
   ];
-  photos = ['/images/photo1.jpg','/images/photo2.jpg','/images/photo3.jpg'];
+  photos = [require('src/assets/images/photo1.jpg'),require('src/assets/images/photo2.jpg'),require('src/assets/images/photo3.jpg')];
   constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {
