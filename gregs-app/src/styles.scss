@@ -1,36 +1,41 @@
-
 body {
   padding: 0;
 }
+
 input[type=date]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   display: none;
 }
+
 .header,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.m-b{
+.m-b {
   margin-bottom: 20px;
 }
-.content{
+
+.content {
   overflow: scroll;
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
 }
+
 /* Responsive: Portrait tablets and up */
 .container {
   @media screen and (min-width: 768px) {
     max-width: 768px;
   }
+
   @media screen and (min-width: 900px) {
     width: 900px;
   }
 }
+
 @media screen and (min-width: 768px) {
 
   /* Remove the padding we set earlier */
@@ -41,11 +46,13 @@ input[type=date]::-webkit-inner-spin-button {
   }
 
 }
-.main-content{
-  .empty-box{
+
+.main-content {
+  .empty-box {
     height: 400px;
     display: flex;
-    .title{
+
+    .title {
       margin: auto;
       margin-bottom: 20px;
       font-size: 40px;
@@ -53,230 +60,142 @@ input[type=date]::-webkit-inner-spin-button {
       text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
   }
-  .underline{
+
+  .underline {
     text-decoration: underline;
   }
-  .box{
+
+  .box {
     min-height: 400px;
     margin-bottom: 20px;
-    &.brown{
+
+    &.brown {
       background-color: #550105b3;
       color: white;
     }
-    &.green{
+
+    &.green {
       background-color: #00443ab3;
       color: white;
     }
-    &.red-1{
+
+    &.red-1 {
       background-color: #8a484eb3;
       color: white;
     }
-    &.purple{
+
+    &.purple {
       background-color: #2d0542a1;
       color: white;
     }
-    &.purple-2{
+
+    &.purple-2 {
       background-color: #55439aad;
       color: white;
     }
-    &.purple-3{
+
+    &.purple-3 {
       background-color: #523263a1;
       color: white;
     }
-    &.yellow-2{
+
+    &.yellow-2 {
       background-color: #c1b53780;
       color: white;
     }
-    &.yellow-3{
+
+    &.yellow-3 {
       background-color: #988f2eb3;
       color: white;
     }
-    &.green-2{
+
+    &.green-2 {
       background-color: #0b73779e;
       color: white;
     }
-    &.green-3{
+
+    &.green-3 {
       background-color: #00443aa1;
       color: white;
     }
-    &.green-4{
+
+    &.green-4 {
       background-color: #0b737785;
       color: white;
     }
-    &.white{
+
+    &.white {
       background-color: #ffffff66;
     }
-    &.white-2{
+
+    &.white-2 {
       background-color: #dceced85;
       color: white;
     }
   }
 
-  .treks{
+  .treks {
     width: 100%;
     max-width: 900px;
     padding: 40px;
-    .title-1{
+
+    .title-1 {
       text-align: center;
       text-decoration: underline;
       font-size: 17px;
     }
-    .title-2{
+
+    .title-2 {
       text-align: center;
       font-size: 30px;
       margin-top: -7px;
       margin-bottom: 15px;
     }
-    .text{
+
+    .text {
       font-size: 20px;
       margin-bottom: 30px;
-      &.line-h{
+
+      &.line-h {
         line-height: 1.5;
       }
     }
-    .bubbles{
-      text-align: center;
-      font-size: 0;
-      .time{
-        width: 70px;
-        height: 70px;
-        font-size: 14px;
-        background-color: #fb6200;
-        border-radius: 50px;
-        padding: 14px;
-        text-align: center;
-        display: inline-block;
-        margin-right: 5%;
-      }
-      .price{
-        width: 80px;
-        height: 80px;
-        font-size: 14px;
-        background-color: #0cad5e;
-        border-radius: 50px;
-        padding: 18px;
-        text-align: center;
-        display: inline-block;
-        @media screen and (min-width: 424px) {
-          margin-right: 5%;
-        }
-      }
-      .level{
-        width: 70px;
-        height: 70px;
-        font-size: 14px;
-        background-color: #8622bf;
-        border-radius: 50px;
-        padding: 14px;
-        text-align: center;
-        display: inline-block;
-        margin-right: 5%;
-        &.exp{
-          width: 90px;
-          height: 90px;
-          padding: 7px;
-          padding-top: 19px;
-        }
-      }
-      .photos-bubble{
-        background-color: #e9d102;
-        width: 70px;
-        height: 70px;
-        padding: 14px;
-        font-size: 14px;
-        border-radius: 50px;
-        text-align: center;
-        display: inline-block;
-      }
-      .mobile{
-        @media screen and (min-width: 424px) {
-          display: none;
-        }
-      }
-    }
   }
-  .horses{
+
+  .horses {
     width: 100%;
     max-width: 900px;
     padding: 40px;
-    
-    .title{
+
+    .title {
       text-align: center;
       font-size: 30px;
-      &.lg{
-      font-size: 32px;
+
+      &.lg {
+        font-size: 32px;
       }
     }
-    .text{
+
+    .text {
       font-size: 20px;
       margin-bottom: 8px;
-      &.line-hight{
+
+      &.line-hight {
         line-height: 1.8;
       }
-      &.lg{
+
+      &.lg {
         font-size: 23px;
       }
-      &.md{
+
+      &.md {
         font-size: 16px;
       }
     }
-    .info{
-      margin-bottom: 20px;
-      .info-item{
-        margin-bottom: 10px;
-        >span{
-          text-decoration: underline;
-      }
-      }
-      @media screen and (min-width: 424px) {
-        display: flex;
-        .info-item{
-          margin-left:10px;
-          margin-right: 10px;
-          &:first-child{
-            margin-left: auto;
-          }
-          &:last-child{
-            margin-right: auto;
-          }
-        }
-      }
-    }
-    .lessons-bubbles{
-      margin-top: 30px;
-      text-align: center;
-      font-size: 0;
-      .lesson{
-        width: 70px;
-        height: 70px;
-        font-size: 14px;
-        font-weight: 600;
-        border-radius: 50px;
-        padding: 14px;
-        text-align: center;
-        display: inline-block;
-      }
-      .lesson-1{
-        background-color: #00b6bf;;
-        margin-right: 5%;
-      }
-      .lesson-2{
-        background-color: #e2cb02;;
-        @media screen and (min-width: 424px) {
-          margin-right: 5%;
-        }
-      }
-      .lesson-3{
-        background-color: #fb6200;
-      }
-      .mobile{
-        @media screen and (min-width: 424px) {
-          display: none;
-        }
-      }
-    }
+
   }
 }
-.m-r{
+
+.m-r {
   margin-right: 12px;
 }

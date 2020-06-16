@@ -33,3 +33,36 @@
       }
     }
   }
+  .lessons-bubbles{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+    .lesson{
+      width: 70px;
+      height: 70px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 14px;
+      text-align: center;
+      display: inline-block;
+    }
+    .lesson-1{
+      background-color: #00b6bf;;
+      margin-right: 5%;
+    }
+    .lesson-2{
+      background-color: #e2cb02;;
+      @media screen and (min-width: 424px) {
+        margin-right: 5%;
+      }
+    }
+    .lesson-3{
+      background-color: #fb6200;
+    }
+    .mobile{
+      @media screen and (min-width: 424px) {
+        display: none;
+      }
+    }
+  }
