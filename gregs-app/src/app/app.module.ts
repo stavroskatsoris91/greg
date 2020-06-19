@@ -7,6 +7,7 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { CoinComponent } from './components/coin/coin.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { InitalizeDirective } from './directives/initalize.directive';
+import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
 
 @NgModule({
   declarations: [
@@ -53,9 +55,11 @@ import { InitalizeDirective } from './directives/initalize.directive';
     ThankyouComponent,
     CoinComponent,
     ModalComponent,
-    InitalizeDirective
+    InitalizeDirective,
+    ToggleAnimateDirective
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,

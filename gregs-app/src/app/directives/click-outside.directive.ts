@@ -1,39 +1,31 @@
-import { Directive ,OnInit, OnDestroy,ElementRef, Output, EventEmitter} from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Directive, Output, EventEmitter, HostListener, ElementRef} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Directive({
   selector: '[clickOutside]'
 })
-export class ClickOutsideDirective implements OnInit, OnDestroy {
+export class ClickOutsideDirective {
 
   @Output() clickOutside: EventEmitter<any> = new EventEmitter();
   el: any;
   routeEvent: any;
   constructor(
-    private elementRef: ElementRef, 
-    private router: Router,
+    private readonly elementRef: ElementRef,
   ) {
   }
-  ngOnInit(): void {
-    this.el = this.elementRef.nativeElement;
-    window['$'](document).bind('click touchstart', this.onClick);
-
-    this.routeEvent = this.router.events
-    .pipe(filter(e => e instanceof NavigationEnd))
-    .subscribe((e) => {
-      window['$'](document).unbind('click touchstart', this.onClick);
-      window['$'](document).bind('click touchstart', this.onClick);
-    });  
+  @HostListener('document:click', ['$event'])
+  click(event) {
+    this.onClick(event);
   }
-  ngOnDestroy(): void {
-    window['$'](document).unbind('click touchstart', this.onClick);
-    this.routeEvent.unsubscribe();
+  @HostListener('document:touchstart', ['$event'])
+  touchstart(event) {
+    this.onClick(event);
   }
-  private onClick = (event) => {
-    let isChild = this.el.contains(event.target);
-    let isSelf = this.el == event.target;
-    let isInside = isChild || isSelf;
+  private onClick(event) {
+    const el = this.elementRef.nativeElement;
+    const isChild = el.contains(event.target);
+    const isSelf = el == event.target;
+    const isInside = isChild || isSelf;
     if (!isInside) {
       this.clickOutside.emit();
     }

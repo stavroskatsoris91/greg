@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, HostListener } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 @Component({
@@ -41,19 +41,27 @@ export class BackgroundComponent implements OnInit {
 
     })
     this.changeBackground(this.count);
-    window['$'](window).on('scroll',(e)=>{
-      let wScroll = window['$'](window).scrollTop();
-      let dHeight = window['$'](document).height();
-      let wHeight = window['$'](window).height();
-      let scrollTop = wScroll / (dHeight - wHeight)* 30;
-      this.updateStyle(scrollTop);
-    });
+    window.addEventListener('scroll', this.scrollEvent, true);
   }
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.scrollEvent();
+  }
+
   private updateStyle(scrollTop){
     let list =this.elementRef.nativeElement.getElementsByClassName('background');
     Array.from(list).map((e)=>{
       this.renderer.setStyle(e['firstChild'],'transform','translateY(-'+scrollTop+'%)');
     })
+  }
+  scrollEvent = () => {
+    const wScroll = window.pageYOffset;
+    const body = document.body,
+      html = document.documentElement;
+    const dHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    const wHeight = window.innerHeight;
+    const scrollTop = wScroll / (dHeight - wHeight) * 30;
+    this.updateStyle(scrollTop);
   }
   private changeBackground(count){
       var image = this.paths[0].image;
@@ -65,14 +73,10 @@ export class BackgroundComponent implements OnInit {
           return true;
         }
       });
-      // images[show] =  image;
-      window['$']('<img/>').attr('src', image).on('load', (ev)=> {
-        window['$'](ev.currentTarget).remove(); // prevent memory leaks as @benweet suggested
-        let el = document.getElementById('background-'+(show+1)).firstChild;
-        let bg = document.getElementById('background-2');
-        this.renderer.setStyle(el,'backgroundImage','url('+image+')');
-        this.renderer.setStyle(bg,'opacity',opacity);
-        this.count = count;
-      });
+      let el = document.getElementById('background-'+(show+1)).firstChild;
+      let bg = document.getElementById('background-2');
+      this.renderer.setStyle(el,'backgroundImage','url('+image+')');
+      this.renderer.setStyle(bg,'opacity',opacity);
+      this.count = count;
     }
 }

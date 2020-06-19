@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent {
 
   carousel = [
     require('src/assets/images/gallery/gallery1.jpg'),
@@ -44,25 +44,24 @@ export class GalleryComponent implements OnInit {
     dots: false,
     infinite: true
   };
-  
-  constructor() { }
-  
-  ngOnInit(): void {
-    window['$'](window).on('resize',this.setHeight);
+  height: number = 0;
+  constructor(private readonly element: ElementRef) { }
+  async ngAfterViewInit() {
+    this.setHeight();
   }
-  ngOnDestroy(): void {
-    window['$'](window).off('resize', this.setHeight);
-    
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.setHeight();
   }
   public initElements=(i)=>{
     if(i==this.cLength-1){
       this.setHeight();
     }
   };
-
+  get imgHeight(){
+    return {height:this.height+'px'}
+  }
   setHeight=()=>{
-    var height = window['$']('.greg-carousel')[0].clientWidth*0.6668118466898955;
-    window['$']('.greg-carousel img').css({height:height+'px'});
-    // 0.6668118466898955
+    this.height = this.element.nativeElement.getElementsByTagName('ngx-slick-carousel')[0].clientWidth*0.6668118466898955;
   }
 }

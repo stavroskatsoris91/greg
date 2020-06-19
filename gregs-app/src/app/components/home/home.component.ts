@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { interval } from 'rxjs';
 
 @Component({
@@ -15,10 +15,12 @@ export class HomeComponent implements OnInit {
     'Apart from riding you can enjoy a picnic with your friends or organize kids’ parties with pony rides in the arena.  We also provide our horses for photoshoots for any special occasion.'
   ];
   checkTripAdvisor: any;
-  constructor() { }
+  constructor(private readonly element: ElementRef) { }
+
   ngOnInit(): void {
     this.checkTripAdvisor = interval(1500).subscribe(()=> {
-      if (window['$']('dt:contains("Gregs Spetses Horses")').length !== 2) {
+      let elements = [...this.element.nativeElement.getElementsByTagName('dt')]
+      if (elements.filter(x=>x.innerText.indexOf('Gregs Spetses Horses')>=0).length < 2) {
         if (window['taValidate']) {
           window['taValidate']();
         }
@@ -32,34 +34,4 @@ export class HomeComponent implements OnInit {
       this.checkTripAdvisor.unsubscribe();
     }
   }
-  private signUp(email, password) {
-    // this.auth.signUp(email, password).then(function (res) {
-    //   console.log(res);
-    // });
-  };
-  private signIn(email, password) {
-    // this.auth.signIn(email, password).then(function (res) {
-    //   console.log(res);
-    // });
-  };
-  private subscribe() {
-    // this.auth.subscribe().then(function (res) {
-    //   console.log(res);
-    // });
-  };
-  private unsubscribe() {
-    // this.auth.unsubscribe().then(function (res) {
-    //   console.log(res);
-    // });
-  };
-  private makeBook(time, adults, kids) {
-    // this.books.makeBook(time, adults, kids).then(function (res) {
-    //   console.log(res);
-    // });
-  };
-  private getTime() {
-    // this.books.getTime().then(function (res) {
-    //   console.log(res);
-    // });
-  };
 }

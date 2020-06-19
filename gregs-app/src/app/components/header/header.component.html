@@ -3,40 +3,45 @@
     <a routerLink="/" class="logo">
       <img src="/images/logo2.png">
     </a>
-    <div class="burger-menu">
-      <button type="button" data-toggle="collapse" data-target="#js-navbar-collapse" aria-expanded="false">
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
-    </div>
-    <div class="collapse menu-2" id="js-navbar-collapse" (clickOutside)="hideCollapse()">
-      <div class="" *ngFor="let opt of menu; let i  = index;">
-        <a [routerLink]="opt.trigger?opt.path:path" class="nav-link"
-          [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}" data-toggle="collapse"
-          [attr.data-target]="'#sub'+i">{{opt.name}}</a>
-        <div class="collapse sub" [id]="'sub'+i" *ngIf="opt.sub" aria-expanded="false">
-          <div class="" *ngFor="let sub of opt.sub">
-            <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name}}</a>
+    <div (clickOutside)="animateMe(false,null)" class="mobile-menu">
+      <div class="burger-menu" (click)="animateMe(!mobileMenu.toggle,null)">
+        <button type="button">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </div>
+      <div class="menu-2" appToggleAnimate [show]="mobileMenu.toggle">
+        <div class="" *ngFor="let opt of menu; let i  = index;">
+          <a [routerLink]="opt.path||path" 
+            class="nav-link"
+            [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}"
+            (click)="animateMe(true,opt)"
+            >{{opt.name}}</a>
+          <div class="sub" *ngIf="opt.sub" appToggleAnimate [show]="opt.toggle">
+            <div class="" *ngFor="let sub of opt.sub" >
+              <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name}}</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="menu">
-      <ul class="">
-        <li *ngFor="let opt of menu; let i = index;">
-          <a [routerLink]="opt.trigger?opt.path:path" class="nav-link" type="button"
-            [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}" data-toggle="collapse" [attr.data-target]="'#sub-'+i"
-            aria-expanded="false">{{opt.name}}</a>
-          <div class="collapse sub" [id]="'sub-'+i" *ngIf="opt.sub" aria-expanded="false">
-            <ul>
-              <li class="" *ngFor="let sub of opt.sub">
-                <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name}}</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+      <div class="menu">
+        <ul>
+          <li *ngFor="let opt of menu; let i = index;">
+            <a [routerLink]="opt.path||path" class="nav-link" type="button"
+              [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}"
+              (click)="animateMe(true,opt)"
+              >{{opt.name}}</a>
+            <div class="sub" *ngIf="opt.sub" appToggleAnimate [show]="opt.toggle">
+              <ul>
+                <li class="" *ngFor="let sub of opt.sub">
+                  <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name}}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

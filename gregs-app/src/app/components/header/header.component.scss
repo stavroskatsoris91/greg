@@ -4,7 +4,7 @@
     margin-bottom: 2rem;
     margin-top: 50px;
     border: 0;
-    background-color: #ffffff66;
+    background-color: #ffffff85;
     padding: 0;
     height: 130px;
     @media screen and (min-width: 768px) {
@@ -28,7 +28,7 @@
     }
     .menu{
       display: none;
-      margin: auto 0 13px auto;
+      margin: 73px 0 13px auto;
       position: unset;
       background-color: transparent;   
       >ul{
@@ -42,6 +42,7 @@
           padding: 10px;
           display: block;
           color: #000;
+          padding-left: 0;
           &.active{
             color: brown;
             text-decoration: underline;
@@ -50,11 +51,11 @@
     }
     .sub{
       position: absolute;
-      background-color: #ffffff66;
+      background-color: #ffffff85;
       text-align: center;
       left: -29px;
       width: 130px;
-      top: 54px;
+      top: 57px;
       overflow: hidden;
       >ul{
         padding: 0;
@@ -80,10 +81,11 @@
     
     .menu-2{
       position: absolute;
+      overflow: hidden;
       right: 0px;
       top: 100%;
       min-width: 190px;
-      background-color: #ffffff66;
+      background-color: #ffffff85;
       >div{
         margin: 0;
         padding: 5px 0;
@@ -97,9 +99,10 @@
           }
         }
         .sub{
-          background-color: #ffffff66;
+          background-color: #ffffff85;
           margin: 0;
           padding-left: 40px;
+          overflow: hidden;
           >div{
             padding: 4px 0;
             >a{
@@ -117,24 +120,26 @@
         display: none;
       }
     }
-    .burger-menu{
+    .mobile-menu{
       margin: auto 0 40px auto;
-      >button{
-        width: 44px;
-        height: 40px;
-        border-radius: 10px;
-        background-color: #29252f;
-        padding: 4px 0px 0px 8px;
-        border: 1px solid #cbcbcb;
-        >div{
-          width: 25px;
-          height: 3px;
-          background-color: #cbcbcb;
-          margin-bottom: 6px;
+      .burger-menu{
+        >button{
+          width: 44px;
+          height: 40px;
+          border-radius: 10px;
+          background-color: #29252f;
+          padding: 4px 0px 0px 8px;
+          border: 1px solid #cbcbcb;
+          >div{
+            width: 25px;
+            height: 3px;
+            background-color: #cbcbcb;
+            margin-bottom: 6px;
+          }
         }
-      }
-      @media screen and (min-width: 768px) {
-        display: none;
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
       }
     }
     

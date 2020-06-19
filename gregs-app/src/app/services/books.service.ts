@@ -10,7 +10,6 @@ export class BooksService {
   constructor(
     private readonly functions : AngularFireFunctions,
   ) { }
-  firebase = window['firebase'];
   savedForm = null;
   ridings = [
     {
