@@ -1,7 +1,7 @@
 <div class="header">
   <div class="container">
     <a routerLink="/" class="logo">
-      <img src="/images/logo2.png">
+      <img [src]="imageLogo">
     </a>
     <div (clickOutside)="animateMe(false,null)" class="mobile-menu">
       <div class="burger-menu" (click)="animateMe(!mobileMenu.toggle,null)">

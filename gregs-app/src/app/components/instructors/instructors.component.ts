@@ -11,7 +11,7 @@ export class InstructorsComponent implements OnInit {
     {
       name: 'GREG',
       color: 'red-1',
-      description:'Greg is the owner of Greg’s Spetses Horses. He is half English and half Greek and he speaks both languages fluently. He has trained all of our horses. He likes to teach his students the importance of building a companionate relationship between the rider and the horse. He’s the main trek guide and enjoys showing visitors the beautiful island he grew up in.'
+      description:'Greg is the owner of Greg’s Spetses Horses. He is half English and half Greek and he speaks both languages fluently. He has trained all of our horses. He likes to teach his students the importance of building a compassionate relationship between the rider and the horse. He’s the main trek guide and enjoys showing visitors the beautiful island he grew up in.'
     },
     {
       name: 'TRACY',

@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   path: any;
   isCollapsed = false;
   mobileMenu = { name:'mobile', toggle: false};
+  imageLogo = require('src/assets/images/logo2.png');
   menu = [
     { path: ['/'], name: 'HOME', trigger: true,toggle:false },
     {   

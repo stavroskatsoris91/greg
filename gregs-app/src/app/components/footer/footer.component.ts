@@ -11,6 +11,11 @@ export class FooterComponent implements OnInit {
   location:string = 'Spetses, 180 50';
   show:boolean = false;
   openMap:boolean = false;
+  imageInfo = require('src/assets/images/info.svg');
+  imageClock = require('src/assets/images/clock.png');
+  imageLocation = require('src/assets/images/location.png');
+  imagePhone = require('src/assets/images/phone2.png');
+  imageGoogleMaps = require('src/assets/images/googlemaps.jpg');
   constructor() { }
 
   ngOnInit(): void {

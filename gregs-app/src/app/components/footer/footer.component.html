@@ -11,11 +11,11 @@
             </div>
             <div class="info-2">
                 <div>
-                    <div class="location"><img src="images/location.png">{{location}}</div>
-                    <a class="phone" href="tel:00306942792460"><img src="images/phone2.png">+(30) 6942 79 24 60</a>
-                    <div class="clock"><img src="images/clock.png">7am - 8pm
+                    <div class="location"><img [src]="imageLocation">{{location}}</div>
+                    <a class="phone" href="tel:00306942792460"><img [src]="imagePhone">+(30) 6942 79 24 60</a>
+                    <div class="clock"><img [src]="imageClock">7am - 8pm
                         <span class="info-popup" (clickOutside)="show=false">
-                            <img class="info-img" src="/images/info.svg" (click)="show=!show">
+                            <img class="info-img" [src]="imageInfo" (click)="show=!show">
                             <span [ngClass]="{'open':show}">
                                 For any activities you are intrested in doing you need to make an appointment first.
                                 <br>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="map">
-            <img src="images/googlemaps.jpg" (mouseover)="openMap=true">
+            <img [src]="imageGoogleMaps" (mouseover)="openMap=true">
             <app-googlemaps *ngIf="openMap"></app-googlemaps>
         </div>
     </div>

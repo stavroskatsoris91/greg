@@ -9,7 +9,7 @@ import { ModalService } from 'src/app/services/modal.service';
 export class LessonsComponent implements OnInit {
 
   lessons=[
-    'Choose a private lesson or come with friends (up to 3-4 riders). Or just try a little ride in our outdoors arena next to the sea view for only 12 euros!',
+    'Choose a private lesson or come with friends (up to 3-4 riders).',// Or just try a little ride in our outdoors arena next to the sea view for only 12 euros!',
     'Lessons are arranged by appointment.',
     'Call or send us an email!'
   ];
