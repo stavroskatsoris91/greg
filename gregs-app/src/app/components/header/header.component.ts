@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { MetaDataService } from 'src/app/services/meta-data.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -39,6 +39,7 @@ export class HeaderComponent implements OnInit {
     private elementRef: ElementRef<any>,
     private router: Router,
     private route: ActivatedRoute,
+    private metadata: MetaDataService
   ) { 
     this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)

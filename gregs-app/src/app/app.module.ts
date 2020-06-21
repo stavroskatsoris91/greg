@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
@@ -32,6 +31,7 @@ import { CoinComponent } from './components/coin/coin.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { InitalizeDirective } from './directives/initalize.directive';
 import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
+import { MetaDataService } from './services/meta-data.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,7 @@ import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
     CoinComponent,
     ModalComponent,
     InitalizeDirective,
-    ToggleAnimateDirective
+    ToggleAnimateDirective,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -68,7 +68,7 @@ import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireFunctionsModule
   ],
-  providers: [],
+  providers: [MetaDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
