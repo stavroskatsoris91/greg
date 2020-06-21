@@ -25,6 +25,10 @@ input[type=date]::-webkit-inner-spin-button {
   top: 0;
 }
 
+@font-face {
+  font-family: 'Bad Script';
+  src: url('~src/assets/font/BadScript-Regular.ttf') format('truetype');
+}
 /* Responsive: Portrait tablets and up */
 .container {
   @media screen and (min-width: 768px) {

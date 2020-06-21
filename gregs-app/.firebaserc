@@ -9,6 +9,6 @@
     }
   },
   "projects": {
-    "default": "greg-8095f"
+    "default": "greg-production"
   }
 }

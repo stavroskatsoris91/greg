@@ -1,20 +1,27 @@
-.home-desktop{
-    max-width: 500px;
-    margin: auto;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    display: none;
-    @media screen and (min-width: 468px) {
-      display: block;
-    }
-  }
-  .home-mobile{
-    max-width: 300px;
-    margin: auto;
-    padding-bottom: 20px;
-    padding-top: 20px;
+.home-desktop {
+  max-width: 500px;
+  margin: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: none;
+
+  @media screen and (min-width: 468px) {
     display: block;
-    @media screen and (min-width: 468px) {
-      display: none;
-    }
   }
+}
+
+.home-mobile {
+  max-width: 300px;
+  margin: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: block;
+
+  @media screen and (min-width: 468px) {
+    display: none;
+  }
+}
+.home-header{
+  font-family: 'Bad Script';
+  font-weight: 800;
+}
