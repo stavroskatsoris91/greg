@@ -6,10 +6,19 @@
       <p *ngFor="let lesson of lessons" class="text">{{lesson}}</p>
       <p *ngFor="let info of extraInfo" class="text md">{{info}}</p>
       <div class="lessons-bubbles">
-        <div class="lesson lesson-1">30min 20€</div>
-        <div class="lesson lesson-2">45min 30€</div>
+        <div class="lesson lesson-1">30min 
+          <span>20€</span><br>
+          <span class="strike-over">30€</span>
+        </div>
+        <div class="lesson lesson-2">45min 
+          <span>30€</span><br>
+          <span class="strike-over">40€</span>
+        </div>
         <br class="mobile">
-        <div class="lesson lesson-3">60min 40€</div>
+        <div class="lesson lesson-3">60min 
+          <span>40€</span><br>
+          <span class="strike-over">50€</span>
+        </div>
       </div>
     </div>
   </div>
