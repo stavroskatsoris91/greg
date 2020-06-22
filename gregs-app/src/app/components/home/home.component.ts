@@ -18,16 +18,16 @@ export class HomeComponent implements OnInit {
   constructor(private readonly element: ElementRef) { }
 
   ngOnInit(): void {
-    this.checkTripAdvisor = interval(1500).subscribe(()=> {
-      let elements = [...this.element.nativeElement.getElementsByTagName('dt')]
-      if (elements.filter(x=>x.innerText.indexOf('Gregs Spetses Horses')>=0).length < 2) {
-        if (window['taValidate']) {
-          window['taValidate']();
-        }
-      } else {
-        this.checkTripAdvisor.unsubscribe();
-      }
-    });
+    // this.checkTripAdvisor = interval(1500).subscribe(()=> {
+    //   let elements = [...this.element.nativeElement.getElementsByTagName('dt')]
+    //   if (elements.filter(x=>x.innerText.indexOf('Gregs Spetses Horses')>=0).length < 2) {
+    //     if (window['taValidate']) {
+    //       window['taValidate']();
+    //     }
+    //   } else {
+    //     this.checkTripAdvisor.unsubscribe();
+    //   }
+    // });
   }
   ngOnDestroy(): void {
     if(this.checkTripAdvisor){

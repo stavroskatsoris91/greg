@@ -13,24 +13,24 @@ export class MetaDataService {
     private readonly router: Router,
     private readonly meta: Meta,
     private readonly title: Title,
-  ) { 
+  ) {
     this.router.events.pipe(
-      filter(e => e instanceof   NavigationEnd)     
-      )
-      .subscribe((e) => { 
-          this.getData(e);
-       });
+      filter(e => e instanceof NavigationEnd)
+    )
+      .subscribe((e) => {
+        this.getData(e);
+      });
   }
-  private getData(e){
+  private getData(e) {
 
     let data = {
-      image : this.homeImage,
-      location : this.baseUrl
+      image: this.homeImage,
+      location: this.baseUrl
     }
     this.updateMeta(data);
   }
   private updateMeta(data) {
-    this.title.setTitle(data.title);
+    // this.title.setTitle(data.title);
     let show = this.getMeta(data);
 
     show.map((x) => {
@@ -64,12 +64,12 @@ export class MetaDataService {
           // { property: 'og:title', content: data.title },
           // { property: 'og:description', content: data.fb_description },
           // { property: 'og:type', content: data.type },
-          { property: 'og:image', content: data.image },
+          { property: 'og:image', content: data.location + '/' + data.image },
           { property: 'og:url', content: data.location },
           // { name: 'twitter:site', content: data.twitter },
           // { name: 'twitter:title', content: data.title },
           // { name: 'twitter:description', content: data.tw_description },
-          { name: 'twitter:image', content: data.image }
+          { name: 'twitter:image', content: data.location + '/' + data.image }
         ]
       },
     ];
