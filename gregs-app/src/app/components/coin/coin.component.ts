@@ -46,6 +46,8 @@ export class CoinComponent implements OnInit {
     var list = this.list.map(function (x) {
       return { img: x };
     });
-    this.ModalService.triggerEvent([list,0]);
+    var l = this.list.length;
+    var rem = (this.count) % l;
+    this.ModalService.triggerEvent([list,rem]);
   };
 }

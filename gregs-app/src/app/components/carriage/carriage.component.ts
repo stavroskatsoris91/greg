@@ -12,7 +12,7 @@ export class CarriageComponent implements OnInit {
     'Horse carriages are one of our island’s most well known traditions. Don’t miss a tour with a beautiful Victoria carriage and the opportunity to learn about Spetses history.',
     'Call us for bookings. Prices depend on the duration of your tour.'
   ];
-  photos = [require('src/assets/images/carriage/carriage1.jpg'),require('src/assets/images/carriage/carriage2.jpg'),require('src/assets/images/carriage/carriage3.jpg')];
+  photos = [require('src/assets/images/carriage/carriage1.jpg'),require('src/assets/images/carriage/carriage3.jpg'),require('src/assets/images/carriage/carriage2.jpg')];
   constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {

@@ -1,18 +1,10 @@
 <div class="coin-area" (click)="showModal()">
-    <div class="skill-icon blue" [ngClass]="{head:head}">
+    <div class="skill-icon blue">
         <div class="coin">
-            <div class="icon" [ngStyle]="side(0)"></div>
+            <div class="icon" [ngClass]="{head:!head}" [ngStyle]="side(0)"></div>
         </div>
-        <div class="coin"></div>
-        <div class="coin"></div>
-        <div class="coin"></div>
-        <div class="coin"></div>
-        <div class="coin"></div>
-        <div class="coin"></div>
-        <div class="coin"></div>
-        <div class="coin"></div>
         <div class="coin">
-            <div class="icon" [ngStyle]="side(1)"></div>
+            <div class="icon" [ngClass]="{head:head}" [ngStyle]="side(1)"></div>
         </div>
         <div class="coin-wedge"></div>
     </div>

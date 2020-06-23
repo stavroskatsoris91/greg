@@ -42,10 +42,13 @@
           padding: 10px;
           display: block;
           color: #000;
-          padding-left: 0;
+          padding-right: 0;
           &.active{
             color: brown;
             text-decoration: underline;
+          }
+          @media screen and (min-width: 840px) {
+            padding-right: 4px;
           }
       }
     }

@@ -2,7 +2,7 @@
     <div class="empty-box"></div>
     <div class="box box-horses" *ngFor="let horse of horses">
         <div class="container horses">
-            <!-- <app-coin [list]="horse.images" *ngIf="horse.images.length"></app-coin> -->
+            <app-coin [list]="horse.images" *ngIf="horse.images.length"></app-coin>
             <div class="title">{{horse.name}}</div>
             <div class="info">
                 <div class="info-item"><span>Breed</span>:&nbsp;{{horse.breed}}</div>
