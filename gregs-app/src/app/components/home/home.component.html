@@ -7,7 +7,7 @@
       <p *ngFor="let text of homeText" class="text line-hight">{{text}}</p>
     </div>
   </div>
-  <div class="box white-2">
+  <div class="box white-2" [ngClass]="{'show':showTripAdvisor}">
     <div class="container home-desktop">
       <div id="TA_selfserveprop789" class="TA_selfserveprop">
         <ul id="uPreGjMh" class="TA_links 5aYnZEdE">

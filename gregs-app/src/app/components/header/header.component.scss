@@ -22,8 +22,8 @@
       display: flex;
       position: relative;
       height: 100%;
-      @media screen and (min-width: 768px) {
-        width: 850px;
+      @media screen and (min-width: 840px) {
+        max-width: 850px;
       }
     }
     .menu{
@@ -76,6 +76,10 @@
     }
       @media screen and (min-width: 768px) {
         display: block;
+        font-size: .85rem;
+      }
+      @media screen and (min-width: 840px) {
+        font-size: 1rem;
       }
     }
     

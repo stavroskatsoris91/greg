@@ -14,7 +14,7 @@ export class BackgroundComponent implements OnInit {
     { name: '/instructors', image: require('src/assets/images/background/about.jpg') },
     { name: '/horses', image: require('src/assets/images/background/horses.jpg') },
     { name: '/treks', image: require('src/assets/images/background/treks.jpg') },
-    // {name:'/riding',image:require('src/assets/images/background/riding.jpg')},
+    { name: '/carriage', image: require('src/assets/images/background/carriage.jpg') },
     { name: '/gallery', image: require('src/assets/images/background/gallery.jpg') },
     { name: '/contact', image: require('src/assets/images/background/contact.jpg') },
     { name: '/thankyou', image: require('src/assets/images/background/contact.jpg') },

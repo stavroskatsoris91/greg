@@ -15,19 +15,21 @@ export class HomeComponent implements OnInit {
     'Apart from riding you can enjoy a picnic with your friends or organize kids’ parties with pony rides in the arena.  We also provide our horses for photoshoots for any special occasion.'
   ];
   checkTripAdvisor: any;
+  showTripAdvisor: boolean;
   constructor(private readonly element: ElementRef) { }
 
   ngOnInit(): void {
-    // this.checkTripAdvisor = interval(1500).subscribe(()=> {
-    //   let elements = [...this.element.nativeElement.getElementsByTagName('dt')]
-    //   if (elements.filter(x=>x.innerText.indexOf('Gregs Spetses Horses')>=0).length < 2) {
-    //     if (window['taValidate']) {
-    //       window['taValidate']();
-    //     }
-    //   } else {
-    //     this.checkTripAdvisor.unsubscribe();
-    //   }
-    // });
+    this.checkTripAdvisor = interval(1000).subscribe(()=> {
+      let elements = [...this.element.nativeElement.getElementsByTagName('dt')]
+      if (elements.filter(x=>x.innerText.indexOf('Gregs Spetses Horses')>=0).length < 2) {
+        if (window['taValidate']) {
+          window['taValidate']();
+        }
+      } else {
+        this.showTripAdvisor = true;
+        this.checkTripAdvisor.unsubscribe();
+      }
+    });
   }
   ngOnDestroy(): void {
     if(this.checkTripAdvisor){

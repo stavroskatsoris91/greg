@@ -32,8 +32,9 @@ export class HeaderComponent implements OnInit {
             { path: '/safety', name: 'SAFETY' }
         ]
     },
-    { path: ['/gallery'], name: 'GALLERY', trigger: true,toggle:false },
-    { path: ['/contact'], name: 'CONTACT', trigger: true,toggle:false }
+    { path: ['/carriage'], name: 'CARRIAGE', trigger: true, toggle: false },
+    { path: ['/gallery'], name: 'GALLERY', trigger: true, toggle: false },
+    { path: ['/contact'], name: 'CONTACT', trigger: true, toggle: false }
 ];
   event: any;
   constructor(

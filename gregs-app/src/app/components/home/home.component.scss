@@ -9,7 +9,12 @@
     display: block;
   }
 }
-
+.white-2{
+  display: none;
+  &.show{
+    display: block;
+  }
+}
 .home-mobile {
   max-width: 300px;
   margin: auto;

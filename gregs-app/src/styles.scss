@@ -127,7 +127,10 @@ input[type=date]::-webkit-inner-spin-button {
       background-color: #0b737785;
       color: white;
     }
-
+    &.green-5{
+      background-color: #2cafd9a8;
+      color: white;
+    }
     &.white {
       background-color: #ffffff66;
     }

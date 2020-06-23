@@ -28,7 +28,7 @@
       <div class="menu">
         <ul>
           <li *ngFor="let opt of menu; let i = index;">
-            <a [routerLink]="opt.path||path" class="nav-link" type="button"
+            <a [routerLink]="opt.path||path" class="nav-link"
               [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}"
               (click)="animateMe(true,opt)"
               >{{opt.name}}</a>

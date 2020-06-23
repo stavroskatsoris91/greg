@@ -32,6 +32,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { InitalizeDirective } from './directives/initalize.directive';
 import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
 import { MetaDataService } from './services/meta-data.service';
+import { CarriageComponent } from './components/carriage/carriage.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MetaDataService } from './services/meta-data.service';
     ModalComponent,
     InitalizeDirective,
     ToggleAnimateDirective,
+    CarriageComponent,
   ],
   imports: [
     BrowserAnimationsModule,
