@@ -11,8 +11,6 @@
 .coin {
   left: 0;
   right: 0;
-  border-radius: 100px;
-  overflow: hidden;
   background: transparent;
   position: absolute;
 }
@@ -20,6 +18,7 @@
 .icon {
   width: 85px;
   height: 85px;
+  border-radius: 100px;
   background-size: cover;
   background-position: center center;
   opacity: 0;
