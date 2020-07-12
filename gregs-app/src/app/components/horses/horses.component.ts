@@ -13,7 +13,8 @@ export class HorsesComponent implements OnInit {
     horses = [
       {
         name: 'REBECCA',
-        breed: 'Chestnut',
+        breed: null,
+        colour: 'Chestnut',
         age: this.getAge(2003)+' years old',
         height: '1.35m',
         images: [require('src/assets/images/horses/rebecca1.jpg'),require('src/assets/images/horses/rebecca2.jpg'),require('src/assets/images/horses/rebecca3.jpg'),require('src/assets/images/horses/rebecca4.jpg')],
@@ -22,6 +23,7 @@ export class HorsesComponent implements OnInit {
       }, {
         name: 'ROBBIE',
         breed: 'Haflinger',
+        colour: null,
         age: this.getAge(2009)+' years old',
         height: '1.50m',
         images:[require('src/assets/images/horses/robbie1.jpg'),require('src/assets/images/horses/robbie2.jpg'),require('src/assets/images/horses/robbie3.jpg'),require('src/assets/images/horses/robbie4.jpg'),require('src/assets/images/horses/robbie5.jpg')],
@@ -29,7 +31,8 @@ export class HorsesComponent implements OnInit {
       },
       {
         name: 'NELLY',
-        breed: '-',
+        breed: 'Cob',
+        colour: null,
         age: this.getAge(2009)+' years old',
         height: '1.45m',
         images:[require('src/assets/images/horses/nelly1.jpg'),require('src/assets/images/horses/nelly2.jpg'),require('src/assets/images/horses/nelly3.jpg'),require('src/assets/images/horses/nelly4.jpg')],
@@ -37,13 +40,15 @@ export class HorsesComponent implements OnInit {
       }, {
         name: 'OSCAR',
         breed: 'Pinto',
-        age: this.getAge(2010)+' years old',
+        colour: null,
+        age: this.getAge(2009)+' years old',
         height: '1.40m',
         images:[require('src/assets/images/horses/oscar1.jpg'),require('src/assets/images/horses/oscar2.jpg'),require('src/assets/images/horses/oscar3.jpg')],
-        text: ['Oscar is a new pony in the family. He has a fun, cheeky character and loves his treks. Many recognise Oscar as he was previously part of Harriet\'s team on Hydra.']
+        text: ['Oscar has a fun, cheeky character and loves his treks. Many recognise Oscar as he was previously part of Harriet\'s team on Hydra.']
       }, {
         name: 'OLIVIA',
-        breed: 'Dappled Grey',
+        breed: null,
+        colour: 'Grey',
         age: this.getAge(2011)+' years old',
         height: '1.60m',
         images:[require('src/assets/images/horses/olivia1.jpg'),require('src/assets/images/horses/olivia2.jpg'),require('src/assets/images/horses/olivia3.jpg')],
@@ -51,15 +56,17 @@ export class HorsesComponent implements OnInit {
           'She is a relaxed horse but always very attentive to her rider.']
       }, {
         name: 'ELINA',
-        breed: 'Chestnut',
+        breed: null,
+        colour: 'Chestnut',
         age: this.getAge(2012)+' years old',
         height: '1.36m',
         images:[require('src/assets/images/horses/elina1.jpg'),require('src/assets/images/horses/elina2.jpg'),require('src/assets/images/horses/elina3.jpg')],
-        text: ['Elina is Rebecca’s youngest daughter. She is a chestnut mare.',
-          'She is in the process of being trained to join us on our rides.']
+        text: ['Elina is Rebecca’s youngest daughter.',
+          'She was a complete surprise, we had no idea Rebecca was in foal again when she arrived.']
       }, {
         name: 'ROSIE',
         breed: 'Thoroughbred/American saddlebred',
+        colour: null,
         age: this.getAge(2014)+' years old',
         height: '1.75m',
         images:[require('src/assets/images/horses/rosie1.jpg'),require('src/assets/images/horses/rosie2.jpg'),require('src/assets/images/horses/rosie3.jpg')],
@@ -68,6 +75,7 @@ export class HorsesComponent implements OnInit {
       }, {
         name: 'ANGEL',
         breed: 'Haflinger',
+        colour: null,
         age: this.getAge(2011)+' years old',
         height: '1.35m',
         images:[require('src/assets/images/horses/angel1.jpg'),require('src/assets/images/horses/angel2.jpg'),require('src/assets/images/horses/angel3.jpg'),require('src/assets/images/horses/angel4.jpg')],
@@ -76,7 +84,8 @@ export class HorsesComponent implements OnInit {
       },
       {
         name: 'TITAN',
-        breed: '-',
+        breed: null,
+        colour: 'black',
         age: this.getAge(2013)+' years old',
         height: '1.60m',
         images: [require('src/assets/images/horses/titan1.jpg'),require('src/assets/images/horses/titan2.jpg'),require('src/assets/images/horses/titan3.jpg'),require('src/assets/images/horses/titan4.jpg')],
