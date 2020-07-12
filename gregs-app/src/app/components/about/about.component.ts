@@ -8,11 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
 
   about=[
-    'I am Greek/English, my father is Greek and my mum is English. I have lived on the beautiful Island of Spetses my whole life.',
-    'My three siblings and I have grown up very close to nature with our many pets and farm animals. My Grandfather owned horses and two of my uncles still do, which are used for Buggy work (a small horse drawn open carriage). So although I have been around horses most of my life, it was at the age of fourteen that my passion for horses was ignited, when my father gifted my mum a foal. Since then I haven\'t looked back!',
-    'Our horses are part of our family. I have completely trained them myself, following a very thorough process of horsemanship that is closest to the horses natural way as possible. This ensures they are confident, reliable, content, but most important of all, safe to be ridden by guests of all ages and abilities.',
-    'My mum trained with the British Horse Society to become a riding instructress. Shortly after learning the basics from her I took it upon myself to educate myself on all aspects of horsemanship, their groundwork and ridden training, their everyday care and welfare, to ensure my horses are happy and healthy on a daily basis.'
-    // 'After two years of preparation and following my graduation from school I decided to start my trekking business to share the joy of horses riding on Spetses. To give the many guests that visit the island the chance to see the hidden beauty and views that are otherwise very difficult to access.'
+    'Greg is the owner of Greg\'s Spetses horses which was founded in 2016. He and his siblings grew up very close to nature with many pets and farm animals. His mum has had a love for horses since she was a little girl and started riding from a young age. His Grandfather was a farmer and a carriage driver, and he owned many horses throughout the years. So, although he has been around horses most of his life, it was at the age of thirteen that his passion for horses was ignited, when his dad gifted his mum a foal, Olivia. Shortly after Olivia’s arrival more horses were added to the family.',
+    'After that he took it upon himself to become educated on all aspects of horsemanship, the horse’s groundwork and ridden training, their everyday care and welfare, to ensure the horses are happy and healthy on a daily basis. Greg completely trained all the horses himself, following a very thorough process of horsemanship that is as close to the horse’s natural way as possible. This ensures they are confident, reliable, content, but most important of all, safe to be ridden by riders of all ages and abilities.'
     ]
   constructor() { }
 

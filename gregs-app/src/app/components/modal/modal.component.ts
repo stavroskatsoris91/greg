@@ -12,6 +12,8 @@ export class ModalComponent implements OnInit {
   right = '>';
   index = 0;
   group: any =null;
+  min = 0;
+  max = 0;
   constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {
@@ -20,12 +22,13 @@ export class ModalComponent implements OnInit {
       let pos = ev[1];
       this.index = pos||0;
       this.group = data;
+      this.max =this.group.length-1;
     })
   }
   public prev(){
-    this.index = window.Math.max(0, this.index-1);
+    this.index = this.index-1>=0?this.index-1:this.max;
   };
   public next(){
-    this.index = window.Math.min(this.index+1,this.group.length-1);
+    this.index = (this.index+1)%(this.max+1);
   };
 }

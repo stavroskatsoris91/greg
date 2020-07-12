@@ -26,22 +26,8 @@ export class HorsesComponent implements OnInit {
         height: '1.50m',
         images:[require('src/assets/images/horses/robbie1.jpg'),require('src/assets/images/horses/robbie2.jpg'),require('src/assets/images/horses/robbie3.jpg'),require('src/assets/images/horses/robbie4.jpg'),require('src/assets/images/horses/robbie5.jpg')],
         text: ['Robbie is the gentleman of the family, when Robbie first arrived he was a very unconfident horse, non of the mares like him, which didn\'t help! Throughout his training his true character shone through. He loves his rubs and wants lots of attention. He really enjoys his treks and is a content, safe horse.']
-      }, {
-        name: 'MILLY',
-        breed: 'Chestnut',
-        age: this.getAge(2009)+' years old',
-        height: '1.70m',
-        images:[require('src/assets/images/horses/milly1.jpg'),require('src/assets/images/horses/milly2.jpg'),require('src/assets/images/horses/milly3.jpg')],
-        text: ['Milly is a retrained English thoroughbred. She is a very intelligent, relaxed and confident horse. Despite her height, I can trust her to look after the most inexperienced rider, even a small child, with no doubt in my mind.',
-          'She will carry you anywhere and everywhere you wish.'],
-      }, {
-        name: 'STAVRINA',
-        breed: 'Chestnut',
-        age: this.getAge(2003)+' years old',
-        height: '1.65m',
-        images: [require('src/assets/images/horses/stavrina1.jpg'),require('src/assets/images/horses/stavrina2.jpg')],
-        text: ['Stavrina is an English thoroughbred. She is lovely to ride and suitable for all levels of experience. She has a very calm, quiet nature. Stavrina will build a nervous riders confidence. She really enjoys getting out and about on the Spetses treks.']
-      }, {
+      },
+      {
         name: 'NELLY',
         breed: '-',
         age: this.getAge(2009)+' years old',
@@ -63,6 +49,39 @@ export class HorsesComponent implements OnInit {
         images:[require('src/assets/images/horses/olivia1.jpg'),require('src/assets/images/horses/olivia2.jpg'),require('src/assets/images/horses/olivia3.jpg')],
         text: ['Olivia has been in our family since she was 3months old. She has a very inquisitive character, her curiosity is endless. She loves people and can never resist the chance to lick you.',
           'She is a relaxed horse but always very attentive to her rider.']
+      }, {
+        name: 'ELINA',
+        breed: 'Chestnut',
+        age: this.getAge(2012)+' years old',
+        height: '1.36m',
+        images:[require('src/assets/images/horses/elina1.jpg'),require('src/assets/images/horses/elina2.jpg'),require('src/assets/images/horses/elina3.jpg')],
+        text: ['Elina is Rebecca’s youngest daughter. She is a chestnut mare.',
+          'She is in the process of being trained to join us on our rides.']
+      }, {
+        name: 'ROSIE',
+        breed: 'Thoroughbred/American saddlebred',
+        age: this.getAge(2014)+' years old',
+        height: '1.75m',
+        images:[require('src/assets/images/horses/rosie1.jpg'),require('src/assets/images/horses/rosie2.jpg'),require('src/assets/images/horses/rosie3.jpg')],
+        text: ['Rosie is a dark bay Thoroughbred/American saddlebred.',
+          'She’s the youngest of our family, she was born in our stables and she recently started her riding training.']
+      }, {
+        name: 'ANGEL',
+        breed: 'Haflinger',
+        age: this.getAge(2011)+' years old',
+        height: '1.35m',
+        images:[require('src/assets/images/horses/angel1.jpg'),require('src/assets/images/horses/angel2.jpg'),require('src/assets/images/horses/angel3.jpg'),require('src/assets/images/horses/angel4.jpg')],
+        text: ['Angel is Chestnut with a distinctive blonde mane. She is part Haflinger. Angel is Rebecca\'s daughter.',
+          'She became part of our family when she was 2.5 months old. She is in the process of being trained to join us on our rides.']
+      },
+      {
+        name: 'TITAN',
+        breed: '-',
+        age: this.getAge(2013)+' years old',
+        height: '1.60m',
+        images:[],//[require('src/assets/images/horses/titan1.jpg'),require('src/assets/images/horses/titan2.jpg'),require('src/assets/images/horses/titan3.jpg')],
+        text: ['Titan is the new member of our family. He\'s a dark bay gelding.',
+          'He has been sweet, calm and relaxed since the day he arrived. He\'s proving to be brave and fearless on our treks and seems to really connect with his riders.']
       }
     ];
   constructor() { }
