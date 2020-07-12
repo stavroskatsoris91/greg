@@ -1,0 +1,11 @@
+<div class="main-content">
+    <div class="empty-box">
+      <div class="title m-b">The Instructors</div>
+    </div>
+    <div class="box" [ngClass]="instructor.color" *ngFor="let instructor of instructors">
+      <div class="container treks">
+        <div class="title-2 instructors-header">{{instructor.name}}</div>
+        <p class="text line-h">{{instructor.description}}</p>
+      </div>
+    </div>
+  </div>

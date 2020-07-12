@@ -1,0 +1,30 @@
+
+
+.skill-icon {
+  position: relative;
+  width: 85px;
+  height: 85px;
+  margin: 15px auto;
+  cursor: pointer;
+}
+
+.coin {
+  left: 0;
+  right: 0;
+  background: transparent;
+  position: absolute;
+}
+
+.icon {
+  width: 85px;
+  height: 85px;
+  border-radius: 100px;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 1.5s;
+  &.head{
+    opacity: 1;
+    transition: opacity 1.5s;
+  }
+}

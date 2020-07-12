@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "greg-production": {
+      "hosting": {
+        "gregs-app": [
+          "greg-production"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "greg-production"
+  }
+}

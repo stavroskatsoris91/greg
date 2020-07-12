@@ -1,0 +1,218 @@
+<div class="main-content">
+    <div class="empty-box"></div>
+    <div class="box green">
+      <div class="container horses">
+        <div class="title m-b">Contact Us
+        </div>
+        <div class="title m-b">
+          <button class="button-info m-r" (click)="scrollTo('payments')">Payment ts&cs</button>
+          <a href="/safety">
+            <button  class="button-info">Safety</button>
+          </a>
+        </div>
+        <form [formGroup]="bookingForm" class="submit-form" (ngSubmit)="submitForm()">
+          <div class="input">
+            <label>Name</label>
+            <input formControlName="name" class="required" type="text" [ngClass]="{'invalid': false}">
+            <div class="error-message" *ngIf="submitted && f.name.errors">
+              <div *ngIf="submitted && f.name.errors">
+                Name is required.
+              </div>
+            </div>
+          </div>
+          <div class="input">
+            <label>Email</label>
+            <input formControlName="email" class="required" type="email" [ngClass]="{'invalid': false}">
+            <div class="error-message" *ngIf="submitted && f.email.errors">
+             <p *ngIf="f.email.errors.required"> Required field </p>
+             <p *ngIf="f.email.errors.email"> Invalid email </p>
+            </div>
+          </div>
+          <div class="input">
+            <label>Contact Number (+Country Code)</label>
+            <input formControlName="tel" class="required" type="tel">
+            <p class="error-message" *ngIf="submitted && f.tel.errors">
+              Required field
+            </p>
+          </div>
+          <div class="date-time">
+            <div class="input date">
+              <label for="date">Date</label>
+              <input formControlName="date" class="required" type="date">
+              <p class="error-message" *ngIf="submitted && f.date.errors">
+                Required field
+              </p>
+            </div>
+            <div class="time">
+              <div class="input input__time">
+                <label>Hour</label>
+                <select formControlName="hour">
+                  <option *ngFor="let opt of hours" [ngValue]="opt">{{opt}}
+                  </option>
+                </select>
+              </div>
+              <div class="input input__time">
+                <label>Mins</label>
+                <select formControlName="minutes">
+                  <option *ngFor="let opt of minutes" [ngValue]="opt">{{opt}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="input">
+            <label>Riding</label>
+            <select formControlName="riding">
+              <option *ngFor="let opt of ridings" [ngValue]="opt">{{opt.name}}
+              </option>
+            </select>
+            <p class="error-message" *ngIf="submitted && f.riding.errors">
+              Required field
+            </p>
+          </div>
+          <div class="input" *ngIf="f.riding.value.options">
+            <label>{{f.riding.value.display}}</label>
+            <select formControlName="rideType" [(ngModel)]="f.riding.value.selected">
+              <option *ngFor="let opt of f.riding.value.options;let i = index" [ngValue]="i">{{opt.name}}
+              </option>
+            </select>
+            <p class="error-message" *ngIf="submitted && f.rideType.errors">
+              Required field
+            </p>
+          </div>
+          <div class="input">
+            <label>Riders</label>
+            <div formArrayName="riders"
+              *ngFor="let rider of riderForm.controls; let i = index" class="riders">
+              <div [formGroupName]="i">
+                <div class="remove-rider" *ngIf="i">
+                  <a class="add-rider" (click)="removeRider(i)"><span class="remove">x</span></a>
+                </div>
+                <div class="text-center" style="font-size: 0">
+                  <div class="input name">
+                    <label>Name</label>
+                    <input formControlName="name" class="required" 
+                      [ngClass]="{'invalid': false}" required>
+                      <p class="error-message" *ngIf="submitted && r(i).name.errors">
+                        Required field
+                      </p>
+                  </div>
+                  <div class="input age input__age">
+                    <label>Age</label>
+                    <input formControlName="age" class="required" type="number"
+                    min="1" max="99" [ngClass]="{'invalid': false}" required>
+      
+                  </div>
+                </div>
+                <div style="font-size: 0;text-align: center">
+                  <div class="input height input__age">
+                    <label>Height (m)</label>
+                    <input formControlName="height" class="required" type="number"
+                      [ngClass]="{'invalid': false}" required>
+                  </div>
+                  <div class="input weight input__age">
+                    <label>Weight (kg)</label>
+                    <input formControlName="weight" class="required" type="number"
+                      [ngClass]="{'invalid': false}" required>
+                  </div>
+                  <div class="input level">
+                    <label>Experence</label>
+                    <select formControlName="level">
+                      <option *ngFor="let opt of levels" [ngValue]="opt">{{opt}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="riderForm.length<=4">
+              <a class="add-rider" (click)="addRider()"><span >+</span>
+                <label>Add Rider</label>
+              </a>
+            </div>
+          </div>
+          <div class="input">
+            <label>Payment Method</label>
+            <select formControlName="payment">
+              <option *ngFor="let opt of payments" [ngValue]="opt">{{opt}} {{price}}
+              </option>
+            </select>
+            <p class="error-message" *ngIf="submitted && f.payment.errors">
+              Required field
+            </p>
+          </div>
+          <div class="input">
+            <label>Message</label>
+            <textarea formControlName="message" rows="4"></textarea>
+            <p class="error-message" *ngIf="submitted && f.message.errors">
+              Required field
+            </p>
+          </div>
+          <div class="input">
+            <input formControlName="accept" type="checkbox" required>
+            I have read your <a class="a-info" href="/safety">safety</a> and <a class="a-info" (click)="scrollTo('payments')">payment & cancelation</a> policy and agree to accept responsibility for our own safety.
+            <p class="error-message" *ngIf="submitted && f.accept.errors">
+              Required field
+            </p>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="button-info">Submit</button>
+          </div>
+        </form>
+        <div>
+          <div class="text-center payments-title" id="payments">
+            Payments
+          </div>
+          <br>
+          Payment can be made by CASH on the day
+          <br>
+          <br>
+          or Bank transfer in advance
+          <br>        
+          <br>        
+          NO Credit/Debit cards accepted due to our position in the countryside with no electricity/secure internet
+          <br>
+          <br>
+          On booking please confirm how you wish to pay.
+          <br>        
+          <br>
+          In the event of cancellation please try to inform us at least 48hrs in advance.
+          <br>
+          <br>
+          <div class="text-center payments-title">
+            Cancellation Policy
+          </div>
+          <br>
+          In the event of cancellation by the customer:
+          <br>
+          - More than 48 hours notice: full refund.
+          <br>
+          - Less than 24 hours notice: you may be charged half the price.
+          <br>
+          - Last minute cancelation: you will be charged the full price depending on the circumstance.
+          <br>
+          <br>
+          If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness) 
+          <br>
+          <br>
+          In event of cancellation by Greg's Spetses Horses, for example:
+          <br>
+          - Due to illness of trek guide
+          <br>
+          - Illness of horses
+          <br>
+          - Adverse weather conditions (at discretion of Greg's Spetses Horses)
+          <br>
+          Then a full refund will be given, or alternative dates agreed subject to availability.
+          <br>
+          <br>
+          It is a condition of your booking that you accept that Greg's Spetses Horses is entitled to require you to
+          dismount or to refuse to allow you to ride if for any reason, including your inability, behaviour or health,
+          they
+          consider that you may endanger the safety or welfare of any person or the horses. If so required you have no
+          claim
+          and will not be entitled to any compensation or refund.
+        </div>
+      </div>
+    </div>
+  </div>

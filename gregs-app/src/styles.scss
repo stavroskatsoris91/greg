@@ -1,0 +1,208 @@
+body {
+  padding: 0;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.m-b {
+  margin-bottom: 20px;
+}
+
+.content {
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+@font-face {
+  font-family: 'Bad Script';
+  src: url('~src/assets/font/BadScript-Regular.ttf') format('truetype');
+}
+/* Responsive: Portrait tablets and up */
+.container {
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 900px) {
+    width: 900px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+.main-content {
+  .empty-box {
+    height: 400px;
+    display: flex;
+
+    .title {
+      margin: auto;
+      margin-bottom: 20px;
+      font-size: 40px;
+      color: white;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+  .box {
+    min-height: 400px;
+    margin-bottom: 20px;
+
+    &.brown {
+      background-color: #550105b3;
+      color: white;
+    }
+
+    &.green {
+      background-color: #00443ab3;
+      color: white;
+    }
+
+    &.red-1 {
+      background-color: #8a484eb3;
+      color: white;
+    }
+
+    &.purple {
+      background-color: #2d0542a1;
+      color: white;
+    }
+
+    &.purple-2 {
+      background-color: #55439aad;
+      color: white;
+    }
+
+    &.purple-3 {
+      background-color: #523263a1;
+      color: white;
+    }
+
+    &.yellow-2 {
+      background-color: #c1b53780;
+      color: white;
+    }
+
+    &.yellow-3 {
+      background-color: #988f2eb3;
+      color: white;
+    }
+
+    &.green-2 {
+      background-color: #0b73779e;
+      color: white;
+    }
+
+    &.green-3 {
+      background-color: #00443aa1;
+      color: white;
+    }
+
+    &.green-4 {
+      background-color: #0b737785;
+      color: white;
+    }
+    &.blue{
+      background-color: #2cafd996;
+      color: white;
+    }
+    &.white {
+      background-color: #ffffff66;
+    }
+
+    &.white-2 {
+      background-color: #dceced85;
+      color: white;
+    }
+  }
+
+  .treks {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+
+    .title-1 {
+      text-align: center;
+      text-decoration: underline;
+      font-size: 17px;
+    }
+
+    .title-2 {
+      text-align: center;
+      font-size: 30px;
+      margin-top: -7px;
+      margin-bottom: 15px;
+    }
+
+    .text {
+      font-size: 20px;
+      margin-bottom: 30px;
+
+      &.line-h {
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .horses {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+
+    .title {
+      text-align: center;
+      font-size: 30px;
+
+      &.lg {
+        font-size: 32px;
+      }
+    }
+
+    .text {
+      font-size: 20px;
+      margin-bottom: 8px;
+
+      &.line-hight {
+        line-height: 1.8;
+      }
+
+      &.lg {
+        font-size: 23px;
+      }
+
+      &.md {
+        font-size: 16px;
+      }
+    }
+
+  }
+}
+
+.m-r {
+  margin-right: 12px;
+}

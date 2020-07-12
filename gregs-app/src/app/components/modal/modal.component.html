@@ -1,0 +1,9 @@
+<div class="modal" [ngClass]="{open:group}" *ngIf="group">
+    <span class="close" (click)="group=null">&times;</span>
+    <div class="pre-content">
+        <img class="modal-content" [src]="group[index].img">
+        <span class="left" (click)="prev()">{{left}}</span>
+        <span class="right" (click)="next()">{{right}}</span>
+    </div>
+    <div class="caption">{{(index+1)+' / '+group.length}}</div>
+</div>

@@ -1,0 +1,91 @@
+.extra-info {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 17px;
+  background-color: #470552b3;
+}
+
+.trek-photos {
+  a {
+    color: white;
+    cursor: pointer;
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: beige;
+    }
+  }
+
+  img {
+    width: 20px;
+  }
+}
+
+.bubbles {
+  text-align: center;
+  font-size: 0;
+
+  .time {
+    width: 70px;
+    height: 70px;
+    font-size: 14px;
+    background-color: #fb6200;
+    border-radius: 50px;
+    padding: 14px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 5%;
+  }
+
+  .price {
+    width: 80px;
+    height: 80px;
+    font-size: 14px;
+    background-color: #0cad5e;
+    border-radius: 50px;
+    padding: 18px;
+    text-align: center;
+    display: inline-block;
+
+    @media screen and (min-width: 424px) {
+      margin-right: 5%;
+    }
+  }
+
+  .level {
+    width: 70px;
+    height: 70px;
+    font-size: 14px;
+    background-color: #8622bf;
+    border-radius: 50px;
+    padding: 14px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 5%;
+
+    &.exp {
+      width: 90px;
+      height: 90px;
+      padding: 7px;
+      padding-top: 19px;
+    }
+  }
+
+  .photos-bubble {
+    background-color: #e9d102;
+    width: 70px;
+    height: 70px;
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .mobile {
+    @media screen and (min-width: 424px) {
+      display: none;
+    }
+  }
+}

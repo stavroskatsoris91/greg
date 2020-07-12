@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/gregs-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "prerender"
+      }
+    ]
+  }
+}
