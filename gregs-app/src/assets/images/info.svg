@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
-    <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
-        <circle cx="10" cy="10" r="10" fill="none" fill-rule="nonzero" stroke="white" stroke-width="2"/>
-        <text fill="white" font-family="Muli-ExtraBold, Muli" font-size="16" font-weight="600">
-            <tspan x="8" y="16">i</tspan>
-        </text>
-    </g>
-</svg>
