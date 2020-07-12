@@ -79,7 +79,7 @@ export class HorsesComponent implements OnInit {
         breed: '-',
         age: this.getAge(2013)+' years old',
         height: '1.60m',
-        images:[],//[require('src/assets/images/horses/titan1.jpg'),require('src/assets/images/horses/titan2.jpg'),require('src/assets/images/horses/titan3.jpg')],
+        images: [require('src/assets/images/horses/titan1.jpg'),require('src/assets/images/horses/titan2.jpg'),require('src/assets/images/horses/titan3.jpg'),require('src/assets/images/horses/titan4.jpg')],
         text: ['Titan is the new member of our family. He\'s a dark bay gelding.',
           'He has been sweet, calm and relaxed since the day he arrived. He\'s proving to be brave and fearless on our treks and seems to really connect with his riders.']
       }
