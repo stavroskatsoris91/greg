@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { BooksService } from '../../services/books.service';
 import * as cloneDeep from "lodash/cloneDeep";
 import { Router } from '@angular/router';
@@ -36,6 +36,8 @@ export class ContactComponent implements OnInit, OnDestroy {
     private books: BooksService,
     private formBuilder: FormBuilder,
     private router: Router,
+    private changeDetector: ChangeDetectorRef,
+    private readonly elementRef: ElementRef 
   ) { }
 
   ngOnInit(): void {
@@ -96,9 +98,26 @@ export class ContactComponent implements OnInit, OnDestroy {
   removeRider(i){
     this.riderForm.removeAt(i);
   };
-  submitForm () {
+  scrollToElement(el: Element): void {
+    if(el) { 
+     el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    }
+ }
+ 
+ scrollToError(): void {
+    const elementsWithError = this.elementRef.nativeElement.getElementsByClassName('ng-invalid');
+    const secondElementWithError = elementsWithError[1];
+    this.scrollToElement(secondElementWithError.previousElementSibling);
+ }
+ 
+ async scrollIfFormHasErrors(form: FormGroup): Promise <any> {
+   await form.invalid;
+   this.scrollToError();
+ }
+ async submitForm () {
     this.submitted = true;
-    if(this.run||this.bookingForm.invalid){
+    if(this.run||await this.bookingForm.invalid){
+      this.scrollToError();
       return;
     }
     this.run = true;

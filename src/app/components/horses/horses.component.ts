@@ -85,7 +85,7 @@ export class HorsesComponent implements OnInit {
       {
         name: 'TITAN',
         breed: null,
-        colour: 'black',
+        colour: 'Black',
         age: this.getAge(2013)+' years old',
         height: '1.60m',
         images: [require('src/assets/images/horses/titan1.jpg'),require('src/assets/images/horses/titan2.jpg'),require('src/assets/images/horses/titan3.jpg'),require('src/assets/images/horses/titan4.jpg')],
