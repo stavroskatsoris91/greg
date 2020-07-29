@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-thankyou',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThankyouComponent implements OnInit {
 
-  thankyou = {
-    title:'Thank you!',
-    text:[
-      'We will be in contact with you shortly 😊'
-      ]
+  thankyou:{title:string,text:string[]} = {
+    title:this.language.thankYou.title,
+    text:this.language.thankYou.text
   };
-  constructor() { }
+  constructor(
+    private readonly language: LanguageService
+  ) { }
 
   ngOnInit(): void {
   }

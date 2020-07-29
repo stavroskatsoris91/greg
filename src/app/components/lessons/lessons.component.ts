@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-lessons',
@@ -8,37 +9,36 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class LessonsComponent implements OnInit {
 
-  lessons=[
-    'Choose a private lesson or come with friends (up to 3-4 riders).',// Or just try a little ride in our outdoors arena next to the sea view for only 12 euros!',
-    'Lessons are arranged by appointment.',
-    'Call or send us an email!'
+  title = this.language.lessons.title;
+  lessons = this.language.lessons.lessons;
+  extraInfo = this.language.lessons.extraInfo;
+  lessonsPhotos = [
+    {
+      image: require('src/assets/images/lessons/lesson-1.jpg'),
+      description: this.language.lessons.lessonPhotosInfo1
+    },
+    {
+      image: require('src/assets/images/lessons/lesson-2.jpg'),
+      description: this.language.lessons.lessonPhotosInfo2
+    },
+    {
+      image: require('src/assets/images/lessons/lesson-3.jpg'),
+      description: this.language.lessons.lessonPhotosInfo3
+    },
+    {
+      image: require('src/assets/images/lessons/lesson-4.jpg'),
+      description: this.language.lessons.lessonPhotosInfo4
+    }
   ];
-extraInfo = [
-  'Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.',
-  'If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)'
-];
-lessonsPhotos = [
-  {
-    image:require('src/assets/images/lessons/lesson-1.jpg'),
-    description:'Fun grooming Robbie before the lesson'},
-  {
-    image:require('src/assets/images/lessons/lesson-2.jpg'),
-    description:'Trotting on Robbie'},
-  {
-    image:require('src/assets/images/lessons/lesson-3.jpg'),
-    description:'First steps learning to trot on Rebecca'},
-  {
-    image:require('src/assets/images/lessons/lesson-4.jpg'),
-    description:'Our students dropping in to say hello to the horses'}
-];
-  constructor(private ModalService: ModalService) { }
+  constructor(private ModalService: ModalService,
+    private readonly language: LanguageService) { }
 
   ngOnInit(): void {
   }
   showModal(pos) {
-    var list = this.lessonsPhotos.map((x)=> {
+    var list = this.lessonsPhotos.map((x) => {
       return { img: x.image };
     });
-    this.ModalService.triggerEvent([list,pos]);
+    this.ModalService.triggerEvent([list, pos]);
   };
 }

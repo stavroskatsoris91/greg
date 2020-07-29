@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-carriage',
@@ -8,12 +9,11 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class CarriageComponent implements OnInit {
 
-  carriageText=[
-    'Horse carriages are one of our island’s most well known traditions. Don’t miss a tour with a beautiful Victoria carriage and the opportunity to learn about Spetses history.',
-    'Call us for bookings. Prices depend on the duration of your tour.'
-  ];
+  title = this.language.carriage.title;
+  carriageText= this.language.carriage.text;
   photos = [require('src/assets/images/carriage/carriage1.jpg'),require('src/assets/images/carriage/carriage3.jpg'),require('src/assets/images/carriage/carriage2.jpg')];
-  constructor(private ModalService: ModalService) { }
+  constructor(private ModalService: ModalService,
+    private readonly language: LanguageService) { }
 
   ngOnInit(): void {
   }

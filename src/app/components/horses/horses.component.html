@@ -5,10 +5,10 @@
             <app-coin [list]="horse.images" *ngIf="horse.images.length"></app-coin>
             <div class="title">{{horse.name}}</div>
             <div class="info">
-                <div class="info-item" *ngIf="horse.breed"><span>Breed</span>:&nbsp;{{horse.breed}}</div>
-                <div class="info-item" *ngIf="horse.colour"><span>Colour</span>:&nbsp;{{horse.colour}}</div>
-                <div class="info-item"><span>Age</span>:&nbsp;{{horse.age}}</div>
-                <div class="info-item"><span>Height</span>:&nbsp;{{horse.height}}</div>
+                <div class="info-item" *ngIf="horse.breed"><span>{{breed}}</span>:&nbsp;{{horse.breed}}</div>
+                <div class="info-item" *ngIf="horse.colour"><span>{{colour}}</span>:&nbsp;{{horse.colour}}</div>
+                <div class="info-item"><span>{{age}}</span>:&nbsp;{{horse.age}}</div>
+                <div class="info-item"><span>{{height}}</span>:&nbsp;{{horse.height}}</div>
             </div>
 
             <div class="text" *ngFor="let text of horse.text">

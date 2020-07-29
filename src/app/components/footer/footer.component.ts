@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  title:string = 'Where to Find Us';
-  location:string = 'Spetses, 180 50';
+  title:string = this.language.footer.title;
+  location:string = this.language.footer.location;
+  time = this.language.footer.time;
+  info:string[]=this.language.footer.info;
   show:boolean = false;
   openMap:boolean = false;
   imageInfo = require('src/assets/images/info.svg');
@@ -16,7 +19,9 @@ export class FooterComponent implements OnInit {
   imageLocation = require('src/assets/images/location.png');
   imagePhone = require('src/assets/images/phone2.png');
   imageGoogleMaps = require('src/assets/images/googlemaps.jpg');
-  constructor() { }
+  constructor(
+    private readonly language: LanguageService
+  ) { }
 
   ngOnInit(): void {
   }
