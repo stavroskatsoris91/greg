@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { interval } from 'rxjs';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,13 @@ import { interval } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  text = 'Home';
-  homeText = [
-    'Do something different while visiting Spetses! Try horse trekking to see the island’s countryside and enjoy the panoramic views of the sparkling sea from above. We have six great treks for you to choose from.',
-    'For those who love horse riding we offer riding lessons in our outdoors arena next to the view of the sea and Spetspoula island. We have private lessons and group lessons if you want to come up with friends.',// Or you can a enjoy a little ride in our arena for 12 euros.',
-    'Apart from riding you can enjoy a picnic with your friends or organize kids’ parties with pony rides in the arena.  We also provide our horses for photoshoots for any special occasion.'
-  ];
+  get copy(){
+    return this.language.home;
+  }
   checkTripAdvisor: any;
   showTripAdvisor: boolean;
-  constructor(private readonly element: ElementRef) { }
+  constructor(private readonly element: ElementRef,
+    private readonly language: LanguageService) { }
 
   ngOnInit(): void {
     this.checkTripAdvisor = interval(1000).subscribe(()=> {

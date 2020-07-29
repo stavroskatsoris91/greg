@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-picnics',
@@ -8,14 +9,12 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class PicnicsComponent implements OnInit {
 
-  picnics = [
-    'Are you looking for a beautiful area with plenty of space for a children\'s party with the extra excitement of horse riding too?',
-    'Or organize a different picnic for you and your friends or family?',
-    ' Contact us for more details.'
-  ];
+  title = this.language.picnics.title;
+  picnics = this.language.picnics.picnics;
   photos = [require('src/assets/images/picnics/picnic-1.jpg')];
 
-  constructor(private ModalService: ModalService) { }
+  constructor(private ModalService: ModalService,
+    private readonly language: LanguageService) { }
 
   ngOnInit(): void {
   }

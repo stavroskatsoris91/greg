@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormGroup,  FormBuilder,  Validators, FormArray } from '@angular/forms';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-contact',
@@ -23,21 +24,29 @@ export class ContactComponent implements OnInit, OnDestroy {
   ridings = this.books.ridings;
   nextDay = new Date(new Date().setDate(new Date().getDate()+1)).toISOString().slice(0, 10);
 
+  title=this.language.contact.title;
+  tsncs = this.language.contact.tsncs;
+  safety = this.language.contact.safety;
+  field = this.language.contact.field;
+  requiredField = this.language.contact.requiredField;
+  requiredName = this.language.contact.requiredName;
+  invalidEmail = this.language.contact.invalidEmail;
+  paymentsTitle = this.language.contact.paymentsTitle;
+  paymentsText = this.language.contact.paymentsText;
+  cancellationTitle = this.language.contact.cancellationTitle;
+  cancellationText = this.language.contact.cancellationText
   public hours = new Array(12).fill(7).map(function(x,i){return x+i;});
   public minutes = ['00','15','30','45'];
-  public levels = [
-    'Novice',
-    'Intermediate',
-    'Advanced'
-  ];
-  public payments = ['Cash on the Day', 'Bank Transfer'];
+  public levels = this.language.contact.levels;
+  public payments = this.language.contact.payments;
 
   constructor(
     private books: BooksService,
     private formBuilder: FormBuilder,
     private router: Router,
     private changeDetector: ChangeDetectorRef,
-    private readonly elementRef: ElementRef 
+    private readonly elementRef: ElementRef,
+    private readonly language: LanguageService
   ) { }
 
   ngOnInit(): void {

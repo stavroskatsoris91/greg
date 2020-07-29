@@ -10,7 +10,7 @@
           <div class="price">{{trek.price}}</div>
           <br class="mobile">
           <div class="level" [ngClass]="{'exp': trek.level=='level experienced'}">{{trek.level}}</div>
-          <div class="photos-bubble trek-photos" (click)="showModal(trek.images)"><a><img [src]="imagePhotos">Photos</a></div>
+          <div class="photos-bubble trek-photos" (click)="showModal(trek.images)"><a><img [src]="imagePhotos">{{photos}}</a></div>
         </div>
       </div>
     </div>
