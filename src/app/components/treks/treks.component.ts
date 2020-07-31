@@ -18,10 +18,10 @@ export class TreksComponent implements OnInit {
             price: '€30 / '+this.language.treks.horse,
             level: this.language.treks.level1,
             images: [
-                require('src/assets/images/treks/trek1-1.jpg'),
-                require('src/assets/images/treks/trek1-2.jpg'),
-                require('src/assets/images/treks/trek1-3.jpg'),
-                require('src/assets/images/treks/trek1-4.jpg')
+                require('src/assets/images/treks/trek1/trek1_1.jpg'),
+                require('src/assets/images/treks/trek1/trek1_2.jpg'),
+                require('src/assets/images/treks/trek1/trek1_3.jpg'),
+                require('src/assets/images/treks/trek1/trek1_4.jpg')
             ],
             text: this.language.treks.trek1.text
         },
@@ -32,12 +32,12 @@ export class TreksComponent implements OnInit {
             price: '€58 / '+this.language.treks.horse,
             level: this.language.treks.level1,
             images: [
-                require('src/assets/images/treks/trek2-1.jpg'),
-                require('src/assets/images/treks/trek2-2.jpg'),
-                require('src/assets/images/treks/trek2-3.jpg'),
-                require('src/assets/images/treks/trek2-4.jpg'),
-                require('src/assets/images/treks/trek2-5.jpg'),
-                require('src/assets/images/treks/trek2-6.jpg')
+                require('src/assets/images/treks/trek2/trek2_1.jpg'),
+                require('src/assets/images/treks/trek2/trek2_2.jpg'),
+                require('src/assets/images/treks/trek2/trek2_3.jpg'),
+                require('src/assets/images/treks/trek2/trek2_4.jpg'),
+                require('src/assets/images/treks/trek2/trek2_5.jpg'),
+                require('src/assets/images/treks/trek2/trek2_6.jpg')
             ],
             text: this.language.treks.trek2.text
         },
@@ -48,11 +48,11 @@ export class TreksComponent implements OnInit {
             price: '€69 / '+this.language.treks.horse,
             level: this.language.treks.level1,
             images: [
-                require('src/assets/images/treks/trek3-1.jpg'),
-                require('src/assets/images/treks/trek3-2.jpg'),
-                require('src/assets/images/treks/trek3-3.jpg'),
-                require('src/assets/images/treks/trek3-4.jpg'),
-                require('src/assets/images/treks/trek3-5.jpg')
+                require('src/assets/images/treks/trek3/trek3_1.jpg'),
+                require('src/assets/images/treks/trek3/trek3_2.jpg'),
+                require('src/assets/images/treks/trek3/trek3_3.jpg'),
+                require('src/assets/images/treks/trek3/trek3_4.jpg'),
+                require('src/assets/images/treks/trek3/trek3_5.jpg')
             ],
             text: this.language.treks.trek3.text
         },
@@ -63,9 +63,9 @@ export class TreksComponent implements OnInit {
             price: '€77 / '+this.language.treks.horse,
             level: this.language.treks.level1,
             images: [
-                require('src/assets/images/treks/trek4-1.jpg'),
-                require('src/assets/images/treks/trek4-2.jpg'),
-                require('src/assets/images/treks/trek4-3.jpg')
+                require('src/assets/images/treks/trek4/trek4_1.jpg'),
+                require('src/assets/images/treks/trek4/trek4_2.jpg'),
+                require('src/assets/images/treks/trek4/trek4_3.jpg')
             ],
             text: this.language.treks.trek4.text
         },
@@ -76,12 +76,12 @@ export class TreksComponent implements OnInit {
             price: '€95 / '+this.language.treks.horse,
             level: this.language.treks.level1,
             images: [
-                require('src/assets/images/treks/trek5-6.jpg'),
-                require('src/assets/images/treks/trek5-1.jpg'),
-                require('src/assets/images/treks/trek5-2.jpg'),
-                require('src/assets/images/treks/trek5-3.jpg'),
-                require('src/assets/images/treks/trek5-4.jpg'),
-                require('src/assets/images/treks/trek5-5.jpg')
+                require('src/assets/images/treks/trek5/trek5_1.jpg'),
+                require('src/assets/images/treks/trek5/trek5_2.jpg'),
+                require('src/assets/images/treks/trek5/trek5_3.jpg'),
+                require('src/assets/images/treks/trek5/trek5_4.jpg'),
+                require('src/assets/images/treks/trek5/trek5_5.jpg'),
+                require('src/assets/images/treks/trek5/trek5_6.jpg')
             ],
             text: this.language.treks.trek5.text
         },
@@ -92,7 +92,7 @@ export class TreksComponent implements OnInit {
             price: '€122 / '+this.language.treks.horse,
             level: this.language.treks.level2,
             images: [
-                require('src/assets/images/treks/trek6-1.jpg')
+                require('src/assets/images/treks/trek6/trek6_1.jpg')
             ],
             text: this.language.treks.trek6.text
         },
