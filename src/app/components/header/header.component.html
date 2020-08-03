@@ -17,10 +17,10 @@
             class="nav-link"
             [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}"
             (click)="animateMe(true,opt)"
-            >{{opt.name}}</a>
+            >{{opt.name| translate}}</a>
           <div class="sub" *ngIf="opt.sub" appToggleAnimate [show]="opt.toggle">
             <div class="" *ngFor="let sub of opt.sub" >
-              <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name}}</a>
+              <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name| translate}}</a>
             </div>
           </div>
         </div>
@@ -31,11 +31,11 @@
             <a [routerLink]="opt.path||path" class="nav-link"
               [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}"
               (click)="animateMe(true,opt)"
-              >{{opt.name}}</a>
+              >{{opt.name| translate}}</a>
             <div class="sub" *ngIf="opt.sub" appToggleAnimate [show]="opt.toggle">
               <ul>
                 <li class="" *ngFor="let sub of opt.sub">
-                  <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name}}</a>
+                  <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name| translate}}</a>
                 </li>
               </ul>
             </div>

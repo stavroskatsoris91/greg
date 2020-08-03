@@ -28,7 +28,8 @@
               "src/robots.txt",
               "src/BingSiteAuth.xml",
               "src/sitemap.xml",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/assets/i18n"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

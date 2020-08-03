@@ -9,13 +9,9 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class HomeComponent implements OnInit {
 
-  get copy(){
-    return this.language.home;
-  }
   checkTripAdvisor: any;
   showTripAdvisor: boolean;
-  constructor(private readonly element: ElementRef,
-    private readonly language: LanguageService) { }
+  constructor(private readonly element: ElementRef) { }
 
   ngOnInit(): void {
     this.checkTripAdvisor = interval(1000).subscribe(()=> {

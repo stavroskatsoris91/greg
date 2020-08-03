@@ -1,11 +1,11 @@
 <div class="main-content">
     <div class="empty-box">
-      <div class="title m-b">{{copy.title}}</div>
+      <div class="title m-b">{{'instructors.title' | translate}}</div>
     </div>
-    <div class="box" [ngClass]="instructor.color" *ngFor="let instructor of copy.instructors">
+    <div class="box" [ngClass]="instructor" *ngFor="let instructor of instructors">
       <div class="container treks">
-        <div class="title-2 instructors-header">{{instructor.name}}</div>
-        <p class="text line-h">{{instructor.description}}</p>
+        <div class="title-2 instructors-header">{{'instructors.instructor.'+instructor+'.name' | translate}}</div>
+        <p class="text line-h">{{'instructors.instructor.'+instructor+'.description' | translate}}</p>
       </div>
     </div>
   </div>

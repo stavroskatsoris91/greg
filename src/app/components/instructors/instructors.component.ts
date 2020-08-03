@@ -8,11 +8,8 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class InstructorsComponent implements OnInit {
 
-  get copy (){
-    return this.language.instructos;
-  }
+  instructors = ['greg','kat','tracy']
   constructor(
-    private readonly language: LanguageService
   ) { }
 
   ngOnInit(): void {
