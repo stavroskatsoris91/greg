@@ -9,29 +9,27 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class LessonsComponent implements OnInit {
 
-  title = this.language.lessons.title;
-  lessons = this.language.lessons.lessons;
-  extraInfo = this.language.lessons.extraInfo;
+  lessons = ['lessons.lessons.copy1','lessons.lessons.copy2','lessons.lessons.copy3'];
+  extraInfo = ['lessons.extraInfo.copy1','lessons.extraInfo.copy2'];
   lessonsPhotos = [
     {
       image: require('src/assets/images/lessons/lesson-1.jpg'),
-      description: this.language.lessons.lessonPhotosInfo1
+      description: 'lessons.lessonPhotos.copy1'
     },
     {
       image: require('src/assets/images/lessons/lesson-2.jpg'),
-      description: this.language.lessons.lessonPhotosInfo2
+      description:'lessons.lessonPhotos.copy2'
     },
     {
       image: require('src/assets/images/lessons/lesson-3.jpg'),
-      description: this.language.lessons.lessonPhotosInfo3
+      description: 'lessons.lessonPhotos.copy3'
     },
     {
       image: require('src/assets/images/lessons/lesson-4.jpg'),
-      description: this.language.lessons.lessonPhotosInfo4
+      description: 'lessons.lessonPhotos.copy4'
     }
   ];
-  constructor(private ModalService: ModalService,
-    private readonly language: LanguageService) { }
+  constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {
   }

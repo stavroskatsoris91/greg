@@ -1,6 +1,6 @@
 <div class="footer">
     <div class="container">
-        <div class="title">{{title}}</div>
+        <div class="title">{{'footer.title' | translate}}</div>
         <div class="info">
             <div class="social-icons">
                 <a href="https://www.facebook.com/gregsspetseshorses" target="_blank" class="facebook"></a>
@@ -11,13 +11,13 @@
             </div>
             <div class="info-2">
                 <div>
-                    <div class="location"><img [src]="imageLocation">{{location}}</div>
+                    <div class="location"><img [src]="imageLocation">{{'footer.location'| translate}}</div>
                     <a class="phone" href="tel:00306942792460"><img [src]="imagePhone">+(30) 6942 79 24 60</a>
-                    <div class="clock"><img [src]="imageClock">{{time}}
+                    <div class="clock"><img [src]="imageClock">{{'footer.time'| translate}}
                         <span class="info-popup" (clickOutside)="show=false">
                             <img class="info-img" [src]="imageInfo" (click)="show=!show">
                             <span [ngClass]="{'open':show}">
-                                <span *ngFor="let inf of info">{{inf}}<br></span>
+                                <span *ngFor="let inf of [1,2,3,4]">{{'footer.info.'+inf| translate}}<br></span>
                             </span>
                         </span>
                     </div>

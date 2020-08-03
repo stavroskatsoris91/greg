@@ -3,8 +3,8 @@
   <div class="box green">
     <div class="container horses">
       <!-- <div class="title m-b">{{safe.title}}</div> -->
-      <div class="title m-b home-header">{{copy.welcome}}</div>
-      <p *ngFor="let text of copy.copy" class="text line-hight">{{text}}</p>
+      <div class="title m-b home-header">{{'home.welcome' | translate}}</div>
+      <p *ngFor="let text of [1,2,3]" class="text line-hight" >{{'home.copy.'+text | translate}}</p>
     </div>
   </div>
   <div class="box white-2" [ngClass]="{'show':showTripAdvisor}">

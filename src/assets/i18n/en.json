@@ -1,0 +1,284 @@
+{
+  "header": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "story": "OUR STORY",
+    "instructors": "THE INSTRUCTORS",
+    "horses": "HORSES",
+    "riding": "RIDING",
+    "treks": "TREKS",
+    "lessons": "LESSONS",
+    "photos": "PHOTO SHOOTS",
+    "picnic": "PICNICS AND PARTIES",
+    "safety": "SAFETY",
+    "carriage": "CARRIAGE",
+    "gallery": "GALLERY",
+    "contact": "CONTACT"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "copy": {
+      "1": "Do something different while visiting Spetses! Try horse trekking to see the island’s countryside and enjoy the panoramic views of the sparkling sea from above. We have six great treks for you to choose from.",
+      "2": "For those who love horse riding we offer riding lessons in our outdoors arena next to the view of the sea and Spetspoula island. We have private lessons and group lessons if you want to come up with friends.",
+      "3": "Apart from riding you can enjoy a picnic with your friends or organize kids’ parties with pony rides in the arena.  We also provide our horses for photoshoots for any special occasion."
+    }
+  },
+  "about": {
+    "title": "Our Story",
+    "copy": {
+      "1": "Greg is the owner of Greg's Spetses horses which was founded in 2016. He and his siblings grew up very close to nature with many pets and farm animals. His mum has had a love for horses since she was a little girl and started riding from a young age. His Grandfather was a farmer and a carriage driver, and he owned many horses throughout the years. So, although he has been around horses most of his life, it was at the age of thirteen that his passion for horses was ignited, when his dad gifted his mum a foal, Olivia. Shortly after Olivia’s arrival more horses were added to the family.",
+      "2": "After that he took it upon himself to become educated on all aspects of horsemanship, the horse’s groundwork and ridden training, their everyday care and welfare, to ensure the horses are happy and healthy on a daily basis. Greg completely trained all the horses himself, following a very thorough process of horsemanship that is as close to the horse’s natural way as possible. This ensures they are confident, reliable, content, but most important of all, safe to be ridden by riders of all ages and abilities."
+    }
+  },
+  "instructors": {
+    "title": "The Instructors",
+    "instructor": {
+      "greg": {
+        "name": "Greg",
+        "color": "red-1",
+        "description": "Greg is the owner of Greg’s Spetses Horses. He was raised in Spetses and he is half English, half Greek and speaks both languages fluently. Greg has trained all our horses and he is also the main performer in our new “Greg’s Spetses Horses” Show with his horse, Olivia. As an instructor, He likes to teach his students the importance of building a compassionate relationship with the horses they ride. He’s the trek guide and enjoys showing visitors the beautiful island he grew up in. Apart from our equestrian club, Greg also drives a beautiful horse drawn Victoria carriage which are traditional to the island."
+      },
+      "kat": {
+        "name": "Katerina",
+        "color": "purple-3",
+        "description": "Katerina is Greek and was raised in Spetses. Growing up on a Greek island she started learning English from a young age and she is now fluent in both languages. She's been part of the Greg's Spetses Horses team from the beginning. She is a riding instructress, assists on treks and is administrator, taking care of the website, advertising and social media. Katerina performs in the “Greg’s Spetses Horses” show and she loves liberty training with her horse, Robbie. Apart from her love for horses, she’s in her third year of studying for a degree in nursing."
+      },
+      "tracy": {
+        "name": "Tracy",
+        "color": "yellow-3",
+        "description": "Tracy was born and raised in England and she has been living in Spetses for nearly 30 years and speaks fluent both English and Greek. She trained with the British Horse Society in horsemanship and teaching. Tracy also enjoyed show jumping and cross country back in England. Being an instructor, she loves to teach and see the progress of her students."
+      }
+    }
+  },
+  "horses": {
+    "breed": "Breed",
+    "colour": "Colour",
+    "age": "Age",
+    "height": "Height",
+    "years": "years old",
+    "colours": {
+      "black": "Black",
+      "grey": "Grey",
+      "chestnut": "Chestnut"
+    },
+    "rebecca": {
+      "copy1": "Rebecca is the smallest but the head of the herd, she's the boss!",
+      "copy2": "She has a strong character, she pulls faces at the other horses to remind them of their place. She is a very safe and relaxed horse. She loves children, she has so much patience and really looks after her rider."
+    },
+    "robbie": {
+      "copy1": "Robbie is the gentleman of the family, when Robbie first arrived he was a very unconfident horse, non of the mares like him, which didn't help! Throughout his training his true character shone through. He loves his rubs and wants lots of attention. He really enjoys his treks and is a content, safe horse."
+    },
+    "nelly": {
+      "copy1": "Nelly is a roan characterized by the white hairs intermingled throughout her bay coat. She has a very calm, quiet nature and is always keen to please her riders."
+    },
+    "oscar": {
+      "copy1": "Oscar has a fun, cheeky character and loves his treks. Many recognise Oscar as he was previously part of Harriet's team on Hydra."
+    },
+    "olivia": {
+      "copy1": "Olivia has been in our family since she was 3months old. She has a very inquisitive character, her curiosity is endless. She loves people and can never resist the chance to lick you.",
+      "copy2": "She is a relaxed horse but always very attentive to her rider."
+    },
+    "elina": {
+      "copy1": "Elina is Rebecca’s youngest daughter.",
+      "copy2": "She was a complete surprise, we had no idea Rebecca was in foal again when she arrived."
+    },
+    "rosie": {
+      "copy1": "Rosie is a dark bay Thoroughbred/American saddlebred.",
+      "copy2": "She’s the youngest of our family, she was born in our stables and she recently started her riding training."
+    },
+    "angel": {
+      "copy1": "Angel is Chestnut with a distinctive blonde mane. She is part Haflinger. Angel is Rebecca's daughter.",
+      "copy2": "She became part of our family when she was 2.5 months old. She is in the process of being trained to join us on our rides."
+    },
+    "titan": {
+      "copy1": "Titan is the new member of our family. He's a dark bay gelding.",
+      "copy2": "He has been sweet, calm and relaxed since the day he arrived. He's proving to be brave and fearless on our treks and seems to really connect with his riders."
+    }
+  },
+  "treks": {
+    "photos": "Photos",
+    "trek": "Trek {{number}}",
+    "time": "{{hour}}h {{min}}min",
+    "min": "{{min}} min",
+    "hour": "{{hour}} hours",
+    "horse": "{{price}} horse",
+    "level1": "All levels",
+    "level2": "level experienced",
+    "info": "*The return journey is along the same route in all treks. Any additional time required will be charged at €12.30 per half hour.",
+    "trek1": {
+      "title": "Coastal Road",
+      "text": "From the stables we ride a 20 minute outbound trek along the high coastal road, over looking the beautiful view of the neighbouring private Island Spetsopoula. Break for photographs."
+    },
+    "trek2": {
+      "title": "Panagia Elonas",
+      "text": "To Panagia Elonas (the Virgin Mary of Elonas). From the stables at the area known as 'Zastano', we travel along the coastal road (1.5km). Then we turn off on to the country tracks through mountains to the beautiful church of Panagia Elonas. This outbound journey will take 40 minutes. On arrival we will rest for 20 minutes for refreshments (not included) and an opportunity to take photographs of the fantastic views."
+    },
+    "trek3": {
+      "title": "Hara Estate",
+      "text": "To The Hara Estate. From the stables we ride a 55 minute outbound trek, travelling along the coastal road (1.5km) then we turn off on to the country track through the mountains. Along the route we will stop off at Panagia Elonas (10 mins) for photographs if wished, then we will head to The Hara Estate. Here we will take a 15 minute rest for photographs and refreshments (not included)."
+    },
+    "trek4": {
+      "title": "Hunters' Refuge",
+      "text": "To Hunters' Refuge. From the stables we ride a 60 minute outbound trek, along the coastal road (1.5km) then we turn off on to the country tracks through the mountains. We will make a stop on the hill of  Elonas (10 mins) if wished and also a stop at The Hara Estate (10 mins) for an opportunity to take photographs of the gorgeous views. We ride through pine forests to reach the Hunters' Refuge where we will rest (15 mins) for photographs and refreshments (not included)."
+    },
+    "trek5": {
+      "title": "Panagia Daskalaki",
+      "text": "To Panagia Daskalaki (Virgin Mary of Daskalaki). From the stables we ride a 75 minute outbound trek, along the coastal road (1.5 km) then we turn off on to the country tracks through the mountains. Along the way we will make stops at Panagia Elonas (10 mins), The Hara Estate (5 mins) and the Hunters' refuge (5 mins) for photograph opportunities if wished. At our destination we will rest (20 mins) for refreshments (not included) and an opportunity to photograph the stunning views! This may be the most forested area of Spetses,  it offers the wonderful natural beauty of the pines, as well as a beautiful view."
+    },
+    "trek6": {
+      "title": "Profitis Ilias",
+      "text": "To Profitis Ilias (the Prophet Elias, or Elijah. From the stables we ride a 1 hour 30 minute trek, going along the coastal road (1.5km) then turning off on to the country tracks through the mountains. Along the way we will visit Panagia Elonas (15 mins), The Hara Estate (5 mins) and The Hunters' Refuge (5 mins). On reaching Panagia Daskalaki we will rest (20 mins), to take in the stunning scenery and an opportunity for photographs and refreshments (not included). At the destination Profitis Ilias, the highest point of the Island, there will chance to rest (15 mins), for refreshments (not included) and for gorgeous photographs of the most fantastic views."
+    }
+  },
+  "lessons": {
+    "title": "Horse Riding Lessons",
+    "min": "{{min}} min",
+    "lessons": {
+      "copy1": "Choose a private lesson or come with friends (up to 3-4 riders).",
+      "copy2": "Lessons are arranged by appointment.",
+      "copy3": "Call or send us an email!"
+    },
+    "extraInfo": {
+      "copy1": "Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.",
+      "copy2": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)"
+    },
+    "lessonPhotos":{ 
+      "copy1":"Fun grooming Robbie before the lesson",
+      "copy2": "Trotting on Robbie",
+      "copy3": "First steps learning to trot on Rebecca",
+      "copy4": "Our students dropping in to say hello to the horses"
+    }
+  },
+  "photoshoots": {
+    "title": "Photo Shoots",
+    "photoshoots": [
+      "Want to a try something different for a special occasion?",
+      "Why not hire our horses to make your wedding day, proposal, anniversary, any day even more unique and unforgettable?",
+      "Choose the horses you like and be ready for a beautiful photoshoot next to the view of the sea or mountain while watching the sunset."
+    ]
+  },
+  "picnics": {
+    "title": "Picnics And Parties",
+    "picnics": [
+      "Are you looking for a beautiful area with plenty of space for a children's party with the extra excitement of horse riding too?",
+      "Or organize a different picnic for you and your friends or family?",
+      " Contact us for more details."
+    ]
+  },
+  "safety": {
+    "safety": [
+      {
+        "title": "Your safety is our concern",
+        "list": [
+          "Safety Helmets",
+          "Modern up-to-date equipment",
+          "Specialist child stirrups",
+          "First aid kit carried",
+          "Certified First Aider",
+          "Rider ability assessment",
+          "Treks matched to experience"
+        ],
+        "text": [
+          "Riding at any standard has inherent risk that you may fall off and could be injured. Please note that by using my service you accept that risk and agree that Greg's Spetses Horses will not be liable for injury or damage to property.",
+          "We therefore recommend that you ensure that you have adequate medical cover with your travel insurance. I also reserve the right to refuse accepting a booking if in my opinion the rider would be putting themselves, others or my horses at risk due to physical disability, behavioral or attitude issues, or appear to be under the influence of alcohol or drugs."
+        ]
+      },
+      {
+        "title": "Rules and Regulations",
+        "list": [
+          "Always arrive at least five minutes before your lesson start time. Lessons will not be extended as this will affect the following student.",
+          "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness)",
+          "No feeding the horses or carrying treats and bags near the arena during the lessons. Horses will only be fed when the instructors allow you to do so.",
+          "Helmets MUST be worn (no exceptions). All riders must wear long trousers or leggings and appropriate closed shoes or boots.",
+          "For your own safety and that of the riders, children must not shout or run around close to the arena fencing.",
+          "Children should not be left unsupervised before or after their lessons. We are only responsible for your child for the duration of their lesson"
+        ],
+        "text": []
+      }
+    ]
+  },
+  "carriage": {
+    "title": "Horse Carriage Tours",
+    "text": [
+      "Horse carriages are one of our island’s most well known traditions. Don’t miss a tour with a beautiful Victoria carriage and the opportunity to learn about Spetses history.",
+      "Call us for bookings. Prices depend on the duration of your tour."
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "tsncs": "Payment ts&cs",
+    "safety": "Safety",
+    "field": {
+      "name": "Name",
+      "email": "Email",
+      "contactNumber": "Contact Number (+Country Code)",
+      "date": "Date",
+      "hour": "Hour",
+      "mins": "Mins",
+      "riding": "Riding",
+      "riders": "Riders",
+      "age": "Age",
+      "height": "Height (m)",
+      "weight": "Weight (kg)",
+      "experience": "Experence",
+      "add": "Add Rider",
+      "paymentMethod": "Payment Method",
+      "message": "Message",
+      "submit": "Submit"
+    },
+    "requiredField": "Required field",
+    "requiredName": "Name is required",
+    "invalidEmail": "Invalid email",
+    "paymentsTitle": "Payments",
+    "paymentsText": [
+      "Payment can be made by CASH on the day",
+      "or Bank transfer in advance",
+      "NO Credit/Debit cards accepted due to our position in the countryside with no electricity/secure internet",
+      "On booking please confirm how you wish to pay.",
+      "In the event of cancellation please try to inform us at least 48hrs in advance."
+    ],
+    "levels": [
+      "Novice",
+      "Intermediate",
+      "Advanced"
+    ],
+    "payments": [
+      "Cash on the Day",
+      "Bank Transfer"
+    ],
+    "cancellationTitle": "Cancellation Policy",
+    "cancellationText": [
+      "In the event of cancellation by the customer:",
+      "- More than 48 hours notice: full refund.",
+      "- Less than 24 hours notice: you may be charged half the price.",
+      "- Last minute cancelation: you will be charged the full price depending on the circumstance.",
+      "",
+      "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness)",
+      "",
+      "In event of cancellation by Greg's Spetses Horses, for example:",
+      "- Due to illness of trek guide",
+      "- Illness of horses",
+      "- Adverse weather conditions (at discretion of Greg's Spetses Horses)",
+      "Then a full refund will be given, or alternative dates agreed subject to availability.",
+      "",
+      "It is a condition of your booking that you accept that Greg's Spetses Horses is entitled to require you to dismount or to refuse to allow you to ride if for any reason, including your inability, behaviour or health, they consider that you may endanger the safety or welfare of any person or the horses. If so required you have no claim and will not be entitled to any compensation or refund."
+    ]
+  },
+  "thankYou": {
+    "title": "Thank you!",
+    "text": [
+      "We will be in contact with you shortly 😊"
+    ]
+  },
+  "footer": {
+    "title": "Where to Find Us",
+    "location": "Spetses, 180 50",
+    "time": "7am - 8pm",
+    "info": {
+      "1": "For any activities you are intrested in doing you need to make an appointment first.",
+      "2": "",
+      "3": "But during summer months we are open all day from 8am to 9pm so you can visit the stables,",
+      "4": "meet the horses or try a little ride in our arena."
+    }
+  }
+}

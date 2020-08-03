@@ -74,7 +74,7 @@ export class LanguageService {
         ]
       };
   }
-  get instructos() {
+  get instructors() {
     return this.isEngilish ? {
       title: 'The Instructors',
       instructors: [
