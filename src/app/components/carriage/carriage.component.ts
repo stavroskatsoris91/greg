@@ -9,8 +9,7 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class CarriageComponent implements OnInit {
 
-  title = this.language.carriage.title;
-  carriageText= this.language.carriage.text;
+  carriageCopy= ['carriage.copy1', 'carriage.copy2']
   photos = [require('src/assets/images/carriage/carriage1.jpg'),require('src/assets/images/carriage/carriage3.jpg'),require('src/assets/images/carriage/carriage2.jpg')];
   constructor(private ModalService: ModalService,
     private readonly language: LanguageService) { }

@@ -8,10 +8,7 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class ThankyouComponent implements OnInit {
 
-  thankyou:{title:string,text:string[]} = {
-    title:this.language.thankYou.title,
-    text:this.language.thankYou.text
-  };
+  thankyouCopy:string[] = ['thankYou.copy1'];
   constructor(
     private readonly language: LanguageService
   ) { }

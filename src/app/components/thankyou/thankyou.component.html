@@ -2,8 +2,8 @@
     <div class="empty-box"></div>
     <div class="box green">
       <div class="container horses">
-        <div class="title m-b lg">{{thankyou.title}}</div>
-        <p *ngFor="let text of thankyou.text" class="text text-center lg">{{text}}</p>
+        <div class="title m-b lg">{{'thankYou.title' | translate}}</div>
+        <p *ngFor="let text of thankyouCopy" class="text text-center lg">{{text| translate}}</p>
       </div>
     </div>
   </div>

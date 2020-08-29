@@ -14,29 +14,29 @@ export class BooksService {
   ridings = [
     {
       name: 'TREK',
-      display: 'Trek',
+      display: 'contact.trek',
       options: [
-        { name: '1 - Coastal Road', price: 30 },
-        { name: '2 - Panagia Elonas', price: 58 },
-        { name: '3 - Hara Estate', price: 69 },
-        { name: '4 - Hunters\' Refuge', price: 77 },
-        { name: '5 - Panagia Daskalaki', price: 95 },
-        { name: '6 - Profitis Ilias', price: 122 }
+        { name: 'contact.trek1', price: 30 },
+        { name: 'contact.trek2', price: 58 },
+        { name: 'contact.trek3', price: 69 },
+        { name: 'contact.trek4', price: 77 },
+        { name: 'contact.trek5', price: 95 },
+        { name: 'contact.trek6', price: 122 }
       ],
       selected: 0
     },
     {
       name: 'LESSON',
-      display: 'Lesson',
+      display: 'contact.lesson',
       options: [
-        { name: '30min', price: 20 },
-        { name: '45min', price: 30 },
-        { name: '60min', price: 40 }
+        { name: 'contact.time', time: 30, price: 20 },
+        { name: 'contact.time', time: 45, price: 30 },
+        { name: 'contact.time', time: 60, price: 40 }
       ],
       selected: 0
     },
-    { name: 'PHOTO SHOOT', display: 'Photo Shoot', selected: null },
-    { name: 'PICNIC / PARTY', display: 'Picnic / Party', selected: null }
+    { name: 'PHOTO SHOOT', display: 'contact.photo', selected: null },
+    { name: 'PICNIC / PARTY', display: 'contact.picnic', selected: null }
   ];
   public makeBook(data) {
     return this.functions.httpsCallable('bookTime')(data);

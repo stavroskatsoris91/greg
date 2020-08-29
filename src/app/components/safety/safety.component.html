@@ -2,11 +2,11 @@
     <div class="empty-box"></div>
     <div class="box green-2" *ngFor="let safe of safety">
       <div class="container horses">
-        <div class="title m-b">{{safe.title}}</div>
+        <div class="title m-b">{{safe.title | translate}}</div>
         <ul class="list">
-          <li *ngFor="let list of safe.list" class="text">{{list}}</li>
+          <li *ngFor="let list of safe.list" class="text">{{list| translate}}</li>
         </ul>
-        <p *ngFor="let text of safe.text" class="text">{{text}}</p>
+        <p *ngFor="let copy of safe.copy" class="text">{{copy| translate}}</p>
       </div>
     </div>
   </div>
