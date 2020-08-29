@@ -6,7 +6,7 @@
       </div>
       <div class="title m-b">
         <button class="button-info m-r" (click)="scrollTo('payments')">{{tsncs | translate}}</button>
-        <a href="/safety">
+        <a routerLink="/safety">
           <button class="button-info">{{safety | translate}}</button>
         </a>
       </div>
@@ -149,7 +149,7 @@
         <div class="input">
           <input formControlName="accept" type="checkbox" required>
           {{'contact.accept.part1' | translate}}<a class="a-info"
-            href="/safety">{{'contact.accept.part2' | translate}}</a> {{'contact.accept.part3' | translate}}<a
+          routerLink="/safety">{{'contact.accept.part2' | translate}}</a> {{'contact.accept.part3' | translate}}<a
             class="a-info"
             (click)="scrollTo('payments')">{{'contact.accept.part4' | translate}}</a>{{'contact.accept.part5' | translate}}
           <p class="error-message" *ngIf="submitted && f.accept.errors">
