@@ -64,6 +64,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private router: Router,
     private readonly elementRef: ElementRef,
+    private translate: TranslateService,
   ) { }
 
   ngOnInit(): void {
@@ -148,14 +149,15 @@ export class ContactComponent implements OnInit, OnDestroy {
     }
     this.run = true;
     var data = cloneDeep(this.bookingForm.value);
+    data.riders.map((rider)=>rider.level=this.translate.instant(rider.level));
     if (data.riding.options) {
-      data.riding = data.riding.name + ' : ' + data.riding.options[data.riding.selected].name;
+      data.riding = this.translate.instant(data.riding.display) + ' : ' + this.translate.instant(data.riding.options[data.riding.selected].name);
     } else {
-      data.riding = data.riding.name;
+      data.riding = this.translate.instant(data.riding.display);
     }
     const date = data.date.split('-').reverse().join('/') + ' ' + data.hour + ':' + data.minutes;
     data.date = date;
-    data.payment = data.payment + ' ' + this.price;
+    data.payment = this.translate.instant(data.payment) + ' ' + this.price;
     this.books.makeBook(data).subscribe((res) => {
       this.router.navigate(['thankyou'])
       this.books.clearForm();
@@ -163,6 +165,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     }, (error) => {
       this.run = false;
     });
+
   };
   scrollTo(id) {
     var element = document.getElementById(id);
