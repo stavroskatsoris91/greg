@@ -151,58 +151,55 @@
   },
   "photoshoots": {
     "title": "Photo Shoots",
-    "photoshoots": [
-      "Want to a try something different for a special occasion?",
-      "Why not hire our horses to make your wedding day, proposal, anniversary, any day even more unique and unforgettable?",
-      "Choose the horses you like and be ready for a beautiful photoshoot next to the view of the sea or mountain while watching the sunset."
-    ]
+    "photoshoots":{
+      "copy1":"Want to a try something different for a special occasion?",
+      "copy2":"Why not hire our horses to make your wedding day, proposal, anniversary, any day even more unique and unforgettable?",
+      "copy3":"Choose the horses you like and be ready for a beautiful photoshoot next to the view of the sea or mountain while watching the sunset."
+    }
+    
   },
   "picnics": {
     "title": "Picnics And Parties",
-    "picnics": [
-      "Are you looking for a beautiful area with plenty of space for a children's party with the extra excitement of horse riding too?",
-      "Or organize a different picnic for you and your friends or family?",
-      " Contact us for more details."
-    ]
+    "picnics": {
+      "copy1":"Are you looking for a beautiful area with plenty of space for a children's party with the extra excitement of horse riding too?",
+      "copy2":"Or organize a different picnic for you and your friends or family?",
+      "copy3":" Contact us for more details."
+    }
   },
   "safety": {
-    "safety": [
-      {
-        "title": "Your safety is our concern",
-        "list": [
-          "Safety Helmets",
-          "Modern up-to-date equipment",
-          "Specialist child stirrups",
-          "First aid kit carried",
-          "Certified First Aider",
-          "Rider ability assessment",
-          "Treks matched to experience"
-        ],
-        "text": [
-          "Riding at any standard has inherent risk that you may fall off and could be injured. Please note that by using my service you accept that risk and agree that Greg's Spetses Horses will not be liable for injury or damage to property.",
-          "We therefore recommend that you ensure that you have adequate medical cover with your travel insurance. I also reserve the right to refuse accepting a booking if in my opinion the rider would be putting themselves, others or my horses at risk due to physical disability, behavioral or attitude issues, or appear to be under the influence of alcohol or drugs."
-        ]
+    "safety1": {
+      "title": "Your safety is our concern",
+      "list": {
+        "row1":"Safety Helmets",
+        "row2":"Modern up-to-date equipment",
+        "row3":"Specialist child stirrups",
+        "row4":"First aid kit carried",
+        "row5":"Certified First Aider",
+        "row6":"Rider ability assessment",
+        "row7":"Treks matched to experience"
       },
-      {
-        "title": "Rules and Regulations",
-        "list": [
-          "Always arrive at least five minutes before your lesson start time. Lessons will not be extended as this will affect the following student.",
-          "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness)",
-          "No feeding the horses or carrying treats and bags near the arena during the lessons. Horses will only be fed when the instructors allow you to do so.",
-          "Helmets MUST be worn (no exceptions). All riders must wear long trousers or leggings and appropriate closed shoes or boots.",
-          "For your own safety and that of the riders, children must not shout or run around close to the arena fencing.",
-          "Children should not be left unsupervised before or after their lessons. We are only responsible for your child for the duration of their lesson"
-        ],
-        "text": []
+      "copy1":"Riding at any standard has inherent risk that you may fall off and could be injured. Please note that by using my service you accept that risk and agree that Greg's Spetses Horses will not be liable for injury or damage to property.",
+      "copy2": "We therefore recommend that you ensure that you have adequate medical cover with your travel insurance. I also reserve the right to refuse accepting a booking if in my opinion the rider would be putting themselves, others or my horses at risk due to physical disability, behavioral or attitude issues, or appear to be under the influence of alcohol or drugs."
+    },
+    "safety2":{
+      "title": "Rules and Regulations",
+      "list": {
+        "row1":"Always arrive at least five minutes before your lesson start time. Lessons will not be extended as this will affect the following student.",
+        "row2":"If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness)",
+        "row3":"No feeding the horses or carrying treats and bags near the arena during the lessons. Horses will only be fed when the instructors allow you to do so.",
+        "row4":"Helmets MUST be worn (no exceptions). All riders must wear long trousers or leggings and appropriate closed shoes or boots.",
+        "row5":"For your own safety and that of the riders, children must not shout or run around close to the arena fencing.",
+        "row6":"Children should not be left unsupervised before or after their lessons. We are only responsible for your child for the duration of their lesson"
       }
-    ]
+    }
   },
   "carriage": {
     "title": "Horse Carriage Tours",
-    "text": [
-      "Horse carriages are one of our island’s most well known traditions. Don’t miss a tour with a beautiful Victoria carriage and the opportunity to learn about Spetses history.",
-      "Call us for bookings. Prices depend on the duration of your tour."
-    ]
+    "copy1": "Horse carriages are one of our island’s most well known traditions. Don’t miss a tour with a beautiful Victoria carriage and the opportunity to learn about Spetses history.",
+    "copy2": "Call us for bookings. Prices depend on the duration of your tour."
+  },
+  "gallery":{
+    "title":"Gallery"
   },
   "contact": {
     "title": "Contact Us",
@@ -230,45 +227,61 @@
     "requiredName": "Name is required",
     "invalidEmail": "Invalid email",
     "paymentsTitle": "Payments",
-    "paymentsText": [
-      "Payment can be made by CASH on the day",
-      "or Bank transfer in advance",
-      "NO Credit/Debit cards accepted due to our position in the countryside with no electricity/secure internet",
-      "On booking please confirm how you wish to pay.",
-      "In the event of cancellation please try to inform us at least 48hrs in advance."
-    ],
-    "levels": [
-      "Novice",
-      "Intermediate",
-      "Advanced"
-    ],
-    "payments": [
-      "Cash on the Day",
-      "Bank Transfer"
-    ],
+    "paymentsText": {
+      "copy1": "Payment can be made by CASH on the day",
+      "copy2": "or Bank transfer in advance",
+      "copy3": "NO Credit/Debit cards accepted due to our position in the countryside with no electricity/secure internet",
+      "copy4": "On booking please confirm how you wish to pay.",
+      "copy5": "In the event of cancellation please try to inform us at least 48hrs in advance."
+    },
+    "levels":{
+      "level1":"Novice",
+      "level2":"Intermediate",
+      "level3":"Advanced"
+    },
+    "payments": {
+      "payment1": "Cash on the Day",
+      "payment2":"Bank Transfer"
+    },
+    "accept":{
+      "part1":"I have read your ",
+      "part2":"safety",
+      "part3":" and ",
+      "part4": "payment & cancelation",
+      "part5": " policy and agree to accept responsibility for our own safety."
+    },
     "cancellationTitle": "Cancellation Policy",
-    "cancellationText": [
-      "In the event of cancellation by the customer:",
-      "- More than 48 hours notice: full refund.",
-      "- Less than 24 hours notice: you may be charged half the price.",
-      "- Last minute cancelation: you will be charged the full price depending on the circumstance.",
-      "",
-      "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness)",
-      "",
-      "In event of cancellation by Greg's Spetses Horses, for example:",
-      "- Due to illness of trek guide",
-      "- Illness of horses",
-      "- Adverse weather conditions (at discretion of Greg's Spetses Horses)",
-      "Then a full refund will be given, or alternative dates agreed subject to availability.",
-      "",
-      "It is a condition of your booking that you accept that Greg's Spetses Horses is entitled to require you to dismount or to refuse to allow you to ride if for any reason, including your inability, behaviour or health, they consider that you may endanger the safety or welfare of any person or the horses. If so required you have no claim and will not be entitled to any compensation or refund."
-    ]
+    "cancellationText": {
+      "copy1": "In the event of cancellation by the customer:",
+      "copy2": "- More than 48 hours notice: full refund.",
+      "copy3": "- Less than 24 hours notice: you may be charged half the price.",
+      "copy4": "- Last minute cancelation: you will be charged the full price depending on the circumstance.",
+      "copy5": "",
+      "copy6": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception would be if you can’t ride due to sickness)",
+      "copy7": "",
+      "copy8": "In event of cancellation by Greg's Spetses Horses, for example:",
+      "copy9": "- Due to illness of trek guide",
+      "copy10":"- Illness of horses",
+      "copy11":"- Adverse weather conditions (at discretion of Greg's Spetses Horses)",
+      "copy12":"Then a full refund will be given, or alternative dates agreed subject to availability.",
+      "copy13":"",
+      "copy14":"It is a condition of your booking that you accept that Greg's Spetses Horses is entitled to require you to dismount or to refuse to allow you to ride if for any reason, including your inability, behaviour or health, they consider that you may endanger the safety or welfare of any person or the horses. If so required you have no claim and will not be entitled to any compensation or refund."
+    },
+    "trek": "Trek",
+    "lesson": "Lesson",
+    "photo": "Photo Shoot",
+    "picnic": "Picnic / Party",
+    "trek1": "1 - Coastal Road",
+    "trek2": "2 - Panagia Elonas",
+    "trek3": "3 - Hara Estate",
+    "trek4": "4 - Hunters' Refuge",
+    "trek5": "5 - Panagia Daskalaki",
+    "trek6": "6 - Profitis Ilias",
+    "time": "{{min}} minutes"
   },
   "thankYou": {
     "title": "Thank you!",
-    "text": [
-      "We will be in contact with you shortly 😊"
-    ]
+    "copy1": "We will be in contact with you shortly 😊"
   },
   "footer": {
     "title": "Where to Find Us",

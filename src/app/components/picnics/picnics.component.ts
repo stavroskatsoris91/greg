@@ -9,8 +9,7 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class PicnicsComponent implements OnInit {
 
-  title = this.language.picnics.title;
-  picnics = this.language.picnics.picnics;
+  picnics = ['picnics.picnics.copy1', 'picnics.picnics.copy2', 'picnics.picnics.copy3']
   photos = [require('src/assets/images/picnics/picnic-1.jpg')];
 
   constructor(private ModalService: ModalService,
@@ -22,6 +21,6 @@ export class PicnicsComponent implements OnInit {
     var list = this.photos.map((x) => {
       return { img: x };
     });
-    this.ModalService.triggerEvent([list,pos]);
+    this.ModalService.triggerEvent([list, pos]);
   }
 }
