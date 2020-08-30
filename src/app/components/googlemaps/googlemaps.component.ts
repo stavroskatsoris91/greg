@@ -8,11 +8,11 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 export class GooglemapsComponent implements OnInit {
   map: any;
   cities = [
-    { title: 'Greg\' Spetses Horses', lat: 37.239282, lng: 23.147472 ,icon:require('src/assets/images/horse0.png')},
-    { title: 'Greg\' Spetses Horses', lat: 37.239148, lng: 23.147901 ,icon:require('src/assets/images/horse1.png')},
-    { title: 'Greg\' Spetses Horses', lat: 37.239151, lng: 23.147985 ,icon:require('src/assets/images/horse2.png')},
-    { title: 'Greg\' Spetses Horses', lat: 37.239063, lng: 23.147970 ,icon:require('src/assets/images/horse3.png')},
-    { title: 'Greg\' Spetses Horses', lat: 37.239062, lng: 23.147870 ,icon:require('src/assets/images/horse4.png')},
+    { title: 'Greg\' Spetses Horses', lat: 37.239282, lng: 23.147472 ,icon:require('src/assets/images/googlemap/horse0.png')},
+    { title: 'Greg\' Spetses Horses', lat: 37.239148, lng: 23.147901 ,icon:require('src/assets/images/googlemap/horse1.png')},
+    { title: 'Greg\' Spetses Horses', lat: 37.239151, lng: 23.147985 ,icon:require('src/assets/images/googlemap/horse2.png')},
+    { title: 'Greg\' Spetses Horses', lat: 37.239063, lng: 23.147970 ,icon:require('src/assets/images/googlemap/horse3.png')},
+    { title: 'Greg\' Spetses Horses', lat: 37.239062, lng: 23.147870 ,icon:require('src/assets/images/googlemap/horse4.png')},
   ]
   infowindow: any;
   element: any;

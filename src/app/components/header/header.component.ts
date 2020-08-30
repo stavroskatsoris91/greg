@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   isCollapsed = false;
   mobileMenu = { name:'mobile', toggle: false};
   imageLogo = require('src/assets/images/logo2.png');
+  languageEn = require('src/assets/images/flags/united-kingdom.svg');
+  languageGr = require('src/assets/images/flags/greece.svg');
   checkLanguage = of(this.language.isEngilish)
     .pipe(
     tap(val=>{
@@ -105,11 +107,7 @@ export class HeaderComponent implements OnInit {
   getState(toggle){
     return toggle?'large':'small';
   }
-  lang = ['en','gr'];
-  first = true;
-  changeLanguage(){
-    const num = this.first?1:0;
-    this.translate.use(this.lang[num]);
-    this.first=!this.first;
+  changeLanguage(lang){
+    this.translate.use(lang);
   }
 }

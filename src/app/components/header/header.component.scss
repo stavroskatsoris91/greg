@@ -1,4 +1,4 @@
-.header {
+.Header {
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 10px;
     margin-bottom: 2rem;
@@ -18,10 +18,23 @@
         position: absolute;
       }
     }
-    .language{
-      position: absolute;
-      right: 0;
-      top: 10px;
+    &__Language{
+      float: right;
+      position: relative;
+      &_Container{
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 60px;
+        display: flex;
+        &__Icons{
+          width: 50%;
+          margin: 3px;
+          img{
+            width: 100%;
+          }
+        }
+      }
     }
     >.container{
       display: flex;

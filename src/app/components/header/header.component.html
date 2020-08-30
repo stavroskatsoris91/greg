@@ -1,4 +1,4 @@
-<div class="header">
+<div class="Header">
   <div class="container">
     <a routerLink="/" class="logo">
       <img [src]="imageLogo">
@@ -43,6 +43,15 @@
         </ul>
       </div>
     </div>
-    <button class="language" (click)="changeLanguage()">ENG/ΕΛΛ</button>
+    <div class="Header__Language">
+      <div class="Header__Language_Container">
+        <div class="Header__Language_Container__Icons">
+          <img [src]="languageEn" (click)="changeLanguage('en')">
+        </div>
+        <div class="Header__Language_Container__Icons">
+          <img [src]="languageGr" (click)="changeLanguage('gr')">
+        </div>
+      </div>
+    </div>
   </div>
 </div>
