@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'gregs-app';
   constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-}
+    const userLang = navigator.language;
+    const defaultLang = userLang.slice(0,2)=='el'?'el':'en';
+    this.translate.setDefaultLang(defaultLang);
+  }
 }
