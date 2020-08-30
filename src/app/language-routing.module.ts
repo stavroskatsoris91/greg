@@ -13,11 +13,14 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { CarriageComponent } from './components/carriage/carriage.component';
-import { LanguageComponent } from './components/language/language.component';
+import { TranslateService } from '@ngx-translate/core';
 
-const children: Routes = [
+export function getLanguage() {
+  return this.translate.currentLang||this.translate.default;
+}
+const routes: Routes = [
   {
-    path: 'about',
+    path: ':lang/about',
     component: AboutComponent,
   },
   {
@@ -66,23 +69,22 @@ const children: Routes = [
   },
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'en',
+    pathMatch: 'full'
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
-];
-const routes: Routes = [
   {
-    path: 'en', component: LanguageComponent, 
-    children: children
-  },
-  { path: '**', redirectTo: '/en', pathMatch: 'full' }
-];
+  path: ':lang',
+  component: HomeComponent,
+}];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    scrollOffset: [0, 0],
-    scrollPositionRestoration: 'top'
-  })],
+  imports: [RouterModule.forRoot(routes,{ 
+    scrollOffset: [0, 0], 
+    scrollPositionRestoration: 'top' })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+  constructor(public translate: TranslateService){
+    console.log(this)
+  }
+}
