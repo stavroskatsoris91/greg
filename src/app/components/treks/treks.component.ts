@@ -90,7 +90,7 @@ export class TreksComponent implements OnInit {
             text: 'treks.trek6.text'
         },
     ];
-    imagePhotos = require('src/assets/images/photos.svg');
+    imagePhotos = require('src/assets/images/treks/photos.svg');
     constructor(private ModalService: ModalService,
         private readonly language: LanguageService) { }
 

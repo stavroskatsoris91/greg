@@ -14,11 +14,11 @@ export class FooterComponent implements OnInit {
   info:string[]=this.language.footer.info;
   show:boolean = false;
   openMap:boolean = false;
-  imageInfo = require('src/assets/images/info.svg');
-  imageClock = require('src/assets/images/clock.png');
-  imageLocation = require('src/assets/images/location.png');
-  imagePhone = require('src/assets/images/phone2.png');
-  imageGoogleMaps = require('src/assets/images/googlemaps.jpg');
+  imageInfo = require('src/assets/images/footer/info.svg');
+  imageClock = require('src/assets/images/footer/clock.png');
+  imageLocation = require('src/assets/images/footer/location.png');
+  imagePhone = require('src/assets/images/footer/phone2.png');
+  imageGoogleMaps = require('src/assets/images/footer/googlemaps.jpg');
   constructor(
     private readonly language: LanguageService
   ) { }
