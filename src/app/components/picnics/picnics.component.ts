@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
-import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-picnics',
@@ -12,8 +11,7 @@ export class PicnicsComponent implements OnInit {
   picnics = ['picnics.picnics.copy1', 'picnics.picnics.copy2', 'picnics.picnics.copy3']
   photos = [require('src/assets/images/picnics/picnic-1.jpg')];
 
-  constructor(private ModalService: ModalService,
-    private readonly language: LanguageService) { }
+  constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {
   }

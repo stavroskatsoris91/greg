@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
-import { LanguageService } from 'src/app/services/language.service';
-
 @Component({
     selector: 'app-treks',
     templateUrl: './treks.component.html',
@@ -91,8 +89,7 @@ export class TreksComponent implements OnInit {
         },
     ];
     imagePhotos = require('src/assets/images/treks/photos.svg');
-    constructor(private ModalService: ModalService,
-        private readonly language: LanguageService) { }
+    constructor(private ModalService: ModalService) { }
 
     ngOnInit(): void {
     }

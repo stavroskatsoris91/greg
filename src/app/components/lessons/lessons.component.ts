@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
-import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-lessons',

@@ -1,6 +1,6 @@
 <div class="Header">
   <div class="container">
-    <a routerLink="/" class="logo">
+    <a [routerLink]="[language]" class="logo">
       <img [src]="imageLogo">
     </a>
     <div (clickOutside)="animateMe(false,null)" class="mobile-menu">
@@ -13,14 +13,22 @@
       </div>
       <div class="menu-2" appToggleAnimate [show]="mobileMenu.toggle">
         <div class="" *ngFor="let opt of menu; let i  = index;">
-          <a [routerLink]="opt.path||path" 
+          <a *ngIf="opt.path; else isNotLink" [routerLink]="[language+(opt.path||'')]" 
             class="nav-link"
             [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}"
-            (click)="animateMe(true,opt)"
-            >{{opt.name| translate}}</a>
+            >{{opt.name| translate}}
+          </a>
+          <ng-template #isNotLink>
+            <a
+              class="nav-link"
+              [ngClass]="{active:opt.subPath.indexOf(path)>=0}"
+              (click)="animateMe(true,opt)"
+              >{{opt.name| translate}}
+            </a>
+          </ng-template>
           <div class="sub" *ngIf="opt.sub" appToggleAnimate [show]="opt.toggle">
             <div class="" *ngFor="let sub of opt.sub" >
-              <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name| translate}}</a>
+              <a [routerLink]="[language+sub.path]" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name| translate}}</a>
             </div>
           </div>
         </div>
@@ -28,14 +36,23 @@
       <div class="menu">
         <ul>
           <li *ngFor="let opt of menu; let i = index;">
-            <a [routerLink]="opt.path||path" class="nav-link"
-              [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}"
-              (click)="animateMe(true,opt)"
-              >{{opt.name| translate}}</a>
+            <a *ngIf="opt.path; else isNotLink" [routerLink]="[language+(opt.path||'')]" 
+              class="nav-link"
+              [ngClass]="{active:opt.path.indexOf(path)>=0}"
+              >{{opt.name| translate}}
+            </a>
+            <ng-template #isNotLink>
+              <a 
+                class="nav-link"
+                [ngClass]="{active:opt.subPath.indexOf(path)>=0}"
+                (click)="animateMe(true,opt)"
+                >{{opt.name| translate}}
+            </a>
+            </ng-template>
             <div class="sub" *ngIf="opt.sub" appToggleAnimate [show]="opt.toggle">
               <ul>
                 <li class="" *ngFor="let sub of opt.sub">
-                  <a [routerLink]="sub.path" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name| translate}}</a>
+                  <a [routerLink]="[language+sub.path]" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name| translate}}</a>
                 </li>
               </ul>
             </div>

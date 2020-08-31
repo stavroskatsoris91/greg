@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-instructors',
@@ -9,8 +8,7 @@ import { LanguageService } from 'src/app/services/language.service';
 export class InstructorsComponent implements OnInit {
 
   instructors = ['greg','kat','tracy']
-  constructor(
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

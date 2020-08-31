@@ -1,9 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { filter, tap } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 import { MetaDataService } from 'src/app/services/meta-data.service';
-import { LanguageService } from 'src/app/services/language.service';
-import { of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-header',
@@ -17,57 +15,31 @@ export class HeaderComponent implements OnInit {
   imageLogo = require('src/assets/images/logo2.png');
   languageEn = require('src/assets/images/flags/united-kingdom.svg');
   languageGr = require('src/assets/images/flags/greece.svg');
-  checkLanguage = of(this.language.isEngilish)
-    .pipe(
-    tap(val=>{
-      this.menu = [
-        { path: ['/'], name: 'header.home', trigger: true,toggle:false },
-        {   
-            name: 'header.about', trigger: false,toggle:false,
-            sub: [
-                { path: '/about', name: 'header.story' },
-                { path: '/instructors', name: 'header.instructors' }
-            ]
-        },
-        { path: ['/horses'], name: 'header.horses', trigger: true,toggle:false },
-        {
-            name: 'header.riding', trigger: false,toggle:false,
-            sub: [
-                { path: '/treks', name: 'header.treks' },
-                { path: '/lessons', name: 'header.lessons' },
-                { path: '/photoshoots', name: 'header.photos' },
-                { path: '/picnics', name: 'header.picnic' },
-                { path: '/safety', name: 'header.safety' }
-            ]
-        },
-        { path: ['/carriage'], name: 'header.carriage', trigger: true, toggle: false },
-        { path: ['/gallery'], name: 'header.gallery', trigger: true, toggle: false },
-        { path: ['/contact'], name: 'header.contact', trigger: true, toggle: false }
-      ]
-    }));
   menu = [
-    { path: ['/'], name: 'header.home', trigger: true,toggle:false },
+    { path: [''], name: 'header.home', toggle:false },
     {   
-        name: 'header.about', trigger: false,toggle:false,
+        name: 'header.about', toggle:false,
         sub: [
-            { path: '/about', name: 'header.story' },
-            { path: '/instructors', name: 'header.instructors' }
-        ]
+            { path: 'about', name: 'header.story' },
+            { path: 'instructors', name: 'header.instructors' }
+        ],
+        subPath:[]
     },
-    { path: ['/horses'], name: 'header.horses', trigger: true,toggle:false },
+    { path: ['horses'], name: 'header.horses', toggle:false },
     {
-        name: 'header.riding', trigger: false,toggle:false,
+        name: 'header.riding', toggle:false,
         sub: [
-            { path: '/treks', name: 'header.treks' },
-            { path: '/lessons', name: 'header.lessons' },
-            { path: '/photoshoots', name: 'header.photos' },
-            { path: '/picnics', name: 'header.picnic' },
-            { path: '/safety', name: 'header.safety' }
-        ]
+            { path: 'treks', name: 'header.treks' },
+            { path: 'lessons', name: 'header.lessons' },
+            { path: 'photoshoots', name: 'header.photos' },
+            { path: 'picnics', name: 'header.picnic' },
+            { path: 'safety', name: 'header.safety' }
+        ],
+        subPath:[]
     },
-    { path: ['/carriage'], name: 'header.carriage', trigger: true, toggle: false },
-    { path: ['/gallery'], name: 'header.gallery', trigger: true, toggle: false },
-    { path: ['/contact'], name: 'header.contact', trigger: true, toggle: false }
+    { path: ['carriage'], name: 'header.carriage',  toggle: false },
+    { path: ['gallery'], name: 'header.gallery',  toggle: false },
+    { path: ['contact'], name: 'header.contact',  toggle: false }
   ];
   event: any;
   constructor(
@@ -75,20 +47,19 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private metadata: MetaDataService,
-    private language: LanguageService,
     private translate: TranslateService
   ) { 
     this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     ).subscribe((e: NavigationEnd) => {
-      this.path = e.url
+      this.path = e.url.split('/')[2]||'';
       this.animateMe(false,null);
     })
-    this.checkLanguage.subscribe()
   }
 
   ngOnInit(): void {
     this.path = this.route.snapshot.url[0];
+    this.menu.map(option=>option.subPath=option.sub&&option.sub.map(subOption=>subOption.path));
   }
   // public hideCollapse() {
   //   this.elementRef.nativeElement.getElementsByClassName('collapse').collapse('hide');
@@ -106,6 +77,9 @@ export class HeaderComponent implements OnInit {
   }
   getState(toggle){
     return toggle?'large':'small';
+  }
+  get language(){
+    return (this.translate.currentLang||this.translate.defaultLang)+'/';
   }
   changeLanguage(lang){
     let url = this.router.url.split('/');
