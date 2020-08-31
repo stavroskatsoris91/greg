@@ -1,6 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { interval } from 'rxjs';
-import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-home',
