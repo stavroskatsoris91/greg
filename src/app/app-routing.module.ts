@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule, Injectable } from '@angular/core';
+import { Routes, RouterModule, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { InstructorsComponent } from './components/instructors/instructors.component';
@@ -14,6 +14,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
+import { CanActivateTeam, CanActivateHome } from './can-activate';
+
+
+
 
 const children: Routes = [
   {
@@ -72,10 +76,19 @@ const children: Routes = [
 ];
 const routes: Routes = [
   {
-    path: 'en', component: LanguageComponent, 
+    path: ':lang',
+    canActivate: [CanActivateTeam],
+    component: LanguageComponent,
     children: children
-  },
-  { path: '**', redirectTo: '/en', pathMatch: 'full' }
+  },{
+    path: '',
+    canActivate:[CanActivateHome],
+    component:LanguageComponent
+  },{
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
@@ -83,6 +96,7 @@ const routes: Routes = [
     scrollOffset: [0, 0],
     scrollPositionRestoration: 'top'
   })],
+  providers: [CanActivateTeam,CanActivateHome],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

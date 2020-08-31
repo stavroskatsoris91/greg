@@ -108,6 +108,8 @@ export class HeaderComponent implements OnInit {
     return toggle?'large':'small';
   }
   changeLanguage(lang){
-    this.translate.use(lang);
+    let url = this.router.url.split('/');
+    url[1]=lang;
+    this.router.navigate(url);
   }
 }
