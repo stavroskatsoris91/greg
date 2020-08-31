@@ -159,7 +159,8 @@ export class ContactComponent implements OnInit, OnDestroy {
     data.date = date;
     data.payment = this.translate.instant(data.payment) + ' ' + this.price;
     this.books.makeBook(data).subscribe((res) => {
-      this.router.navigate(['thankyou'])
+      const language = this.translate.currentLang || this.translate.defaultLang;
+      this.router.navigate([language,'thankyou'])
       this.books.clearForm();
       this.run = false;
     }, (error) => {
