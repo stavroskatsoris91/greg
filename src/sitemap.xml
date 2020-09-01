@@ -1,39 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.gregsspetseshorses.com/</loc>
+    <loc>https://www.gregsspetseshorses.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en" />
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el" />
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/about</loc>
+    <loc>https://www.gregsspetseshorses.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/horses</loc>
+    <loc>https://www.gregsspetseshorses.com/en/horses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/horses"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/horses"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/treks</loc>
+    <loc>https://www.gregsspetseshorses.com/en/treks</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/treks"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/treks"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/lessons</loc>
+    <loc>https://www.gregsspetseshorses.com/en/lessons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/lessons"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/lessons"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/photoshoots</loc>
+    <loc>https://www.gregsspetseshorses.com/en/photoshoots</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/photoshoots"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/photoshoots"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/picnics</loc>
+    <loc>https://www.gregsspetseshorses.com/en/picnics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/picnics"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/picnics"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/safety</loc>
+    <loc>https://www.gregsspetseshorses.com/en/safety</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/safety"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/safety"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/gallery</loc>
+    <loc>https://www.gregsspetseshorses.com/en/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/gallery"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/instructors</loc>
+    <loc>https://www.gregsspetseshorses.com/en/instructors</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/instructors"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/instructors"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/contact</loc>
+    <loc>https://www.gregsspetseshorses.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/carriage</loc>
+    <loc>https://www.gregsspetseshorses.com/en/carriage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/carriage"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/carriage"/>
   </url>
 </urlset>
