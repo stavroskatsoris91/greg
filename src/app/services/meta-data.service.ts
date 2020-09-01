@@ -1,7 +1,9 @@
 import { Router, NavigationEnd } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { filter } from 'rxjs/operators';
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -13,26 +15,32 @@ export class MetaDataService {
     private readonly router: Router,
     private readonly meta: Meta,
     private readonly title: Title,
+    @Inject(DOCUMENT) private document: Document,
+    private readonly translate: TranslateService,
   ) {
     this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     )
       .subscribe((e) => {
-        this.getData(e);
+        this.getData()
       });
+    this.translate.onLangChange.subscribe((x)=>{this.getData()})
   }
-  private getData(e) {
+  private getData() {
 
     let data = {
       image: this.homeImage,
-      location: this.baseUrl
+      location: this.baseUrl,
+      title: this.translate.instant('meta.title'),
+      keywords: this.translate.instant('meta.keywords'),
+      description: this.translate.instant('meta.description'),
     }
     this.updateMeta(data);
   }
   private updateMeta(data) {
-    // this.title.setTitle(data.title);
+    this.title.setTitle(data.title);
     let show = this.getMeta(data);
-
+    this.document.documentElement.lang = this.translate.currentLang||this.translate.defaultLang; 
     show.map((x) => {
       x.list.forEach((y) => {
         let value = 'name';
@@ -58,17 +66,16 @@ export class MetaDataService {
       {
         condition: true,
         list: [
-          // { name: 'description', content: data.fb_description },
-          // { name: 'keywords', content: data.keywords },
-          // { property: 'og:site_name', content: data.name },
-          // { property: 'og:title', content: data.title },
-          // { property: 'og:description', content: data.fb_description },
-          // { property: 'og:type', content: data.type },
+          { name: 'description', content: data.description },
+          { name: 'keywords', content: data.keywords },
+          { property: 'title', content: data.title },
+          { property: 'og:title', content: data.title },
+          { property: 'og:description', content: data.description },
+          { property: 'og:type', content: data.type },
           { property: 'og:image', content: data.location + '/' + data.image },
           { property: 'og:url', content: data.location },
-          // { name: 'twitter:site', content: data.twitter },
-          // { name: 'twitter:title', content: data.title },
-          // { name: 'twitter:description', content: data.tw_description },
+          { name: 'twitter:title', content: data.title },
+          { name: 'twitter:description', content: data.tw_description },
           { name: 'twitter:image', content: data.location + '/' + data.image }
         ]
       },
