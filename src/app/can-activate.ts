@@ -13,11 +13,12 @@ export class CanActivateTeam implements CanActivate {
   ): Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree {
     const path = route.params.lang;
     const routeChildren = route.routeConfig.children;
-    const language = this.translate.currentLang || this.translate.defaultLang;
+    const languages = this.translate.getLangs();
     if(routeChildren.map(x=>x.component&&x.path).filter(x=>x!=undefined).includes(path)){
-      this.router.navigateByUrl(language+'/'+path);
+      const currentLang = this.translate.currentLang|| this.translate.defaultLang;
+      this.router.navigateByUrl(currentLang+'/'+path);
       return false;
-    }else if(['en','el'].includes(path)){
+    }else if(languages.includes(path)){
       return true;
     }else{
       return false;
@@ -32,8 +33,8 @@ export class CanActivateHome implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree {
-    const language = this.translate.currentLang || this.translate.defaultLang;
-    this.router.navigateByUrl(language+'/');
+    const currentLang = this.translate.currentLang || this.translate.defaultLang;
+    this.router.navigateByUrl(currentLang+'/');
     return false;
   }
 }

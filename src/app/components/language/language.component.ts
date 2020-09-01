@@ -13,7 +13,8 @@ export class LanguageComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe( (params : Params) => {
-      if(['en','el'].includes(params['lang'])){
+      const languages = this.translate.getLangs();
+      if(languages.includes(params['lang'])){
         this.translate.use( params['lang'] );
       }
     });    
