@@ -2,10 +2,11 @@ import { Injectable } from "@angular/core";
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-
+import { MetaDataService } from 'src/app/services/meta-data.service'
 @Injectable()
 export class CanActivateTeam implements CanActivate {
-  constructor(private router: Router, private translate: TranslateService) {}
+  constructor(private router: Router, private translate: TranslateService,
+    private readonly metaData: MetaDataService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -16,7 +17,9 @@ export class CanActivateTeam implements CanActivate {
     const languages = this.translate.getLangs();
     if(routeChildren.map(x=>x.component&&x.path).filter(x=>x!=undefined).includes(path)){
       const currentLang = this.translate.currentLang|| this.translate.defaultLang;
-      this.router.navigateByUrl(currentLang+'/'+path);
+      const newPath = currentLang+'/'+path;
+      this.metaData.redirectPage(newPath);
+      this.router.navigateByUrl(newPath);
       return false;
     }else if(languages.includes(path)){
       return true;
@@ -27,14 +30,18 @@ export class CanActivateTeam implements CanActivate {
 }
 @Injectable()
 export class CanActivateHome implements CanActivate {
-  constructor(private router: Router, private translate: TranslateService) {}
+  constructor(private router: Router,
+    private translate: TranslateService,
+    private readonly metaData: MetaDataService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree {
     const currentLang = this.translate.currentLang || this.translate.defaultLang;
-    this.router.navigateByUrl(currentLang+'/');
+    const newPath = currentLang;
+    this.metaData.redirectPage(newPath);
+    this.router.navigateByUrl(newPath);
     return false;
   }
 }
