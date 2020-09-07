@@ -11,6 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class MetaDataService {
   baseUrl = window.location.protocol + '//' + window.location.hostname;
   homeImage = require('src/assets/images/background/home.jpg');
+  redirect = false;
+  redirectPath: any;
   constructor(
     private readonly router: Router,
     private readonly meta: Meta,
@@ -34,8 +36,14 @@ export class MetaDataService {
       title: this.translate.instant('meta.title'),
       keywords: this.translate.instant('meta.keywords'),
       description: this.translate.instant('meta.description'),
+      prerender_redirect: this.redirect,
+      prerender_redirect_path : this.redirectPath
     }
     this.updateMeta(data);
+  }
+  public redirectPage(path) {
+    this.redirect = true;
+    this.redirectPath = this.baseUrl+'/'+path;
   }
   private updateMeta(data) {
     this.title.setTitle(data.title);
@@ -73,12 +81,19 @@ export class MetaDataService {
           { property: 'og:description', content: data.description },
           { property: 'og:type', content: data.type },
           { property: 'og:image', content: data.location + '/' + data.image },
-          { property: 'og:url', content: data.location },
+          { property: 'og:url', content: window.location.href },
           { name: 'twitter:title', content: data.title },
           { name: 'twitter:description', content: data.tw_description },
           { name: 'twitter:image', content: data.location + '/' + data.image }
-        ]
+        ],
       },
+      {
+        condition:data['prerender_redirect'],
+        list: [
+          { name: 'prerender-status-code', content: '301' },
+          { name: 'prerender-header', content: data.prerender_redirect_path }
+        ]
+      }
     ];
     return list;
   }
