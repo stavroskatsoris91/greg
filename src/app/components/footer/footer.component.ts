@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class FooterComponent {
   show:boolean = false;
   openMap:boolean = false;
-  imageInfo = require('src/assets/images/footer/info.svg');
-  imageClock = require('src/assets/images/footer/clock.png');
-  imageLocation = require('src/assets/images/footer/location.png');
-  imagePhone = require('src/assets/images/footer/phone2.png');
-  imageGoogleMaps = require('src/assets/images/footer/googlemaps.jpg');
+  imageInfo = require('src/assets/images/footer/info.svg').default;
+  imageClock = require('src/assets/images/footer/clock.png').default;
+  imageLocation = require('src/assets/images/footer/location.png').default;
+  imagePhone = require('src/assets/images/footer/phone2.png').default;
+  imageGoogleMaps = require('src/assets/images/footer/googlemaps.jpg').default;
   constructor() { }
 }

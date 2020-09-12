@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class MetaDataService {
   baseUrl = window.location.protocol + '//' + window.location.hostname;
-  homeImage = require('src/assets/images/background/home.jpg');
+  homeImage = require('src/assets/images/background/home.jpg').default;
   redirect = false;
   redirectPath: any;
   constructor(

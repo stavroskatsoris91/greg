@@ -17,7 +17,7 @@ export class HorsesComponent implements OnInit {
         colour: 'horses.colours.chestnut',
         age: this.getAge(2003),
         height: '1.35m',
-        images: [require('src/assets/images/horses/rebecca1.jpg'),require('src/assets/images/horses/rebecca2.jpg'),require('src/assets/images/horses/rebecca3.jpg'),require('src/assets/images/horses/rebecca4.jpg')],
+        images: [require('src/assets/images/horses/rebecca1.jpg').default,require('src/assets/images/horses/rebecca2.jpg').default,require('src/assets/images/horses/rebecca3.jpg').default,require('src/assets/images/horses/rebecca4.jpg').default],
         text: ['horses.rebecca.copy1','horses.rebecca.copy2']
       }, {
         name: 'ROBBIE',
@@ -25,7 +25,7 @@ export class HorsesComponent implements OnInit {
         colour: null,
         age: this.getAge(2009),
         height: '1.50m',
-        images:[require('src/assets/images/horses/robbie1.jpg'),require('src/assets/images/horses/robbie2.jpg'),require('src/assets/images/horses/robbie3.jpg'),require('src/assets/images/horses/robbie4.jpg'),require('src/assets/images/horses/robbie5.jpg')],
+        images:[require('src/assets/images/horses/robbie1.jpg').default,require('src/assets/images/horses/robbie2.jpg').default,require('src/assets/images/horses/robbie3.jpg').default,require('src/assets/images/horses/robbie4.jpg').default,require('src/assets/images/horses/robbie5.jpg').default],
         text: ['horses.robbie.copy1']
       },
       {
@@ -34,7 +34,7 @@ export class HorsesComponent implements OnInit {
         colour: null,
         age: this.getAge(2009),
         height: '1.45m',
-        images:[require('src/assets/images/horses/nelly1.jpg'),require('src/assets/images/horses/nelly2.jpg'),require('src/assets/images/horses/nelly3.jpg'),require('src/assets/images/horses/nelly4.jpg')],
+        images:[require('src/assets/images/horses/nelly1.jpg').default,require('src/assets/images/horses/nelly2.jpg').default,require('src/assets/images/horses/nelly3.jpg').default,require('src/assets/images/horses/nelly4.jpg').default],
         text: ['horses.nelly.copy1']
       }, {
         name: 'OSCAR',
@@ -42,7 +42,7 @@ export class HorsesComponent implements OnInit {
         colour: null,
         age: this.getAge(2009),
         height: '1.40m',
-        images:[require('src/assets/images/horses/oscar1.jpg'),require('src/assets/images/horses/oscar2.jpg'),require('src/assets/images/horses/oscar3.jpg')],
+        images:[require('src/assets/images/horses/oscar1.jpg').default,require('src/assets/images/horses/oscar2.jpg').default,require('src/assets/images/horses/oscar3.jpg').default],
         text: ['horses.oscar.copy1']
       }, {
         name: 'OLIVIA',
@@ -50,7 +50,7 @@ export class HorsesComponent implements OnInit {
         colour: 'horses.colours.grey',
         age: this.getAge(2011),
         height: '1.60m',
-        images:[require('src/assets/images/horses/olivia1.jpg'),require('src/assets/images/horses/olivia2.jpg'),require('src/assets/images/horses/olivia3.jpg')],
+        images:[require('src/assets/images/horses/olivia1.jpg').default,require('src/assets/images/horses/olivia2.jpg').default,require('src/assets/images/horses/olivia3.jpg').default],
         text: ['horses.olivia.copy1','horses.olivia.copy2']
       }, {
         name: 'ELINA',
@@ -58,7 +58,7 @@ export class HorsesComponent implements OnInit {
         colour: 'horses.colours.chestnut',
         age: this.getAge(2012),
         height: '1.36m',
-        images:[require('src/assets/images/horses/elina1.jpg'),require('src/assets/images/horses/elina2.jpg'),require('src/assets/images/horses/elina3.jpg')],
+        images:[require('src/assets/images/horses/elina1.jpg').default,require('src/assets/images/horses/elina2.jpg').default,require('src/assets/images/horses/elina3.jpg').default],
         text: ['horses.elina.copy1','horses.elina.copy2']
       }, {
         name: 'ROSIE',
@@ -66,7 +66,7 @@ export class HorsesComponent implements OnInit {
         colour: null,
         age: this.getAge(2014),
         height: '1.75m',
-        images:[require('src/assets/images/horses/rosie1.jpg'),require('src/assets/images/horses/rosie2.jpg'),require('src/assets/images/horses/rosie3.jpg')],
+        images:[require('src/assets/images/horses/rosie1.jpg').default,require('src/assets/images/horses/rosie2.jpg').default,require('src/assets/images/horses/rosie3.jpg').default],
         text: ['horses.rosie.copy1','horses.rosie.copy2']
       }, {
         name: 'ANGEL',
@@ -74,7 +74,7 @@ export class HorsesComponent implements OnInit {
         colour: null,
         age: this.getAge(2011),
         height: '1.35m',
-        images:[require('src/assets/images/horses/angel1.jpg'),require('src/assets/images/horses/angel2.jpg'),require('src/assets/images/horses/angel3.jpg'),require('src/assets/images/horses/angel4.jpg')],
+        images:[require('src/assets/images/horses/angel1.jpg').default,require('src/assets/images/horses/angel2.jpg').default,require('src/assets/images/horses/angel3.jpg').default,require('src/assets/images/horses/angel4.jpg').default],
         text: ['horses.angel.copy1','horses.angel.copy2']
       },
       {
@@ -83,7 +83,7 @@ export class HorsesComponent implements OnInit {
         colour: 'horses.colours.black',
         age: this.getAge(2013),
         height: '1.60m',
-        images: [require('src/assets/images/horses/titan1.jpg'),require('src/assets/images/horses/titan2.jpg'),require('src/assets/images/horses/titan3.jpg'),require('src/assets/images/horses/titan4.jpg')],
+        images: [require('src/assets/images/horses/titan1.jpg').default,require('src/assets/images/horses/titan2.jpg').default,require('src/assets/images/horses/titan3.jpg').default,require('src/assets/images/horses/titan4.jpg').default],
         text: ['horses.titan.copy1','horses.titan.copy2']
       }
     ];
