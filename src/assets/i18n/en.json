@@ -204,7 +204,13 @@
     "copy2": "Call us for bookings. Prices depend on the duration of your tour."
   },
   "gallery":{
-    "title":"Gallery"
+    "title":"Gallery",
+    "all": "ALL",
+    "lessons": "LESSONS",
+    "treks": "TREKS",
+    "photoshoots": "PHOTOSHOOTS",
+    "horseshow": "HORSESHOW",
+    "carriage": "CARRIAGE"
   },
   "contact": {
     "title": "Contact Us",

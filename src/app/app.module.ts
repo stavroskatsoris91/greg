@@ -37,6 +37,7 @@ import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
 import { MetaDataService } from './services/meta-data.service';
 import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
+import { GalleryImageComponent } from './components/gallery-image/gallery-image.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { LanguageComponent } from './components/language/language.component';
     ToggleAnimateDirective,
     CarriageComponent,
     LanguageComponent,
+    GalleryImageComponent,
   ],
   imports: [
     BrowserAnimationsModule,

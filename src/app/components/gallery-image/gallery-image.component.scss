@@ -1,0 +1,8 @@
+.GalleryImage{
+    position: absolute;
+    transition: all 1s;
+    &__image{
+        width: 100%;
+
+    }
+}

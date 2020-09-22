@@ -5,3 +5,25 @@
       margin: auto;
     }
   }
+.Gallery{
+  &__Options{
+    &__Option{
+      display: inline-block;
+      font-size: 20px;
+      transition: color .2s;
+      &:not(:last-child){
+        margin-right: 25px;
+      }
+      &:hover{
+        color:#F89406
+      }
+      &--selected{
+        color:#F89406
+      }
+    }
+  }
+  &__Images{
+    margin: 5px;
+    position: relative;
+  }
+}
