@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { GalleryCategory, ImageOnCategory } from './components/gallery/gallery.component';
 type CORSMethod = 'Anonymous' | 'User-Authenticated'
 @Injectable({
   providedIn: 'root'
@@ -6,37 +7,131 @@ type CORSMethod = 'Anonymous' | 'User-Authenticated'
 export class GalleryService {
 
   constructor() { }
-  public getImagesByTitle(title:string) {
+  get categories():GalleryCategory[]{
     return [
-      require('src/assets/images/gallery/gallery1.jpg').default,
-      require('src/assets/images/gallery/gallery2.jpg').default,
-      require('src/assets/images/gallery/gallery3.jpg').default,
-      require('src/assets/images/gallery/gallery4.jpg').default,
-      require('src/assets/images/gallery/gallery5.jpg').default,
-      require('src/assets/images/gallery/gallery6.jpg').default,
-      require('src/assets/images/gallery/gallery7.jpg').default,
-      require('src/assets/images/gallery/gallery8.jpg').default,
-      require('src/assets/images/gallery/gallery9.jpg').default,
-      require('src/assets/images/gallery/gallery10.jpg').default,
-      require('src/assets/images/gallery/gallery11.jpg').default,
-      require('src/assets/images/gallery/gallery12.jpg').default,
-      require('src/assets/images/gallery/gallery13.jpg').default,
-      require('src/assets/images/gallery/gallery14.jpg').default,
-      require('src/assets/images/gallery/gallery15.jpg').default,
-      require('src/assets/images/gallery/gallery16.jpg').default,
-      require('src/assets/images/gallery/gallery17.jpg').default,
-      require('src/assets/images/gallery/gallery18.jpg').default,
-      require('src/assets/images/gallery/gallery19.jpg').default,
-      require('src/assets/images/gallery/gallery20.jpg').default,
-      require('src/assets/images/gallery/gallery21.jpg').default,
-      require('src/assets/images/gallery/gallery22.jpg').default,
-      require('src/assets/images/gallery/gallery23.jpg').default,
-      require('src/assets/images/gallery/gallery24.jpg').default,
-      require('src/assets/images/gallery/gallery25.jpg').default,
-      require('src/assets/images/gallery/gallery26.jpg').default,
-      require('src/assets/images/gallery/gallery27.jpg').default,
-      require('src/assets/images/gallery/gallery28.jpg').default
-    ].filter(image=>title=='gallery.all');
+      {title:'gallery.all',value:'all'},
+      {title:'gallery.lessons',value:'lessons'},
+      {title:'gallery.treks',value:'treks'},
+      {title:'gallery.photoshoots',value:'photoshoots'},
+      {title:'gallery.horseshow',value:'horseshow'},
+      {title:'gallery.carriage',value:'carriage'},
+      ];
+  }
+  get getImages():ImageOnCategory[] {
+    return [
+      {
+        src:require('src/assets/images/gallery/gallery1.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery2.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery3.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery4.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery5.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery6.jpg').default,
+        category:'photoshoots'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery7.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery8.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery9.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery10.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery11.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery12.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery13.jpg').default,
+        category:'photoshoots'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery14.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery15.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery16.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery17.jpg').default,
+        category:'photoshoots'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery18.jpg').default,
+        category:'photoshoots'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery19.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery20.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery21.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery22.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery23.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery24.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery25.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery26.jpg').default,
+        category:'treks'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery27.jpg').default,
+        category:'lessons'
+      },
+      {
+        src:require('src/assets/images/gallery/gallery28.jpg').default,
+        category:'lessons'
+      }
+    ]
   }
   public async computeImageDimensionsFromFile(imageSrc: string): Promise<[number, number]> {
     const image = await this.fetchImage(imageSrc)
