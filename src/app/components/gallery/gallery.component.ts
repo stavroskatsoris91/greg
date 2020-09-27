@@ -42,7 +42,7 @@ export class GalleryComponent {
           from(this.imagesWithSizes(image, image.size))
         )
         )
-      ),tap((a)=>{console.log(a.map(i=>i.src+': size:['+i.size.join()+']\n').join()),this.loadingImages.next(false)}),share());
+      ),tap(()=>this.loadingImages.next(false)),share());
   getWindowsEvent = new BehaviorSubject(window);
   windowResize: Observable<Event> = fromEvent(window, 'resize').pipe(debounceTime(500));//throttleTime
 

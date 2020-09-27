@@ -7,8 +7,9 @@
                 <div class="Modal__Button" (click)="group=null">&times;</div>
                 <div class="Modal__Button" (click)="next()">{{right}}</div>
             </div>
-            <div class="Modal__Image" (click)="next()">
-                <img [src]="group[index].img">
+            <div #ImageContent class="Modal__Image" (click)="next()" [style.backgroundImage]="imageUrl" [style.height]="imageHeight | async">
+                <!-- <img [src]="group[index].img"> -->
+
             </div>
         </div>
 

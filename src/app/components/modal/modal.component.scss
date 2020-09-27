@@ -69,8 +69,9 @@
   /* Modal Content (image) */
   &__Image {
     cursor: pointer;
-    img{
-      width: 100%;
-    }
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    transition: all .5s;
   }
 }
