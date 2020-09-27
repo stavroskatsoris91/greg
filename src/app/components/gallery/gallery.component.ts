@@ -13,6 +13,7 @@ export interface ImageSize {
 }
 export interface ImageOnCategory {
   src: string,
+  size: [string, string],
   category: string
 }
 export class windowBreakpoint {
@@ -38,10 +39,10 @@ export class GalleryComponent {
     .pipe(
       switchMap(images =>
         combineLatest(images.map(image =>
-          from(this.imagesWithSizes(image, this.galleryService.computeImageDimensionsFromFile(image.src)))
+          from(this.imagesWithSizes(image, image.size))
         )
         )
-      ),tap(()=>this.loadingImages.next(false)),share());
+      ),tap((a)=>{console.log(a.map(i=>i.src+': size:['+i.size.join()+']\n').join()),this.loadingImages.next(false)}),share());
   getWindowsEvent = new BehaviorSubject(window);
   windowResize: Observable<Event> = fromEvent(window, 'resize').pipe(debounceTime(500));//throttleTime
 
