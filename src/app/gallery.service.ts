@@ -66,7 +66,6 @@ export class GalleryService {
           require('src/assets/images/gallery/photoshoots/galleryphotoshoots2.jpg').default,
           require('src/assets/images/gallery/photoshoots/galleryphotoshoots3.jpg').default,
           require('src/assets/images/gallery/photoshoots/galleryphotoshoots4.jpg').default,
-          require('src/assets/images/gallery/photoshoots/galleryphotoshoots5.jpg').default,
           require('src/assets/images/gallery/photoshoots/galleryphotoshoots6.jpg').default
         ],
         category:'photoshoots',

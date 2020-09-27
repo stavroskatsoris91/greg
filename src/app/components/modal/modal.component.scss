@@ -57,6 +57,7 @@
     margin: 2px;
     line-height: 1.2;
     transition: all 0.3s;
+    cursor: pointer;
     &:hover,
     :focus {
       color: #282b30;
@@ -67,6 +68,7 @@
 
   /* Modal Content (image) */
   &__Image {
+    cursor: pointer;
     img{
       width: 100%;
     }
