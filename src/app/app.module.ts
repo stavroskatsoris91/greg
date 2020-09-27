@@ -38,6 +38,7 @@ import { MetaDataService } from './services/meta-data.service';
 import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
 import { GalleryImageComponent } from './components/gallery-image/gallery-image.component';
+import { NgxScrollLockModule } from 'ngx-scroll-lock';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { GalleryImageComponent } from './components/gallery-image/gallery-image.
     ReactiveFormsModule,
     SlickCarouselModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireFunctionsModule
+    AngularFireFunctionsModule,
+    NgxScrollLockModule,
   ],
   providers: [MetaDataService],
   bootstrap: [AppComponent]

@@ -29,6 +29,7 @@
     "file-loader": "^6.1.0",
     "firebase": "^7.19.1",
     "lodash.clonedeep": "^4.5.0",
+    "ngx-scroll-lock": "^9.1.0",
     "ngx-slick-carousel": "^0.5.1",
     "rxjs": "^6.6.3",
     "slick-carousel": "^1.8.1",

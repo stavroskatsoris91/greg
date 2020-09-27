@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 import { GalleryService } from 'src/app/gallery.service';
 import { BehaviorSubject } from 'rxjs';
@@ -17,6 +17,7 @@ export class ModalComponent implements OnInit {
   min = 0;
   max = 0;
   imageHeight:BehaviorSubject<string> = new BehaviorSubject('0px')
+  imageWidth:BehaviorSubject<string> = new BehaviorSubject(`${this.imageStyleWidth}px`)
   constructor(private ModalService: ModalService,
     private galleryService: GalleryService) { }
   @ViewChild('ImageContent', { static: false })
@@ -31,6 +32,13 @@ export class ModalComponent implements OnInit {
       this.getHeight(this.imgSrc)
     })
   }
+  @HostListener('window:resize')
+  onResize() {
+    this.getHeight(this.imgSrc)
+  }
+  get isModalOpen(){
+    return Boolean(this.group);
+  }
   public prev(){
     this.index = this.index-1>=0?this.index-1:this.max;
     this.getHeight(this.imgSrc);
@@ -41,10 +49,14 @@ export class ModalComponent implements OnInit {
   };
   public async getHeight(src){
     const [width,height] = await this.galleryService.computeImageDimensionsFromFile(src);
-    const contentWidth = this.ImageContentComponent.nativeElement.clientWidth;
+    const contentWidth = this.imageStyleWidth
     const contentHeight = window.innerHeight;
     const ratio = Math.min(contentWidth/width,contentHeight/height);
     this.imageHeight.next(`${height*ratio}px`)
+    this.imageWidth.next(`${width*ratio}px`)
+  }
+  get imageStyleWidth(){
+    return Math.min(window.innerWidth*.95,800);
   }
   get imgSrc(){
     return this.group[this.index].img;
