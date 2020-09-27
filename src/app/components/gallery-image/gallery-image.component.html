@@ -1,3 +1,7 @@
-<div [style.top]="styleTop" [style.left]="styleLeft" class="GalleryImage" [style.width]="styleWidth" >
-    <img [src]="imageSrc" class="GalleryImage__image">
+<div [style.top]="styleTop" [style.left]="styleLeft" class="GalleryImage" [style.width]="styleWidth" [class.GalleryImage--close]="isClosed">
+    <div class="GalleryImage__Content">
+        <div class="GalleryImage__Image">
+            <img [src]="imageSrc">
+        </div>
+    </div>
 </div>

@@ -8,9 +8,10 @@
           *ngFor="let category of categories" (click)="selected.next(category.value)">{{category.title | translate}}</div>
       </div>
     </div>
-    <div class="Gallery__Images" [style.height]="containersHeight | async">
+    <div #GalleryImages class="Gallery__Images" [style.height]="containersHeight | async">
       <app-gallery-image *ngFor="let image of setImagePositions | async" [top]="image.style.top"
-        [left]="image.style.left" [imageSrc]="image.src" [width]="image.style.width"></app-gallery-image>
+        [left]="image.style.left" [imageSrc]="image.src" [width]="image.style.width" [display]="image.style.display"
+        (click)="showModal(image)"></app-gallery-image>
     </div>
   </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { of, Observable } from 'rxjs';
+import { debounceTime, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-gallery-image',
@@ -19,6 +21,9 @@ export class GalleryImageComponent implements OnInit {
   @Input()
   public readonly imageSrc:string = null;
 
+  @Input()
+  public readonly display:boolean;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -30,6 +35,9 @@ export class GalleryImageComponent implements OnInit {
 
   get styleTop(){
     return `${this.top}px`;
+  }
+  get isClosed(){
+    return !this.display;
   }
 
   get styleLeft(){

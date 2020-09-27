@@ -1,137 +1,118 @@
 import { Injectable } from '@angular/core';
 import { GalleryCategory, ImageOnCategory } from './components/gallery/gallery.component';
 type CORSMethod = 'Anonymous' | 'User-Authenticated'
+
+interface CategoryList {
+  images: string[],
+  category: string,
+  title: string
+}
 @Injectable({
   providedIn: 'root'
 })
 export class GalleryService {
 
   constructor() { }
-  get categories():GalleryCategory[]{
-    return [
-      {title:'gallery.all',value:'all'},
-      {title:'gallery.lessons',value:'lessons'},
-      {title:'gallery.treks',value:'treks'},
-      {title:'gallery.photoshoots',value:'photoshoots'},
-      {title:'gallery.horseshow',value:'horseshow'},
-      {title:'gallery.carriage',value:'carriage'},
-      ];
-  }
-  get getImages():ImageOnCategory[] {
+  get categoryList(): CategoryList[] {
     return [
       {
-        src:require('src/assets/images/gallery/gallery1.jpg').default,
-        category:'treks'
+        images: [],
+        category: 'all',
+        title: 'gallery.all'
       },
       {
-        src:require('src/assets/images/gallery/gallery2.jpg').default,
-        category:'treks'
+        images: [
+          require('src/assets/images/gallery/lessons/lessons13.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons11.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons12.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons10.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons8.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons9.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons7.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons5.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons6.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons4.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons3.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons2.jpg').default,
+          require('src/assets/images/gallery/lessons/lessons1.jpg').default
+        ],
+        category: 'lessons',
+        title: 'gallery.lessons'
       },
       {
-        src:require('src/assets/images/gallery/gallery3.jpg').default,
-        category:'lessons'
+        images: [
+          require('src/assets/images/gallery/treks/treks1.jpg').default,
+          require('src/assets/images/gallery/treks/treks2.jpg').default,
+          require('src/assets/images/gallery/treks/treks3.jpg').default,
+          require('src/assets/images/gallery/treks/treks4.jpg').default,
+          require('src/assets/images/gallery/treks/treks5.jpg').default,
+          require('src/assets/images/gallery/treks/treks6.jpg').default,
+          require('src/assets/images/gallery/treks/treks7.jpg').default,
+          require('src/assets/images/gallery/treks/treks8.jpg').default,
+          require('src/assets/images/gallery/treks/treks9.jpg').default,
+          require('src/assets/images/gallery/treks/treks10.jpg').default,
+          require('src/assets/images/gallery/treks/treks11.jpg').default,
+          require('src/assets/images/gallery/treks/treks12.jpg').default,
+          require('src/assets/images/gallery/treks/treks13.jpg').default,
+          require('src/assets/images/gallery/treks/treks14.jpg').default,
+          require('src/assets/images/gallery/treks/treks15.jpg').default
+        ],
+        category: 'treks',
+        title: 'gallery.treks'
       },
       {
-        src:require('src/assets/images/gallery/gallery4.jpg').default,
-        category:'treks'
+        images:[
+          require('src/assets/images/gallery/photoshoots/galleryphotoshoots1.jpg').default,
+          require('src/assets/images/gallery/photoshoots/galleryphotoshoots2.jpg').default,
+          require('src/assets/images/gallery/photoshoots/galleryphotoshoots3.jpg').default,
+          require('src/assets/images/gallery/photoshoots/galleryphotoshoots4.jpg').default,
+          require('src/assets/images/gallery/photoshoots/galleryphotoshoots5.jpg').default,
+          require('src/assets/images/gallery/photoshoots/galleryphotoshoots6.jpg').default
+        ],
+        category:'photoshoots',
+        title:'gallery.photoshoots'
       },
       {
-        src:require('src/assets/images/gallery/gallery5.jpg').default,
-        category:'lessons'
+        images: [
+          require('src/assets/images/gallery/horseshow/horseshow10.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow9.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow8.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow5.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow6.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow7.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow4.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow3.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow2.jpg').default,
+          require('src/assets/images/gallery/horseshow/horseshow1.jpg').default
+        ],
+        category: 'horseshow',
+        title: 'gallery.horseshow'
       },
       {
-        src:require('src/assets/images/gallery/gallery6.jpg').default,
-        category:'photoshoots'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery7.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery8.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery9.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery10.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery11.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery12.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery13.jpg').default,
-        category:'photoshoots'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery14.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery15.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery16.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery17.jpg').default,
-        category:'photoshoots'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery18.jpg').default,
-        category:'photoshoots'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery19.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery20.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery21.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery22.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery23.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery24.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery25.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery26.jpg').default,
-        category:'treks'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery27.jpg').default,
-        category:'lessons'
-      },
-      {
-        src:require('src/assets/images/gallery/gallery28.jpg').default,
-        category:'lessons'
+        images: [
+          require('src/assets/images/gallery/carriage/gallerycarriage5.jpg').default,
+          require('src/assets/images/gallery/carriage/gallerycarriage2.jpg').default,
+          require('src/assets/images/gallery/carriage/gallerycarriage3.jpg').default,
+          require('src/assets/images/gallery/carriage/gallerycarriage4.jpg').default,
+          require('src/assets/images/gallery/carriage/gallerycarriage1.jpg').default
+        ],
+        category: 'carriag',
+        title: 'gallery.carriage'
       }
     ]
+  }
+  get categories(): GalleryCategory[] {
+    return this.categoryList.map(({ title, category: value }) => {
+      return { title, value }
+    })
+  }
+  get getImages(): ImageOnCategory[] {
+    const imagesFromCategory = this.categoryList.map(({ images, category }) => {
+      return images.map((image,index) => { return { src: image, category: category, order:index } });
+    })
+    return ([]).concat(...imagesFromCategory).sort((a,b)=>
+      a.order-b.order
+    );
   }
   public async computeImageDimensionsFromFile(imageSrc: string): Promise<[number, number]> {
     const image = await this.fetchImage(imageSrc)
