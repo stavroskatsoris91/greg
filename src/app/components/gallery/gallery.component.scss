@@ -1,30 +1,55 @@
-.greg-carousel{
-    img{
-      height: 0.66%;
-      width: auto;
-      margin: auto;
-    }
+.greg-carousel {
+  img {
+    height: 0.66%;
+    width: auto;
+    margin: auto;
   }
-.Gallery{
-  &__Options{
-    &__Option{
+}
+
+.Gallery {
+  &__Options {
+    &__Option {
       display: inline-block;
       font-size: 20px;
       transition: color .2s;
-      &:not(:last-child){
+
+      &:not(:last-child) {
         margin-right: 25px;
       }
-      &:hover{
-        color:#F89406
+
+      &:hover {
+        color: #F89406
       }
-      &--selected{
-        color:#F89406
+
+      &--selected {
+        color: #F89406
       }
     }
   }
-  &__Images{
+
+  &__Images {
     margin: 0;
     line-height: 0;
     position: relative;
+  }
+
+  &__Loading {
+    margin: auto;
+    border: 16px solid #f3f3f35c;
+    border-top: 16px solid #25bb92;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
 }

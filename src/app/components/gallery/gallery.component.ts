@@ -1,9 +1,8 @@
 import { Component, HostListener, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { GalleryService } from 'src/app/gallery.service';
 import { Observable, BehaviorSubject, fromEvent, combineLatest, of, from, merge } from 'rxjs';
-import { switchMap, debounceTime, map, take, mergeMap, throttleTime, share, withLatestFrom } from 'rxjs/operators';
+import { switchMap, debounceTime, map, take, mergeMap, throttleTime, share, withLatestFrom, tap } from 'rxjs/operators';
 import { ModalService } from 'src/app/services/modal.service';
-
 export interface StyleImage extends ImageOnCategory {
   size: [string, string],
   style: { top: number, left: number, width: number, height: number, display: boolean }
@@ -33,6 +32,7 @@ export class GalleryComponent {
 
   categories: GalleryCategory[] = this.galleryService.categories
   selected = new BehaviorSubject<string>(this.categories[0].value);
+  loadingImages = new BehaviorSubject<boolean>(true);
   imageList: ImageOnCategory[] = this.galleryService.getImages;
   imageOriginalSizes: Observable<StyleImage[]> = of(this.imageList)
     .pipe(
@@ -41,7 +41,7 @@ export class GalleryComponent {
           from(this.imagesWithSizes(image, this.galleryService.computeImageDimensionsFromFile(image.src)))
         )
         )
-      ),share());
+      ),tap(()=>this.loadingImages.next(false)),share());
   getWindowsEvent = new BehaviorSubject(window);
   windowResize: Observable<Event> = fromEvent(window, 'resize').pipe(debounceTime(500));//throttleTime
 
