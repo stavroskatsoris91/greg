@@ -36,6 +36,7 @@
     top: 50%;
     transform: translateY(-50%);
     overflow-y: scroll;
+    transition: all .5s;
     &::-webkit-scrollbar {
       -webkit-appearance: none;
       display: none;

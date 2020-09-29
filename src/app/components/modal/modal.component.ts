@@ -59,8 +59,9 @@ export class ModalComponent implements OnInit {
     return Math.min(window.innerWidth*.95,800);
   }
   get imgSrc(){
-    return this.group[this.index].img;
+    return this.isModalOpen&&this.group[this.index].img;
   }
+
   public get imageUrl(){
     return `url(${this.imgSrc})`
   }
