@@ -23,7 +23,7 @@ export class TreksComponent implements OnInit {
         },
         {
             title: 'treks.trek2.title',
-            time: {h:0,m:40},
+            time: {h:1,m:40},
             price: '€58 / ',
             level: 'treks.level1',
             images: [
