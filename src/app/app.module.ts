@@ -39,6 +39,7 @@ import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
 import { GalleryImageComponent } from './components/gallery-image/gallery-image.component';
 import { NgxScrollLockModule } from 'ngx-scroll-lock';
+// import { ImagePreloadDirective } from './directives/imagepreload.directive';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { NgxScrollLockModule } from 'ngx-scroll-lock';
     CarriageComponent,
     LanguageComponent,
     GalleryImageComponent,
+    // ImagePreloadDirective
   ],
   imports: [
     BrowserAnimationsModule,

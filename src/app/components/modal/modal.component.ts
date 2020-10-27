@@ -48,6 +48,9 @@ export class ModalComponent implements OnInit {
     this.getHeight(this.imgSrc);
   };
   public async getHeight(src){
+    if(!src){
+      return;
+    }
     const [width,height] = await this.galleryService.computeImageDimensionsFromFile(src);
     const contentWidth = this.imageStyleWidth
     const contentHeight = window.innerHeight;

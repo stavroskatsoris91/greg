@@ -53,8 +53,13 @@ input[type=date]::-webkit-inner-spin-button {
 
 .main-content {
   .empty-box {
-    height: 400px;
+    min-height: 400px;
     display: flex;
+
+    img{
+      margin: auto;
+      width: 100%;
+    }
 
     .title {
       margin: auto;

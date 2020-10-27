@@ -1,5 +1,9 @@
-declare const FileLoaderImage: any
+declare const FileLoaderImage: IFileLoaderImage;
 
+interface IFileLoaderImage {
+  __esModule: boolean
+  default: string
+}
 declare module "*.jpg" {
   export = FileLoaderImage
 }
@@ -9,5 +13,8 @@ declare module "*.png" {
 }
 
 declare module "*.gif" {
+  export = FileLoaderImage
+}
+declare module "*.svg" {
   export = FileLoaderImage
 }
