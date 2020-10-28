@@ -39,6 +39,7 @@ import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
 import { GalleryImageComponent } from './components/gallery-image/gallery-image.component';
 import { NgxScrollLockModule } from 'ngx-scroll-lock';
+import { TrekMapComponent } from './trek-map/trek-map.component';
 // import { ImagePreloadDirective } from './directives/imagepreload.directive';
 
 @NgModule({
@@ -68,6 +69,7 @@ import { NgxScrollLockModule } from 'ngx-scroll-lock';
     CarriageComponent,
     LanguageComponent,
     GalleryImageComponent,
+    TrekMapComponent,
     // ImagePreloadDirective
   ],
   imports: [

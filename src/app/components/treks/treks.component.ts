@@ -26,7 +26,6 @@ import * as trek5_5 from 'src/assets/images/treks/trek5/trek5_5.jpg';
 import * as trek5_6 from 'src/assets/images/treks/trek5/trek5_6.jpg';
 import * as trek6_1 from 'src/assets/images/treks/trek6/trek6_1.jpg';
 import * as photosIcon from 'src/assets/images/treks/photos.svg';
-import * as trekMap from 'src/assets/images/treks/trek_map.jpg';
 @Component({
     selector: 'app-treks',
     templateUrl: './treks.component.html',
@@ -34,7 +33,6 @@ import * as trekMap from 'src/assets/images/treks/trek_map.jpg';
 })
 export class TreksComponent implements OnInit {
     public imagePhotos = photosIcon.default;
-    public trekMap = trekMap.default;
     public treks = [
         {
             title: 'treks.trek1.title',
@@ -126,5 +124,8 @@ export class TreksComponent implements OnInit {
         });
         this.ModalService.triggerEvent([list, 0]);
     };
+    public trekTime(trek){
+        return trek.time.h?trek.time.m?'treks.time':'treks.hour':'treks.min';
+    }
 
 }
