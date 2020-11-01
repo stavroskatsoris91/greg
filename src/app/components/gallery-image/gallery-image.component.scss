@@ -1,0 +1,23 @@
+.GalleryImage{
+    position: absolute;
+    transition: all 1s;
+    transform: scale(1);
+    cursor: pointer;
+    &__Content{
+        padding: 4%;
+    }
+    &__Image{
+        overflow: hidden;
+        img{
+            transition: transform 1s;
+            width: 100%;
+            &:focus,&:hover{
+                transform: scale(1.1);
+            }
+        }
+
+    }
+    &--close{
+        transform: scale(0);
+    }
+}

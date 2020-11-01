@@ -37,6 +37,10 @@ import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
 import { MetaDataService } from './services/meta-data.service';
 import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
+import { GalleryImageComponent } from './components/gallery-image/gallery-image.component';
+import { NgxScrollLockModule } from 'ngx-scroll-lock';
+import { TrekMapComponent } from './trek-map/trek-map.component';
+// import { ImagePreloadDirective } from './directives/imagepreload.directive';
 
 @NgModule({
   declarations: [
@@ -64,6 +68,9 @@ import { LanguageComponent } from './components/language/language.component';
     ToggleAnimateDirective,
     CarriageComponent,
     LanguageComponent,
+    GalleryImageComponent,
+    TrekMapComponent,
+    // ImagePreloadDirective
   ],
   imports: [
     BrowserAnimationsModule,
@@ -81,7 +88,8 @@ import { LanguageComponent } from './components/language/language.component';
     ReactiveFormsModule,
     SlickCarouselModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireFunctionsModule
+    AngularFireFunctionsModule,
+    NgxScrollLockModule,
   ],
   providers: [MetaDataService],
   bootstrap: [AppComponent]

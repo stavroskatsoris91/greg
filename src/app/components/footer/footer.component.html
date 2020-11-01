@@ -1,33 +1,39 @@
 <div class="footer">
     <div class="container">
         <div class="title">{{'footer.title' | translate}}</div>
-        <div class="info">
-            <div class="social-icons">
-                <a href="https://www.facebook.com/gregsspetseshorses" target="_blank" class="facebook"></a>
-                <a href="https://www.instagram.com/gregs_spetses_horses" target="_blank" class="instagram"></a>
-                <a href="https://www.tripadvisor.com/Attraction_Review-g189496-d10367019-Reviews-Gregs_Spetses_Horses-Spetses_Saronic_Gulf_Islands_Attica.html"
-                    target="_blank" class="tripadvisor" crossorigin="anonymous"></a>
-                <a href="https://twitter.com/GregoryThimaras" target="_blank" class="twitter"></a>
-            </div>
-            <div class="info-2">
-                <div>
-                    <div class="location"><img [src]="imageLocation">{{'footer.location'| translate}}</div>
-                    <a class="phone" href="tel:00306942792460"><img [src]="imagePhone">+(30) 6942 79 24 60</a>
-                    <div class="clock"><img [src]="imageClock">{{'footer.time'| translate}}
-                        <span class="info-popup" (clickOutside)="show=false">
-                            <img class="info-img" [src]="imageInfo" (click)="show=!show">
-                            <span [ngClass]="{'open':show}">
-                                <span *ngFor="let inf of [1,2,3,4]">{{'footer.info.'+inf| translate}}<br></span>
+        <div class="Content">
+            <div class="Content__Info">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/gregsspetseshorses" target="_blank" class="facebook"></a>
+                    <a href="https://www.instagram.com/gregs_spetses_horses" target="_blank" class="instagram"></a>
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g189496-d10367019-Reviews-Gregs_Spetses_Horses-Spetses_Saronic_Gulf_Islands_Attica.html"
+                        target="_blank" class="tripadvisor" crossorigin="anonymous"></a>
+                    <a href="https://twitter.com/GregoryThimaras" target="_blank" class="twitter"></a>
+                </div>
+                <div class="info-2">
+                    <div>
+                        <div class="location"><img [src]="imageLocation">{{'footer.location'| translate}}</div>
+                        <a class="phone" href="tel:00306942792460"><img [src]="imagePhone">+(30) 6942 79 24 60</a>
+                        <div class="clock"><img [src]="imageClock">{{'footer.time'| translate}}
+                            <span class="info-popup" (clickOutside)="show=false">
+                                <img class="info-img" [src]="imageInfo" (click)="show=!show">
+                                <span [ngClass]="{'open':show}">
+                                    <span *ngFor="let inf of [1,2,3,4]">{{'footer.info.'+inf| translate}}<br></span>
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>
+    
+            <div class="Content__Map"
+                [class.Content__Map--active]="openMap">
+                <img [src]="imageGoogleMaps" (mouseover)="openMap=true">
+                <app-googlemaps *ngIf="openMap"></app-googlemaps>
+            </div>
         </div>
-
-        <div class="map">
-            <img [src]="imageGoogleMaps" (mouseover)="openMap=true">
-            <app-googlemaps *ngIf="openMap"></app-googlemaps>
+        <div class="text-center">
+            © Gregs Spetses Horses {{year}}. All rights reserved.
         </div>
     </div>
 </div>

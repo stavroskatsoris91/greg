@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class MetaDataService {
   baseUrl = window.location.protocol + '//' + window.location.hostname;
-  homeImage = require('src/assets/images/background/home.jpg');
+  homeImage = require('src/assets/images/background/home.jpg').default;
   redirect = false;
   redirectPath: any;
   constructor(
@@ -36,6 +36,7 @@ export class MetaDataService {
       title: this.translate.instant('meta.title'),
       keywords: this.translate.instant('meta.keywords'),
       description: this.translate.instant('meta.description'),
+      language: this.translate.currentLang,
       prerender_redirect: this.redirect,
       prerender_redirect_path : this.redirectPath
     }
@@ -82,6 +83,7 @@ export class MetaDataService {
           { property: 'og:type', content: data.type },
           { property: 'og:image', content: data.location + '/' + data.image },
           { property: 'og:url', content: window.location.href },
+          { property: 'og:locale', content: data.language },
           { name: 'twitter:title', content: data.title },
           { name: 'twitter:description', content: data.tw_description },
           { name: 'twitter:image', content: data.location + '/' + data.image }

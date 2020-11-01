@@ -1,38 +1,64 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
+import * as trek1_1 from 'src/assets/images/treks/trek1/trek1_1.jpg';
+import * as trek1_2 from 'src/assets/images/treks/trek1/trek1_2.jpg';
+import * as trek1_3 from 'src/assets/images/treks/trek1/trek1_3.jpg';
+import * as trek1_4 from 'src/assets/images/treks/trek1/trek1_4.jpg';
+import * as trek2_1 from 'src/assets/images/treks/trek2/trek2_1.jpg';
+import * as trek2_2 from 'src/assets/images/treks/trek2/trek2_2.jpg';
+import * as trek2_3 from 'src/assets/images/treks/trek2/trek2_3.jpg';
+import * as trek2_4 from 'src/assets/images/treks/trek2/trek2_4.jpg';
+import * as trek2_5 from 'src/assets/images/treks/trek2/trek2_5.jpg';
+import * as trek2_6 from 'src/assets/images/treks/trek2/trek2_6.jpg';
+import * as trek3_1 from 'src/assets/images/treks/trek3/trek3_1.jpg';
+import * as trek3_2 from 'src/assets/images/treks/trek3/trek3_2.jpg';
+import * as trek3_3 from 'src/assets/images/treks/trek3/trek3_3.jpg';
+import * as trek3_4 from 'src/assets/images/treks/trek3/trek3_4.jpg';
+import * as trek3_5 from 'src/assets/images/treks/trek3/trek3_5.jpg';
+import * as trek4_1 from 'src/assets/images/treks/trek4/trek4_1.jpg';
+import * as trek4_2 from 'src/assets/images/treks/trek4/trek4_2.jpg';
+import * as trek4_3 from 'src/assets/images/treks/trek4/trek4_3.jpg';
+import * as trek5_1 from 'src/assets/images/treks/trek5/trek5_1.jpg';
+import * as trek5_2 from 'src/assets/images/treks/trek5/trek5_2.jpg';
+import * as trek5_3 from 'src/assets/images/treks/trek5/trek5_3.jpg';
+import * as trek5_4 from 'src/assets/images/treks/trek5/trek5_4.jpg';
+import * as trek5_5 from 'src/assets/images/treks/trek5/trek5_5.jpg';
+import * as trek5_6 from 'src/assets/images/treks/trek5/trek5_6.jpg';
+import * as trek6_1 from 'src/assets/images/treks/trek6/trek6_1.jpg';
+import * as photosIcon from 'src/assets/images/treks/photos.svg';
 @Component({
     selector: 'app-treks',
     templateUrl: './treks.component.html',
     styleUrls: ['./treks.component.scss']
 })
 export class TreksComponent implements OnInit {
-
-    treks = [
+    public imagePhotos = photosIcon.default;
+    public treks = [
         {
             title: 'treks.trek1.title',
             time: {h:0,m:45},
             price: '€30 / ',
             level: 'treks.level1',
             images: [
-                require('src/assets/images/treks/trek1/trek1_1.jpg'),
-                require('src/assets/images/treks/trek1/trek1_2.jpg'),
-                require('src/assets/images/treks/trek1/trek1_3.jpg'),
-                require('src/assets/images/treks/trek1/trek1_4.jpg')
+                trek1_1.default,
+                trek1_2.default,
+                trek1_3.default,
+                trek1_4.default
             ],
             text: 'treks.trek1.text'
         },
         {
             title: 'treks.trek2.title',
-            time: {h:0,m:40},
+            time: {h:1,m:40},
             price: '€58 / ',
             level: 'treks.level1',
             images: [
-                require('src/assets/images/treks/trek2/trek2_1.jpg'),
-                require('src/assets/images/treks/trek2/trek2_2.jpg'),
-                require('src/assets/images/treks/trek2/trek2_3.jpg'),
-                require('src/assets/images/treks/trek2/trek2_4.jpg'),
-                require('src/assets/images/treks/trek2/trek2_5.jpg'),
-                require('src/assets/images/treks/trek2/trek2_6.jpg')
+                trek2_1.default,
+                trek2_2.default,
+                trek2_3.default,
+                trek2_4.default,
+                trek2_5.default,
+                trek2_6.default
             ],
             text: 'treks.trek2.text'
         },
@@ -42,11 +68,11 @@ export class TreksComponent implements OnInit {
             price: '€69 / ',
             level: 'treks.level1',
             images: [
-                require('src/assets/images/treks/trek3/trek3_1.jpg'),
-                require('src/assets/images/treks/trek3/trek3_2.jpg'),
-                require('src/assets/images/treks/trek3/trek3_3.jpg'),
-                require('src/assets/images/treks/trek3/trek3_4.jpg'),
-                require('src/assets/images/treks/trek3/trek3_5.jpg')
+                trek3_1.default,
+                trek3_2.default,
+                trek3_3.default,
+                trek3_4.default,
+                trek3_5.default
             ],
             text: 'treks.trek3.text'
         },
@@ -56,9 +82,9 @@ export class TreksComponent implements OnInit {
             price: '€77 / ',
             level: 'treks.level1',
             images: [
-                require('src/assets/images/treks/trek4/trek4_1.jpg'),
-                require('src/assets/images/treks/trek4/trek4_2.jpg'),
-                require('src/assets/images/treks/trek4/trek4_3.jpg')
+                trek4_1.default,
+                trek4_2.default,
+                trek4_3.default
             ],
             text: 'treks.trek4.text'
         },
@@ -68,12 +94,12 @@ export class TreksComponent implements OnInit {
             price: '€95 / ',
             level: 'treks.level1',
             images: [
-                require('src/assets/images/treks/trek5/trek5_1.jpg'),
-                require('src/assets/images/treks/trek5/trek5_2.jpg'),
-                require('src/assets/images/treks/trek5/trek5_3.jpg'),
-                require('src/assets/images/treks/trek5/trek5_4.jpg'),
-                require('src/assets/images/treks/trek5/trek5_5.jpg'),
-                require('src/assets/images/treks/trek5/trek5_6.jpg')
+                trek5_1.default,
+                trek5_2.default,
+                trek5_3.default,
+                trek5_4.default,
+                trek5_5.default,
+                trek5_6.default
             ],
             text: 'treks.trek5.text'
         },
@@ -83,12 +109,11 @@ export class TreksComponent implements OnInit {
             price: '€122 / ',
             level: 'treks.level2',
             images: [
-                require('src/assets/images/treks/trek6/trek6_1.jpg')
+                trek6_1.default
             ],
             text: 'treks.trek6.text'
         },
     ];
-    imagePhotos = require('src/assets/images/treks/photos.svg');
     constructor(private ModalService: ModalService) { }
 
     ngOnInit(): void {
@@ -99,5 +124,8 @@ export class TreksComponent implements OnInit {
         });
         this.ModalService.triggerEvent([list, 0]);
     };
+    public trekTime(trek){
+        return trek.time.h?trek.time.m?'treks.time':'treks.hour':'treks.min';
+    }
 
 }

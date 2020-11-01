@@ -12,19 +12,19 @@ export class LessonsComponent implements OnInit {
   extraInfo = ['lessons.extraInfo.copy1','lessons.extraInfo.copy2'];
   lessonsPhotos = [
     {
-      image: require('src/assets/images/lessons/lesson-1.jpg'),
+      image: require('src/assets/images/lessons/lesson-1.jpg').default,
       description: 'lessons.lessonPhotos.copy1'
     },
     {
-      image: require('src/assets/images/lessons/lesson-2.jpg'),
+      image: require('src/assets/images/lessons/lesson-2.jpg').default,
       description:'lessons.lessonPhotos.copy2'
     },
     {
-      image: require('src/assets/images/lessons/lesson-3.jpg'),
+      image: require('src/assets/images/lessons/lesson-3.jpg').default,
       description: 'lessons.lessonPhotos.copy3'
     },
     {
-      image: require('src/assets/images/lessons/lesson-4.jpg'),
+      image: require('src/assets/images/lessons/lesson-4.jpg').default,
       description: 'lessons.lessonPhotos.copy4'
     }
   ];

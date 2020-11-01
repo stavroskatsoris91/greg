@@ -1,14 +1,18 @@
 <div class="main-content">
-    <div class="empty-box"></div>
-    <div class="box green-4">
-      <div class="container horses">
-        <div class="title m-b">{{'gallery.title' | translate}}</div>
-        <p class="text" ></p>
-        <ngx-slick-carousel class="carousel"  #slickModal="slick-carousel" [config]="slideConfig">
-          <div ngxSlickItem class="greg-carousel" *ngFor="let image of carousel;let i = index">
-            <img [src]="image" [ngStyle]="imgHeight">
-          </div>
-        </ngx-slick-carousel>
+  <div class="empty-box"></div>
+  <div class="box green-4">
+    <div class="container horses">
+      <div class="Gallery__Options text-center">
+        <div class="Gallery__Options__Option" 
+        [class.Gallery__Options__Option--selected]="(selected | async) == category.value"
+          *ngFor="let category of categories" (click)="selected.next(category.value)">{{category.title | translate}}</div>
       </div>
     </div>
+    <div class="Gallery__Loading" *ngIf="loadingImages | async"></div>
+    <div #GalleryImages class="Gallery__Images" [style.height]="containersHeight | async">
+      <app-gallery-image *ngFor="let image of setImagePositions | async" [top]="image.style.top"
+        [left]="image.style.left" [imageSrc]="image.src" [width]="image.style.width" [display]="image.style.display"
+        (click)="showModal(image)"></app-gallery-image>
+    </div>
   </div>
+</div>

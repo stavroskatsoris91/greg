@@ -9,19 +9,19 @@ import { filter } from 'rxjs/operators';
 export class BackgroundComponent implements OnInit {
   imageSrc = null;
   paths = [
-    { name: '', image: require('src/assets/images/background/home.jpg') },
-    { name: 'about', image: require('src/assets/images/background/about.jpg') },
-    { name: 'instructors', image: require('src/assets/images/background/about.jpg') },
-    { name: 'horses', image: require('src/assets/images/background/horses.jpg') },
-    { name: 'treks', image: require('src/assets/images/background/treks.jpg') },
-    { name: 'carriage', image: require('src/assets/images/background/carriage.jpg') },
-    { name: 'gallery', image: require('src/assets/images/background/gallery.jpg') },
-    { name: 'contact', image: require('src/assets/images/background/contact.jpg') },
-    { name: 'thankyou', image: require('src/assets/images/background/contact.jpg') },
-    { name: 'lessons', image: require('src/assets/images/background/lessons.jpg') },
-    { name: 'photoshoots', image: require('src/assets/images/background/photoshoots.jpg') },
-    { name: 'picnics', image: require('src/assets/images/background/picnics.jpg') },
-    { name: 'safety', image: require('src/assets/images/background/safety.jpg') }
+    { name: '', image: require('src/assets/images/background/home.jpg').default },
+    { name: 'about', image: require('src/assets/images/background/about.jpg').default },
+    { name: 'instructors', image: require('src/assets/images/background/about.jpg').default },
+    { name: 'horses', image: require('src/assets/images/background/horses.jpg').default },
+    { name: 'treks', image: require('src/assets/images/background/treks.jpg').default },
+    { name: 'carriage', image: require('src/assets/images/background/carriage.jpg').default },
+    { name: 'gallery', image: require('src/assets/images/background/gallery.jpg').default },
+    { name: 'contact', image: require('src/assets/images/background/contact.jpg').default },
+    { name: 'thankyou', image: require('src/assets/images/background/contact.jpg').default },
+    { name: 'lessons', image: require('src/assets/images/background/lessons.jpg').default },
+    { name: 'photoshoots', image: require('src/assets/images/background/photoshoots.jpg').default },
+    { name: 'picnics', image: require('src/assets/images/background/picnics.jpg').default },
+    { name: 'safety', image: require('src/assets/images/background/safety.jpg').default }
   ];
   count = 0;
   scrollTop = 0;

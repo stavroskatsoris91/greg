@@ -1,9 +1,21 @@
-<div class="modal" [ngClass]="{open:group}" *ngIf="group">
-    <span class="close" (click)="group=null">&times;</span>
-    <div class="pre-content">
-        <img class="modal-content" [src]="group[index].img">
-        <span class="left" (click)="prev()">{{left}}</span>
-        <span class="right" (click)="next()">{{right}}</span>
+<ngx-scroll-lock [lock]="isModalOpen"></ngx-scroll-lock>
+<div class="Modal" [class.Modal--open]="group" *ngIf="isModalOpen">
+    <div class="Modal__Container">
+        <div class="Modal__Container Modal__Container__Background" (click)="group=null"></div>
+        <div class="Modal__Content"
+                [style.height]="imageHeight | async"
+                [style.width]="imageWidth | async">
+            <div class="Modal__Buttons">
+                <div class="Modal__Button" (click)="prev()">{{left}}</div>
+                <div class="Modal__Button" (click)="group=null">&times;</div>
+                <div class="Modal__Button" (click)="next()">{{right}}</div>
+            </div>
+            <div class="Modal__Image" (click)="next()" [style.backgroundImage]="imageUrl"
+                [style.height]="imageHeight | async"
+                [style.width]="imageWidth | async">
+            </div>
+        </div>
+
     </div>
-    <div class="caption">{{(index+1)+' / '+group.length}}</div>
+    <!-- <div class="caption">{{(index+1)+' / '+group.length}}</div> -->
 </div>

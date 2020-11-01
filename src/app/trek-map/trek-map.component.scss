@@ -1,0 +1,89 @@
+$ratio: 1.6;
+
+:host {
+    width: 100%;
+
+    .TrekMap {
+        width: fit-content;
+        margin: auto;
+        position: relative;
+
+        img {
+            margin: auto;
+            max-width: 100%;
+            border-radius: 3%;
+        }
+
+        &__Pointer {
+            position: absolute;
+            width: 1%;
+            height: 1%*$ratio;
+            // background-color: blue;
+            border-radius: 50%;
+            transform: scale(4);
+
+            &--0 {
+                top: 85.5%;
+                left: 67.07%;
+            }
+
+            &--1 {
+                top: 87.4%;
+                left: 56.6%;
+            }
+
+            &--2 {
+                top: 65.9%;
+                left: 64.3%;
+            }
+
+            &--3 {
+                top: 54.7%;
+                left: 66.91%;
+            }
+
+            &--4 {
+                top: 39.9%;
+                left: 60.15%;
+            }
+
+            &--5 {
+                top: 30.5%;
+                left: 57.4%;
+            }
+
+            &--6 {
+                top: 23.35%;
+                left: 49.45%;
+            }
+            &--beach1{
+                top: 83.4%;
+                left: 44.6%;
+            }
+            &--beach2{
+                top: 42.4%;
+                left: 22.6%;
+            }
+            &--beach3{
+                top: 24.1%;
+                left: 15.6%;
+            }
+            &--beach4{
+                top: 47.1%;
+                left: 89.1%;
+            }
+            &--faros{
+                top: 18.4%;
+                left: 93.6%;
+            }
+            &--carriage{
+                top: 8.4%;
+                left: 80.6%;
+            }
+            &--statue{
+                top: 3.5%;
+                left: 75.7%;
+            }
+        }
+    }
+}
