@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { environment } from '../environments/environment';
@@ -86,7 +85,6 @@ import { TrekMapComponent } from './trek-map/trek-map.component';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    SlickCarouselModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireFunctionsModule,
     NgxScrollLockModule,
