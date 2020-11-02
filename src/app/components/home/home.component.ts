@@ -13,11 +13,12 @@ export class HomeComponent implements OnInit {
   constructor(private readonly element: ElementRef) { }
 
   ngOnInit(): void {
-    this.checkTripAdvisor = interval(1000).subscribe(()=> {
+    this.checkTripAdvisor = interval(500).subscribe(()=> {
       let elements = [...this.element.nativeElement.getElementsByTagName('dt')]
       if (elements.filter(x=>x.innerText.indexOf('Gregs Spetses Horses')>=0).length < 2) {
-        if (window['taValidate']) {
-          window['taValidate']();
+        if (window.taValidate) {
+          window.taValidate();
+          
         }
       } else {
         this.showTripAdvisor = true;
