@@ -1,5 +1,5 @@
 <div class="main-content">
-    <div class="empty-box"></div>
+    <app-empty-box></app-empty-box>
     <div class="box box-horses" *ngFor="let horse of horses">
         <div class="container horses">
             <app-coin [list]="horse.images" *ngIf="horse.images.length"></app-coin>
