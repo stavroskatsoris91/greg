@@ -24,6 +24,7 @@ import * as trek5_3 from 'src/assets/images/treks/trek5/trek5_3.jpg';
 import * as trek5_4 from 'src/assets/images/treks/trek5/trek5_4.jpg';
 import * as trek5_5 from 'src/assets/images/treks/trek5/trek5_5.jpg';
 import * as trek5_6 from 'src/assets/images/treks/trek5/trek5_6.jpg';
+import * as trek5_7 from 'src/assets/images/treks/trek5/trek5_7.jpg';
 import * as trek6_1 from 'src/assets/images/treks/trek6/trek6_1.jpg';
 import * as photosIcon from 'src/assets/images/treks/photos.svg';
 @Component({
@@ -99,7 +100,8 @@ export class TreksComponent implements OnInit {
                 trek5_3.default,
                 trek5_4.default,
                 trek5_5.default,
-                trek5_6.default
+                trek5_6.default,
+                trek5_7.default
             ],
             text: 'treks.trek5.text'
         },
