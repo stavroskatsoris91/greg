@@ -18,7 +18,7 @@ export class CarriageComponent implements OnInit {
     var list = this.photos.map(function (x) {
       return { img: x };
     });
-    this.ModalService.triggerEvent([list,pos]);
+    this.ModalService.triggerEvent({list, position:pos});
   };
 
 }

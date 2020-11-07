@@ -124,7 +124,8 @@ export class TreksComponent implements OnInit {
         var list = images.map((x) => {
             return { img: x };
         });
-        this.ModalService.triggerEvent([list, 0]);
+        this.ModalService.triggerEvent({ list, position: 0 });
+
     };
     public trekTime(trek){
         return trek.time.h?trek.time.m?'treks.time':'treks.hour':'treks.min';

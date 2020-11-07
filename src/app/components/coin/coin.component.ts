@@ -48,6 +48,6 @@ export class CoinComponent implements OnInit {
     });
     var l = this.list.length;
     var rem = (this.count) % l;
-    this.ModalService.triggerEvent([list,rem]);
+    this.ModalService.triggerEvent({list, position:rem});
   };
 }

@@ -2,10 +2,15 @@
     <div class="empty-box">
       <div class="title m-b">{{'instructors.title' | translate}}</div>
     </div>
-    <div class="box" [ngClass]="instructor" *ngFor="let instructor of instructors">
+    <div class="box" [ngClass]="instructor.about" *ngFor="let instructor of instructors; let i = index">
       <div class="container treks">
-        <div class="title-2 instructors-header">{{'instructors.instructor.'+instructor+'.name' | translate}}</div>
-        <p class="text line-h">{{'instructors.instructor.'+instructor+'.description' | translate}}</p>
+        <div class="title-2 instructors-header">{{'instructors.instructor.'+instructor.about+'.name' | translate}}</div>
+        <p class="text line-h">
+          <img class="instructorImage" 
+            [class.instructorImage--left]="!(i%2)"
+            [class.instructorImage--right]="i%2"
+          *ngIf="instructor.image" [src]="instructor.image" (click)="showModal(i)">
+          {{'instructors.instructor.'+instructor.about+'.description' | translate}}</p>
       </div>
     </div>
   </div>

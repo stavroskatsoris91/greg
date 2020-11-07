@@ -19,6 +19,7 @@ export class PicnicsComponent implements OnInit {
     var list = this.photos.map((x) => {
       return { img: x };
     });
-    this.ModalService.triggerEvent([list, pos]);
+    this.ModalService.triggerEvent({ list, position: pos });
+
   }
 }

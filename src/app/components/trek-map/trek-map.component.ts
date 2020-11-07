@@ -13,5 +13,4 @@ export class TrekMapComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

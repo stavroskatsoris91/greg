@@ -73,6 +73,7 @@
     }
     .sub{
       position: absolute;
+      z-index: 1;
       background-color: #ffffff85;
       text-align: center;
       left: -29px;
@@ -107,6 +108,7 @@
     
     .menu-2{
       position: absolute;
+      z-index: 1;
       overflow: hidden;
       right: 0px;
       top: 100%;
@@ -114,10 +116,9 @@
       background-color: #ffffff85;
       >div{
         margin: 0;
-        padding: 5px 0;
         >a{
           cursor: pointer;
-          padding: 0 10px;
+          padding: 5px 10px;
           margin-left: 20px;
           color: #000;
           &.active{

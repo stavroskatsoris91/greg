@@ -1,72 +1,114 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { ModalService } from 'src/app/services/modal.service';
-import { GalleryService } from 'src/app/gallery.service';
-import { BehaviorSubject } from 'rxjs';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  HostListener,
+} from "@angular/core";
+import { ModalService } from "src/app/services/modal.service";
+import { GalleryService } from "src/app/gallery.service";
+import { BehaviorSubject, combineLatest, Observable, merge } from "rxjs";
+import { map, pluck, switchMap, shareReplay, take } from "rxjs/operators";
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+  selector: "app-modal",
+  templateUrl: "./modal.component.html",
+  styleUrls: ["./modal.component.scss"],
 })
 export class ModalComponent implements OnInit {
-
-  left = '<';
-  right = '>';
+  left = "<";
+  right = ">";
   index = 0;
-  group: any =null;
+  group: any = null;
   min = 0;
   max = 0;
-  imageHeight:BehaviorSubject<string> = new BehaviorSubject('0px')
-  imageWidth:BehaviorSubject<string> = new BehaviorSubject(`${this.imageStyleWidth}px`)
-  constructor(private ModalService: ModalService,
-    private galleryService: GalleryService) { }
-  @ViewChild('ImageContent', { static: false })
-    private readonly ImageContentComponent: ElementRef<HTMLDivElement>
-  ngOnInit(): void {
-    this.ModalService.listenEvent().subscribe((ev)=>{
-      let data = ev[0];
-      let pos = ev[1];
-      this.index = pos||0;
-      this.group = data;
-      this.max =this.group.length-1;
-      this.getHeight(this.imgSrc)
-    })
-  }
-  @HostListener('window:resize')
+  changePosition: BehaviorSubject<number> = new BehaviorSubject(0);
+
+  private contentSize: BehaviorSubject<[number, number]> = new BehaviorSubject(
+    this.imageStyleSize
+  );
+
+  listOfImages = this.ModalService.getList().pipe(pluck("list"));
+  imagePosition: Observable<number> = merge(
+    this.changePosition,
+    this.ModalService.getList().pipe(pluck("position"))
+  ).pipe(
+    map((x) => {
+      return x;
+    }),
+    shareReplay(1)
+  );
+  listLength = this.ModalService.getList().pipe(pluck("max"));
+  modalIsOpen = this.listLength.pipe(map((max) => Boolean(max)));
+
+  imgSrc: Observable<string> = combineLatest(
+    this.listOfImages,
+    this.imagePosition
+  ).pipe(
+    map(([list, position]) => {
+      const item = list.find((_, i) => i == position) || { img: "" };
+      return item.img;
+    }),
+    shareReplay(1)
+  );
+  imageUrl: Observable<string> = this.imgSrc.pipe(map((src) => `url(${src})`));
+
+  imageSize: Observable<{ height: string; width: string }> = combineLatest(
+    this.contentSize,
+    this.imgSrc
+  ).pipe(
+    switchMap(async ([contentSize, src]) => {
+      const [contentWidth, contentHeight] = contentSize;
+      const [width, height] = src
+        ? await this.galleryService.computeImageDimensionsFromFile(src)
+        : [0, 0];
+      const ratio =
+        width && height
+          ? Math.min(contentWidth / width, contentHeight / height)
+          : 0;
+      return {
+        height: `${height * ratio}px`,
+        width: `${width * ratio}px`,
+      };
+    }),
+    shareReplay(1)
+  );
+  imageHeight: Observable<string> = this.imageSize.pipe(pluck("height"));
+  imageWidth: Observable<string> = this.imageSize.pipe(pluck("width"));
+
+  constructor(
+    private ModalService: ModalService,
+    private galleryService: GalleryService
+  ) {}
+  @ViewChild("ImageContent", { static: false })
+  private readonly ImageContentComponent: ElementRef<HTMLDivElement>;
+  ngOnInit(): void {}
+  @HostListener("window:resize")
   onResize() {
-    this.getHeight(this.imgSrc)
+    this.contentSize.next(this.imageStyleSize);
   }
-  get isModalOpen(){
-    return Boolean(this.group);
-  }
-  public prev(){
-    this.index = this.index-1>=0?this.index-1:this.max;
-    this.getHeight(this.imgSrc);
-  };
-  public next(){
-    this.index = (this.index+1)%(this.max+1);
-    this.getHeight(this.imgSrc);
-  };
-  public async getHeight(src){
-    if(!src){
-      return;
-    }
-    const [width,height] = await this.galleryService.computeImageDimensionsFromFile(src);
-    const contentWidth = this.imageStyleWidth
-    const contentHeight = window.innerHeight;
-    const ratio = Math.min(contentWidth/width,contentHeight/height);
-    this.imageHeight.next(`${height*ratio}px`)
-    this.imageWidth.next(`${width*ratio}px`)
-  }
-  get imageStyleWidth(){
-    return Math.min(window.innerWidth*.95,800);
-  }
-  get imgSrc(){
-    return this.isModalOpen&&this.group[this.index].img;
+  public async changePage(symbol) {
+    const index = await combineLatest(this.imagePosition, this.listLength)
+      .pipe(
+        map(([position, maxPosition]) => {
+          const operation = symbol === "+";
+          return operation
+            ? (position + 1) % maxPosition
+            : position - 1 >= 0
+            ? position - 1
+            : maxPosition;
+        }),
+        take(1)
+      )
+      .toPromise();
+    this.changePosition.next(index);
   }
 
-  public get imageUrl(){
-    return `url(${this.imgSrc})`
+  get imageStyleSize(): [number, number] {
+    return [Math.min(window.innerWidth * 0.95, 800), window.innerHeight];
   }
 
+  public closeModal() {
+    this.ModalService.triggerEvent({ list: [], position: 0 });
+  }
 }
