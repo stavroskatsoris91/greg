@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { environment } from '../environments/environment';
@@ -39,7 +38,8 @@ import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
 import { GalleryImageComponent } from './components/gallery-image/gallery-image.component';
 import { NgxScrollLockModule } from 'ngx-scroll-lock';
-import { TrekMapComponent } from './trek-map/trek-map.component';
+import { TrekMapComponent } from './components/trek-map/trek-map.component';
+import { EmptyBoxComponent } from './components/empty-box/empty-box.component';
 // import { ImagePreloadDirective } from './directives/imagepreload.directive';
 
 @NgModule({
@@ -70,6 +70,7 @@ import { TrekMapComponent } from './trek-map/trek-map.component';
     LanguageComponent,
     GalleryImageComponent,
     TrekMapComponent,
+    EmptyBoxComponent,
     // ImagePreloadDirective
   ],
   imports: [
@@ -86,7 +87,6 @@ import { TrekMapComponent } from './trek-map/trek-map.component';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    SlickCarouselModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireFunctionsModule,
     NgxScrollLockModule,

@@ -51,7 +51,7 @@
     position: absolute;
     z-index: 1;
     width: 100%;
-    top: 5px;
+    bottom: 4px;
   }
 
   &__Button {
@@ -65,11 +65,13 @@
     margin: 2px;
     line-height: 1.2;
     transition: all 0.3s;
+    opacity: 0.5;
     cursor: pointer;
     &:hover,
     :focus {
       color: #282b30;
       background-color: #f1f1f1;
+      opacity: 1;
     }
   }
 

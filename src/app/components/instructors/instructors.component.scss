@@ -14,3 +14,17 @@
     background-color: #988f2eb3;
     color: white;
 }
+.instructorImage {
+    width: 50%;
+    float: left;
+    padding-right: 20px;
+    @media screen and (min-width: 768px) {
+        width: 30%;
+      }
+    &--left{
+        float: left;
+    }
+    &--right{
+        float: right;
+    }
+}

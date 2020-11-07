@@ -4,6 +4,7 @@
     border-top: 1px solid #e5e5e5;
     min-height: 550px;
     background-color: #171717f2;
+    border: none;
     @media screen and (min-width: 768px) {
       min-height: 400px;
   
@@ -68,13 +69,16 @@
               margin-right: 10px;
             }
           }
+          .phone{
+            color: white;
+          }
           .phone,.clock{
             display: block;
             margin-bottom: 6px;
             img{
               width: 20px;
               margin-right: 12px;
-              margin-left: 2px;
+              margin-left: 4px;
               &.info-img{
                 width: 15px;
                 position: absolute;

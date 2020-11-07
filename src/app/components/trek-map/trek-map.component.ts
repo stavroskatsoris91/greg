@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as trekMap from 'src/assets/images/treks/trek_map.jpg';
+import * as trekMap from 'src/assets/images/treks/trek_map.png';
 
 @Component({
   selector: 'app-trek-map',
@@ -13,5 +13,4 @@ export class TrekMapComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

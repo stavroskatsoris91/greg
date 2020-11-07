@@ -109,7 +109,23 @@
     "horse": "{{price}} horse",
     "level1": "All levels",
     "level2": "level experienced",
-    "info": "*The return journey is along the same route in all treks. You will have the opportunity to take photographs of the fantastic views and take a break if requested.",
+    "map":{
+      "start": "Start",
+      "trek1": "Trek 1",
+      "trek2": "Trek 2",
+      "trek3": "Trek 3",
+      "trek4": "Trek 4",
+      "trek5": "Trek 5",
+      "trek6": "Trek 6",
+      "beach1": "Xilokeriza",
+      "beach2": "Agii Anargiri",
+      "beach3": "Agia Paraskevi",
+      "beach4": "Agia Marina",
+      "faros": "Faros",
+      "carriages": "Horse carriages stop",
+      "statue": "Bubulina statue"
+    },
+    "info": "*You will have the opportunity to take photographs of the fantastic views and take a break if requested.",
     "trek1": {
       "title": "Coastal Road",
       "text": "From the stables we ride a 20 minute outbound trek along the high coastal road, over looking the beautiful view of the neighbouring private Island Spetsopoula."

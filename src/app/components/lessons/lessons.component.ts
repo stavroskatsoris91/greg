@@ -36,6 +36,7 @@ export class LessonsComponent implements OnInit {
     var list = this.lessonsPhotos.map((x) => {
       return { img: x.image };
     });
-    this.ModalService.triggerEvent([list, pos]);
+    this.ModalService.triggerEvent({ list, position: 0 });
+
   };
 }
