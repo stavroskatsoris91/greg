@@ -135,13 +135,15 @@ export class GalleryService {
           {src:require('src/assets/images/gallery/carriage/gallerycarriage5.jpg').default,
           size: [899,1000]},
           {src:require('src/assets/images/gallery/carriage/gallerycarriage2.jpg').default,
-          size: [1000,454]},
+          size: [1000,750]},
           {src:require('src/assets/images/gallery/carriage/gallerycarriage3.jpg').default,
           size: [1000,749]},
           {src:require('src/assets/images/gallery/carriage/gallerycarriage4.jpg').default,
           size: [1000,667]},
           {src:require('src/assets/images/gallery/carriage/gallerycarriage1.jpg').default,
-          size: [1000,750]}
+          size: [1000,750]},
+          {src:require('src/assets/images/gallery/carriage/gallerycarriage6.jpg').default,
+          size: [1000,794]}
         ],
         category: 'carriag',
         title: 'gallery.carriage'
