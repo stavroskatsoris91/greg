@@ -1,8 +1,10 @@
 <div class="background-component">
     <div class="background" id="background-1">
-        <div class="animation"></div>
+        <span class="animation" role="img"
+            [style.transform]="'translateY(-' +this.scrollTop +'%)'"></span>
     </div>
     <div class="background second" id="background-2">
-        <div class="animation" ></div>
+        <span class="animation" role="img"
+        [style.transform]="'translateY(-' +this.scrollTop +'%)'"></span>
     </div>
 </div>
