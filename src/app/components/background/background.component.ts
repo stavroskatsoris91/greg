@@ -7,6 +7,7 @@ import {
 import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { BackgroundService } from './background.service';
+import { TranslateService } from '@ngx-translate/core';
 
 export class ProductPageBreakpoint {
   static MobileBreakpoint: number = 575
@@ -17,17 +18,22 @@ export class ProductPageBreakpoint {
   styleUrls: ["./background.component.scss"],
 })
 export class BackgroundComponent implements OnInit {
-  imageSrc = null;
   device = 'mobile';
   count = 0;
   path: string = "/";
   loadedImage: HTMLImageElement;
   paths = this.backgrounds.getBackgrounds;
+  labels = ['',''];
   constructor(
     private router: Router,
     private renderer: Renderer2,
-    private readonly backgrounds: BackgroundService
-  ) {}
+    private readonly backgrounds: BackgroundService,
+    private translate: TranslateService,
+  ) {
+    this.translate.onLangChange.subscribe((x)=>{
+      this.changeBackground(this.count)
+    })
+  }
 
   ngOnInit(): void {
     this.router.events
@@ -64,10 +70,11 @@ export class BackgroundComponent implements OnInit {
   };
   private changeBackground(count) {
     const index = this.isMobile?1:0;
-    const image = (this.paths.find((x) => x.name === this.path) || this.paths[0]).images[index];
+    const path = (this.paths.find((x) => x.name === this.path) || this.paths[0]);
+    const image = path.images[index];
     const show = count % 2;
     const opacity = show === 1 ? 1 : 0;
-    
+    this.labels[show] = path.alt;
     this.loadedImage = new Image();
     this.loadedImage.crossOrigin = "Anonymous";
     this.loadedImage.src = image;
@@ -75,7 +82,7 @@ export class BackgroundComponent implements OnInit {
       let el = document.getElementById("background-" + (show + 1)).firstChild;
       let bg = document.getElementById("background-2");
       this.renderer.setStyle(el, "backgroundImage", "url(" + image + ")");
-      this.renderer.setAttribute(el,'aria-label','[place alt text here]')
+      // this.renderer.setAttribute(el,'aria-label',`[${description}]`)
       this.renderer.setStyle(bg, "opacity", opacity);
       this.count = count;
     };

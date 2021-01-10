@@ -12,7 +12,7 @@ interface IBackgroundImage {
 export class BackgroundService {
   constructor() {}
 
-  get getBackgrounds(): IBackgroundImage[] {
+  public get getBackgrounds(): IBackgroundImage[] {
     return [
       {
         name: "",
@@ -21,7 +21,7 @@ export class BackgroundService {
           require("src/assets/images/background/homemob.jpg").default,
         ],
         alt:
-          "Horse and rider on the mountain overlooking the sea and neighbouring island.",
+          "image.background.home",
       },
       {
         name: "about",
@@ -29,7 +29,7 @@ export class BackgroundService {
           require("src/assets/images/background/about.jpg").default,
           require("src/assets/images/background/aboutmob.jpg").default,
         ],
-        alt: "Two instructors holding four horses in the arena",
+        alt: "image.background.about",
       },
       {
         name: "instructors",
@@ -37,7 +37,7 @@ export class BackgroundService {
           require("src/assets/images/background/about.jpg").default,
           require("src/assets/images/background/aboutmob.jpg").default,
         ],
-        alt: "",
+        alt: "image.background.about",
       },
       {
         name: "horses",
@@ -45,7 +45,7 @@ export class BackgroundService {
           require("src/assets/images/background/horses.jpg").default,
           require("src/assets/images/background/horsesmob.jpg").default,
         ],
-        alt: "",
+        alt: "image.background.horses",
       },
       {
         name: "treks",

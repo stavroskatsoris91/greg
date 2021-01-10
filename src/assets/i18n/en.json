@@ -321,7 +321,58 @@
       "4": "meet the horses or try a little ride in our arena."
     }
   },
-  "background":{
-    "home": "Horse and rider on the mountain overlooking the sea and neighbouring island."
+  "image":{
+    "background":{
+      "home": "[Horse and rider on the mountain overlooking the sea and neighbouring island]",
+      "about": "[Two instructors holding four horses in the arena]",
+      "horses": "[Instructor holding three horses and walking in arena]"
+    },
+    "insructor":{
+      "greg": "Hugging a pony in arena",
+      "kat": "Horse and girl run together next to each other in arena"
+    },
+    "horse":{
+      "rebecca1": "Horse and little girl getting ready to mount",
+      "rebecca2": "Horse standing in arena",
+      "rebecca3": "Horse laying down, instructor and young student stroke the horse",
+      "rebecca4": "Horse standing in arena with saddle and bridle",
+      "robbie1": "Horse walking in arena",
+      "robbie2": "Horse standing in arena",
+      "robbie3": "Horse wearing saddle and bridle in arena",
+      "robbie4": "Horse wearing saddle and bridle in arena",
+      "robbie5": "Horse wearing saddle and bridle in arena",
+      "robbie6": "Horse trotting in arena",
+      "nelly1": "Horse standing with saddle next to a tree on mountain",
+      "nelly2": "Horse standing with saddle next to a tree on mountain",
+      "nelly3": "Horse in arena",
+      "nelly4": "Horse in flower field",
+      "nelly5": "Horse standing on mountain",
+      "oscar1": "Pony in arena ridden by a kid",
+      "oscar2": "Pony eating with sea view",
+      "oscar3": "Free pony on the mountain with sea view",
+      "oscar4": "Pony in arena with flowers on his mane",
+      "oscar5": "Pony in arena",
+      "olivia1": "Horse trotting in arena",
+      "olivia2": "Horse rolling in arena sand",
+      "olivia3": "Horse walking in arena and seagulls flying above",
+      "olivia4": "Horse standing in arena stables in the back",
+      "elina1": "Horse in sun",
+      "elina2": "Two horses grazing together",
+      "elina3": "Horse standing on mountain",
+      "rosie1": "Horse trotting in arena",
+      "rosie2": "Horse after bath in arena",
+      "rosie3": "Horse cantering in arena",
+      "angel1": "Horse grazing in green field",
+      "angel2": "Horse in arena",
+      "angel3": "Horse grazing in field of flowers",
+      "angel4": "Horse in arena",
+      "angel5": "Horse in field",
+      "titan1": "Horse trotting in arena",
+      "titan2": "Horse standing in arena",
+      "titan3": "Horse trotting in arena",
+      "titan4": "Horse in arena",
+      "titan5": "Horse laying in arena sand"
+    }
   }
+
 }
