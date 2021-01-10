@@ -35,8 +35,16 @@ export class BooksService {
       ],
       selected: 0
     },
+    {
+      name: 'GROOMING LESSON',
+      display: 'contact.grooming',
+      options: [
+        { name: 'contact.time', time: 20, price: 10 }
+      ],
+      selected: 0
+    },
     { name: 'PHOTO SHOOT', display: 'contact.photo', selected: null },
-    { name: 'PICNIC / PARTY', display: 'contact.picnic', selected: null }
+    // { name: 'PICNIC / PARTY', display: 'contact.picnic', selected: null }
   ];
   public makeBook(data) {
     return this.functions.httpsCallable('bookTime')(data);
