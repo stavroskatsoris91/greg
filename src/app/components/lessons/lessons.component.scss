@@ -109,19 +109,44 @@
   &__Copy {
     font-size: 20px;
     margin-bottom: 20px;
+    min-height: 155px;
+    @media screen and (min-width: 768px) {
+      min-height: auto;
+    }
   }
 
   &__Image{
-    width: 50%;
-    min-width: 110px;
+    width: 100%;
     max-width: 160px;
-    float: left;
-    margin-right: 20px;
     border: 5px solid white;
+    &--mobile{
+      width: 50%;
+      min-width: 110px;
+      margin-right: 20px;
+      float: left;
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  &__DesktopDisplay{
+    display: flex;
+  }
+  &__ImageContent{
+    flex:1;
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
   }
   &__List {
     list-style-image: url('~src/assets/images/horseshoe.png');
     margin: auto;
     width: fit-content;
+    flex: none;
+    @media screen and (min-width: 768px) {
+      flex:1;
+    }
+
   }
 }

@@ -36,12 +36,17 @@
   <div class="box purple-2">
     <div class="container horses LessonsGrooming">
       <div class="title m-b">{{lessonsCopy2.title | translate}}</div>
-      <p class="LessonsGrooming__Copy">
-        <img class="LessonsGrooming__Image" [src]="LessonsGroomingImage" (click)="showModal2(LessonsGroomingImage)">
+      <img class="LessonsGrooming__Image LessonsGrooming__Image--mobile" [src]="LessonsGroomingImage" (click)="showModal2(LessonsGroomingImage)">
+      <p class="LessonsGrooming__Copy LessonsGrooming__Copy--mobile">
         {{lessonsCopy2.description| translate}}</p>
-      <ul class="LessonsGrooming__List">
-        <li *ngFor="let list of lessonsCopy2.list" class="text">{{list| translate}}</li>
-      </ul>
+      <div class="LessonsGrooming__DesktopDisplay">
+        <div class="LessonsGrooming__ImageContent text-center">
+          <img class="LessonsGrooming__Image  LessonsGrooming__Image--desktop" [src]="LessonsGroomingImage" (click)="showModal2(LessonsGroomingImage)">
+        </div>
+        <ul class="LessonsGrooming__List">
+          <li *ngFor="let list of lessonsCopy2.list" class="text">{{list| translate}}</li>
+        </ul>
+      </div>
       <div class="LessonsBubbles">
         <div class="LessonsBubbles__Bubble LessonsBubbles__Bubble--blue LessonsBubbles__Bubble--grooming" translate [translateParams]="{min:20}">lessons.min
           <span>10€</span><br>
