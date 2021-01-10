@@ -43,13 +43,13 @@
   }
 }
 
-.lessons-bubbles {
+.LessonsBubbles {
   margin-top: 30px;
   text-align: center;
   font-size: 0;
   line-height: 13px;
 
-  .lesson {
+  &__Bubble {
     width: 70px;
     height: 70px;
     font-size: 14px;
@@ -58,25 +58,38 @@
     padding: 14px;
     text-align: center;
     display: inline-block;
-  }
 
-  .lesson-1 {
-    background-color: #00b6bf;
-    ;
-    margin-right: 5%;
-  }
+    &--blue {
 
-  .lesson-2 {
-    background-color: #e2cb02;
-    ;
-
-    @media screen and (min-width: 424px) {
+      background-color: #00b6bf;
+      ;
       margin-right: 5%;
     }
-  }
 
-  .lesson-3 {
-    background-color: #fb6200;
+    &--yellow {
+      background-color: #e2cb02;
+      ;
+
+      @media screen and (min-width: 424px) {
+        margin-right: 5%;
+      }
+    }
+
+    &--red {
+
+      background-color: #fb6200;
+    }
+
+    &--grooming {
+      margin: 0;
+      padding: 0;
+      padding-top: 14px;
+
+      >span {
+        line-height: 30px;
+        font-size: 23px;
+      }
+    }
   }
 
   .mobile {
@@ -90,4 +103,25 @@
   text-decoration: line-through;
   text-decoration-color: red;
   font-weight: 400;
+}
+
+.LessonsGrooming {
+  &__Copy {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__Image{
+    width: 50%;
+    min-width: 110px;
+    max-width: 160px;
+    float: left;
+    margin-right: 20px;
+    border: 5px solid white;
+  }
+  &__List {
+    list-style-image: url('~src/assets/images/horseshoe.png');
+    margin: auto;
+    width: fit-content;
+  }
 }

@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
             { path: 'treks', name: 'header.treks' },
             { path: 'lessons', name: 'header.lessons' },
             { path: 'photoshoots', name: 'header.photos' },
-            { path: 'picnics', name: 'header.picnic' },
+            // { path: 'picnics', name: 'header.picnic' },
             { path: 'safety', name: 'header.safety' }
         ],
         subPath:[]

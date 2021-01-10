@@ -9,7 +9,7 @@ import { ModalService } from 'src/app/services/modal.service';
 export class LessonsComponent implements OnInit {
 
   lessons = ['lessons.lessons.copy1','lessons.lessons.copy2','lessons.lessons.copy3'];
-  extraInfo = ['lessons.extraInfo.copy1','lessons.extraInfo.copy2'];
+  extraInfo = ['lessons.extraInfo.copy3','lessons.extraInfo.copy4','lessons.extraInfo.copy5'];
   lessonsPhotos = [
     {
       image: require('src/assets/images/lessons/lesson-1.jpg').default,
@@ -28,6 +28,18 @@ export class LessonsComponent implements OnInit {
       description: 'lessons.lessonPhotos.copy4'
     }
   ];
+  lessonsCopy2 = {
+    title: 'lessons.lessonGrooming.title',
+    description: 'lessons.lessonGrooming.description',
+    list: [
+      'lessons.lessonGrooming.list1',
+      'lessons.lessonGrooming.list2',
+      'lessons.lessonGrooming.list3',
+      'lessons.lessonGrooming.list4'
+    ]
+  }
+  LessonsGroomingImage = require('src/assets/images/lessons/grooming.jpg').default;
+
   constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {
@@ -36,6 +48,11 @@ export class LessonsComponent implements OnInit {
     var list = this.lessonsPhotos.map((x) => {
       return { img: x.image };
     });
+    this.ModalService.triggerEvent({ list, position: 0 });
+
+  };
+  showModal2(image) {
+    var list = [{img: image }]
     this.ModalService.triggerEvent({ list, position: 0 });
 
   };

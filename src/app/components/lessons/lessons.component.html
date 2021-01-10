@@ -5,24 +5,24 @@
       <div class="title m-b">{{'lessons.title' | translate}}</div>
       <p *ngFor="let lesson of lessons" class="text">{{lesson | translate}}</p>
       <p *ngFor="let info of extraInfo" class="text md">{{info | translate}}</p>
-      <div class="lessons-bubbles">
-        <div class="lesson lesson-1" translate [translateParams]="{min:30}">lessons.min
+      <div class="LessonsBubbles">
+        <div class="LessonsBubbles__Bubble LessonsBubbles__Bubble--blue" translate [translateParams]="{min:30}">lessons.min
           <span>20€</span><br>
           <span class="strike-over">30€</span>
         </div>
-        <div class="lesson lesson-2" translate [translateParams]="{min:45}">lessons.min
+        <div class="LessonsBubbles__Bubble LessonsBubbles__Bubble--yellow" translate [translateParams]="{min:45}">lessons.min
           <span>30€</span><br>
           <span class="strike-over">40€</span>
         </div>
         <br class="mobile">
-        <div class="lesson lesson-3" translate [translateParams]="{min:60}">lessons.min
+        <div class="LessonsBubbles__Bubble LessonsBubbles__Bubble--red" translate [translateParams]="{min:60}">lessons.min
           <span>40€</span><br>
           <span class="strike-over">50€</span>
         </div>
       </div>
     </div>
   </div>
-  <div class="box purple-2">
+  <!-- <div class="box purple-2">
     <div class="container horses">
       <div class="lessons-photos" *ngFor="let lesson of lessonsPhotos; let i=index">
         <div class="description left" [ngClass]="{'desktop-hide':i%2==0}">{{lesson.description | translate}}</div>
@@ -31,6 +31,21 @@
         </div>
         <div class="description" [ngClass]="{'desktop-hide':i%2==1}">{{lesson.description | translate}}</div>
       </div>
+    </div>
+  </div> -->
+  <div class="box purple-2">
+    <div class="container horses LessonsGrooming">
+      <div class="title m-b">{{lessonsCopy2.title | translate}}</div>
+      <p class="LessonsGrooming__Copy">
+        <img class="LessonsGrooming__Image" [src]="LessonsGroomingImage" (click)="showModal2(LessonsGroomingImage)">
+        {{lessonsCopy2.description| translate}}</p>
+      <ul class="LessonsGrooming__List">
+        <li *ngFor="let list of lessonsCopy2.list" class="text">{{list| translate}}</li>
+      </ul>
+      <div class="LessonsBubbles">
+        <div class="LessonsBubbles__Bubble LessonsBubbles__Bubble--blue LessonsBubbles__Bubble--grooming" translate [translateParams]="{min:20}">lessons.min
+          <span>10€</span><br>
+        </div>
     </div>
   </div>
 </div>

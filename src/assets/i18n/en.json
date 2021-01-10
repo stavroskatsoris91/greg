@@ -161,7 +161,18 @@
     },
     "extraInfo": {
       "copy1": "Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.",
-      "copy2": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)"
+      "copy2": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)",
+      "copy3": "Greg’s Spetses Horses offers riding lessons individually or in groups, always maintaining the safety of the riders and the horses. Lessons are arranged by appointment.",
+      "copy4": "Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.",
+      "copy5": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)."
+    },
+    "lessonGrooming":{ 
+      "title":"GROOMING LESSONS",
+      "description": "Learn how to groom and tack up a horse. It’s a very important activity for the rider and a great bonding opportunity as well. Suitable for adults, kids, beginners or more advanced riders.",
+      "list1": "How to groom the horse",
+      "list2": "Grooming materials",
+      "list3": "Basic hoof care",
+      "list4": "Saddling up"
     },
     "lessonPhotos":{ 
       "copy1":"Fun grooming Robbie before the lesson",
