@@ -155,16 +155,11 @@
     "title": "Horse Riding Lessons",
     "min": "{{min}} min",
     "lessons": {
-      "copy1": "Choose a private lesson or come with friends (up to 3-4 riders).",
-      "copy2": "Lessons are arranged by appointment.",
-      "copy3": "Call or send us an email!"
+      "copy1": "Greg’s Spetses Horses offers riding lessons individually or in groups, always maintaining the safety of the riders and the horses. Lessons are arranged by appointment."
     },
     "extraInfo": {
       "copy1": "Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.",
-      "copy2": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)",
-      "copy3": "Greg’s Spetses Horses offers riding lessons individually or in groups, always maintaining the safety of the riders and the horses. Lessons are arranged by appointment.",
-      "copy4": "Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.",
-      "copy5": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)."
+      "copy2": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)."
     },
     "lessonGrooming":{ 
       "title":"GROOMING LESSONS",

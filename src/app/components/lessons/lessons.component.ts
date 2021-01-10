@@ -8,8 +8,8 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class LessonsComponent implements OnInit {
 
-  lessons = ['lessons.lessons.copy1','lessons.lessons.copy2','lessons.lessons.copy3'];
-  extraInfo = ['lessons.extraInfo.copy3','lessons.extraInfo.copy4','lessons.extraInfo.copy5'];
+  lessons = ['lessons.lessons.copy1'];
+  extraInfo = ['lessons.extraInfo.copy1','lessons.extraInfo.copy2'];
   lessonsPhotos = [
     {
       image: require('src/assets/images/lessons/lesson-1.jpg').default,
