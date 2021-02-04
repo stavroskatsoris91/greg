@@ -1,5 +1,5 @@
 <div class="TrekMap">
-    <img [src]="trekMap">
+    <img [src]="trekMap" [attr.aria-label]="(description | translate)">
     <div class="TrekMap__Pointer TrekMap__Pointer--0" placement="right" [ngbPopover]="'treks.map.start' | translate"></div>
     <div class="TrekMap__Pointer TrekMap__Pointer--1" placement="left" [ngbPopover]="'treks.map.trek1' | translate"></div>
     <div class="TrekMap__Pointer TrekMap__Pointer--2" placement="right" [ngbPopover]="'treks.map.trek2' | translate"></div>

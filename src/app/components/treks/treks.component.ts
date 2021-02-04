@@ -10,6 +10,7 @@ import * as trek2_3 from 'src/assets/images/treks/trek2/trek2_3.jpg';
 import * as trek2_4 from 'src/assets/images/treks/trek2/trek2_4.jpg';
 import * as trek2_5 from 'src/assets/images/treks/trek2/trek2_5.jpg';
 import * as trek2_6 from 'src/assets/images/treks/trek2/trek2_6.jpg';
+import * as trek2_7 from 'src/assets/images/treks/trek2/trek2_7.jpg';
 import * as trek3_1 from 'src/assets/images/treks/trek3/trek3_1.jpg';
 import * as trek3_2 from 'src/assets/images/treks/trek3/trek3_2.jpg';
 import * as trek3_3 from 'src/assets/images/treks/trek3/trek3_3.jpg';
@@ -26,6 +27,7 @@ import * as trek5_5 from 'src/assets/images/treks/trek5/trek5_5.jpg';
 import * as trek5_6 from 'src/assets/images/treks/trek5/trek5_6.jpg';
 import * as trek5_7 from 'src/assets/images/treks/trek5/trek5_7.jpg';
 import * as trek6_1 from 'src/assets/images/treks/trek6/trek6_1.jpg';
+import * as trek6_2 from 'src/assets/images/treks/trek6/trek6_2.jpg';
 import * as photosIcon from 'src/assets/images/treks/photos.svg';
 @Component({
     selector: 'app-treks',
@@ -56,6 +58,7 @@ export class TreksComponent implements OnInit {
             images: [
                 trek2_1.default,
                 trek2_2.default,
+                trek2_7.default,
                 trek2_3.default,
                 trek2_4.default,
                 trek2_5.default,
@@ -111,7 +114,8 @@ export class TreksComponent implements OnInit {
             price: '€122 / ',
             level: 'treks.level2',
             images: [
-                trek6_1.default
+                trek6_1.default,
+                trek6_2.default
             ],
             text: 'treks.trek6.text'
         },

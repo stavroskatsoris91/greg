@@ -379,6 +379,9 @@
       "titan3": "Horse in arena",
       "titan4": "Horse laying in arena sand",
       "titan5": "Horse trotting in arena"
+    },
+    "trek":{
+      "map":"Spetses horse trek map"
     }
   }
 

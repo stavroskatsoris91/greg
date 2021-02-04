@@ -9,6 +9,7 @@ import * as trekMap from 'src/assets/images/treks/trek_map.png';
 export class TrekMapComponent implements OnInit {
   
   public trekMap = trekMap.default;
+  public readonly description: string = 'image.trek.map'
   constructor() { }
 
   ngOnInit(): void {
