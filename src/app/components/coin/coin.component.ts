@@ -1,22 +1,22 @@
-import { Component, OnInit, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { interval } from 'rxjs';
 import { ModalService } from 'src/app/services/modal.service';
+import { IHorseImage } from '../horses/horses';
 
 @Component({
   selector: 'app-coin',
   templateUrl: './coin.component.html',
   styleUrls: ['./coin.component.scss']
 })
-export class CoinComponent implements OnInit {
-  @Input() list: any;
+export class CoinComponent implements OnInit, OnDestroy {
+  @Input() list: IHorseImage[];
   count: number = 0;
-  sides: any;
+  sides: IHorseImage[];
   loopInterval: any;
   head: boolean = false;
 
-  constructor(private elementRef: ElementRef<any>,
-    private renderer: Renderer2,
-    private ModalService: ModalService) { }
+  constructor(
+    private readonly modalService: ModalService) { }
 
   ngOnInit(): void {
     this.sides = this.list.slice(0, 2);
@@ -31,23 +31,23 @@ export class CoinComponent implements OnInit {
     
   }
   private updateSides = ()=> {
-    var l = this.list.length;
-    var rem = (this.count+1) % l;
+    const l = this.list.length;
+    const rem = (this.count+1) % l;
     if(this.count%2===1){
       this.sides[0]=this.list[rem];
     }else{
       this.sides[1]=this.list[rem];
     }
   }
-  public side(i) {
-    return { 'background-image': 'url(' + this.sides[i] + ')' };
+  public side(i):string {
+    return `url(${this.sides[i].src})`;
   };
-  public showModal = function () {
-    var list = this.list.map(function (x) {
-      return { img: x };
+  public showModal() {
+    const list = this.list.map(function (x) {
+      return { img: x.src };
     });
-    var l = this.list.length;
-    var rem = (this.count) % l;
-    this.ModalService.triggerEvent({list, position:rem});
+    const l = this.list.length;
+    const rem = (this.count) % l;
+    this.modalService.triggerEvent({list, position:rem});
   };
 }
