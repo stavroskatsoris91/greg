@@ -1,7 +1,3 @@
-interface taValidate {
-    ():void,
-    
-  }
 interface IGoogleMaps{
   maps:{
     MapTypeId:{
@@ -14,7 +10,5 @@ interface IGoogleMaps{
   }
 }
 interface Window {
-    taValidate: taValidate,
-    taOnLoad(event):void,
     google:IGoogleMaps
   }
