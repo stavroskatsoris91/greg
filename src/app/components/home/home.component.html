@@ -7,28 +7,9 @@
       <p *ngFor="let text of [1,2,3]" class="text line-hight" >{{'home.copy.'+text | translate}}</p>
     </div>
   </div>
-  <div class="box white-2" [ngClass]="{'show':showTripAdvisor}">
-    <div class="container home-desktop">
-      <div id="TA_selfserveprop789" class="TA_selfserveprop">
-        <ul id="uPreGjMh" class="TA_links 5aYnZEdE">
-        <li id="XE2fkaASI7W" class="kXJHNRl8h">
-        <a target="_blank" href="https://www.tripadvisor.co.uk/Attraction_Review-g189496-d10367019-Reviews-Gregs_Spetses_Horses-Spetses_Saronic_Gulf_Islands_Attica.html">
-          <img src="https://www.tripadvisor.co.uk/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-11900-2.svg" alt="TripAdvisor"/>
-        </a>
-        </li>
-        </ul>
-        </div>
-    </div>
-    <div class="container home-mobile">
-      <div id="TA_selfserveprop207" class="TA_selfserveprop">
-        <ul id="6uLOQ3fN" class="TA_links eGXq2sGm">
-          <li id="FjjYrE63" class="pOeo9O3Hb">
-            <a target="_blank" href="https://www.tripadvisor.co.uk/Attraction_Review-g189496-d10367019-Reviews-Gregs_Spetses_Horses-Spetses_Saronic_Gulf_Islands_Attica.html">
-              <img src="https://www.tripadvisor.co.uk/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor" />
-            </a>
-          </li>
-        </ul>
-      </div>
+  <div class="box white-2">
+    <div class="container">
+      <app-trip-advisor></app-trip-advisor>
     </div>
   </div>
 </div>

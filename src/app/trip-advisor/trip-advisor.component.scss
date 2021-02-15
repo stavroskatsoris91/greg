@@ -1,0 +1,10 @@
+.TripAdvisor {
+    max-width: 500px;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    &--mobile{
+        max-width: 300px;
+    }
+}

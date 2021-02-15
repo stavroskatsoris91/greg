@@ -11,6 +11,7 @@ export interface IScriptResponse {
     status: string
 }
 interface ScriptAttribute {
+    attr: string[][]
     src: string,
     loaded: boolean
 }
@@ -34,7 +35,8 @@ export class ScriptLoader {
                     script.name,
                     {
                         src: script.src,
-                        loaded:false
+                        loaded:false,
+                        attr: script.attr||[]
                     },
                 ]
             })
@@ -48,9 +50,12 @@ export class ScriptLoader {
     }
 /** Load a single requested script and return the result as a promise */
     loadScript(name_: ScriptTags): Promise<IScriptResponse> {
-        return (
-            this.queue.get(name_) ||
-            (this.queue.set(
+        let loadedScript = this.queue.get(name_);
+        if(loadedScript){
+            return loadedScript;
+        }else {
+            
+            this.queue.set(
                 name_,
                 new Promise((resolve, reject) => {
                     //resolve if already loaded
@@ -73,6 +78,9 @@ export class ScriptLoader {
                         let script = document.createElement('script')
                         script.type = 'text/javascript'
                         script.src = requestedScript.src
+                        // requestedScript.attr.map(([name,value])=>
+                        //     script.setAttribute(name, value)
+                        // )
                         if (script.readyState) {
                             //IE
                             script.onreadystatechange = () => {
@@ -91,7 +99,7 @@ export class ScriptLoader {
                             }
                         } else {
                             //Others
-                            script.onload = () => {
+                            script.onload = (e) => {
                                 requestedScript.loaded = true
                                 resolve({
                                     script: name_,
@@ -111,8 +119,10 @@ export class ScriptLoader {
                             .appendChild(script)
                     }
                 })
-            ) &&
-                this.queue.get(name_))
-        )
+            )
+            loadedScript = this.queue.get(name_);
+            this.queue.delete(name_);
+            return loadedScript;
+        }
     }
 }

@@ -40,6 +40,7 @@ import { GalleryImageComponent } from './components/gallery-image/gallery-image.
 import { NgxScrollLockModule } from 'ngx-scroll-lock';
 import { TrekMapComponent } from './components/trek-map/trek-map.component';
 import { EmptyBoxComponent } from './components/empty-box/empty-box.component';
+import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
 // import { SwipeDirective } from './swipe.directive';
 // import { ImagePreloadDirective } from './directives/imagepreload.directive';
 
@@ -72,6 +73,7 @@ import { EmptyBoxComponent } from './components/empty-box/empty-box.component';
     GalleryImageComponent,
     TrekMapComponent,
     EmptyBoxComponent,
+    TripAdvisorComponent,
     // SwipeDirective,
     // ImagePreloadDirective
   ],
