@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 import {
   IScriptResponse,
   ScriptLoader,
@@ -14,23 +15,41 @@ export class TripAdvisorComponent implements OnInit {
   @HostListener("window:resize")
   onResize() {
     if(this.wasMobile!==this.isMobile){
+      this.wasMobile = this.isMobile;
       this.loadTripAdvisor();
     }
   }
   wasMobile:boolean = this.isMobile;
-  constructor(private readonly scriptLoader: ScriptLoader) {}
+  constructor(
+    private readonly scriptLoader: ScriptLoader,
+    private readonly translate: TranslateService
+    ) {
+      this.translate.onLangChange.subscribe((x)=>{
+        this.loadTripAdvisor();
+      })
+    }
 
   ngOnInit(): void {}
   ngAfterViewInit(): void {
     this.loadTripAdvisor();
   }
   loadTripAdvisor() {
+    const scriptName = this.tripAdvisorScript;
     this.scriptLoader
-      .loadScript(this.tripAdvisorScript)
+      .loadScript(scriptName)
       .then((res: IScriptResponse) => {
         if (res.loaded) {
-          document.head.getElementsByTagName('script')[0].onload = ()=>{this.taValidate()}
-          this.taValidate();
+          if(res.status=='Already Loaded'){
+            const call = this.scriptLoader.loadMethod(scriptName);
+            if(call){
+              call();
+            }
+          }else{
+            document.head.getElementsByTagName('script')[0].onload = ()=>{
+              this.scriptLoader.saveMethod(scriptName,this.taMethod);
+              this.taMethod();
+            }
+          }
         }
       });
   }
@@ -44,7 +63,16 @@ export class TripAdvisorComponent implements OnInit {
   }
   get tripAdvisorScript() {
     return this.isMobile
-      ? ScriptTags.TripAdvisorMobile
-      : ScriptTags.TripAdvisorDesktop;
+      ? this.isGreek?ScriptTags.TripAdvisorMobileGR:ScriptTags.TripAdvisorMobile
+      : this.isGreek?ScriptTags.TripAdvisorDesktopGR:ScriptTags.TripAdvisorDesktop;
+  }
+  get isGreek(){
+    return (this.translate.currentLang||this.translate.defaultLang)=='el';
+  }
+  get taMethod():()=>void{
+    const {taValidate, taValList, taValIndex} = window;
+    if(taValidate){
+      return taValList[taValIndex-1];
+    }
   }
 }
