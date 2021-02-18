@@ -61,6 +61,12 @@
         "age": "Ηλικία",
         "height": "Ύψος",
         "years": "χρονών",
+        "breeds":{
+            "haflinger":"Χάφλινγκερ",
+            "pinto": "Πίντο",
+            "cob": "Κομπ",
+            "murgese":"Μουργκέζ"
+          },
         "colours": {
             "black": "Μάυρο",
             "grey": "Γκρι",

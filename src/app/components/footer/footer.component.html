@@ -17,8 +17,8 @@
                         <div class="clock"><img [src]="imageClock">{{'footer.time'| translate}}
                             <span class="info-popup" (clickOutside)="show=false">
                                 <img class="info-img" [src]="imageInfo" (click)="show=!show">
-                                <span [ngClass]="{'open':show}">
-                                    <span *ngFor="let inf of [1,2,3,4]">{{'footer.info.'+inf| translate}}<br></span>
+                                <span [ngClass]="{'open':show}" class="v-2">
+                                    <span *ngFor="let inf of [1]">{{'footer.info.'+inf| translate}}<br></span>
                                 </span>
                             </span>
                         </div>

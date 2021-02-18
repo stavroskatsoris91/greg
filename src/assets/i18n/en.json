@@ -61,6 +61,12 @@
     "age": "Age",
     "height": "Height",
     "years": "years old",
+    "breeds":{
+      "haflinger": "Haflinger",
+      "pinto": "Pinto",
+      "cob": "Cob",
+      "murgese":"Murgese"
+    },
     "colours": {
       "black": "Black",
       "grey": "Grey",

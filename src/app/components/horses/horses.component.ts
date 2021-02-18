@@ -39,7 +39,7 @@ export class HorsesComponent implements OnInit {
     },
     {
       name: "ROBBIE",
-      breed: "Haflinger",
+      breed: "horses.breeds.haflinger",
       colour: null,
       age: this.getAge(2009),
       height: "1.50m",
@@ -73,7 +73,7 @@ export class HorsesComponent implements OnInit {
     },
     {
       name: "NELLY",
-      breed: "Cob",
+      breed: "horses.breeds.cob",
       colour: null,
       age: this.getAge(2009),
       height: "1.45m",
@@ -103,7 +103,7 @@ export class HorsesComponent implements OnInit {
     },
     {
       name: "OSCAR",
-      breed: "Pinto",
+      breed: "horses.breeds.pinto",
       colour: null,
       age: this.getAge(2009),
       height: "1.40m",
@@ -203,7 +203,7 @@ export class HorsesComponent implements OnInit {
     },
     {
       name: "ANGEL",
-      breed: "Haflinger",
+      breed: "horses.breeds.haflinger",
       colour: null,
       age: this.getAge(2011),
       height: "1.35m",
@@ -233,8 +233,8 @@ export class HorsesComponent implements OnInit {
     },
     {
       name: "TITAN",
-      breed: null,
-      colour: "horses.colours.black",
+      breed: "horses.breeds.murgese",
+      colour: null,
       age: this.getAge(2013),
       height: "1.60m",
       images: [
