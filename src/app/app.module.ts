@@ -41,6 +41,8 @@ import { NgxScrollLockModule } from 'ngx-scroll-lock';
 import { TrekMapComponent } from './components/trek-map/trek-map.component';
 import { EmptyBoxComponent } from './components/empty-box/empty-box.component';
 import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
+import { SendMessageComponent } from './components/send-message/send-message.component';
+import { ScrollToErrorDirective } from './scroll-to-error.directive';
 // import { SwipeDirective } from './swipe.directive';
 // import { ImagePreloadDirective } from './directives/imagepreload.directive';
 
@@ -74,6 +76,8 @@ import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
     TrekMapComponent,
     EmptyBoxComponent,
     TripAdvisorComponent,
+    SendMessageComponent,
+    ScrollToErrorDirective,
     // SwipeDirective,
     // ImagePreloadDirective
   ],

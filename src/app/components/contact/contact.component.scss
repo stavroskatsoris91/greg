@@ -55,6 +55,7 @@
     .error-message {
         position: absolute;
         color: red;
+        text-shadow: -1px 0px 3px #000;
     }
 
     &__time {

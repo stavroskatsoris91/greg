@@ -125,26 +125,13 @@ export class ContactComponent implements OnInit, OnDestroy {
   removeRider(i) {
     this.riderForm.removeAt(i);
   };
-  scrollToElement(el: Element): void {
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-    }
-  }
-
-  scrollToError(): void {
-    const elementsWithError = this.elementRef.nativeElement.getElementsByClassName('ng-invalid');
-    const secondElementWithError = elementsWithError[1];
-    this.scrollToElement(secondElementWithError.previousElementSibling);
-  }
 
   async scrollIfFormHasErrors(form: FormGroup): Promise<any> {
     await form.invalid;
-    this.scrollToError();
   }
   async submitForm() {
     this.submitted = true;
     if (this.run || await this.bookingForm.invalid) {
-      this.scrollToError();
       return;
     }
     this.run = true;

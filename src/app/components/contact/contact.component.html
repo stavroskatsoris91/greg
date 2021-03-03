@@ -10,7 +10,7 @@
           <button class="button-info">{{safety | translate}}</button>
         </a>
       </div>
-      <form [formGroup]="bookingForm" class="submit-form" (ngSubmit)="submitForm()">
+      <form [formGroup]="bookingForm" class="submit-form" (ngSubmit)="submitForm()" appScrollToError>
         <div class="input input__default">
           <label>{{'contact.field.name' | translate}}</label>
           <input formControlName="name" class="required" type="text" [ngClass]="{'invalid': false}">

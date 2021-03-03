@@ -15,6 +15,7 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
 import { CanActivateTeam, CanActivateHome } from './can-activate';
+import { SendMessageComponent } from './components/send-message/send-message.component';
 
 
 
@@ -59,6 +60,10 @@ const children: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+  },
+  {
+    path: 'sendmessage',
+    component: SendMessageComponent,
   },
   {
     path: 'thankyou',
