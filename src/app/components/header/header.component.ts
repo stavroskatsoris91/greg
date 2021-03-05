@@ -21,23 +21,23 @@ export class HeaderComponent implements OnInit {
         name: 'header.about', toggle:false,
         sub: [
             { path: 'about', name: 'header.story' },
-            { path: 'instructors', name: 'header.instructors' }
+            { path: 'instructors', name: 'header.instructors' },
+            { path: 'horses', name: 'header.horses' },
         ],
         subPath:[]
     },
-    { path: ['horses'], name: 'header.horses', toggle:false },
     {
-        name: 'header.riding', toggle:false,
+        name: 'header.activities', toggle:false,
         sub: [
             { path: 'treks', name: 'header.treks' },
             { path: 'lessons', name: 'header.lessons' },
             { path: 'photoshoots', name: 'header.photos' },
             // { path: 'picnics', name: 'header.picnic' },
-            { path: 'safety', name: 'header.safety' }
+            { path: 'safety', name: 'header.safety' },
+            { path: 'carriage', name: 'header.carriage' },
         ],
         subPath:[]
     },
-    { path: ['carriage'], name: 'header.carriage',  toggle: false },
     { path: ['gallery'], name: 'header.gallery',  toggle: false },
     { path: ['contact'], name: 'header.contact',  toggle: false }
   ];

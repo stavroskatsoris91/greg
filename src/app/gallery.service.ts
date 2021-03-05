@@ -327,7 +327,13 @@ export class GalleryService {
             src: require("src/assets/images/gallery/carriage/gallerycarriage6.jpg")
               .default,
             alt: "",
-            size: [1000, 794],
+            size: [749, 1000],
+          },
+          {
+            src: require("src/assets/images/carriage/carriage6.jpg")
+              .default,
+            alt: "",
+            size: [1498, 1000],
           },
           {
             src: require("src/assets/images/gallery/carriage/gallerycarriage7.jpg")

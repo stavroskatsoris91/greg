@@ -13,9 +13,10 @@
     .logo{
       padding-top: 14px;
       position: relative;
+      width: 295px;
+      max-width: calc(100% - 40px);
       img{
-        width: 295px;
-        position: absolute;
+        width: 100%;
       }
     }
     &__Language{
