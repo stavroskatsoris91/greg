@@ -329,6 +329,12 @@ export class GalleryService {
             alt: "",
             size: [1000, 794],
           },
+          {
+            src: require("src/assets/images/gallery/carriage/gallerycarriage7.jpg")
+              .default,
+            alt: "",
+            size: [668, 1000],
+          }
         ],
         category: "carriag",
         title: "gallery.carriage",

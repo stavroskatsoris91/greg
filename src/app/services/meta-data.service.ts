@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class MetaDataService {
-  baseUrl = window.location.protocol + '//' + window.location.hostname;
+  baseUrl = this.document.location.origin
   homeImage = require('src/assets/images/background/home.jpg').default;
   redirect = false;
   redirectPath: any;
@@ -82,7 +82,7 @@ export class MetaDataService {
           { property: 'og:description', content: data.description },
           { property: 'og:type', content: data.type },
           { property: 'og:image', content: data.location + '/' + data.image },
-          { property: 'og:url', content: window.location.href },
+          { property: 'og:url', content: this.document.location.href },
           { property: 'og:locale', content: data.language },
           { name: 'twitter:title', content: data.title },
           { name: 'twitter:description', content: data.tw_description },
