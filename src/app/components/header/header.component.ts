@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
             { path: 'about', name: 'header.story' },
             { path: 'instructors', name: 'header.instructors' },
             { path: 'horses', name: 'header.horses' },
+            { path: 'safety', name: 'header.safety' }
         ],
         subPath:[]
     },
@@ -33,7 +34,6 @@ export class HeaderComponent implements OnInit {
             { path: 'lessons', name: 'header.lessons' },
             { path: 'photoshoots', name: 'header.photos' },
             // { path: 'picnics', name: 'header.picnic' },
-            { path: 'safety', name: 'header.safety' },
             { path: 'carriage', name: 'header.carriage' },
         ],
         subPath:[]
