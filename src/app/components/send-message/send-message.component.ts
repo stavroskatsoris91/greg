@@ -2,8 +2,6 @@ import { Component, NgZone, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
-import { BehaviorSubject, of } from "rxjs";
-import { catchError, concatMap, delay, timeout } from "rxjs/operators";
 import { MessageService } from "src/app/message.service";
 
 @Component({
@@ -32,9 +30,7 @@ export class SendMessageComponent implements OnInit {
     ) {}
   ngOnInit(): void {}
   get validate() { return this.messageForm.controls; }
-  makeRequest(timeToDelay) {
-    return of('Request Complete!').pipe(delay(timeToDelay));
-  }
+
   public async submitForm(){
     this.submitted = true;
     if(this.messageForm.valid && !this.run){
