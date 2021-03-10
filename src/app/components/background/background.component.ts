@@ -20,7 +20,7 @@ export class ProductPageBreakpoint {
 export class BackgroundComponent implements OnInit {
   device = 'mobile';
   count = 0;
-  path: string = "/";
+  pagePath: string;
   loadedImage: HTMLImageElement;
   paths = this.backgrounds.getBackgrounds;
   labels = ['',''];
@@ -39,7 +39,7 @@ export class BackgroundComponent implements OnInit {
     this.router.events
       .pipe(filter((e) => e instanceof NavigationEnd))
       .subscribe((e: NavigationEnd) => {
-        this.path = e.url.split("/").slice(-1)[0];
+        this.pagePath = e.url.split("/").slice(2).join('/')||''
         this.changeBackground(this.count + 1);
       });
   }
@@ -70,7 +70,7 @@ export class BackgroundComponent implements OnInit {
   };
   private changeBackground(count) {
     const index = this.isMobile?1:0;
-    const path = (this.paths.find((x) => x.name === this.path) || this.paths[0]);
+    const path = (this.paths.find((x) => x.name === this.pagePath) || this.paths[0]);
     const image = path.images[index];
     const show = count % 2;
     const opacity = show === 1 ? 1 : 0;

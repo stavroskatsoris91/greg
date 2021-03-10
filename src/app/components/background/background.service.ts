@@ -72,7 +72,7 @@ export class BackgroundService {
         alt: "",
       },
       {
-        name: "contact",
+        name: "contact/booking",
         images: [
           require("src/assets/images/background/contact.jpg").default,
           require("src/assets/images/background/contactmob.jpg").default,
