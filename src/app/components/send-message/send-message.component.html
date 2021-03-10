@@ -37,11 +37,26 @@
             </p>
           </div>
           <div class="text-center">
-            <button type="submit" class="button-info">{{'contact.field.submit' | translate}}</button>
+            <button type="submit" class="button-info">{{'contact.field.sendMessage' | translate}}</button>
           </div>
         </form>
         <div>
-          Or send on messenger or whatsapp
+        <h3 class="text-center"> - {{'contact.or' | translate}} - </h3>
+        <br>
+        <div class="text-center Message__Alternative">
+          <div class="Message__Icon">
+            <a href="http://m.me/580857355426657" target="_blank">
+              <img [src]="messenger">
+            </a>
+            Messenger
+          </div>
+          <div class="Message__Icon">
+            <a href="https://wa.me/+306942792460" target="_blank">
+              <img [src]="whatsapp">
+            </a>
+            WhatsApp
+          </div>
+        </div>
         </div>
       </div>
     </div>

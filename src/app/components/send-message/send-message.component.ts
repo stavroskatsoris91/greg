@@ -25,6 +25,8 @@ export class SendMessageComponent implements OnInit {
   submitted: boolean;
   run: boolean;
 
+  messenger = require('src/assets/images/contact/messenger.svg').default;
+  whatsapp = require('src/assets/images/contact/whatsapp.svg').default;
   constructor(
     private readonly formBuilder: FormBuilder,
     private router: Router,
