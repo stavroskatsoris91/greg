@@ -1,5 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, NgZone, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
+import { BehaviorSubject, of } from "rxjs";
+import { catchError, concatMap, delay, timeout } from "rxjs/operators";
+import { MessageService } from "src/app/message.service";
 
 @Component({
   selector: "app-send-message",
@@ -18,15 +23,34 @@ export class SendMessageComponent implements OnInit {
     message: ["", [Validators.required, Validators.maxLength(1000)]],
   });
   submitted: boolean
-  constructor(private readonly formBuilder: FormBuilder) {}
-
+  run: boolean;
+  constructor(private readonly formBuilder: FormBuilder,
+    private router: Router,
+    private translate: TranslateService,
+    private zone: NgZone,
+    private message: MessageService
+    ) {}
   ngOnInit(): void {}
   get validate() { return this.messageForm.controls; }
-
-  public submitForm(){
-    this.submitted = true;
-    if(this.messageForm.valid){
-
-    }
+  makeRequest(timeToDelay) {
+    return of('Request Complete!').pipe(delay(timeToDelay));
   }
+  public async submitForm(){
+    this.submitted = true;
+    if(this.messageForm.valid && !this.run){
+      const data = this.messageForm.value
+      this.run = true;
+      this.message.sendMessage(data).subscribe((res) => {
+        this.zone.run(() => {
+          const language = this.translate.currentLang || this.translate.defaultLang;
+          this.run = false;
+          this.router.navigate([language,'thankyou'])
+        });
+      }, (error) => {
+        this.run = false;
+        return
+      });
+    }
+    }
+  
 }

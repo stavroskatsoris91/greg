@@ -72,7 +72,7 @@
         </div>
         <div class="input input__default" *ngIf="f.riding.value.options">
           <label>{{f.riding.value.display | translate}}</label>
-          <select formControlName="rideType" [(ngModel)]="f.riding.value.selected">
+          <select formControlName="rideType">
             <option *ngFor="let opt of f.riding.value.options;let i = index" [ngValue]="i" translate
               [translateParams]="{min:opt.time}">{{opt.name}}
             </option>

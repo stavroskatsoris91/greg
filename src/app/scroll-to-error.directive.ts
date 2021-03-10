@@ -16,7 +16,9 @@ export class ScrollToErrorDirective {
   private scrollToError(): void {
     const elementsWithError = this.elementRef.nativeElement.getElementsByClassName('ng-invalid');
     const secondElementWithError = elementsWithError[0];
-    this.scrollToElement(secondElementWithError.previousElementSibling);
+    if(secondElementWithError){
+      this.scrollToElement(secondElementWithError.previousElementSibling);
+    }
   }
   private scrollToElement(el: Element): void {
     if (el) {

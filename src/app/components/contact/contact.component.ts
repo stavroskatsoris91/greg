@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, NgZone } from '@angular/core';
 import { BooksService } from '../../services/books.service';
 import * as cloneDeep from "lodash/cloneDeep";
 import { Router } from '@angular/router';
@@ -58,20 +58,25 @@ export class ContactComponent implements OnInit, OnDestroy {
   public minutes = ['00', '15', '30', '45'];
   public levels = ['contact.levels.level1', 'contact.levels.level2', 'contact.levels.level3'];
   public payments = ['contact.payments.payment1', 'contact.payments.payment2'];
+  listener: any;
 
   constructor(
     private books: BooksService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private readonly elementRef: ElementRef,
     private translate: TranslateService,
+    private zone: NgZone
   ) { }
 
   ngOnInit(): void {
     this.init();
+    this.listener = this.bookingForm.get("riding").valueChanges.subscribe(x => {
+      this.bookingForm.get("rideType").setValue(0);
+   })
   }
   ngOnDestroy(): void {
     this.books.setForm(this.bookingForm);
+    this.listener.unsubscribe()
   }
 
   private init() {
@@ -84,7 +89,7 @@ export class ContactComponent implements OnInit, OnDestroy {
       minutes: [this.minutes[0], Validators.required],
       riding: [this.ridings[0], Validators.required],
       riders: this.formBuilder.array([this.createItem]),
-      rideType: this.ridings[0].options,
+      rideType: 0,
       message: ['', Validators.maxLength(1000)],
       payment: [this.payments[0], Validators.required],
       accept: [false, Validators.required]
@@ -113,7 +118,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     var total = 0;
     const { value } = this.bookingForm;
     if (value.riding.options) {
-      total = value.riding.options[value.riding.selected].price * value.riders.length;
+      total = value.riding.options[value.rideType].price * value.riders.length;
     }
     return total ? '- €' + total : '';
   };
@@ -138,7 +143,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     var data = cloneDeep(this.bookingForm.value);
     data.riders.map((rider)=>rider.level=this.translate.instant(rider.level));
     if (data.riding.options) {
-      data.riding = this.translate.instant(data.riding.display) + ' : ' + this.translate.instant(data.riding.options[data.riding.selected].name);
+      data.riding = this.translate.instant(data.riding.display) + ' : ' + this.translate.instant(data.riding.options[data.rideType].name);
     } else {
       data.riding = this.translate.instant(data.riding.display);
     }
@@ -146,12 +151,15 @@ export class ContactComponent implements OnInit, OnDestroy {
     data.date = date;
     data.payment = this.translate.instant(data.payment) + ' ' + this.price;
     this.books.makeBook(data).subscribe((res) => {
-      const language = this.translate.currentLang || this.translate.defaultLang;
-      this.router.navigate([language,'thankyou'])
-      this.books.clearForm();
-      this.run = false;
+      this.zone.run(() => {
+        const language = this.translate.currentLang || this.translate.defaultLang;
+        this.books.clearForm();
+        this.run = false;
+        this.router.navigate([language,'thankyou'])
+      });
     }, (error) => {
       this.run = false;
+      return
     });
 
   };
