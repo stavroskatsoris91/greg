@@ -7,10 +7,12 @@ import { MessageService } from "src/app/message.service";
 @Component({
   selector: "app-send-message",
   templateUrl: "./send-message.component.html",
-  styleUrls: ["./send-message.component.scss","../contact/contact.component.scss"],
+  styleUrls: [
+    "./send-message.component.scss",
+    "../contact/contact.component.scss",
+  ],
 })
 export class SendMessageComponent implements OnInit {
-  
   messageForm: FormGroup = this.formBuilder.group({
     name: ["", [Validators.required, Validators.maxLength(50)]],
     email: [
@@ -20,33 +22,42 @@ export class SendMessageComponent implements OnInit {
     tel: ["", [Validators.required, Validators.maxLength(50)]],
     message: ["", [Validators.required, Validators.maxLength(1000)]],
   });
-  submitted: boolean
+  submitted: boolean;
   run: boolean;
-  constructor(private readonly formBuilder: FormBuilder,
+
+  constructor(
+    private readonly formBuilder: FormBuilder,
     private router: Router,
     private translate: TranslateService,
     private zone: NgZone,
     private message: MessageService
-    ) {}
-  ngOnInit(): void {}
-  get validate() { return this.messageForm.controls; }
+  ) {}
 
-  public async submitForm(){
+  ngOnInit(): void {}
+
+  get validate() {
+    return this.messageForm.controls;
+  }
+
+  public async submitForm() {
     this.submitted = true;
-    if(this.messageForm.valid && !this.run){
-      const data = this.messageForm.value
+    if (this.messageForm.valid && !this.run) {
+      const data = this.messageForm.value;
       this.run = true;
-      this.message.sendMessage(data).subscribe((res) => {
-        this.zone.run(() => {
-          const language = this.translate.currentLang || this.translate.defaultLang;
+      this.message.sendMessage(data).subscribe(
+        (res) => {
+          this.zone.run(() => {
+            const language =
+              this.translate.currentLang || this.translate.defaultLang;
+            this.run = false;
+            this.router.navigate([language, "thankyou"]);
+          });
+        },
+        (error) => {
           this.run = false;
-          this.router.navigate([language,'thankyou'])
-        });
-      }, (error) => {
-        this.run = false;
-        return
-      });
+          return;
+        }
+      );
     }
-    }
-  
+  }
 }

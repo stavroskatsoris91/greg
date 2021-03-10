@@ -59,11 +59,17 @@ const children: Routes = [
   },
   {
     path: 'contact',
-    component: ContactComponent,
-  },
-  {
-    path: 'sendmessage',
-    component: SendMessageComponent,
+    children:[
+      { path: '',  redirectTo: 'booking', pathMatch: 'full' },
+      {
+        path:'booking',
+        component: ContactComponent
+      },
+      {
+        path:'message',
+        component: SendMessageComponent
+      }
+    ]
   },
   {
     path: 'thankyou',

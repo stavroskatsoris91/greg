@@ -51,9 +51,14 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/instructors"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact"/>
+    <loc>https://www.gregsspetseshorses.com/en/contact/booking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact/booking"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact/booking"/>
+  </url>
+  <url>
+    <loc>https://www.gregsspetseshorses.com/en/contact/message</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact/message"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact/message"/>
   </url>
   <url>
     <loc>https://www.gregsspetseshorses.com/en/carriage</loc>

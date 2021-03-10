@@ -14,7 +14,9 @@
     "safety": "SAFETY",
     "carriage": "CARRIAGE",
     "gallery": "GALLERY",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "booking": "BOOKING",
+    "message": "MESSAGE"
   },
   "meta":{
     "title":"Greg's Spetses Horses | Do something different while visiting Spetses!",
@@ -243,6 +245,7 @@
   },
   "contact": {
     "title": "Contact Us",
+    "booking": "Book a Ride",
     "tsncs": "Payment ts&cs",
     "safety": "Safety",
     "field": {

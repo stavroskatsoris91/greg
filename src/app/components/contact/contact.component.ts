@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   ridings = this.books.ridings;
   nextDay = new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().slice(0, 10);
 
-  title = 'contact.title';
+  title = 'contact.booking';
   tsncs = 'contact.tsncs';
   safety = 'contact.safety';
   field = 'contact.field';

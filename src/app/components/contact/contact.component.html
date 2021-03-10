@@ -25,7 +25,7 @@
           <input formControlName="email" class="required" type="email" [ngClass]="{'invalid': false}">
           <div class="error-message" *ngIf="submitted && f.email.errors">
             <p *ngIf="f.email.errors.required"> {{requiredField | translate}} </p>
-            <p *ngIf="f.email.errors.email"> {{invalidEmail}} </p>
+            <p *ngIf="f.email.errors.email"> {{invalidEmail | translate}} </p>
           </div>
         </div>
         <div class="input input__default">

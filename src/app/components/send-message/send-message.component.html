@@ -2,7 +2,7 @@
     <app-empty-box></app-empty-box>
     <div class="box green">
       <div class="container horses">
-        <div class="title m-b">{{'sendmessage.title' | translate}}
+        <div class="title m-b">{{'contact.title' | translate}}
         </div>
         <form [formGroup]="messageForm" class="submit-form" (ngSubmit)="submitForm()" appScrollToError>
           <div class="input input__default">
@@ -19,7 +19,7 @@
             <input formControlName="email" class="required" type="email" [ngClass]="{'invalid': false}">
             <div class="error-message" *ngIf="submitted && validate.email.errors">
               <p *ngIf="validate.email.errors.required"> {{'contact.requiredField' | translate}} </p>
-              <p *ngIf="validate.email.errors.email"> {{'contact.invalidEmail'}} </p>
+              <p *ngIf="validate.email.errors.email"> {{'contact.invalidEmail' | translate}} </p>
             </div>
           </div>
           <div class="input input__default">

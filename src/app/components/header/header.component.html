@@ -15,20 +15,20 @@
         <div class="" *ngFor="let opt of menu; let i  = index;">
           <a *ngIf="opt.path; else isNotLink" [routerLink]="[language+(opt.path||'')]" 
             class="nav-link"
-            [ngClass]="{active:opt.path&&opt.path.indexOf(path)>=0}"
+            [class.active]="opt.path&&opt.path.indexOf(pagePath)>=0"
             >{{opt.name| translate}}
           </a>
           <ng-template #isNotLink>
             <a
               class="nav-link"
-              [ngClass]="{active:opt.subPath.indexOf(path)>=0}"
+              [class.active]="opt.subPath.indexOf(pagePath)>=0"
               (click)="animateMe(true,opt)"
               >{{opt.name| translate}}
             </a>
           </ng-template>
           <div class="sub" *ngIf="opt.sub" appToggleAnimate [show]="opt.toggle">
             <div class="" *ngFor="let sub of opt.sub" >
-              <a [routerLink]="[language+sub.path]" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name| translate}}</a>
+              <a [routerLink]="[language+sub.path]" class="nav-link" [class.active]="pagePath===sub.path">{{sub.name| translate}}</a>
             </div>
           </div>
         </div>
@@ -38,13 +38,13 @@
           <li *ngFor="let opt of menu; let i = index;">
             <a *ngIf="opt.path; else isNotLink" [routerLink]="[language+(opt.path||'')]" 
               class="nav-link"
-              [ngClass]="{active:opt.path.indexOf(path)>=0}"
+              [class.active]="opt.path.indexOf(pagePath)>=0"
               >{{opt.name| translate}}
             </a>
             <ng-template #isNotLink>
               <a 
                 class="nav-link"
-                [ngClass]="{active:opt.subPath.indexOf(path)>=0}"
+                [class.active]="opt.subPath.indexOf(pagePath)>=0"
                 (click)="animateMe(true,opt)"
                 >{{opt.name| translate}}
             </a>
@@ -52,7 +52,7 @@
             <div class="sub" *ngIf="opt.sub" appToggleAnimate [show]="opt.toggle">
               <ul>
                 <li class="" *ngFor="let sub of opt.sub">
-                  <a [routerLink]="[language+sub.path]" class="nav-link" [ngClass]="{active:path===sub.path}">{{sub.name| translate}}</a>
+                  <a [routerLink]="[language+sub.path]" class="nav-link" [class.active]="pagePath===sub.path">{{sub.name| translate}}</a>
                 </li>
               </ul>
             </div>
