@@ -16,12 +16,7 @@ import { BackgroundComponent } from './components/background/background.componen
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { InstructorsComponent } from './components/instructors/instructors.component';
-import { SafetyComponent } from './components/safety/safety.component';
-import { HorsesComponent } from './components/horses/horses.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { CoinComponent } from './components/coin/coin.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { InitalizeDirective } from './directives/initalize.directive';
 import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
@@ -41,12 +36,7 @@ import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
     ClickOutsideDirective,
     GooglemapsComponent,
     HomeComponent,
-    AboutComponent,
-    InstructorsComponent,
-    SafetyComponent,
-    HorsesComponent,
     GalleryComponent,
-    CoinComponent,
     ModalComponent,
     InitalizeDirective,
     ToggleAnimateDirective,

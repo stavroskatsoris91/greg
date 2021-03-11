@@ -8,7 +8,6 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
 
 
 const routes: Routes = [
-  { path: '',  redirectTo: 'booking', pathMatch: 'full' },
   {
     path:'booking',
     component: BookingComponent

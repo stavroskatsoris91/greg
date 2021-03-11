@@ -24,7 +24,7 @@ export class BackgroundService {
           "image.background.home",
       },
       {
-        name: "about",
+        name: "about/story",
         images: [
           require("src/assets/images/background/about.jpg").default,
           require("src/assets/images/background/aboutmob.jpg").default,
@@ -32,7 +32,7 @@ export class BackgroundService {
         alt: "image.background.about",
       },
       {
-        name: "instructors",
+        name: "about/instructors",
         images: [
           require("src/assets/images/background/about.jpg").default,
           require("src/assets/images/background/aboutmob.jpg").default,
@@ -40,12 +40,20 @@ export class BackgroundService {
         alt: "image.background.about",
       },
       {
-        name: "horses",
+        name: "about/horses",
         images: [
           require("src/assets/images/background/horses.jpg").default,
           require("src/assets/images/background/horsesmob.jpg").default,
         ],
         alt: "image.background.horses",
+      },
+      {
+        name: "about/safety",
+        images: [
+          require("src/assets/images/background/safety.jpg").default,
+          require("src/assets/images/background/safetymob.jpg").default,
+        ],
+        alt: "",
       },
       {
         name: "activities/treks",
@@ -108,14 +116,6 @@ export class BackgroundService {
         images: [
           require("src/assets/images/background/picnics.jpg").default,
           require("src/assets/images/background/picnicsmob.jpg").default,
-        ],
-        alt: "",
-      },
-      {
-        name: "safety",
-        images: [
-          require("src/assets/images/background/safety.jpg").default,
-          require("src/assets/images/background/safetymob.jpg").default,
         ],
         alt: "",
       },

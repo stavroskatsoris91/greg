@@ -6,14 +6,14 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el" />
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about"/>
+    <loc>https://www.gregsspetseshorses.com/en/about/story</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about/story"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about/story"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/horses</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/horses"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/horses"/>
+    <loc>https://www.gregsspetseshorses.com/en/about/horses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about/horses"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about/horses"/>
   </url>
   <url>
     <loc>https://www.gregsspetseshorses.com/en/activities/treks</loc>
@@ -36,9 +36,9 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/picnics"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/safety</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/safety"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/safety"/>
+    <loc>https://www.gregsspetseshorses.com/en/about/safety</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about/safety"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about/safety"/>
   </url>
   <url>
     <loc>https://www.gregsspetseshorses.com/en/gallery</loc>

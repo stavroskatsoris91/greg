@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { InstructorsComponent } from './components/instructors/instructors.component';
-import { HorsesComponent } from './components/horses/horses.component';
-import { SafetyComponent } from './components/safety/safety.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { LanguageComponent } from './components/language/language.component';
 import { CanActivateTeam, CanActivateHome } from './can-activate';
@@ -14,30 +10,19 @@ import { CanActivateTeam, CanActivateHome } from './can-activate';
 
 const children: Routes = [
   {
-    path: 'about',
-    component: AboutComponent,
-  },
-  {
-    path: 'instructors',
-    component: InstructorsComponent,
-  },
-  {
-    path: 'horses',
-    component: HorsesComponent,
-  },
-  {
-    path: 'safety',
-    component: SafetyComponent,
-  },
-  {
     path: 'gallery',
     component: GalleryComponent,
+  },
+  { path: 'about',  redirectTo: 'about/story', pathMatch: 'full' },
+  {
+    path: 'about',
+    loadChildren: () => import('./modules/about/about.module').then(m_ => m_.AboutModule)
   },
   {
     path: 'activities',
     loadChildren: () => import('./modules/activities/activities.module').then(m_ => m_.ActivitiesModule)
   },
-  
+  { path: 'contact',  redirectTo: 'contact/booking', pathMatch: 'full' },
   {
     path: 'contact',
     loadChildren: () => import('./modules/contact/contact.module').then(m_ => m_.ContactModule)
@@ -46,6 +31,9 @@ const children: Routes = [
     path: '',
     component: HomeComponent,
   },
+  { path: 'instructors',  redirectTo: 'about/instructors', pathMatch: 'full' },
+  { path: 'horses',  redirectTo: 'about/horses', pathMatch: 'full' },
+  { path: 'safety',  redirectTo: 'about/safety', pathMatch: 'full' },
   { path: 'treks',  redirectTo: 'activities/treks', pathMatch: 'full' },
   { path: 'lessons',  redirectTo: 'activities/lessons', pathMatch: 'full' },
   { path: 'photoshoots',  redirectTo: 'activities/photoshoots', pathMatch: 'full' },
