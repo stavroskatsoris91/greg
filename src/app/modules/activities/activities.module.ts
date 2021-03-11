@@ -8,11 +8,12 @@ import { CarriageComponent } from './components/carriage/carriage.component';
 import { LessonsComponent } from './components/lessons/lessons.component';
 import { PhotoshootsComponent } from './components/photoshoots/photoshoots.component';
 import { TreksComponent } from './components/treks/treks.component';
+import { PicnicsComponent } from './components/picnics/picnics.component';
 
 
 @NgModule({
   declarations: [
-    CarriageComponent, LessonsComponent, PhotoshootsComponent, TreksComponent, TrekMapComponent
+    CarriageComponent, LessonsComponent, PhotoshootsComponent, TreksComponent, TrekMapComponent, PicnicsComponent
   ],
   imports: [
     CommonModule,

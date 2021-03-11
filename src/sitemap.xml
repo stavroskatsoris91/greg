@@ -16,24 +16,24 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/horses"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/treks</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/treks"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/treks"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/treks</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/treks"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/treks"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/lessons</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/lessons"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/lessons"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/lessons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/lessons"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/lessons"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/photoshoots</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/photoshoots"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/photoshoots"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/photoshoots</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/photoshoots"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/photoshoots"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/picnics</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/picnics"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/picnics"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/picnics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/picnics"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/picnics"/>
   </url>
   <url>
     <loc>https://www.gregsspetseshorses.com/en/safety</loc>
@@ -61,8 +61,8 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact/message"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/carriage</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/carriage"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/carriage"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/carriage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/carriage"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/carriage"/>
   </url>
 </urlset>

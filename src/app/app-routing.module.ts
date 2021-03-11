@@ -38,6 +38,7 @@ const children: Routes = [
     path: 'activities',
     loadChildren: () => import('./modules/activities/activities.module').then(m_ => m_.ActivitiesModule)
   },
+  
   {
     path: 'contact',
     loadChildren: () => import('./modules/contact/contact.module').then(m_ => m_.ContactModule)
@@ -50,6 +51,11 @@ const children: Routes = [
     path: '',
     component: HomeComponent,
   },
+  { path: 'treks',  redirectTo: 'activities/treks', pathMatch: 'full' },
+  { path: 'lessons',  redirectTo: 'activities/lessons', pathMatch: 'full' },
+  { path: 'photoshoots',  redirectTo: 'activities/photoshoots', pathMatch: 'full' },
+  { path: 'carriage',  redirectTo: 'activities/carriage', pathMatch: 'full' },
+  { path: 'picnics',  redirectTo: 'activities/picnics', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 const routes: Routes = [
