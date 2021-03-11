@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireFunctions } from '@angular/fire/functions';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MessageService {
 
   constructor(private readonly functions : AngularFireFunctions) { }

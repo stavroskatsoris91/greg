@@ -2,14 +2,14 @@ import { Component, NgZone, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
-import { MessageService } from "src/app/message.service";
+import { MessageService } from "../../services/message.service";
 
 @Component({
   selector: "app-send-message",
   templateUrl: "./send-message.component.html",
   styleUrls: [
     "./send-message.component.scss",
-    "../contact/contact.component.scss",
+    "../booking/booking.component.scss",
   ],
 })
 export class SendMessageComponent implements OnInit {

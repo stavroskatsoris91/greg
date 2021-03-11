@@ -8,11 +8,11 @@ import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: 'app-booking',
+  templateUrl: './booking.component.html',
+  styleUrls: ['./booking.component.scss']
 })
-export class ContactComponent implements OnInit, OnDestroy {
+export class BookingComponent implements OnInit, OnDestroy {
   run: boolean;
   bookingForm: FormGroup;
   savedForm: FormGroup;

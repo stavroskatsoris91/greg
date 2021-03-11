@@ -10,12 +10,10 @@ import { PhotoshootsComponent } from './components/photoshoots/photoshoots.compo
 import { PicnicsComponent } from './components/picnics/picnics.component';
 import { SafetyComponent } from './components/safety/safety.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
 import { CanActivateTeam, CanActivateHome } from './can-activate';
-import { SendMessageComponent } from './components/send-message/send-message.component';
 
 
 
@@ -59,17 +57,7 @@ const children: Routes = [
   },
   {
     path: 'contact',
-    children:[
-      { path: '',  redirectTo: 'booking', pathMatch: 'full' },
-      {
-        path:'booking',
-        component: ContactComponent
-      },
-      {
-        path:'message',
-        component: SendMessageComponent
-      }
-    ]
+    loadChildren: () => import('./modules/contact/contact.module').then(m_ => m_.ContactModule)
   },
   {
     path: 'thankyou',

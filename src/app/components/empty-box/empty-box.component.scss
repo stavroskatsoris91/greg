@@ -1,3 +1,14 @@
+.EmptyBox {
+  min-height: 400px;
+  display: flex;
+  .title {
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+}
 .ArrowContainer{
     margin: 0 auto;
     transform-origin: center 0;

@@ -4,7 +4,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -27,7 +26,6 @@ import { PicnicsComponent } from './components/picnics/picnics.component';
 import { SafetyComponent } from './components/safety/safety.component';
 import { HorsesComponent } from './components/horses/horses.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { CoinComponent } from './components/coin/coin.component';
 import { ModalComponent } from './components/modal/modal.component';
@@ -41,10 +39,7 @@ import { NgxScrollLockModule } from 'ngx-scroll-lock';
 import { TrekMapComponent } from './components/trek-map/trek-map.component';
 import { EmptyBoxComponent } from './components/empty-box/empty-box.component';
 import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
-import { SendMessageComponent } from './components/send-message/send-message.component';
 import { ScrollToErrorDirective } from './scroll-to-error.directive';
-// import { SwipeDirective } from './swipe.directive';
-// import { ImagePreloadDirective } from './directives/imagepreload.directive';
 
 @NgModule({
   declarations: [
@@ -64,7 +59,6 @@ import { ScrollToErrorDirective } from './scroll-to-error.directive';
     SafetyComponent,
     HorsesComponent,
     GalleryComponent,
-    ContactComponent,
     ThankyouComponent,
     CoinComponent,
     ModalComponent,
@@ -76,7 +70,6 @@ import { ScrollToErrorDirective } from './scroll-to-error.directive';
     TrekMapComponent,
     EmptyBoxComponent,
     TripAdvisorComponent,
-    SendMessageComponent,
     ScrollToErrorDirective,
     // SwipeDirective,
     // ImagePreloadDirective
@@ -94,7 +87,6 @@ import { ScrollToErrorDirective } from './scroll-to-error.directive';
     }),
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireFunctionsModule,
     NgxScrollLockModule,
