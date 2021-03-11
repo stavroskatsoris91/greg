@@ -39,7 +39,6 @@ import { NgxScrollLockModule } from 'ngx-scroll-lock';
 import { TrekMapComponent } from './components/trek-map/trek-map.component';
 import { EmptyBoxComponent } from './components/empty-box/empty-box.component';
 import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
-import { ScrollToErrorDirective } from './scroll-to-error.directive';
 
 @NgModule({
   declarations: [
@@ -69,10 +68,7 @@ import { ScrollToErrorDirective } from './scroll-to-error.directive';
     GalleryImageComponent,
     TrekMapComponent,
     EmptyBoxComponent,
-    TripAdvisorComponent,
-    ScrollToErrorDirective,
-    // SwipeDirective,
-    // ImagePreloadDirective
+    TripAdvisorComponent
   ],
   imports: [
     BrowserAnimationsModule,

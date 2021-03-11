@@ -7,9 +7,10 @@ import { BookingComponent } from "./components/booking/booking.component";
 import { SendMessageComponent } from "./components/send-message/send-message.component";
 import { TranslateModule } from "@ngx-translate/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ScrollToErrorDirective } from "src/app/scroll-to-error.directive";
 
 @NgModule({
-  declarations: [BookingComponent, SendMessageComponent],
+  declarations: [BookingComponent, SendMessageComponent, ScrollToErrorDirective],
   imports: [
     CommonModule,
     ContactRoutingModule,
