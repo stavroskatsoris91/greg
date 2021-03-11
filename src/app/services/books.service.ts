@@ -47,6 +47,7 @@ export class BooksService {
     // { name: 'PICNIC / PARTY', display: 'contact.picnic', selected: null }
   ];
   public makeBook(data) {
+    data.created = Date.now();
     return this.functions.httpsCallable('bookTime')(data);
 
   }
