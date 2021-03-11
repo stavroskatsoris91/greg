@@ -52,7 +52,7 @@ export class SendMessageComponent implements OnInit {
             const language =
               this.translate.currentLang || this.translate.defaultLang;
             this.run = false;
-            this.router.navigate([language, "thankyou"]);
+            this.router.navigate([language,'contact', 'thankyou']);
           });
         },
         (error) => {

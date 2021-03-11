@@ -6,7 +6,6 @@ import { InstructorsComponent } from './components/instructors/instructors.compo
 import { HorsesComponent } from './components/horses/horses.component';
 import { SafetyComponent } from './components/safety/safety.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { LanguageComponent } from './components/language/language.component';
 import { CanActivateTeam, CanActivateHome } from './can-activate';
 
@@ -44,10 +43,6 @@ const children: Routes = [
     loadChildren: () => import('./modules/contact/contact.module').then(m_ => m_.ContactModule)
   },
   {
-    path: 'thankyou',
-    component: ThankyouComponent,
-  },
-  {
     path: '',
     component: HomeComponent,
   },
@@ -56,6 +51,7 @@ const children: Routes = [
   { path: 'photoshoots',  redirectTo: 'activities/photoshoots', pathMatch: 'full' },
   { path: 'carriage',  redirectTo: 'activities/carriage', pathMatch: 'full' },
   { path: 'picnics',  redirectTo: 'activities/picnics', pathMatch: 'full' },
+  { path: 'thankyou',  redirectTo: 'contact/thankyou', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 const routes: Routes = [

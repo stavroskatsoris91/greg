@@ -48,7 +48,7 @@ export class BackgroundService {
         alt: "image.background.horses",
       },
       {
-        name: "treks",
+        name: "activities/treks",
         images: [
           require("src/assets/images/background/treks.jpg").default,
           require("src/assets/images/background/treksmob.jpg").default,
@@ -56,7 +56,7 @@ export class BackgroundService {
         alt: "",
       },
       {
-        name: "carriage",
+        name: "activities/carriage",
         images: [
           require("src/assets/images/background/carriage.jpg").default,
           require("src/assets/images/background/carriagemob.jpg").default,
@@ -80,7 +80,7 @@ export class BackgroundService {
         alt: "",
       },
       {
-        name: "thankyou",
+        name: "contact/thankyou",
         images: [
           require("src/assets/images/background/contact.jpg").default,
           require("src/assets/images/background/contactmob.jpg").default,
@@ -88,7 +88,7 @@ export class BackgroundService {
         alt: "",
       },
       {
-        name: "lessons",
+        name: "activities/lessons",
         images: [
           require("src/assets/images/background/lessons.jpg").default,
           require("src/assets/images/background/lessonsmob.jpg").default,
@@ -96,7 +96,7 @@ export class BackgroundService {
         alt: "",
       },
       {
-        name: "photoshoots",
+        name: "activities/photoshoots",
         images: [
           require("src/assets/images/background/photoshoots.jpg").default,
           require("src/assets/images/background/photoshootsmob.jpg").default,
@@ -104,7 +104,7 @@ export class BackgroundService {
         alt: "",
       },
       {
-        name: "picnics",
+        name: "activities/picnics",
         images: [
           require("src/assets/images/background/picnics.jpg").default,
           require("src/assets/images/background/picnicsmob.jpg").default,

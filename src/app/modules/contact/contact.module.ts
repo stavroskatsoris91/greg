@@ -8,9 +8,10 @@ import { SendMessageComponent } from "./components/send-message/send-message.com
 import { TranslateModule } from "@ngx-translate/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ScrollToErrorDirective } from "src/app/scroll-to-error.directive";
+import { ThankyouComponent } from "./components/thankyou/thankyou.component";
 
 @NgModule({
-  declarations: [BookingComponent, SendMessageComponent, ScrollToErrorDirective],
+  declarations: [BookingComponent, SendMessageComponent, ScrollToErrorDirective, ThankyouComponent],
   imports: [
     CommonModule,
     ContactRoutingModule,

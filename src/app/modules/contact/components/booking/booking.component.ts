@@ -155,7 +155,7 @@ export class BookingComponent implements OnInit, OnDestroy {
         const language = this.translate.currentLang || this.translate.defaultLang;
         this.books.clearForm();
         this.run = false;
-        this.router.navigate([language,'thankyou'])
+        this.router.navigate([language,'contact','thankyou'])
       });
     }, (error) => {
       this.run = false;

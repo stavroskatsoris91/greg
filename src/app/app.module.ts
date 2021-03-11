@@ -21,7 +21,6 @@ import { InstructorsComponent } from './components/instructors/instructors.compo
 import { SafetyComponent } from './components/safety/safety.component';
 import { HorsesComponent } from './components/horses/horses.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { CoinComponent } from './components/coin/coin.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { InitalizeDirective } from './directives/initalize.directive';
@@ -47,7 +46,6 @@ import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
     SafetyComponent,
     HorsesComponent,
     GalleryComponent,
-    ThankyouComponent,
     CoinComponent,
     ModalComponent,
     InitalizeDirective,

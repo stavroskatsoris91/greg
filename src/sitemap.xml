@@ -61,6 +61,11 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact/message"/>
   </url>
   <url>
+    <loc>https://www.gregsspetseshorses.com/en/contact/thankyou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact/thankyou"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact/thankyou"/>
+  </url>
+  <url>
     <loc>https://www.gregsspetseshorses.com/en/activities/carriage</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/carriage"/>
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/carriage"/>

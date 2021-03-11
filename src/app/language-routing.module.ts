@@ -6,7 +6,6 @@ import { InstructorsComponent } from './components/instructors/instructors.compo
 import { HorsesComponent } from './components/horses/horses.component';
 import { SafetyComponent } from './components/safety/safety.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { TranslateService } from '@ngx-translate/core';
 
 export function getLanguage() {
@@ -32,10 +31,6 @@ const routes: Routes = [
   {
     path: 'gallery',
     component: GalleryComponent,
-  },
-  {
-    path: 'thankyou',
-    component: ThankyouComponent,
   },
   {
     path: '',
