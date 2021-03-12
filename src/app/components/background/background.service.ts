@@ -88,6 +88,14 @@ export class BackgroundService {
         alt: "",
       },
       {
+        name: "contact/message",
+        images: [
+          require("src/assets/images/background/message.jpg").default,
+          require("src/assets/images/background/messagemob.jpg").default,
+        ],
+        alt: "",
+      },
+      {
         name: "contact/thankyou",
         images: [
           require("src/assets/images/background/contact.jpg").default,
