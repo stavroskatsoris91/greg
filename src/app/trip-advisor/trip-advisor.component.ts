@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
+import { BrowserService } from "../browser.service";
 import {
   IScriptResponse,
   ScriptLoader,
@@ -22,7 +23,8 @@ export class TripAdvisorComponent implements OnInit {
   wasMobile:boolean = this.isMobile;
   constructor(
     private readonly scriptLoader: ScriptLoader,
-    private readonly translate: TranslateService
+    private readonly translate: TranslateService,
+    private readonly browser: BrowserService
     ) {
       this.translate.onLangChange.subscribe((x)=>{
         this.loadTripAdvisor();
@@ -54,12 +56,12 @@ export class TripAdvisorComponent implements OnInit {
       });
   }
   taValidate(){
-    if(window.taValidate){
-      window.taValidate();
+    if(this.browser.window.taValidate){
+      this.browser.window.taValidate();
     }
   }
   get isMobile(): boolean {
-    return window.innerWidth < 468;
+    return this.browser.window.innerWidth < 468;
   }
   get tripAdvisorScript() {
     return this.isMobile

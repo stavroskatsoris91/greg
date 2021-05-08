@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { BrowserService } from './browser.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'gregs-app';
   constructor(
-    private translate: TranslateService){
-    const path = window.location.pathname.split('/')[1];
+    private translate: TranslateService,
+    private readonly browser: BrowserService
+    ){
+    const path = this.browser.window.location.pathname.split('/')[1];
     const userLang = translate.getBrowserLang();
     const defaultLang = (path||userLang)=='el'?'el':'en';
 

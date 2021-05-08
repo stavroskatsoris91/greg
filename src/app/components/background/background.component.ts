@@ -3,11 +3,14 @@ import {
   OnInit,
   Renderer2,
   HostListener,
+  Inject,
 } from "@angular/core";
-import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
+import { Router, NavigationEnd } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { BackgroundService } from './background.service';
 import { TranslateService } from '@ngx-translate/core';
+import { DOCUMENT } from "@angular/common";
+import { BrowserService } from "src/app/browser.service";
 
 export class ProductPageBreakpoint {
   static MobileBreakpoint: number = 575
@@ -20,6 +23,7 @@ export class ProductPageBreakpoint {
 export class BackgroundComponent implements OnInit {
   device = 'mobile';
   count = 0;
+  scrollTop:number = 0;
   pagePath: string;
   loadedImage: HTMLImageElement;
   paths = this.backgrounds.getBackgrounds;
@@ -29,6 +33,7 @@ export class BackgroundComponent implements OnInit {
     private renderer: Renderer2,
     private readonly backgrounds: BackgroundService,
     private translate: TranslateService,
+    private readonly browser: BrowserService
   ) {
     this.translate.onLangChange.subscribe((x)=>{
       this.changeBackground(this.count)
@@ -43,18 +48,26 @@ export class BackgroundComponent implements OnInit {
         this.changeBackground(this.count + 1);
       });
   }
-  @HostListener("window:resize", ["$event"])
-  onResize(event) {
+  @HostListener("window:resize")
+  onResize() {
 
     const newDevice = this.isMobile?'mobile':'desktop';
     if(newDevice!==this.device){
       this.device = newDevice;
       this.changeBackground(this.count);
     }
+    this.scrollTop = this.updateScrollTop();
+  }
+  @HostListener("window:scroll")
+  onScroll() {
+    this.scrollTop = this.updateScrollTop();
+  }
+  get window(){
+    return this.browser.window
   }
   get dHeight(){
-    const body = document.body,
-      html = document.documentElement;
+    const body = this.browser.document.body,
+      html = this.browser.document.documentElement;
     return Math.max(
       body.scrollHeight,
       body.offsetHeight,
@@ -63,9 +76,10 @@ export class BackgroundComponent implements OnInit {
       html.offsetHeight
     );
   }
-  get scrollTop(){
-    const wScroll = window.pageYOffset;
-    const wHeight = window.innerHeight;
+  private updateScrollTop(){
+
+    const wScroll = this.window.pageYOffset;
+    const wHeight = this.window.innerHeight;
     return (wScroll / (this.dHeight - wHeight)) * 16;
   };
   private changeBackground(count) {
@@ -79,8 +93,8 @@ export class BackgroundComponent implements OnInit {
     this.loadedImage.crossOrigin = "Anonymous";
     this.loadedImage.src = image;
     this.loadedImage.onload = () => {
-      let el = document.getElementById("background-" + (show + 1)).firstChild;
-      let bg = document.getElementById("background-2");
+      let el = this.browser.document.getElementById("background-" + (show + 1)).firstChild;
+      let bg = this.browser.document.getElementById("background-2");
       this.renderer.setStyle(el, "backgroundImage", "url(" + image + ")");
       // this.renderer.setAttribute(el,'aria-label',`[${description}]`)
       this.renderer.setStyle(bg, "opacity", opacity);
@@ -90,5 +104,5 @@ export class BackgroundComponent implements OnInit {
   public get isMobile() {
     return this.layoutWidth <= ProductPageBreakpoint.MobileBreakpoint
   }
-  public get layoutWidth(): number{ return window.innerWidth}
+  public get layoutWidth(): number{ return this.window.innerWidth}
 }

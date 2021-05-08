@@ -1,35 +1,14 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { interval } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   checkTripAdvisor: any;
   showTripAdvisor: boolean;
-  constructor(private readonly element: ElementRef) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    // this.checkTripAdvisor = interval(500).subscribe(()=> {
-    //   let elements = [...this.element.nativeElement.getElementsByTagName('dt')]
-    //   if (elements.filter(x=>x.innerText.indexOf('Gregs Spetses Horses')>=0).length < 2) {
-    //     if (window.taValidate) {
-    //       window.taValidate();
-          
-    //     }
-    //   } else {
-    //     this.showTripAdvisor = true;
-    //     this.checkTripAdvisor.unsubscribe();
-    //   }
-    // });
-
-  }
-  ngOnDestroy(): void {
-    // if(this.checkTripAdvisor){
-    //   this.checkTripAdvisor.unsubscribe();
-    // }
-  }
 }

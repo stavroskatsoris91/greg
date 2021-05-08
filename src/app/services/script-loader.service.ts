@@ -119,7 +119,11 @@ export class ScriptLoader {
         })
       );
       loadedScript = this.queue.get(name_);
-      this.queue.delete(name_);
+      loadedScript.then(()=>{
+        if(this.queue.get(name_)){
+            this.queue.delete(name_);
+        }
+      })
       return loadedScript;
     }
   }

@@ -28,8 +28,8 @@
     
             <div class="Content__Map"
                 [class.Content__Map--active]="openMap">
-                <img [src]="imageGoogleMaps" (mouseover)="openMap=true">
-                <app-googlemaps *ngIf="openMap"></app-googlemaps>
+                <img [src]="imageGoogleMaps" (mouseover)="openMap=true" *ngIf="!mapIsLoaded">
+                <app-googlemaps *ngIf="openMap" [markers]="googleHorses" (loaded)="mapLoaded($event)"></app-googlemaps>
             </div>
         </div>
         <div class="text-center">
