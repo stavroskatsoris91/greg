@@ -115,7 +115,7 @@
     "time": "{{hour}}h {{min}}min",
     "min": "{{min}} min",
     "hour": "{{hour}} hours",
-    "horse": "{{price}} horse",
+    "horse": "€{{price}} / horse",
     "level1": "All levels",
     "level2": "level experienced",
     "map":{
