@@ -98,7 +98,7 @@ export class BookingComponent implements OnInit, OnDestroy {
   private get createItem(): FormGroup {
     return this.formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
-      age: ['', [Validators.required, Validators.maxLength(4), Validators.pattern("^[0-9]*$/")]],
+      age: ['', [Validators.required, Validators.maxLength(4), Validators.pattern("^[0-9]*$")]],
       height: ['', [Validators.required, Validators.maxLength(4), Validators.pattern("^[0-9]+\.?[0-9]*$")]],
       weight: ['', [Validators.required, Validators.maxLength(4), Validators.pattern("^[0-9]+\.?[0-9]*$")]],
       level: [this.levels[0], Validators.required]
@@ -143,7 +143,9 @@ export class BookingComponent implements OnInit, OnDestroy {
     var data = cloneDeep(this.bookingForm.value);
     data.riders.map((rider)=>rider.level=this.translate.instant(rider.level));
     if (data.riding.options) {
-      data.riding = this.translate.instant(data.riding.display) + ' : ' + this.translate.instant(data.riding.options[data.rideType].name);
+      const type = data.riding.options[data.rideType];
+      const params = type.time?{min:type.time}:{};
+      data.riding = this.translate.instant(data.riding.display) + ' : ' + this.translate.instant(type.name,params);
     } else {
       data.riding = this.translate.instant(data.riding.display);
     }
