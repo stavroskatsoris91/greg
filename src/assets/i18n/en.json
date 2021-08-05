@@ -250,6 +250,7 @@
     "tsncs": "Payment ts&cs",
     "safety": "Safety",
     "or": "Or Via",
+    "heatwarning": "Due\u00a0to\u00a0the\u00a0heat, appointments from\u00a012\u00a0to\u00a016 will\u00a0not\u00a0be\u00a0available",
     "field": {
       "name": "Name",
       "email": "Email",

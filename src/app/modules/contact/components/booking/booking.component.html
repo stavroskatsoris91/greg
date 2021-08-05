@@ -34,6 +34,7 @@
             {{requiredField | translate}}
           </p>
         </div>
+        <div *ngIf="heatWarning" class="warning-message">{{ 'contact.heatwarning' | translate}}</div>
         <div class="date-time">
           <div class="input input__default date">
             <label for="date">{{'contact.field.date' | translate}}</label>
