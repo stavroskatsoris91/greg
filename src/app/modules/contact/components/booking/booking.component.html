@@ -5,7 +5,7 @@
       </div>
       <div class="title m-b">
         <button class="button-info m-r" (click)="scrollTo('payments')">{{tsncs | translate}}</button>
-        <a routerLink="/safety">
+        <a [routerLink]="['/',language,'about','safety']">
           <button class="button-info">{{safety | translate}}</button>
         </a>
       </div>
@@ -46,14 +46,14 @@
             <div class="input input__default input__time">
               <label>{{'contact.field.hour' | translate}}</label>
               <select formControlName="hour">
-                <option *ngFor="let opt of hours" [ngValue]="opt">{{opt | translate}}
+                <option *ngFor="let opt of hours" [ngValue]="opt" [disabled]="notAvailableHour(opt)" >{{opt | translate}}
                 </option>
               </select>
             </div>
             <div class="input input__default input__time">
               <label>{{'contact.field.mins' | translate}}</label>
               <select formControlName="minutes">
-                <option *ngFor="let opt of minutes" [ngValue]="opt">{{opt | translate}}
+                <option *ngFor="let opt of minutes" [ngValue]="opt" [disabled]="notAvailableMinute(opt)" >{{opt | translate}}
                 </option>
               </select>
             </div>
@@ -148,7 +148,7 @@
         <div class="input">
           <input formControlName="accept" type="checkbox" required>
           {{'contact.accept.part1' | translate}}<a class="a-info"
-          routerLink="/safety">{{'contact.accept.part2' | translate}}</a> {{'contact.accept.part3' | translate}}<a
+          [routerLink]="['/',language,'about','safety']">{{'contact.accept.part2' | translate}}</a> {{'contact.accept.part3' | translate}}<a
             class="a-info"
             (click)="scrollTo('payments')">{{'contact.accept.part4' | translate}}</a>{{'contact.accept.part5' | translate}}
           <p class="error-message" *ngIf="submitted && f.accept.errors">

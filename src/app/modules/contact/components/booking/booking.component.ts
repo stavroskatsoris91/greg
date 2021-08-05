@@ -19,6 +19,7 @@ export class BookingComponent implements OnInit, OnDestroy {
   riders2: FormArray;
   error: boolean = false;
   submitted = false;
+  heatWarning = false;
   phoneNumber = "^((\\+91-?)|0)?[0-9]{10}$";
   minDate = new Date().toISOString().slice(0, 10);
   ridings = this.books.ridings;
@@ -66,13 +67,25 @@ export class BookingComponent implements OnInit, OnDestroy {
     private router: Router,
     private translate: TranslateService,
     private zone: NgZone
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.init();
     this.listener = this.bookingForm.get("riding").valueChanges.subscribe(x => {
       this.bookingForm.get("rideType").setValue(0);
    })
+   this.bookingForm.get("hour").valueChanges.subscribe((v)=>{
+    if(v==11){
+      this.f.minutes.setValue(this.minutes[0]);
+    }
+  })
+  this.isSummer(this.bookingForm.get("date").value)
+  this.bookingForm.get("date").valueChanges.subscribe((v)=>{
+    this.isSummer(v)
+    if(this.heatWarning&&this.notAvailableHour(this.f.hour.value)){
+      this.f.hour.setValue(11);
+    }
+  })
   }
   ngOnDestroy(): void {
     this.books.setForm(this.bookingForm);
@@ -104,7 +117,7 @@ export class BookingComponent implements OnInit, OnDestroy {
       level: [this.levels[0], Validators.required]
     });
   }
-  get f() { return this.bookingForm.controls; }
+  get f() { return this.bookingForm?.controls; }
   get riders() {
     return of(this.riderForm.value).pipe(
       map(x => x)
@@ -169,4 +182,18 @@ export class BookingComponent implements OnInit, OnDestroy {
     var element = document.getElementById(id);
     element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
   };
+  get language() {
+    return (this.translate.currentLang || this.translate.defaultLang);
+  }
+  notAvailableHour(hour){
+    return this.heatWarning&&hour>=12&&hour<=16;
+  }
+  notAvailableMinute(minute){
+    return this.heatWarning&&this.f?.hour.value==11&&minute>0;
+  }
+  isSummer(date){
+    const selectedMonth = Number(date.split('-')[1]);
+    const summerDates = [6,7,8];
+    this.heatWarning = summerDates.indexOf(selectedMonth)>=1;
+  }
 }
