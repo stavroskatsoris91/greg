@@ -24,6 +24,10 @@ export class InstructorsComponent implements OnInit {
       image: null,
       about: "tracy",
     },
+    {
+      image: null,
+      about: "katerina",
+    }
   ];
   constructor(
     private readonly modalService: ModalService
