@@ -26,16 +26,16 @@ export class BackgroundService {
       {
         name: "about/story",
         images: [
-          require("src/assets/images/background/about.jpg").default,
-          require("src/assets/images/background/aboutmob.jpg").default,
+          require("src/assets/images/background/aboutus.jpg").default,
+          require("src/assets/images/background/aboutusmob.jpg").default,
         ],
         alt: "image.background.about",
       },
       {
         name: "about/instructors",
         images: [
-          require("src/assets/images/background/about.jpg").default,
-          require("src/assets/images/background/aboutmob.jpg").default,
+          require("src/assets/images/background/instructors.jpg").default,
+          require("src/assets/images/background/instructorsmob.jpg").default,
         ],
         alt: "image.background.about",
       },

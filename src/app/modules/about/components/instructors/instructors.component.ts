@@ -17,10 +17,6 @@ export class InstructorsComponent implements OnInit {
       about: "greg",
     },
     {
-      image: kat.default,
-      about: "kat",
-    },
-    {
       image: null,
       about: "tracy",
     },
