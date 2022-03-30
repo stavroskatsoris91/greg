@@ -1,0 +1,12 @@
+.Message{
+    &__Alternative{
+        margin-bottom: 30px;
+    }
+    &__Icon{
+        width: 100px;
+        display: inline-block;
+        img{
+            width: 50%;
+        }
+    }
+}

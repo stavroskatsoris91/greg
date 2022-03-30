@@ -6,6 +6,7 @@
     "instructors": "INSTRUCTORS",
     "horses": "HORSES",
     "riding": "RIDING",
+    "activities": "ACTIVITIES",
     "treks": "TREKS",
     "lessons": "LESSONS",
     "photos": "PHOTO SHOOTS",
@@ -13,7 +14,9 @@
     "safety": "SAFETY",
     "carriage": "CARRIAGE",
     "gallery": "GALLERY",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "booking": "BOOKING",
+    "message": "MESSAGE"
   },
   "meta":{
     "title":"Greg's Spetses Horses | Do something different while visiting Spetses!",
@@ -40,18 +43,19 @@
     "instructor": {
       "greg": {
         "name": "Greg",
-        "color": "red-1",
         "description": "Greg is the owner of Greg’s Spetses Horses. He was raised in Spetses and he is half English, half Greek and speaks both languages fluently. Greg has trained all our horses and he is also the main performer in our new “Greg’s Spetses Horses” Show with his horse, Olivia. As an instructor, He likes to teach his students the importance of building a compassionate relationship with the horses they ride. He’s the trek guide and enjoys showing visitors the beautiful island he grew up in. Apart from our equestrian club, Greg also drives a beautiful horse drawn Victoria carriage which are traditional to the island."
       },
       "kat": {
         "name": "Katerina",
-        "color": "purple-3",
         "description": "Katerina is Greek and was raised in Spetses. Growing up on a Greek island she started learning English from a young age and she is now fluent in both languages. She's been part of the Greg's Spetses Horses team from the beginning. She is a riding instructress, assists on treks and is administrator, taking care of the website, advertising and social media. Katerina performs in the “Greg’s Spetses Horses” show and she loves liberty training with her horse, Robbie. Apart from her love for horses, she’s in her third year of studying for a degree in nursing."
       },
       "tracy": {
         "name": "Tracy",
-        "color": "yellow-3",
         "description": "Tracy was born and raised in England and she has been living in Spetses for nearly 30 years and speaks fluent both English and Greek. She trained with the British Horse Society in horsemanship and teaching. Tracy also enjoyed show jumping and cross country back in England. Being an instructor, she loves to teach and see the progress of her students."
+      },
+      "katerina": {
+        "name": "Katerina",
+        "description": "Katerina is the newest member of our team. She grew up on Spetses with her Greek dad and English mum. Katerina has been around horses all her life. She started riding horses bareback from a very young age. Her father is a carriage driver. She is responsible for the stable management, the care of our horses and she assists on treks and in riding lessons."
       }
     }
   },
@@ -61,6 +65,12 @@
     "age": "Age",
     "height": "Height",
     "years": "years old",
+    "breeds":{
+      "haflinger": "Haflinger",
+      "pinto": "Pinto",
+      "cob": "Cob",
+      "murgese":"Murgese"
+    },
     "colours": {
       "black": "Black",
       "grey": "Grey",
@@ -106,7 +116,7 @@
     "time": "{{hour}}h {{min}}min",
     "min": "{{min}} min",
     "hour": "{{hour}} hours",
-    "horse": "{{price}} horse",
+    "horse": "€{{price}} / horse",
     "level1": "All levels",
     "level2": "level experienced",
     "map":{
@@ -155,13 +165,19 @@
     "title": "Horse Riding Lessons",
     "min": "{{min}} min",
     "lessons": {
-      "copy1": "Choose a private lesson or come with friends (up to 3-4 riders).",
-      "copy2": "Lessons are arranged by appointment.",
-      "copy3": "Call or send us an email!"
+      "copy1": "Greg’s Spetses Horses offers riding lessons individually or in groups, always maintaining the safety of the riders and the horses. Lessons are arranged by appointment."
     },
     "extraInfo": {
       "copy1": "Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.",
-      "copy2": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)"
+      "copy2": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)."
+    },
+    "lessonGrooming":{ 
+      "title":"GROOMING LESSONS",
+      "description": "Learn how to groom and tack up a horse. It’s a very important activity for the rider and a great bonding opportunity as well. Suitable for adults, kids, beginners or more advanced riders.",
+      "list1": "How to groom the horse",
+      "list2": "Grooming materials",
+      "list3": "Basic hoof care",
+      "list4": "Saddling up"
     },
     "lessonPhotos":{ 
       "copy1":"Fun grooming Robbie before the lesson",
@@ -230,8 +246,11 @@
   },
   "contact": {
     "title": "Contact Us",
+    "booking": "Book a Ride",
     "tsncs": "Payment ts&cs",
     "safety": "Safety",
+    "or": "Or Via",
+    "heatwarning": "Due\u00a0to\u00a0the\u00a0heat, appointments from\u00a012\u00a0to\u00a016 will\u00a0not\u00a0be\u00a0available",
     "field": {
       "name": "Name",
       "email": "Email",
@@ -248,7 +267,8 @@
       "add": "Add Rider",
       "paymentMethod": "Payment Method",
       "message": "Message",
-      "submit": "Submit"
+      "submit": "Submit",
+      "sendMessage": "Send Message"
     },
     "requiredField": "Required field",
     "requiredName": "Name is required",
@@ -296,6 +316,7 @@
     },
     "trek": "Trek",
     "lesson": "Lesson",
+    "grooming": "Grooming Lesson",
     "photo": "Photo Shoot",
     "picnic": "Picnic / Party",
     "trek1": "1 - Coastal Road",
@@ -320,5 +341,62 @@
       "3": "But during summer months we are open all day from 8am to 9pm so you can visit the stables,",
       "4": "meet the horses or try a little ride in our arena."
     }
+  },
+  "image":{
+    "background":{
+      "home": "[Horse and rider on the mountain overlooking the sea and neighbouring island]",
+      "about": "[Two instructors holding four horses in the arena]",
+      "horses": "[Instructor holding three horses and walking in arena]"
+    },
+    "insructor":{
+      "greg": "Hugging a pony in arena",
+      "kat": "Horse and girl run together next to each other in arena"
+    },
+    "horse":{
+      "rebecca1": "Horse standing in arena",
+      "rebecca2": "Horse laying down, instructor and young student stroke the horse",
+      "rebecca3": "Horse standing in arena with saddle and bridle",
+      "rebecca4": "Horse and little girl getting ready to mount",
+      "robbie1": "Horse wearing saddle and bridle in arena",
+      "robbie2": "Horse wearing saddle and bridle in arena",
+      "robbie3": "Horse trotting in arena",
+      "robbie4": "Horse walking in arena",
+      "robbie5": "Horse standing in arena",
+      "robbie6": "Horse wearing saddle and bridle in arena",
+      "nelly1": "Horse standing with saddle next to a tree on mountain",
+      "nelly2": "Horse in arena",
+      "nelly3": "Horse in flower field",
+      "nelly4": "Horse standing on mountain",
+      "nelly5": "Horse standing with saddle next to a tree on mountain",
+      "oscar1": "Pony in arena with flowers on his mane",
+      "oscar2": "Pony in arena",
+      "oscar3": "Pony in arena ridden by a kid",
+      "oscar4": "Pony eating with sea view",
+      "oscar5": "Free pony on the mountain with sea view",
+      "olivia1": "Horse walking in arena and seagulls flying above",
+      "olivia2": "Horse rolling in arena sand",
+      "olivia3": "Horse trotting in arena",
+      "olivia4": "Horse standing in arena stables in the back",
+      "elina1": "Horse in sun",
+      "elina2": "Two horses grazing together",
+      "elina3": "Horse standing on mountain",
+      "rosie1": "Horse cantering in arena",
+      "rosie2": "Horse trotting in arena",
+      "rosie3": "Horse after bath in arena",
+      "angel1": "Horse grazing in field of flowers",
+      "angel2": "Horse in arena",
+      "angel3": "Horse in field",
+      "angel4": "Horse grazing in green field",
+      "angel5": "Horse in arena",
+      "titan1": "Horse standing in arena",
+      "titan2": "Horse trotting in arena",
+      "titan3": "Horse in arena",
+      "titan4": "Horse laying in arena sand",
+      "titan5": "Horse trotting in arena"
+    },
+    "trek":{
+      "map":"Spetses horse trek map"
+    }
   }
+
 }

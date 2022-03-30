@@ -12,7 +12,7 @@
 
   &__Container{
     position: absolute;
-    overflow-y: scroll;
+    overflow-y: auto;
     &::-webkit-scrollbar {
       -webkit-appearance: none;
       display: none;
@@ -35,7 +35,7 @@
     margin: auto;
     top: 50%;
     transform: translateY(-50%);
-    overflow-y: scroll;
+    overflow-y: auto;
     transition: all .5s;
     &::-webkit-scrollbar {
       -webkit-appearance: none;

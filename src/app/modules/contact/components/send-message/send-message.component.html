@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="box green">
+      <div class="container horses">
+        <div class="title m-b">{{'contact.title' | translate}}
+        </div>
+        <form [formGroup]="messageForm" class="submit-form" (ngSubmit)="submitForm()" appScrollToError>
+          <div class="input input__default">
+            <label>{{'contact.field.name' | translate}}</label>
+            <input formControlName="name" class="required" type="text" [ngClass]="{'invalid': false}">
+            <div class="error-message" *ngIf="submitted && validate.name.errors">
+              <div *ngIf="submitted && validate.name.errors">
+                {{'contact.requiredName' | translate}}
+              </div>
+            </div>
+          </div>
+          <div class="input input__default">
+            <label>{{'contact.field.email' | translate}}</label>
+            <input formControlName="email" class="required" type="email" [ngClass]="{'invalid': false}">
+            <div class="error-message" *ngIf="submitted && validate.email.errors">
+              <p *ngIf="validate.email.errors.required"> {{'contact.requiredField' | translate}} </p>
+              <p *ngIf="validate.email.errors.email"> {{'contact.invalidEmail' | translate}} </p>
+            </div>
+          </div>
+          <div class="input input__default">
+            <label>{{'contact.field.contactNumber' | translate}}</label>
+            <input formControlName="tel" class="required" type="tel">
+            <p class="error-message" *ngIf="submitted && validate.tel.errors">
+              {{'contact.requiredField' | translate}}
+            </p>
+          </div>
+          <div class="input input__default">
+            <label>{{'contact.field.message' | translate}}</label>
+            <textarea formControlName="message" rows="4"></textarea>
+            <p class="error-message" *ngIf="submitted && validate.message.errors">
+              {{'contact.requiredField' | translate}}
+            </p>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="button-info">{{'contact.field.sendMessage' | translate}}</button>
+          </div>
+        </form>
+        <div>
+        <h3 class="text-center"> - {{'contact.or' | translate}} - </h3>
+        <br>
+        <div class="text-center Message__Alternative">
+          <div class="Message__Icon">
+            <a href="http://m.me/580857355426657" target="_blank">
+              <img [src]="messenger">
+            </a>
+            Messenger
+          </div>
+          <div class="Message__Icon">
+            <a href="https://wa.me/+306942792460" target="_blank">
+              <img [src]="whatsapp">
+            </a>
+            WhatsApp
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
