@@ -124,7 +124,7 @@
         z-index: 2;
         color: #000000;
         padding: 10px;
-        left: -173px;
+        left: -171px;
         top: 21px;
         transform: translate(33px, -65%) scale(0);
         transition: transform 0.5s;
@@ -154,8 +154,17 @@
             border-right-color: #ffffff;
             border-left: none;
           }
+          &.v-2{
+            top:-35px;
+            &::before{
+              top:14px
+            }
+          }
         }
       }
     
+    }
+    .light-grey{
+      color: #b5b5b5;
     }
   }

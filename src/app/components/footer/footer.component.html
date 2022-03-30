@@ -17,8 +17,8 @@
                         <div class="clock"><img [src]="imageClock">{{'footer.time'| translate}}
                             <span class="info-popup" (clickOutside)="show=false">
                                 <img class="info-img" [src]="imageInfo" (click)="show=!show">
-                                <span [ngClass]="{'open':show}">
-                                    <span *ngFor="let inf of [1,2,3,4]">{{'footer.info.'+inf| translate}}<br></span>
+                                <span [ngClass]="{'open':show}" class="v-2">
+                                    <span *ngFor="let inf of [1]">{{'footer.info.'+inf| translate}}<br></span>
                                 </span>
                             </span>
                         </div>
@@ -28,12 +28,12 @@
     
             <div class="Content__Map"
                 [class.Content__Map--active]="openMap">
-                <img [src]="imageGoogleMaps" (mouseover)="openMap=true">
-                <app-googlemaps *ngIf="openMap"></app-googlemaps>
+                <img [src]="imageGoogleMaps" (mouseover)="openMap=true" *ngIf="!mapIsLoaded">
+                <app-googlemaps *ngIf="openMap" [markers]="googleHorses" (loaded)="mapLoaded($event)"></app-googlemaps>
             </div>
         </div>
         <div class="text-center">
-            © Gregs Spetses Horses {{year}}. All rights reserved.
+            © Gregs Spetses Horses {{year}}. All rights reserved. Photos by <a class="light-grey" href="https://www.instagram.com/mixaliskokorakis" target="_blank">@mixaliskokorakis</a>
         </div>
     </div>
 </div>

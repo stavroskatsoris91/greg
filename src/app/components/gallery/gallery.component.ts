@@ -1,8 +1,6 @@
 import {
   Component,
-  HostListener,
   ElementRef,
-  Renderer2,
   ViewChild,
 } from "@angular/core";
 import { GalleryService } from "src/app/gallery.service";
@@ -20,13 +18,11 @@ import {
   debounceTime,
   map,
   take,
-  mergeMap,
-  throttleTime,
   share,
-  withLatestFrom,
   tap,
 } from "rxjs/operators";
 import { ModalService } from "src/app/services/modal.service";
+import { BrowserService } from "src/app/browser.service";
 export interface StyleImage extends ImageOnCategory {
   size: [string, string];
   style: {
@@ -129,7 +125,7 @@ export class GalleryComponent {
     })
   );
   get numberOfColumns() {
-    return Math.ceil(window.innerWidth / windowBreakpoint.MobileBreakpoint);
+    return Math.ceil(this.browser.window.innerWidth / windowBreakpoint.MobileBreakpoint);
   }
   private displayImage(image, selected): boolean {
     return selected == "all" || image.category == selected;
@@ -140,8 +136,7 @@ export class GalleryComponent {
   private readonly galleryImagesComponent: ElementRef<HTMLDivElement>;
 
   constructor(
-    private readonly elementRef: ElementRef<any>,
-    private readonly renderer: Renderer2,
+    private readonly browser: BrowserService,
     private readonly galleryService: GalleryService,
     private readonly modalService: ModalService
   ) {}

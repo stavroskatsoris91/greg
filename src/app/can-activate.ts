@@ -24,6 +24,7 @@ export class CanActivateTeam implements CanActivate {
     }else if(languages.includes(path)){
       return true;
     }else{
+      this.router.navigateByUrl('')
       return false;
     }
   }

@@ -1,18 +1,7 @@
-import { NgModule, Injectable } from '@angular/core';
-import { Routes, RouterModule, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { InstructorsComponent } from './components/instructors/instructors.component';
-import { HorsesComponent } from './components/horses/horses.component';
-import { TreksComponent } from './components/treks/treks.component';
-import { LessonsComponent } from './components/lessons/lessons.component';
-import { PhotoshootsComponent } from './components/photoshoots/photoshoots.component';
-import { PicnicsComponent } from './components/picnics/picnics.component';
-import { SafetyComponent } from './components/safety/safety.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { ThankyouComponent } from './components/thankyou/thankyou.component';
-import { CarriageComponent } from './components/carriage/carriage.component';
 import { LanguageComponent } from './components/language/language.component';
 import { CanActivateTeam, CanActivateHome } from './can-activate';
 
@@ -21,57 +10,36 @@ import { CanActivateTeam, CanActivateHome } from './can-activate';
 
 const children: Routes = [
   {
-    path: 'about',
-    component: AboutComponent,
-  },
-  {
-    path: 'instructors',
-    component: InstructorsComponent,
-  },
-  {
-    path: 'horses',
-    component: HorsesComponent,
-  },
-  {
-    path: 'treks',
-    component: TreksComponent,
-  },
-  {
-    path: 'lessons',
-    component: LessonsComponent,
-  },
-  {
-    path: 'photoshoots',
-    component: PhotoshootsComponent,
-  },
-  {
-    path: 'picnics',
-    component: PicnicsComponent,
-  },
-  {
-    path: 'safety',
-    component: SafetyComponent,
-  },
-  {
     path: 'gallery',
     component: GalleryComponent,
   },
+  { path: 'about',  redirectTo: 'about/story', pathMatch: 'full' },
+  {
+    path: 'about',
+    loadChildren: () => import('./modules/about/about.module').then(m_ => m_.AboutModule)
+  },
+  {
+    path: 'activities',
+    loadChildren: () => import('./modules/activities/activities.module').then(m_ => m_.ActivitiesModule)
+  },
+  { path: 'contact',  redirectTo: 'contact/booking', pathMatch: 'full' },
   {
     path: 'contact',
-    component: ContactComponent,
-  },
-  {
-    path: 'thankyou',
-    component: ThankyouComponent,
-  },
-  {
-    path: 'carriage',
-    component: CarriageComponent,
+    loadChildren: () => import('./modules/contact/contact.module').then(m_ => m_.ContactModule)
   },
   {
     path: '',
     component: HomeComponent,
   },
+  { path: 'instructors',  redirectTo: 'about/instructors', pathMatch: 'full' },
+  { path: 'horses',  redirectTo: 'about/horses', pathMatch: 'full' },
+  { path: 'safety',  redirectTo: 'about/safety', pathMatch: 'full' },
+  { path: 'treks',  redirectTo: 'activities/treks', pathMatch: 'full' },
+  { path: 'lessons',  redirectTo: 'activities/lessons', pathMatch: 'full' },
+  { path: 'photoshoots',  redirectTo: 'activities/photoshoots', pathMatch: 'full' },
+  { path: 'carriage',  redirectTo: 'activities/carriage', pathMatch: 'full' },
+  { path: 'picnics',  redirectTo: 'activities/picnics', pathMatch: 'full' },
+  { path: 'thankyou',  redirectTo: 'contact/thankyou', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 const routes: Routes = [

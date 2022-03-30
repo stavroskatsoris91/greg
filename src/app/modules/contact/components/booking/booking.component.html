@@ -1,0 +1,184 @@
+<div class="main-content">
+  <div class="box green">
+    <div class="container horses">
+      <div class="title m-b">{{title | translate}}
+      </div>
+      <div class="title m-b">
+        <button class="button-info m-r" (click)="scrollTo('payments')">{{tsncs | translate}}</button>
+        <a [routerLink]="['/',language,'about','safety']">
+          <button class="button-info">{{safety | translate}}</button>
+        </a>
+      </div>
+      <form [formGroup]="bookingForm" class="submit-form" (ngSubmit)="submitForm()" appScrollToError>
+        <div class="input input__default">
+          <label>{{'contact.field.name' | translate}}</label>
+          <input formControlName="name" class="required" type="text" [ngClass]="{'invalid': false}">
+          <div class="error-message" *ngIf="submitted && f.name.errors">
+            <div *ngIf="submitted && f.name.errors">
+              {{requiredName | translate}}
+            </div>
+          </div>
+        </div>
+        <div class="input input__default">
+          <label>{{'contact.field.email' | translate}}</label>
+          <input formControlName="email" class="required" type="email" [ngClass]="{'invalid': false}">
+          <div class="error-message" *ngIf="submitted && f.email.errors">
+            <p *ngIf="f.email.errors.required"> {{requiredField | translate}} </p>
+            <p *ngIf="f.email.errors.email"> {{invalidEmail | translate}} </p>
+          </div>
+        </div>
+        <div class="input input__default">
+          <label>{{'contact.field.contactNumber' | translate}}</label>
+          <input formControlName="tel" class="required" type="tel">
+          <p class="error-message" *ngIf="submitted && f.tel.errors">
+            {{requiredField | translate}}
+          </p>
+        </div>
+        <div *ngIf="heatWarning" class="warning-message">{{ 'contact.heatwarning' | translate}}</div>
+        <div class="date-time">
+          <div class="input input__default date">
+            <label for="date">{{'contact.field.date' | translate}}</label>
+            <input formControlName="date" class="required" type="date">
+            <p class="error-message" *ngIf="submitted && f.date.errors">
+              {{requiredField | translate}}
+            </p>
+          </div>
+          <div class="time">
+            <div class="input input__default input__time">
+              <label>{{'contact.field.hour' | translate}}</label>
+              <select formControlName="hour">
+                <option *ngFor="let opt of hours" [ngValue]="opt" [disabled]="notAvailableHour(opt)" >{{opt | translate}}
+                </option>
+              </select>
+            </div>
+            <div class="input input__default input__time">
+              <label>{{'contact.field.mins' | translate}}</label>
+              <select formControlName="minutes">
+                <option *ngFor="let opt of minutes" [ngValue]="opt" [disabled]="notAvailableMinute(opt)" >{{opt | translate}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="input input__default">
+          <label>{{'contact.field.riding' | translate}}</label>
+          <select formControlName="riding">
+            <option *ngFor="let opt of ridings" [ngValue]="opt">{{opt.display | translate}}
+            </option>
+          </select>
+          <p class="error-message" *ngIf="submitted && f.riding.errors">
+            {{requiredField | translate}}
+          </p>
+        </div>
+        <div class="input input__default" *ngIf="f.riding.value.options">
+          <label>{{f.riding.value.display | translate}}</label>
+          <select formControlName="rideType">
+            <option *ngFor="let opt of f.riding.value.options;let i = index" [ngValue]="i" translate
+              [translateParams]="{min:opt.time}">{{opt.name}}
+            </option>
+          </select>
+          <p class="error-message" *ngIf="submitted && f.rideType.errors">
+            {{requiredField | translate}}
+          </p>
+        </div>
+        <div class="input input__default">
+          <label>{{'contact.field.riders' | translate}}</label>
+          <div formArrayName="riders" *ngFor="let rider of riderForm.controls; let i = index" class="riders">
+            <div [formGroupName]="i">
+              <div class="remove-rider" *ngIf="i">
+                <a class="add-rider" (click)="removeRider(i)"><span class="remove">x</span></a>
+              </div>
+              <div class="text-center" style="font-size: 0">
+                <div class="input input__default name">
+                  <label>{{'contact.field.name' | translate}}</label>
+                  <input formControlName="name" class="required" [ngClass]="{'invalid': false}" required>
+                  <p class="error-message" *ngIf="submitted && r(i).name.errors">
+                    {{requiredField | translate}}
+                  </p>
+                </div>
+                <div class="input input__default age input__age">
+                  <label>{{'contact.field.age' | translate}}</label>
+                  <input formControlName="age" class="required" type="number" min="1" max="99"
+                    [ngClass]="{'invalid': submitted && r(i).age.errors}" required>
+                </div>
+              </div>
+              <div style="font-size: 0;text-align: center">
+                <div class="input input__default height input__age">
+                  <label>{{'contact.field.height' | translate}}</label>
+                  <input formControlName="height" class="required" type="number"
+                    [ngClass]="{'invalid': submitted && r(i).height.errors}" required>
+                </div>
+                <div class="input input__default weight input__age">
+                  <label>{{'contact.field.weight' | translate}}</label>
+                  <input formControlName="weight" class="required" type="number"
+                    [ngClass]="{'invalid': submitted && r(i).weight.errors}" required>
+                </div>
+                <div class="input input__default level">
+                  <label>{{'contact.field.experience' | translate}}</label>
+                  <select formControlName="level">
+                    <option *ngFor="let opt of levels" [ngValue]="opt">{{opt | translate}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="riderForm.length<=4">
+            <a class="add-rider" (click)="addRider()"><span>+</span>
+              <label>{{'contact.field.add' | translate}}</label>
+            </a>
+          </div>
+        </div>
+        <div class="input input__default">
+          <label>{{'contact.field.paymentMethod' | translate}}</label>
+          <select formControlName="payment">
+            <option *ngFor="let opt of payments" [ngValue]="opt">{{opt | translate}} {{price}}
+            </option>
+          </select>
+          <p class="error-message" *ngIf="submitted && f.payment.errors">
+            {{requiredField | translate}}
+          </p>
+        </div>
+        <div class="input input__default">
+          <label>{{'contact.field.message' | translate}}</label>
+          <textarea formControlName="message" rows="4"></textarea>
+          <p class="error-message" *ngIf="submitted && f.message.errors">
+            {{requiredField | translate}}
+          </p>
+        </div>
+        <div class="input">
+          <input formControlName="accept" type="checkbox" required>
+          {{'contact.accept.part1' | translate}}<a class="a-info"
+          [routerLink]="['/',language,'about','safety']">{{'contact.accept.part2' | translate}}</a> {{'contact.accept.part3' | translate}}<a
+            class="a-info"
+            (click)="scrollTo('payments')">{{'contact.accept.part4' | translate}}</a>{{'contact.accept.part5' | translate}}
+          <p class="error-message" *ngIf="submitted && f.accept.errors">
+            {{requiredField | translate}}
+          </p>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="button-info">{{'contact.field.submit' | translate}}</button>
+        </div>
+      </form>
+      <div>
+        <div class="text-center payments-title" id="payments">
+          {{paymentsTitle | translate}}
+        </div>
+        <br>
+        <span *ngFor="let text of paymentsText">
+          {{text| translate}}
+          <br>
+          <br>
+        </span>
+        <div class="text-center payments-title">
+          {{cancellationTitle| translate}}
+        </div>
+        <br>
+        <span *ngFor="let text of cancellationText">
+          {{text| translate}}
+          <br>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

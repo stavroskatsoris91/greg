@@ -6,39 +6,39 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el" />
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about"/>
+    <loc>https://www.gregsspetseshorses.com/en/about/story</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about/story"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about/story"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/horses</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/horses"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/horses"/>
+    <loc>https://www.gregsspetseshorses.com/en/about/horses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about/horses"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about/horses"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/treks</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/treks"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/treks"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/treks</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/treks"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/treks"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/lessons</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/lessons"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/lessons"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/lessons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/lessons"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/lessons"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/photoshoots</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/photoshoots"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/photoshoots"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/photoshoots</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/photoshoots"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/photoshoots"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/picnics</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/picnics"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/picnics"/>
+    <loc>https://www.gregsspetseshorses.com/en/activities/picnics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/picnics"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/picnics"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/safety</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/safety"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/safety"/>
+    <loc>https://www.gregsspetseshorses.com/en/about/safety</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about/safety"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about/safety"/>
   </url>
   <url>
     <loc>https://www.gregsspetseshorses.com/en/gallery</loc>
@@ -51,13 +51,23 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/instructors"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact"/>
+    <loc>https://www.gregsspetseshorses.com/en/contact/booking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact/booking"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact/booking"/>
   </url>
   <url>
-    <loc>https://www.gregsspetseshorses.com/en/carriage</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/carriage"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/carriage"/>
+    <loc>https://www.gregsspetseshorses.com/en/contact/message</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact/message"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact/message"/>
+  </url>
+  <url>
+    <loc>https://www.gregsspetseshorses.com/en/contact/thankyou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/contact/thankyou"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/contact/thankyou"/>
+  </url>
+  <url>
+    <loc>https://www.gregsspetseshorses.com/en/activities/carriage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/activities/carriage"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/activities/carriage"/>
   </url>
 </urlset>

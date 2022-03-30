@@ -9,6 +9,7 @@ import { ModalService } from "src/app/services/modal.service";
 import { GalleryService } from "src/app/gallery.service";
 import { BehaviorSubject, combineLatest, Observable, merge } from "rxjs";
 import { map, pluck, switchMap, shareReplay, take } from "rxjs/operators";
+import { BrowserService } from "src/app/browser.service";
 
 @Component({
   selector: "app-modal",
@@ -78,7 +79,8 @@ export class ModalComponent implements OnInit {
 
   constructor(
     private ModalService: ModalService,
-    private galleryService: GalleryService
+    private galleryService: GalleryService,
+    private browser: BrowserService,
   ) {}
   @ViewChild("ImageContent", { static: false })
   private readonly ImageContentComponent: ElementRef<HTMLDivElement>;
@@ -105,7 +107,7 @@ export class ModalComponent implements OnInit {
   }
 
   get imageStyleSize(): [number, number] {
-    return [Math.min(window.innerWidth * 0.95, 800), window.innerHeight];
+    return [Math.min(this.browser.window.innerWidth * 0.95, 800), this.browser.window.innerHeight];
   }
 
   public closeModal() {

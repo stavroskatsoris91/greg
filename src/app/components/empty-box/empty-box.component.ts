@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
 import { throttleTime, map } from 'rxjs/operators';
+import { BrowserService } from 'src/app/browser.service';
 
 @Component({
   selector: 'app-empty-box',
@@ -21,7 +22,9 @@ import { throttleTime, map } from 'rxjs/operators';
 })
 export class EmptyBoxComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly browser: BrowserService
+  ) { }
 
   
   arrowState: BehaviorSubject<string> = new BehaviorSubject('closed');
@@ -44,7 +47,7 @@ export class EmptyBoxComponent implements OnInit {
     }, 4000);
   }
   get hasScrolled(){
-    return window.pageYOffset>100;
+    return this.browser.window.pageYOffset>100;
   }
   scrollDown(anchor: HTMLElement){
     anchor.scrollIntoView({behavior:"smooth"});
