@@ -12,6 +12,7 @@
     "photos": "PHOTO SHOOTS",
     "picnic": "PICNICS AND PARTIES",
     "safety": "SAFETY",
+    "accommodations": "ACCOMMODATIONS",
     "carriage": "CARRIAGE",
     "gallery": "GALLERY",
     "contact": "CONTACT",
@@ -171,7 +172,7 @@
       "copy1": "Please arrive at least five minutes before your lesson start time. Lessons will not be extended if you are late as this will affect the following student.",
       "copy2": "If upon arrival you decide you do not wish to ride you will be required to pay for the number of horses originally booked as they are prepared and saddled waiting specifically for you. (exception due to sickness)."
     },
-    "lessonGrooming":{ 
+    "lessonGrooming":{
       "title":"GROOMING LESSONS",
       "description": "Learn how to groom and tack up a horse. It’s a very important activity for the rider and a great bonding opportunity as well. Suitable for adults, kids, beginners or more advanced riders.",
       "list1": "How to groom the horse",
@@ -179,7 +180,7 @@
       "list3": "Basic hoof care",
       "list4": "Saddling up"
     },
-    "lessonPhotos":{ 
+    "lessonPhotos":{
       "copy1":"Fun grooming Robbie before the lesson",
       "copy2": "Trotting on Robbie",
       "copy3": "First steps learning to trot on Rebecca",
@@ -193,7 +194,7 @@
       "copy2":"Why not hire our horses to make your wedding day, proposal, anniversary, any day even more unique and unforgettable?",
       "copy3":"Choose the horses you like and be ready for a beautiful photoshoot next to the view of the sea or mountain while watching the sunset."
     }
-    
+
   },
   "picnics": {
     "title": "Picnics And Parties",
@@ -228,6 +229,15 @@
         "row5":"For your own safety and that of the riders, children must not shout or run around close to the arena fencing.",
         "row6":"Children should not be left unsupervised before or after their lessons. We are only responsible for your child for the duration of their lesson"
       }
+    }
+  },
+  "accommodations": {
+    "accommodation": {
+      "title": "VILLA KALOMIRA",
+      "copy1":"Villa Kalomira is a traditional mansion of 1861, Recently renovated, in Spetses, In the quiet area of Agios Eleftherios.",
+      "copy2":"The scene of the old mansion is composed by the large terraces which are full of flowers as well as the spacious rooms it houses.",
+      "copy3": "It is just an 8-minute walk from Dapia (The main harbor of Spetses) and the Old Harbor. It offers 2/3-room rooms and 4/5-room apartments, self-catering and fully equipped.",
+      "link": "Visit Website"
     }
   },
   "carriage": {

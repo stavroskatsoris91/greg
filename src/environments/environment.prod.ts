@@ -1,3 +1,5 @@
+import { FirebaseOptions } from "@angular/fire";
+
 export const environment = {
   production: true,
   firebase:{
@@ -8,7 +10,7 @@ export const environment = {
     storageBucket: "greg-production.appspot.com",
     messagingSenderId: "112169888870",
     appId: "1:112169888870:web:7b041901dfe5b2211c11a7"
-  }
+  } as FirebaseOptions
   // firebase: {
   //   apiKey: "AIzaSyCg19u4sGu9ZhqqHuVXedWM8ZeL2qvKd3A",
   //   authDomain: "greg-8095f.firebaseapp.com",

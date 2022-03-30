@@ -34,6 +34,7 @@ const children: Routes = [
   { path: 'instructors',  redirectTo: 'about/instructors', pathMatch: 'full' },
   { path: 'horses',  redirectTo: 'about/horses', pathMatch: 'full' },
   { path: 'safety',  redirectTo: 'about/safety', pathMatch: 'full' },
+  { path: 'accommodations',  redirectTo: 'about/accommodations', pathMatch: 'full' },
   { path: 'treks',  redirectTo: 'activities/treks', pathMatch: 'full' },
   { path: 'lessons',  redirectTo: 'activities/lessons', pathMatch: 'full' },
   { path: 'photoshoots',  redirectTo: 'activities/photoshoots', pathMatch: 'full' },

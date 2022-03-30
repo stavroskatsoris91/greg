@@ -41,6 +41,11 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about/safety"/>
   </url>
   <url>
+    <loc>https://www.gregsspetseshorses.com/en/about/accommodations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/about/accommodations"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/about/accommodations"/>
+  </url>
+  <url>
     <loc>https://www.gregsspetseshorses.com/en/gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.gregsspetseshorses.com/en/gallery"/>
     <xhtml:link rel="alternate" hreflang="el" href="https://www.gregsspetseshorses.com/el/gallery"/>

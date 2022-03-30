@@ -7,11 +7,12 @@ import { HorsesComponent } from './components/horses/horses.component';
 import { InstructorsComponent } from './components/instructors/instructors.component';
 import { SafetyComponent } from './components/safety/safety.component';
 import { CoinComponent } from './components/coin/coin.component';
+import { AccommodationsComponent } from './components/accommodations/accommodations.component';
 
 
 
 @NgModule({
-  declarations: [StoryComponent, InstructorsComponent, HorsesComponent, SafetyComponent, CoinComponent],
+  declarations: [StoryComponent, InstructorsComponent, HorsesComponent, SafetyComponent, CoinComponent, AccommodationsComponent],
   imports: [
     CommonModule,
     AboutRoutingModule,

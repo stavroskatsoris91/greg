@@ -4,6 +4,7 @@ import { StoryComponent } from './components/story/story.component';
 import { HorsesComponent } from './components/horses/horses.component';
 import { InstructorsComponent } from './components/instructors/instructors.component';
 import { SafetyComponent } from './components/safety/safety.component';
+import { AccommodationsComponent } from './components/accommodations/accommodations.component';
 
 
 
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'safety',
     component: SafetyComponent,
+  },
+  {
+    path: 'accommodations',
+    component: AccommodationsComponent,
   },
 ];
 

@@ -1,0 +1,25 @@
+.accommodation-header{
+  font-family: 'Bad Script';
+  font-weight: 800;
+  display: block;
+  color: inherit;
+  text-decoration: inherit;
+
+}
+.accommodationImage {
+  width: 50%;
+  float: right;
+  padding-left: 20px;
+  @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+}
+.a-info {
+  color: #00bf8a;
+  text-decoration: underline;
+
+  &:focus,
+  &:hover {
+      color: #04fcb7;
+  }
+}

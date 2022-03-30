@@ -56,6 +56,14 @@ export class BackgroundService {
         alt: "",
       },
       {
+        name: "about/accommodations",
+        images: [
+          require("src/assets/images/background/safety.jpg").default,
+          require("src/assets/images/background/safetymob.jpg").default,
+        ],
+        alt: "",
+      },
+      {
         name: "activities/treks",
         images: [
           require("src/assets/images/background/treks.jpg").default,

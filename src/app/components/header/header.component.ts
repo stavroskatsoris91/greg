@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
         { path: "about/instructors", name: "header.instructors" },
         { path: "about/horses", name: "header.horses" },
         { path: "about/safety", name: "header.safety" },
+        { path: "about/accommodations", name: "header.accommodations" },
       ],
       subPath: [],
     },
