@@ -14,10 +14,10 @@ export class BooksService {
       name: 'TREK',
       display: 'contact.trek',
       options: [
-        { name: 'contact.trek1', price: 30 },
-        { name: 'contact.trek2', price: 60 },
-        { name: 'contact.trek3', price: 70 },
-        { name: 'contact.trek4', price: 80 },
+        { name: 'contact.trek1', price: 35 },
+        { name: 'contact.trek2', price: 65 },
+        { name: 'contact.trek3', price: 75 },
+        { name: 'contact.trek4', price: 85 },
         { name: 'contact.trek5', price: 95 },
         { name: 'contact.trek6', price: 125 }
       ],

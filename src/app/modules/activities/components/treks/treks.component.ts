@@ -36,7 +36,7 @@ export class TreksComponent implements OnInit {
         {
             title: 'treks.trek1.title',
             time: {h:0,m:45},
-            price: 30,
+            price: 35,
             level: 'treks.level1',
             images: [
                 trek1_1.default,
@@ -49,7 +49,7 @@ export class TreksComponent implements OnInit {
         {
             title: 'treks.trek2.title',
             time: {h:1,m:40},
-            price: 60,
+            price: 65,
             level: 'treks.level1',
             images: [
                 trek2_7.default,
@@ -63,7 +63,7 @@ export class TreksComponent implements OnInit {
         {
             title: 'treks.trek3.title',
             time: {h:2,m:15},
-            price: 70,
+            price: 75,
             level: 'treks.level1',
             images: [
                 trek3_1.default,
@@ -77,7 +77,7 @@ export class TreksComponent implements OnInit {
         {
             title: 'treks.trek4.title',
             time: {h:2,m:35},
-            price: 80,
+            price: 85,
             level: 'treks.level1',
             images: [
                 trek4_1.default,
