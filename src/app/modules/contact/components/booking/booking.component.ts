@@ -194,6 +194,6 @@ export class BookingComponent implements OnInit, OnDestroy {
   isSummer(date){
     const selectedMonth = Number(date.split('-')[1]);
     const summerDates = [6,7,8];
-    this.heatWarning = summerDates.indexOf(selectedMonth)>=1;
+    this.heatWarning = summerDates.indexOf(selectedMonth)>=0;
   }
 }
