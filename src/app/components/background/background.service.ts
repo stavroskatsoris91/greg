@@ -7,7 +7,7 @@ interface IBackgroundImage {
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'any',
 })
 export class BackgroundService {
   constructor() {}

@@ -11,7 +11,7 @@ interface CategoryList {
   title: string;
 }
 @Injectable({
-  providedIn: "root",
+  providedIn: 'any',
 })
 export class GalleryService {
   constructor(

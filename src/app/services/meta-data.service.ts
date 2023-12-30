@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { BrowserService } from '../browser.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class MetaDataService {
   baseUrl = this.document.location.origin

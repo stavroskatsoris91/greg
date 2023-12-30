@@ -63,8 +63,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     scrollOffset: [0, 0],
-    scrollPositionRestoration: 'top',
-    relativeLinkResolution: 'legacy'
+    scrollPositionRestoration: 'top'
 })],
   providers: [CanActivateTeam,CanActivateHome],
   exports: [RouterModule]

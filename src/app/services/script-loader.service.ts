@@ -20,7 +20,7 @@ interface ScriptAttribute {
 declare var document: any;
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'any',
 })
 export class ScriptLoader {
   private scriptMap: Map<ScriptTags, ScriptAttribute>;
