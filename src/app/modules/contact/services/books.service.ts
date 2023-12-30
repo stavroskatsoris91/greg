@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireFunctions } from '@angular/fire/functions';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 @Injectable()
 export class BooksService {
@@ -71,7 +71,7 @@ export class BooksService {
   public clearForm():void {
     this.savedForm = null;
   }
-  get getFrom():FormGroup {
+  get getFrom():UntypedFormGroup {
     return this.savedForm;
   }
 }

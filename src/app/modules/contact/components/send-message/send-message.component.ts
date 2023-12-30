@@ -1,5 +1,5 @@
 import { Component, NgZone, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { MessageService } from "../../services/message.service";
@@ -13,7 +13,7 @@ import { MessageService } from "../../services/message.service";
   ],
 })
 export class SendMessageComponent implements OnInit {
-  messageForm: FormGroup = this.formBuilder.group({
+  messageForm: UntypedFormGroup = this.formBuilder.group({
     name: ["", [Validators.required, Validators.maxLength(50)]],
     email: [
       "",
@@ -28,7 +28,7 @@ export class SendMessageComponent implements OnInit {
   messenger = require('src/assets/images/contact/messenger.svg').default;
   whatsapp = require('src/assets/images/contact/whatsapp.svg').default;
   constructor(
-    private readonly formBuilder: FormBuilder,
+    private readonly formBuilder: UntypedFormBuilder,
     private router: Router,
     private translate: TranslateService,
     private zone: NgZone,

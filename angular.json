@@ -125,7 +125,6 @@
       }
     }
   },
-  "defaultProject": "gregs-app",
   "cli": {
     "analytics": "833301ce-7798-4c61-b6b5-72da75a3e37d"
   }
