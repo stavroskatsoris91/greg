@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { MetaDataService } from 'src/app/services/meta-data.service'
 @Injectable()
-export class CanActivateTeam implements CanActivate {
+export class CanActivateTeam  {
   constructor(private router: Router, private translate: TranslateService,
     private readonly metaData: MetaDataService) {}
 
@@ -30,7 +30,7 @@ export class CanActivateTeam implements CanActivate {
   }
 }
 @Injectable()
-export class CanActivateHome implements CanActivate {
+export class CanActivateHome  {
   constructor(private router: Router,
     private translate: TranslateService,
     private readonly metaData: MetaDataService) {}
