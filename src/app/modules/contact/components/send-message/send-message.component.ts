@@ -25,8 +25,8 @@ export class SendMessageComponent implements OnInit {
   submitted: boolean;
   run: boolean;
 
-  messenger = require('src/assets/images/contact/messenger.svg').default;
-  whatsapp = require('src/assets/images/contact/whatsapp.svg').default;
+  messenger = './assets/images/contact/messenger.svg';
+  whatsapp = './assets/images/contact/whatsapp.svg';
   constructor(
     private readonly formBuilder: UntypedFormBuilder,
     private router: Router,
@@ -46,11 +46,10 @@ export class SendMessageComponent implements OnInit {
     if (this.messageForm.valid && !this.run) {
       const data = this.messageForm.value;
       this.run = true;
-      this.message.sendMessage(data).subscribe(
+      this.message.sendMessage(data).then(
         (res) => {
           this.zone.run(() => {
-            const language =
-              this.translate.currentLang || this.translate.defaultLang;
+            const language = this.translate.currentLang ?? this.translate.defaultLang;
             this.run = false;
             this.router.navigate([language,'contact', 'thankyou']);
           });

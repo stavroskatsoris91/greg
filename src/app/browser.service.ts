@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'root'
 })
 export class BrowserService {
 

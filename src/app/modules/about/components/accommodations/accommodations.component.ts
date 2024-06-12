@@ -1,6 +1,6 @@
 import { ModalService } from './../../../../services/modal.service';
 import { Component, OnInit } from '@angular/core';
-import * as kalomira from "src/assets/images/villakalomira.jpg";
+import * as kalomira from "./assets/images/villakalomira.jpg";
 
 @Component({
   selector: 'app-accommodations',
@@ -9,7 +9,7 @@ import * as kalomira from "src/assets/images/villakalomira.jpg";
 })
 export class AccommodationsComponent implements OnInit {
 
-  kalomiraImage = kalomira.default;
+  kalomiraImage = './assets/images/villakalomira.jpg';
   constructor(private readonly modalService: ModalService) { }
 
   ngOnInit(): void {

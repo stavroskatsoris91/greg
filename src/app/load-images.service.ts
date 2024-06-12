@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-type CORSMethod = "Anonymous" | "User-Authenticated";
+type CORSMethod = 'Anonymous' | 'User-Authenticated';
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'root'
 })
 export class LoadImagesService {
 

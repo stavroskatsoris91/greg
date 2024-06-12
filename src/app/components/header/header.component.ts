@@ -11,9 +11,9 @@ export class HeaderComponent implements OnInit {
   pagePath: string;
   isCollapsed = false;
   mobileMenu = { name: "mobile", toggle: false };
-  imageLogo = require("src/assets/images/logo2.png").default;
-  languageEn = require("src/assets/images/flags/united-kingdom.svg").default;
-  languageGr = require("src/assets/images/flags/greece.svg").default;
+  imageLogo = "./assets/images/logo2.png";
+  languageEn = "./assets/images/flags/united-kingdom.svg";
+  languageGr = "./assets/images/flags/greece.svg";
   menu = [
     { path: [""], name: "header.home", toggle: false },
     {

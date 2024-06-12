@@ -10,9 +10,9 @@ export class CarriageComponent implements OnInit {
 
   carriageCopy= ['carriage.copy1', 'carriage.copy2']
   photos = [
-    require('src/assets/images/carriage/carriage5.jpg').default,
-    require('src/assets/images/carriage/carriage4.jpg').default,
-    require('src/assets/images/carriage/carriage6.jpg').default
+    './assets/images/carriage/carriage5.jpg',
+    './assets/images/carriage/carriage4.jpg',
+    './assets/images/carriage/carriage6.jpg'
   ];
   
   constructor(private ModalService: ModalService) { }

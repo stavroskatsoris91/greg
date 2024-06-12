@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { FunctionsModule, getFunctions, provideFunctions } from '@angular/fire/functions';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -23,9 +22,10 @@ import { ToggleAnimateDirective } from './directives/toggle.animate.directive';
 import { MetaDataService } from './services/meta-data.service';
 import { LanguageComponent } from './components/language/language.component';
 import { GalleryImageComponent } from './components/gallery-image/gallery-image.component';
-import { NgxScrollLockModule } from 'ngx-scroll-lock';
+// import { NgxScrollLockModule } from 'ngx-scroll-lock';
 import { EmptyBoxComponent } from './components/empty-box/empty-box.component';
 import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 
 @NgModule({
   declarations: [
@@ -57,9 +57,10 @@ import { TripAdvisorComponent } from './trip-advisor/trip-advisor.component';
       }
     }),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireFunctionsModule,
-    NgxScrollLockModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFunctions(() => getFunctions()),
+    FunctionsModule,
+    // NgxScrollLockModule,
   ],
   providers: [MetaDataService],
   bootstrap: [AppComponent]

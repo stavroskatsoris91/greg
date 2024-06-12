@@ -165,7 +165,7 @@ export class BookingComponent implements OnInit, OnDestroy {
     const date = data.date.split('-').reverse().join('/') + ' ' + data.hour + ':' + data.minutes;
     data.date = date;
     data.payment = this.translate.instant(data.payment) + ' ' + this.price;
-    this.books.makeBook(data).subscribe((res) => {
+    this.books.makeBook(data).then((res) => {
       this.zone.run(() => {
         const language = this.translate.currentLang || this.translate.defaultLang;
         this.books.clearForm();

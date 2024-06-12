@@ -6,11 +6,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { BrowserService } from '../browser.service';
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'root'
 })
 export class MetaDataService {
   baseUrl = this.document.location.origin
-  homeImage = require('src/assets/images/background/home.jpg').default;
+  homeImage = './assets/images/background/home.jpg';
   redirect = false;
   redirectPath: any;
   constructor(

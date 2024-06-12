@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 interface IBackgroundImage {
   name: string;
@@ -7,7 +7,7 @@ interface IBackgroundImage {
 }
 
 @Injectable({
-  providedIn: 'any',
+  providedIn: 'root',
 })
 export class BackgroundService {
   constructor() {}
@@ -15,125 +15,125 @@ export class BackgroundService {
   public get getBackgrounds(): IBackgroundImage[] {
     return [
       {
-        name: "",
+        name: '',
         images: [
-          require("src/assets/images/background/home.jpg").default,
-          require("src/assets/images/background/homemob.jpg").default,
+          './assets/images/background/home.jpg',
+          './assets/images/background/homemob.jpg',
         ],
         alt:
-          "image.background.home",
+          'image.background.home',
       },
       {
-        name: "about/story",
+        name: 'about/story',
         images: [
-          require("src/assets/images/background/aboutus.jpg").default,
-          require("src/assets/images/background/aboutusmob.jpg").default,
+          './assets/images/background/aboutus.jpg',
+          './assets/images/background/aboutusmob.jpg',
         ],
-        alt: "image.background.about",
+        alt: 'image.background.about',
       },
       {
-        name: "about/instructors",
+        name: 'about/instructors',
         images: [
-          require("src/assets/images/background/instructors.jpg").default,
-          require("src/assets/images/background/instructorsmob.jpg").default,
+          './assets/images/background/instructors.jpg',
+          './assets/images/background/instructorsmob.jpg',
         ],
-        alt: "image.background.about",
+        alt: 'image.background.about',
       },
       {
-        name: "about/horses",
+        name: 'about/horses',
         images: [
-          require("src/assets/images/background/horses.jpg").default,
-          require("src/assets/images/background/horsesmob.jpg").default,
+          './assets/images/background/horses.jpg',
+          './assets/images/background/horsesmob.jpg',
         ],
-        alt: "image.background.horses",
+        alt: 'image.background.horses',
       },
       {
-        name: "about/safety",
+        name: 'about/safety',
         images: [
-          require("src/assets/images/background/safety.jpg").default,
-          require("src/assets/images/background/safetymob.jpg").default,
+          './assets/images/background/safety.jpg',
+          './assets/images/background/safetymob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "about/accommodations",
+        name: 'about/accommodations',
         images: [
-          require("src/assets/images/background/safety.jpg").default,
-          require("src/assets/images/background/safetymob.jpg").default,
+          './assets/images/background/safety.jpg',
+          './assets/images/background/safetymob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "activities/treks",
+        name: 'activities/treks',
         images: [
-          require("src/assets/images/background/treks.jpg").default,
-          require("src/assets/images/background/treksmob.jpg").default,
+          './assets/images/background/treks.jpg',
+          './assets/images/background/treksmob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "activities/carriage",
+        name: 'activities/carriage',
         images: [
-          require("src/assets/images/background/carriage.jpg").default,
-          require("src/assets/images/background/carriagemob.jpg").default,
+          './assets/images/background/carriage.jpg',
+          './assets/images/background/carriagemob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "gallery",
+        name: 'gallery',
         images: [
-          require("src/assets/images/background/gallery.jpg").default,
-          require("src/assets/images/background/gallerymob.jpg").default,
+          './assets/images/background/gallery.jpg',
+          './assets/images/background/gallerymob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "contact/booking",
+        name: 'contact/booking',
         images: [
-          require("src/assets/images/background/contact.jpg").default,
-          require("src/assets/images/background/contactmob.jpg").default,
+          './assets/images/background/contact.jpg',
+          './assets/images/background/contactmob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "contact/message",
+        name: 'contact/message',
         images: [
-          require("src/assets/images/background/message.jpg").default,
-          require("src/assets/images/background/messagemob.jpg").default,
+          './assets/images/background/message.jpg',
+          './assets/images/background/messagemob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "contact/thankyou",
+        name: 'contact/thankyou',
         images: [
-          require("src/assets/images/background/contact.jpg").default,
-          require("src/assets/images/background/contactmob.jpg").default,
+          './assets/images/background/contact.jpg',
+          './assets/images/background/contactmob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "activities/lessons",
+        name: 'activities/lessons',
         images: [
-          require("src/assets/images/background/lessons.jpg").default,
-          require("src/assets/images/background/lessonsmob.jpg").default,
+          './assets/images/background/lessons.jpg',
+          './assets/images/background/lessonsmob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "activities/photoshoots",
+        name: 'activities/photoshoots',
         images: [
-          require("src/assets/images/background/photoshoots.jpg").default,
-          require("src/assets/images/background/photoshootsmob.jpg").default,
+          './assets/images/background/photoshoots.jpg',
+          './assets/images/background/photoshootsmob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
       {
-        name: "activities/picnics",
+        name: 'activities/picnics',
         images: [
-          require("src/assets/images/background/picnics.jpg").default,
-          require("src/assets/images/background/picnicsmob.jpg").default,
+          './assets/images/background/picnics.jpg',
+          './assets/images/background/picnicsmob.jpg',
         ],
-        alt: "",
+        alt: '',
       },
     ];
   }

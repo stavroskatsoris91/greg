@@ -14,7 +14,7 @@ interface IModalEntity extends IModalImageList{
 }
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'root'
 })
 export class ModalService {
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import * as greg from "src/assets/images/greg.jpg";
-import * as kat from "src/assets/images/kat.jpg";
+import * as greg from "./assets/images/greg.jpg";
+import * as kat from "./assets/images/kat.jpg";
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -9,11 +9,11 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ["./instructors.component.scss"],
 })
 export class InstructorsComponent implements OnInit {
-  gregImage = greg.default;
-  katImage = kat.default;
+  gregImage = './assets/images/greg.jpg';
+  katImage = './assets/images/kat.jpg';
   instructors = [
     {
-      image: greg.default,
+      image: this.gregImage,
       about: "greg",
     },
     {
