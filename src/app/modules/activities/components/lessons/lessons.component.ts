@@ -12,19 +12,19 @@ export class LessonsComponent implements OnInit {
   extraInfo = ['lessons.extraInfo.copy1','lessons.extraInfo.copy2'];
   lessonsPhotos = [
     {
-      image: require('src/assets/images/lessons/lesson-1.jpg').default,
+      image: './assets/images/lessons/lesson-1.jpg',
       description: 'lessons.lessonPhotos.copy1'
     },
     {
-      image: require('src/assets/images/lessons/lesson-2.jpg').default,
+      image: './assets/images/lessons/lesson-2.jpg',
       description:'lessons.lessonPhotos.copy2'
     },
     {
-      image: require('src/assets/images/lessons/lesson-3.jpg').default,
+      image: './assets/images/lessons/lesson-3.jpg',
       description: 'lessons.lessonPhotos.copy3'
     },
     {
-      image: require('src/assets/images/lessons/lesson-4.jpg').default,
+      image: './assets/images/lessons/lesson-4.jpg',
       description: 'lessons.lessonPhotos.copy4'
     }
   ];
@@ -38,7 +38,7 @@ export class LessonsComponent implements OnInit {
       'lessons.lessonGrooming.list4'
     ]
   }
-  LessonsGroomingImage = require('src/assets/images/lessons/grooming.jpg').default;
+  LessonsGroomingImage = './assets/images/lessons/grooming.jpg';
 
   constructor(private ModalService: ModalService) { }
 

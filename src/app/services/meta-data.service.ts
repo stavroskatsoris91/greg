@@ -10,7 +10,7 @@ import { BrowserService } from '../browser.service';
 })
 export class MetaDataService {
   baseUrl = this.document.location.origin
-  homeImage = require('src/assets/images/background/home.jpg').default;
+  homeImage = './assets/images/background/home.jpg';
   redirect = false;
   redirectPath: any;
   constructor(

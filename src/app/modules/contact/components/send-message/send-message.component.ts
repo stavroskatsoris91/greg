@@ -1,5 +1,5 @@
 import { Component, NgZone, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { MessageService } from "../../services/message.service";
@@ -13,7 +13,7 @@ import { MessageService } from "../../services/message.service";
   ],
 })
 export class SendMessageComponent implements OnInit {
-  messageForm: FormGroup = this.formBuilder.group({
+  messageForm: UntypedFormGroup = this.formBuilder.group({
     name: ["", [Validators.required, Validators.maxLength(50)]],
     email: [
       "",
@@ -25,10 +25,10 @@ export class SendMessageComponent implements OnInit {
   submitted: boolean;
   run: boolean;
 
-  messenger = require('src/assets/images/contact/messenger.svg').default;
-  whatsapp = require('src/assets/images/contact/whatsapp.svg').default;
+  messenger = './assets/images/contact/messenger.svg';
+  whatsapp = './assets/images/contact/whatsapp.svg';
   constructor(
-    private readonly formBuilder: FormBuilder,
+    private readonly formBuilder: UntypedFormBuilder,
     private router: Router,
     private translate: TranslateService,
     private zone: NgZone,
@@ -46,11 +46,10 @@ export class SendMessageComponent implements OnInit {
     if (this.messageForm.valid && !this.run) {
       const data = this.messageForm.value;
       this.run = true;
-      this.message.sendMessage(data).subscribe(
+      this.message.sendMessage(data).then(
         (res) => {
           this.zone.run(() => {
-            const language =
-              this.translate.currentLang || this.translate.defaultLang;
+            const language = this.translate.currentLang ?? this.translate.defaultLang;
             this.run = false;
             this.router.navigate([language,'contact', 'thankyou']);
           });

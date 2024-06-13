@@ -9,7 +9,7 @@ import { ModalService } from 'src/app/services/modal.service';
 export class PicnicsComponent implements OnInit {
 
   picnics = ['picnics.picnics.copy1', 'picnics.picnics.copy2', 'picnics.picnics.copy3']
-  photos = [require('src/assets/images/picnics/picnic-1.jpg').default];
+  photos = ['./assets/images/picnics/picnic-1.jpg'];
 
   constructor(private ModalService: ModalService) { }
 

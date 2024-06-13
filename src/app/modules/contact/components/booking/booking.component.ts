@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ElementRef, NgZone } from '@angular/core'
 import { BooksService } from '../../services/books.service';
 import * as cloneDeep from "lodash/cloneDeep";
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, UntypedFormArray } from '@angular/forms';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,9 +14,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class BookingComponent implements OnInit, OnDestroy {
   run: boolean;
-  bookingForm: FormGroup;
-  savedForm: FormGroup;
-  riders2: FormArray;
+  bookingForm: UntypedFormGroup;
+  savedForm: UntypedFormGroup;
+  riders2: UntypedFormArray;
   error: boolean = false;
   submitted = false;
   heatWarning = false;
@@ -63,7 +63,7 @@ export class BookingComponent implements OnInit, OnDestroy {
 
   constructor(
     private books: BooksService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private translate: TranslateService,
     private zone: NgZone
@@ -108,7 +108,7 @@ export class BookingComponent implements OnInit, OnDestroy {
       accept: [false, Validators.required]
     });
   }
-  private get createItem(): FormGroup {
+  private get createItem(): UntypedFormGroup {
     return this.formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
       age: ['', [Validators.required, Validators.maxLength(4), Validators.pattern("^[0-9]*$")]],
@@ -123,9 +123,9 @@ export class BookingComponent implements OnInit, OnDestroy {
       map(x => x)
     );
   }
-  public r(i) { return (this.riderForm.controls[i] as FormGroup).controls; }
+  public r(i) { return (this.riderForm.controls[i] as UntypedFormGroup).controls; }
   public get riderForm() {
-    return this.bookingForm.get('riders') as FormArray;
+    return this.bookingForm.get('riders') as UntypedFormArray;
   }
   get price() {
     var total = 0;
@@ -144,7 +144,7 @@ export class BookingComponent implements OnInit, OnDestroy {
     this.riderForm.removeAt(i);
   };
 
-  async scrollIfFormHasErrors(form: FormGroup): Promise<any> {
+  async scrollIfFormHasErrors(form: UntypedFormGroup): Promise<any> {
     await form.invalid;
   }
   async submitForm() {
@@ -165,7 +165,7 @@ export class BookingComponent implements OnInit, OnDestroy {
     const date = data.date.split('-').reverse().join('/') + ' ' + data.hour + ':' + data.minutes;
     data.date = date;
     data.payment = this.translate.instant(data.payment) + ' ' + this.price;
-    this.books.makeBook(data).subscribe((res) => {
+    this.books.makeBook(data).then((res) => {
       this.zone.run(() => {
         const language = this.translate.currentLang || this.translate.defaultLang;
         this.books.clearForm();

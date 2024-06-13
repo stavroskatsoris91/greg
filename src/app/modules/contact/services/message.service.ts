@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { AngularFireFunctions } from '@angular/fire/functions';
+import { Injectable, inject } from '@angular/core';
+import { Functions, httpsCallable } from '@angular/fire/functions';
 
 @Injectable()
 export class MessageService {
 
-  constructor(private readonly functions : AngularFireFunctions) { }
+  constructor(private readonly functions : Functions) { }
   sendMessage(data){
     data.created = Date.now();
-    return this.functions.httpsCallable('newMessage')(data);
+    return httpsCallable(this.functions, 'newMessage')(data);
   }
 }

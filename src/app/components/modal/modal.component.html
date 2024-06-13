@@ -1,4 +1,4 @@
-<ngx-scroll-lock [lock]="modalIsOpen | async"></ngx-scroll-lock>
+<!-- <ngx-scroll-lock [lock]="modalIsOpen | async"></ngx-scroll-lock> -->
 <div class="Modal" [class.Modal--open]="modalIsOpen | async" *ngIf="modalIsOpen | async">
     <div class="Modal__Container">
         <div class="Modal__Container Modal__Container__Background" (click)="closeModal()"></div>

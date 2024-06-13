@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AngularFireFunctions } from '@angular/fire/functions';
-import { FormGroup } from '@angular/forms';
+import { httpsCallable, Functions } from '@angular/fire/functions';
+import { UntypedFormGroup } from '@angular/forms';
 
 @Injectable()
 export class BooksService {
 
   constructor(
-    private readonly functions : AngularFireFunctions,
+    private readonly functions : Functions,
   ) { }
   savedForm = null;
   ridings = [
@@ -46,17 +46,17 @@ export class BooksService {
   ];
   public makeBook(data) {
     data.created = Date.now();
-    return this.functions.httpsCallable('bookTime')(data);
+    return httpsCallable(this.functions, 'bookTime')(data);
 
   }
   public getTime(time, adults, kids) {
-    var getTimes = this.functions.httpsCallable('getTime');
+    var getTimes = httpsCallable(this.functions, 'getTime');
     var data = {
       time: time,
       adults: adults,
       kids: kids,
     };
-    return getTimes(data).subscribe((result) =>{
+    return getTimes(data).then((result) =>{
       console.log(result);
       // ...
       return true;
@@ -71,7 +71,7 @@ export class BooksService {
   public clearForm():void {
     this.savedForm = null;
   }
-  get getFrom():FormGroup {
+  get getFrom():UntypedFormGroup {
     return this.savedForm;
   }
 }

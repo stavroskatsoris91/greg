@@ -64,7 +64,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     scrollOffset: [0, 0],
     scrollPositionRestoration: 'top'
-  })],
+})],
   providers: [CanActivateTeam,CanActivateHome],
   exports: [RouterModule]
 })

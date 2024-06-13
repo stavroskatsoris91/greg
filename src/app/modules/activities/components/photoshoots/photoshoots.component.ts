@@ -9,7 +9,7 @@ import { ModalService } from 'src/app/services/modal.service';
 export class PhotoshootsComponent implements OnInit {
 
   photoshoots= ['photoshoots.photoshoots.copy1','photoshoots.photoshoots.copy2','photoshoots.photoshoots.copy3'];
-  photos = [require('src/assets/images/photoshoots/photo1.jpg').default,require('src/assets/images/photoshoots/photo2.jpg').default,require('src/assets/images/photoshoots/photo3.jpg').default];
+  photos = ['./assets/images/photoshoots/photo1.jpg','./assets/images/photoshoots/photo2.jpg','./assets/images/photoshoots/photo3.jpg'];
   constructor(private ModalService: ModalService) { }
 
   ngOnInit(): void {
